@@ -6,4 +6,4 @@ Group Members:
 * Sebastien Boulas
 * Justin Gaskins
 * Christopher Pence
-
+* ~~Pengqin Wu~~ (dropped)
