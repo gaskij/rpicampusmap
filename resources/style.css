@@ -2,3 +2,52 @@ html {
 	margin: 0;
 	padding: 0;
 }
+
+body {
+   background-color: #dedede;
+}
+
+#header {
+   background-color: #cc0000;
+   padding-left: 12.5%;
+   padding-right: 12.5%;
+   width: 75%;
+   margin: auto;
+}
+
+#container {
+   background-color: #ffffff;
+   height: 750px;
+   width: 75%;
+   margin: auto;
+}
+
+#search {
+   width: 37.5%;
+/*   clear: right;*/
+}
+
+#map {
+   width: 37.5%;
+   float: right;
+}
+
+footer {
+   background-color: #cc0000;
+   padding-left: 12.5%;
+   padding-right: 12.5%;
+   width: 75%;
+   height: 100px;
+   margin: auto;
+   color: aliceblue;
+   text-align: center; 
+}
+
+input[type=text] {
+/*    float: right;*/
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+}
