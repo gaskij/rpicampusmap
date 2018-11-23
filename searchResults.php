@@ -44,7 +44,7 @@
             //Return all of the results in the form above /\
 
             //Connect to the SQL database
-            $mysqli = mysqli_connect("localhost", "termproject", "It18BrigitteRes_ume", "iit");
+            $mysqli = mysqli_connect("localhost", "termproject", "password", "database");
 
             //Check if there was an error connecting to the database
             if($mysqli-> connect_error){
