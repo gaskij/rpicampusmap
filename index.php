@@ -26,12 +26,18 @@
             </form>
          </div>
 
+         <div id="mapContainer">
+         <img id="tmp" src="resources/images/campusmap.png" width="100%" height=" ">
+         </div>
+
          <!-- Insert php for search function here-->
          
          <!--Plan to make the map full screen, with search bar above-->
          <div id="map"> 
             <h1> Main Map Area</h1>
             <!-- Insert Map here-->
+
+            
          </div>
                   
       </div>

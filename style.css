@@ -228,6 +228,7 @@ input[type=text] {
   margin: auto;
   border-style: ridge;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 #commentFormTitle{ /*input containing the comment title*/
   width: 70%;
@@ -249,6 +250,13 @@ input[type=text] {
   margin-right: 1em;
 }
 
-.commentFiller{ /*Used to ensure that the webpage is long enough*/
-  height:100px;
+#noComment{ /*used when there arent any comments*/
+  margin: auto;
+  text-align: center;
+}
+
+/*delete this*/
+#mapContainer{
+  width: 100%;
+  background-color: lavender;
 }

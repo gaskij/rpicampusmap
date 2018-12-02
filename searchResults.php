@@ -23,7 +23,7 @@
          <div id="search"> 
             <form action="searchResults.php" method="post">
                <input name="searchText" id="searchText" type="text" placeholder="Enter a location...">
-               <input id="searchButton" type="submit" placeholder="Search">
+               <input id="searchButton" type="submit" placeholder="Search" value="Search">
             </form>
          </div>
 
@@ -55,38 +55,47 @@
                //check to see if nothing was entered the search term
                if($search_term == ""){
                   echo "<div class=\"noResult\">";
-
                   echo "<h1>No Results Found!</h1>";
-
                   echo "</div>";
                }
                else{
                   //Connect to the SQL database
-                  $mysqli = mysqli_connect("localhost", "termproject", "It18BrigitteRes_ume", "pencec-websyslab8");
+                  $mysqli = mysqli_connect("localhost", "termproject", "It18BrigitteRes_ume", "campusmap");
 
                   //Check if there was an error connecting to the database
                   if($mysqli-> connect_error){
                      die("Connect Failed:". $mysqli-> connect_error);
                   }
 
-                  //Create a variable to store the SQL query
-                  //This search query is fairly loose, we must expand to include nicknames
-                  $sql = "SELECT `first name` FROM students WHERE `first name` LIKE '%" . $search_term . "%'";
+                  //query the nicks table
+                  $nick_sql = "SELECT `location` FROM `nick` WHERE `nick` LIKE '%" . $search_term . "%'";
+                  $result = $mysqli->query($nick_sql);
+
+                  //create the databse query
+                  if($result->num_rows == 0){
+                     //regular search
+                     if($search_term == "*"){
+                        //admin tool to list all results
+                        $sql = "SELECT * FROM main";
+                     }
+                     else{
+                        $sql = "SELECT * FROM main WHERE `location` LIKE '%" . $search_term . "%'";
+                     }
+                  }
+                  else{
+                     //altered search
+                     $search_term_2 = $result->fetch_assoc()['location'];
+                     $sql = "SELECT * FROM main WHERE `location` LIKE '%" . $search_term . "%' OR `location` LIKE '%" . $search_term_2 . "%'";
+                  }
 
                   //Query the SQL databsae
                   $result = $mysqli-> query($sql);
-
-                  //Begin to write the results out to the HTML, this can also be done
-                  //by creating a json file and then using JS to print to that
-                  //or this can just be done with echos https://www.w3schools.com/php/php_mysql_select.asp
 
                   //Check to see if we got any search results
                   if($result->num_rows == 0){
                      //This is what is displayed when no searchResults are found
                      echo "<div class=\"noResult\">";
-
                      echo "<h1>No Results Found!</h1>";
-
                      echo "</div>";
                   }
                   //If there are results, print them out
@@ -94,39 +103,54 @@
                      while($r = $result->fetch_assoc()){
                         //Form info and starter div DO NOT EDIT
                         echo "<form id=\"";
-                        echo $r['first name'];
+                        echo $r['location'];
                         echo "\" action=\"info.php\" method=\"post\"><div class=\"resultBox\" onclick=\"document.forms['";
-                        echo $r['first name'];
+                        echo $r['location'];
                         echo "'].submit();\">";
 
                         //display title
                         echo "<div class=\"resultInfo\"><h1 class=\"resultTitle\">";
-                        echo $r['first name'];
+                        echo $r['location'];
                         echo "</h1>";
 
                         //display desc
                         echo "<p class=\"resultDesc\">";
-                        echo "Yuh yuh ice on my lean"; //INSERT DESC HERE
+                        echo $r['description']; 
                         echo "</p>";
 
                         //display nicks
                         echo "<p class=\"resultNicks\">";
-                        echo "Nicknames bruh, my is DrPencil"; //INSERT NICKS HERE
+                        //query the nicks table
+                        $sql = "SELECT * FROM nick WHERE `location` = '". $r['location'] . "'";
+                        $nicks = $mysqli->query($sql);
+                        $i = 1;
+                        $num = $nicks->num_rows;
+                        //print the nicknames in comma list
+                        while($n = $nicks->fetch_assoc()){
+                           echo $n['nick'];
+                           if($i != $num){
+                              echo ", ";
+                           }
+                           $i = $i + 1;
+                        }
                         echo "</p>";
                         echo "</div>";
 
                         //display image
                         echo "<img class=\"resultImg\" src=\"";
-                        echo "https://images-gmi-pmc.edge-generalmills.com/edfaaf9f-9bde-426a-8d67-3284e9e496ae.jpg"; //INSERT IMAGE HERE
+                        //query the images table, take the first result
+                        $sql = "SELECT * FROM images WHERE `location` = '". $r['location'] . "'";
+                        $nicks = $mysqli->query($sql);
+                        echo $nicks->fetch_assoc()['link'];
                         echo "\" alt=\"Image of ";
-                        echo $r['first name'];
+                        echo $r['location'];
                         echo "\" />";
-
 
                         //Input info DO NOT EDIT
                         echo "</div><input name=\"location\" value=\"";
-                        echo $r['first name'];
-                        echo "\" type=\"text\" style=\"display:none;\"></form>";
+                        echo $r['location'];
+                        echo "\" type=\"text\" style=\"display:none;\">";
+                        echo "<input name=\"type\" value=\"load\" type=\"text\" style=\"display:none;\"></form>";
                      }
                      //filler div underneath
                      if($result->num_rows < 4){
