@@ -13,7 +13,7 @@
    <body>
       <!-- Header -->
       <div id="header">
-         <a href="https://rpi.edu/" target="_blank"><img id="logo" src="resources/images/rensselaer_logo.png" alt="Rensselaer Polytechnic Institute" height="100px"/></a>
+         <a href="https://rpi.edu/" target="_blank"><img id="logo" src="resources/images/rensselaer_logo.png" alt="Rensselaer Polytechnic Institute"/></a>
       </div>
 
       <!-- Main content -->
@@ -178,9 +178,9 @@
       </div>
 
       <!-- footer -->
-      <div id ="footer">
+      <footer>
          RPI Interactive Campus Map -- Group 5 -- Justin Gaskins, Christopher Pence, Sebastien Boulas -- Professor Munasinghe -- 2018
-      </div>
+      </footer>
    </body>
 
 </html>
