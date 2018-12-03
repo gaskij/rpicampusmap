@@ -1,24 +1,32 @@
 html {
-	margin: 0;
-	padding: 0;
+   height: 100%;
+   margin: 0;
+   padding: 0;
+   font-family: -apple-system, system-ui, BlinkMacSystemFont, 
+       "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", 
+       "Segoe UI Emoji", "Segoe UI Symbol"
 }
 
 body {
    background-color: #dedede;
+   height: 100%;
+   margin: 0;
+   padding: 0;
 }
 
 #header {
    background-color: #cc0000;
-   padding-left: 12.5%;
-   padding-right: 12.5%;
-   width: 75%;
+   padding-left: 1%;
+   padding-right: 1%;
+   height: 7%;
+   width: 98%;
    margin: auto;
 }
 
 #container {
    background-color: #ffffff;
-   height: 750px;
-   width: 75%;
+   height: 88%;
+   width: 80%;
    margin: auto;
 }
 
@@ -27,17 +35,30 @@ body {
 /*   clear: right;*/
 }
 
-#map {
-   width: 37.5%;
+#mapsearch {
    float: right;
+}
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+   height: 88%;
+   width: 100%;
+}
+
+img {
+   max-height: 100%;
+   max-width: 100%;
+   
 }
 
 footer {
    background-color: #cc0000;
-   padding-left: 12.5%;
-   padding-right: 12.5%;
-   width: 75%;
-   height: 100px;
+   vertical-align: middle;
+   padding-left: 1%;
+   padding-right: 1%;
+   height: 5%;  
+   width: 98%;
    margin: auto;
    color: aliceblue;
    text-align: center; 
