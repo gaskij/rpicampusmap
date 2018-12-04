@@ -1,0 +1,38 @@
+[
+{"type":"header","version":"4.7.9","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"campusmap"},
+{"type":"table","name":"comments","database":"campusmap","data":
+[
+{"location":"Amos Eaton Hall","title":"The CS Lounge","comment":"The CS lounge on the first floor is a really cool place to study and work","time":"2018-12-02 21:19:30"},
+{"location":"Darrin Communications Center","title":"hi","comment":"hi","time":"2018-12-02 23:47:30"},
+{"location":"Darrin Communications Center","title":"hi","comment":"you whats up","time":"2018-12-02 23:47:50"}
+]
+}
+,{"type":"table","name":"images","database":"campusmap","data":
+[
+{"location":"Amos Eaton Hall","link":"https:\/\/cdn.discordapp.com\/attachments\/516827237413158912\/518550562682437633\/amos_eaton_hall_large.png"},
+{"location":"Folsom Library","link":"https:\/\/cdn.discordapp.com\/attachments\/516827237413158912\/518553660142256141\/1200px-Folsom_Library2.png"},
+{"location":"Amos Eaton Hall","link":"https:\/\/cdn.discordapp.com\/attachments\/516827237413158912\/518973399033184266\/Amos_Eaton_Hall.png"},
+{"location":"Folsom Library","link":"https:\/\/cdn.discordapp.com\/attachments\/516827237413158912\/518987028277231627\/a4f0fbe891c55a86371674d70514259416c6743.png"},
+{"location":"Darrin Communications Center","link":"https:\/\/cdn.discordapp.com\/attachments\/516827237413158912\/518989665437745162\/dcc_large.png"},
+{"location":"Darrin Communications Center","link":"https:\/\/cdn.discordapp.com\/attachments\/516827237413158912\/518997414992937048\/DCC.png"},
+{"location":"Darrin Communications Center","link":"https:\/\/cdn.discordapp.com\/attachments\/516827237413158912\/519000239181660170\/genericon_webleveled_-_ethan_spitz.png"},
+{"location":"Darrin Communications Center","link":"https:\/\/cdn.discordapp.com\/attachments\/516827237413158912\/519010940746989581\/ccpd.png"}
+]
+}
+,{"type":"table","name":"main","database":"campusmap","data":
+[
+{"location":"Amos Eaton Hall","description":"Home of the Mathematics Department and part of the Computer Science Department. Many Math and Computer science courses are taught inside. It is names after Amos Eaton, Co-Founder of RPI.","address":"Amos Eaton Hall, 110 8th Street, Troy, NY, 12180","phone":"0"},
+{"location":"Darrin Communications Center","description":"Main Lecture Hall","address":"110 8th Street, Troy, NY, 12180","phone":null},
+{"location":"Folsom Library","description":"The main library on campus. 4 floors of study spaces, bookshelves and even a cafe. A great place to study quietly.","address":"110 8th St, Troy, NY 12180","phone":null}
+]
+}
+,{"type":"table","name":"nick","database":"campusmap","data":
+[
+{"location":"Amos Eaton Hall","nick":"AE"},
+{"location":"Amos Eaton Hall","nick":"Amos Eaton"},
+{"location":"Folsom Library","nick":"library"},
+{"location":"Darrin Communications Center","nick":"DCC"}
+]
+}
+]

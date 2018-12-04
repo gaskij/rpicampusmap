@@ -13,7 +13,7 @@
    <body>
       <!-- Header -->
       <div id="header">
-         <a href="https://rpi.edu/" target="_blank"><img id="logo" src="resources/images/rensselaer_logo.png" alt="Rensselaer Polytechnic Institute" height="100px"/></a>
+         <a href="https://rpi.edu/" target="_blank"><img id="logo" src="resources/images/rensselaer_logo.png" alt="Rensselaer Polytechnic Institute"/></a>
       </div>
 
       <!-- Main content -->
@@ -21,60 +21,166 @@
 
          <!-- Working search form--> 
          <div id="search"> 
-            <form action="" method="post">
-               <input type="text" placeholder="Enter a location...">
-               <input type="submit" placeholder="Search">
+            <form action="searchResults.php" method="post">
+               <input name="searchText" id="searchText" type="text" placeholder="Enter a location...">
+               <input id="searchButton" type="submit" placeholder="Search" value="Search">
             </form>
          </div>
 
+         <!--
+         <form id="loadInfo" action="info.php" method="post">
+            <div class="resultBox" onclick="document.forms['loadInfo'].submit();"></div>
+            <input name="bean" value="John" type="text" style="display:none;">
+         </form>
+         -->
+
          <!-- Example output for search results, all will be echoed from PHP-->
+         <!--
          <div class="resultBox">
             <div class="resultInfo">
                <h1 class="resultTitle">Darrin Communication Center</h1>
+               <p class="resultDesc">Something about the DCC. It was built in the 50s im pretty sure, so thats pretty cool. Maybe more info here so we can see the css truncation</p>
                <p class="resultNicks">DCC</p>
-               <p class="resultDesc">Main lecture hall on campus</p>
             </div>
             <img class="resultImg" src="resources/images/dcc.jpg" alt="Image of Location" />
          </div>
+         -->
 
          <!-- Actual PHP that is called after the form is submitted-->
          <?php
-            //Capture the value of the search bar
-            //Add it to MYSQL query 
-            //Return all of the results in the form above /\
+            //Check to see when the button is clicked
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+               $search_term = $_POST['searchText'];
 
-            //Connect to the SQL database
-            $mysqli = mysqli_connect("localhost", "termproject", "password", "database");
+               //check to see if nothing was entered the search term
+               if($search_term == ""){
+                  echo "<div class=\"noResult\">";
+                  echo "<h1>No Results Found!</h1>";
+                  echo "</div>";
+               }
+               else{
+                  //Connect to the SQL database
+                  $mysqli = mysqli_connect("localhost", "termproject", "It18BrigitteRes_ume", "campusmap");
 
-            //Check if there was an error connecting to the database
-            if($mysqli-> connect_error){
-               die("Connect Failed:". $mysqli-> connect_error);
-            }
+                  //Check if there was an error connecting to the database
+                  if($mysqli-> connect_error){
+                     die("Connect Failed:". $mysqli-> connect_error);
+                  }
 
-            //Create a variable to store the SQL query
-            $sql = "SELECT full_name FROM actors";
+                  //query the nicks table
+                  $nick_sql = "SELECT `location` FROM `nick` WHERE `nick` LIKE '%" . $search_term . "%'";
+                  $result = $mysqli->query($nick_sql);
 
-            //Query the SQL databsae
-            $result = $mysqli-> query($sql);
+                  //create the databse query
+                  if($result->num_rows == 0){
+                     //regular search
+                     if($search_term == "*"){
+                        //admin tool to list all results
+                        $sql = "SELECT * FROM main";
+                     }
+                     else{
+                        $sql = "SELECT * FROM main WHERE `location` LIKE '%" . $search_term . "%'";
+                     }
+                  }
+                  else{
+                     //altered search
+                     $search_term_2 = $result->fetch_assoc()['location'];
+                     $sql = "SELECT * FROM main WHERE `location` LIKE '%" . $search_term . "%' OR `location` LIKE '%" . $search_term_2 . "%'";
+                  }
 
-            //Begin to write the results out to the HTML, this can also be done
-            //by creating a json file and then using JS to print to that
-            //or this can just be done with echos https://www.w3schools.com/php/php_mysql_select.asp
-            while($r = $result->fetch_assoc()){
-               echo "<div class=\"resultBox\"><div class=\"resultInfo\"><h1 class=\"resultTitle\">";
+                  //Query the SQL databsae
+                  $result = $mysqli-> query($sql);
 
-               echo $r['full_name'];
+                  //Check to see if we got any search results
+                  if($result->num_rows == 0){
+                     //This is what is displayed when no searchResults are found
+                     echo "<div class=\"noResult\">";
+                     echo "<h1>No Results Found!</h1>";
+                     echo "</div>";
+                  }
+                  //If there are results, print them out
+                  else{
+                     while($r = $result->fetch_assoc()){
+                        //Form info and starter div DO NOT EDIT
+                        echo "<form id=\"";
+                        echo $r['location'];
+                        echo "\" action=\"info.php\" method=\"post\"><div class=\"resultBox\" onclick=\"document.forms['";
+                        echo $r['location'];
+                        echo "'].submit();\">";
 
-               echo "</h1></div></div>";
+                        //display title
+                        echo "<div class=\"resultInfo\"><h1 class=\"resultTitle\">";
+                        echo $r['location'];
+                        echo "</h1>";
+
+                        //display desc
+                        echo "<p class=\"resultDesc\">";
+                        echo $r['description']; 
+                        echo "</p>";
+
+                        //display nicks
+                        echo "<p class=\"resultNicks\">";
+                        //query the nicks table
+                        $sql = "SELECT * FROM nick WHERE `location` = '". $r['location'] . "'";
+                        $nicks = $mysqli->query($sql);
+                        $i = 1;
+                        $num = $nicks->num_rows;
+                        //print the nicknames in comma list
+                        while($n = $nicks->fetch_assoc()){
+                           echo $n['nick'];
+                           if($i != $num){
+                              echo ", ";
+                           }
+                           $i = $i + 1;
+                        }
+                        echo "</p>";
+                        echo "</div>";
+
+                        //display image
+                        echo "<img class=\"resultImg\" src=\"";
+                        //query the images table, take the first result
+                        $sql = "SELECT * FROM images WHERE `location` = '". $r['location'] . "'";
+                        $nicks = $mysqli->query($sql);
+                        echo $nicks->fetch_assoc()['link'];
+                        echo "\" alt=\"Image of ";
+                        echo $r['location'];
+                        echo "\" />";
+
+                        //Input info DO NOT EDIT
+                        echo "</div><input name=\"location\" value=\"";
+                        echo $r['location'];
+                        echo "\" type=\"text\" style=\"display:none;\">";
+                        echo "<input name=\"type\" value=\"load\" type=\"text\" style=\"display:none;\"></form>";
+                     }
+                     //filler div underneath
+                     if($result->num_rows < 4){
+                        echo "<div class=\"noResult\">";
+                        echo "<h3>Displaying ";
+                        echo $result->num_rows;
+                        echo " out of ";
+                        echo $result->num_rows;
+                        echo " result(s).";
+                        echo "</div>";                     
+                     }
+                     else{
+                        echo "<div class=\"yesResult\">";
+                        echo "<h3>Displaying ";
+                        echo $result->num_rows;
+                        echo " out of ";
+                        echo $result->num_rows;
+                        echo " result(s).";
+                        echo "</div>";  
+                     }
+                  }
+               }
             }
          ?>
-         <!-- These would be repeated over and over again downwards for the results-->
       </div>
 
       <!-- footer -->
-      <div id ="footer">
+      <footer>
          RPI Interactive Campus Map -- Group 5 -- Justin Gaskins, Christopher Pence, Sebastien Boulas -- Professor Munasinghe -- 2018
-      </div>
+      </footer>
    </body>
 
 </html>
