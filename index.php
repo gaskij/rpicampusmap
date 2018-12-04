@@ -9,7 +9,7 @@
       <link rel="icon" href="resources/images/favicon.ico" type="image/x-icon">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
-      <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>	
+      <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script> 
       <style>
          
       </style>
@@ -18,14 +18,16 @@
    <body>
       <!-- Header -->
       <div id="header">
-         <a href="https://rpi.edu/" target="_blank"><img id="logo" src="resources/images/rensselaer_logo.png" alt="Rensselaer Polytechnic Institute"/></a>
+         <a href="/index.php"><img id="logo" src="resources/images/logo.png" alt="RPI Campus Map"/></a>
          <!-- Search bar-->    
+          
           <div id="mapsearch"> 
             <form action="searchResults.php" method="post">
                <input name="searchText" id="searchText" type="text" placeholder="Enter a location...">
-               <input id="searchButton" type="submit" placeholder="Search">
+               <input id="searchButton" type="submit" value="Search">
             </form>
          </div>
+        
       </div>
 
       <!-- Main content -->
@@ -40,7 +42,8 @@
       </div>
 
       <!-- footer -->
-      <footer>
+      <footer id="index">
+<!--          <a href="https://rpi.edu/" target="_blank"><img id="seal" src="resources/images/seal.png" alt="Rensselaer Polytechnic Institute"/></a>-->
          RPI Interactive Campus Map -- Group 5 -- Justin Gaskins, Christopher Pence, Sebastien Boulas -- Professor Munasinghe -- 2018
       </footer>
       
@@ -53,6 +56,19 @@
       
       <script src="resources/geolocations.js"></script>
       <script src="resources/map.js"></script>
+
+      <?php
+         //check for post request
+         if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            //get the location to highlight
+            $location = $_POST['location'];
+            echo "<script type=\"text/javascript\">var building = \"";
+            echo $location;
+            echo "\";var point = getCoords(building);showOnMap(building, point[1], point[0]);</script>";
+         }
+      ?>
+
+      
    </body>
 
 </html>

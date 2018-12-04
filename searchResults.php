@@ -13,20 +13,21 @@
    <body>
       <!-- Header -->
       <div id="header">
-         <a href="https://rpi.edu/" target="_blank"><img id="logo" src="resources/images/rensselaer_logo.png" alt="Rensselaer Polytechnic Institute"/></a>
-      </div>
-
-      <!-- Main content -->
-      <div id="container">
-
-         <!-- Working search form--> 
-         <div id="search"> 
+<!--         <a href="https://rpi.edu/" target="_blank"><img id="logo" src="resources/images/rensselaer_logo.png" alt="Rensselaer Polytechnic Institute"/></a>-->
+         <a href="/index.php"><img id="logo" src="resources/images/logo.png" alt="RPI Campus Map"/></a>
+          <div id="mapsearch"> 
             <form action="searchResults.php" method="post">
                <input name="searchText" id="searchText" type="text" placeholder="Enter a location...">
                <input id="searchButton" type="submit" placeholder="Search" value="Search">
             </form>
+            <a href="index.php">
+               <button id="homeButton">Back to Map</button>
+            </a>
          </div>
+      </div>
 
+      <!-- Main content -->
+      <div id="container">
          <!--
          <form id="loadInfo" action="info.php" method="post">
             <div class="resultBox" onclick="document.forms['loadInfo'].submit();"></div>
@@ -140,8 +141,8 @@
                         echo "<img class=\"resultImg\" src=\"";
                         //query the images table, take the first result
                         $sql = "SELECT * FROM images WHERE `location` = '". $r['location'] . "'";
-                        $nicks = $mysqli->query($sql);
-                        echo $nicks->fetch_assoc()['link'];
+                        $image = $mysqli->query($sql);
+                        echo $image->fetch_assoc()['link'];
                         echo "\" alt=\"Image of ";
                         echo $r['location'];
                         echo "\" />";
