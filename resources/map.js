@@ -1,7 +1,22 @@
-// Display the map at id 'map'
+/*
+* This is the main file responsible for handling the map.
+* 
+* In all locations below, "L" refers to the Leaflet API.
+*/
+
+/*
+Display the map on the pag at id 'map'
+
+setView() focuses the map around the given point.
+In this case, it does on creating of the map (pageload)
+Usage: setView([latitude, longitude], zoomlevel)
+*/
 var mymap = L.map('map').setView([42.73131, -73.675218], 16);
 
-// Tile Layer is the display style (satellite, street, etc.)
+/* 
+Tile Layer is the display style (satellite, street, etc.)
+Attribution refers to the creeator of the layer (accreditation)
+*/
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
     maxZoom: 18,
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
@@ -10,16 +25,14 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
     id: 'mapbox.streets'
 }).addTo(mymap);
 
-// Create a marker that displays on page load
-/*L.marker([42.729267, -73.677642]).addTo(mymap)
-   .bindPopup("<b>Rensselaer Polytechnic Institute</b><br>Campus higlighted.").openPopup();
+/*
+// Highlight an area with a circle
+L.circle([42.729267, -73.677642], 100, {
+   color: 'red',
+   fillColor: '#f03',
+   fillOpacity: 0.5
+}).addTo(mymap).bindPopup("I am a circle.");
 */
-//// Highlight an area with a circle
-//L.circle([42.729267, -73.677642], 100, {
-//   color: 'red',
-//   fillColor: '#f03',
-//   fillOpacity: 0.5
-//}).addTo(mymap).bindPopup("I am a circle.");
 
 // Highlight an area with custom points forming a polygon
 var campus = [
@@ -41,17 +54,20 @@ var campus = [
 ];
 L.polygon(campus, {color: 'gray', opacity: 0.1}).addTo(mymap);
 
+// Popup object that would show on the map
 var popup = L.popup();
 
 function onMapClick(e) {
 popup
-   .setLatLng(e.latlng)
+   .setLatLng(e.latlng) // e refers to an event, in theis case a click
    .setContent("You clicked the map at " + e.latlng.toString())
    .openOn(mymap);
 }
 
 mymap.on('click', onMapClick);
 
+
+// Binds properties to each Feature in a Feature Collection
 function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.popupContent) {
@@ -59,6 +75,8 @@ function onEachFeature(feature, layer) {
         var building = feature.properties.name;
         var point = getCoords(building);
         var popupContent = '';
+        
+        // Pull the Points from the 'geolocations.js' JSON file
         $.ajax({
            url: "resources/infoPreview.php",
            type: "get",
@@ -67,23 +85,25 @@ function onEachFeature(feature, layer) {
               "location": building
            },
            success: function(response){
+              // Create popup based on which point is chosen
               var info = JSON.parse(response);
               var popupContent = '<form method="post" action="info.php"><div class="popup" onclick="javascript:this.parentNode.submit();"><h2>';
-          popupContent += info['location'] + '</h2>';
-          popupContent += '<p>Nicknames: ' + info['nicks'] + '</p>';
-          popupContent += '<img src="' + info['image'] + '" alt="' + info['location'] + '" width="100%"/><input type="text" name="location" value="';
-          popupContent += info['location'];
-          popupContent += '" style="display:none"><input type="text" name="type" value="none" style="display:none"></div></form>';
+              popupContent += info['location'] + '</h2>';
+              popupContent += '<p>Nicknames: ' + info['nicks'] + '</p>';
+              popupContent += '<img src="' + info['image'] + '" alt="' + info['location'] + '" width="100%"/><input type="text" name="location" value="';
+              popupContent += info['location'];
+              popupContent += '" style="display:none"><input type="text" name="type" value="none" style="display:none"></div></form>';
               layer.bindPopup(popupContent);
            },
            error: function(xhr){
               alert("error");
            }
         });
+        
     }
 }
 
-
+// Style and add the points to the map
 L.geoJSON(locations, {
     style: function (feature) {
         return feature.properties && feature.properties.style;
@@ -92,7 +112,7 @@ L.geoJSON(locations, {
     onEachFeature: onEachFeature,
 
     pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng, {
+        return L.circleMarker(latlng, { // circleMarker shows at the Point's location
             radius: 8,
             fillColor: "#ff7800",
             color: "#000",
@@ -104,6 +124,7 @@ L.geoJSON(locations, {
 }).addTo(mymap);
 
 
+// Fetch the coordinates of a given location (name)
 function getCoords(name) {
     for (var i=0; i < locations['features'].length; i++) {
         if (locations['features'][i]['properties']['name'] == name) {
@@ -113,7 +134,7 @@ function getCoords(name) {
     }   
     return 0;
 }
-
+ 
 function showOnMap(building, latitude, longitude) {
     $.ajax({
        url: "resources/infoPreview.php",

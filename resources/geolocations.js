@@ -1,4 +1,14 @@
-// Coordinates for feature objects are listed backwards (long, lat) for some reason?
+/* 
+Each point on the map is a "Feature" type object. These Features
+specifically are "Points" that show on the map. 
+There are many methods that can be used on points, described here:
+https://leafletjs.com/reference-1.3.4.html#point
+
+**IMPORTANT**
+**Coordinates for Point objects are used backwards (long, lat)
+for some reason according to the API**
+*/
+
 var locations = {
     "type": "FeatureCollection",
     "features": [

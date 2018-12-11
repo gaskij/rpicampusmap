@@ -116,10 +116,10 @@ INSERT INTO `main` (`location`, `description`, `address`, `phone`) VALUES
 ('Heffner Alumni House', 'This is where all alumni events are planned and coordinated.', '1301 Peoples Ave, Troy, NY 12180', '518-276-6205'),
 ('Admissions', 'This is where the admissions department is located at RPI.', '110 8th St, Troy, NY 12180', '518-276-6216'), 
 ('Commons Dining Hall', 'One of the main dining hills on campus. Located on freshman hill. The mailing center is also located in this building.', '1999 Burdett Ave, Troy, NY 12180', '518-276-6277'),
-('Barton Hall', 'One of the residence halls on campus. Located on freshman hill.', '1999 Burdett Ave, Troy, NY 12180', NULL)
-('Bray Hall', 'One of the residence halls on campus. Located on freshman hill.', '1999 Burdett Ave, Troy, NY 12180', NULL)
-('Hall Hall', 'One of the residence halls on campus. Located on freshman hill.', '1999 Burdett Ave, Troy, NY 12180', NULL)
-('Nason Hall', 'One of the residence halls on campus. Located on freshman hill.', '1999 Burdett Ave, Troy, NY 12180', NULL)
+('Barton Hall', 'One of the residence halls on campus. Located on freshman hill.', '1999 Burdett Ave, Troy, NY 12180', NULL),
+('Bray Hall', 'One of the residence halls on campus. Located on freshman hill.', '1999 Burdett Ave, Troy, NY 12180', NULL),
+('Hall Hall', 'One of the residence halls on campus. Located on freshman hill.', '1999 Burdett Ave, Troy, NY 12180', NULL),
+('Nason Hall', 'One of the residence halls on campus. Located on freshman hill.', '1999 Burdett Ave, Troy, NY 12180', NULL),
 ('Nugent Hall', 'One of the residence halls on campus. Located on freshman hill.', '1999 Burdett Ave, Troy, NY 12180', NULL);
 
 

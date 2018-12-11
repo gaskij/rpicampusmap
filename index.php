@@ -32,19 +32,26 @@
 
       <!-- Main content -->
       <div id="map">     
-         <!-- Insert php for search function here-->
-         
-         <!--Plan to make the map full screen, with search bar above-->
- 
-<!--            <h1> Main Map Area</h1>-->
             <!-- Insert Map here-->
-             
       </div>
+       
+      <div id="login" class="modalDialog">
+         <form action="admin.php" class="borderedForm">
+            <a href="#close" title="Close" class="close">X</a>
+            <label for="uname"><b>Username</b></label>
+            <input type="text" class="loginInput" placeholder="Enter rcsID" class="loginInput" name="uname" required>
 
+            <label for="psw"><b>Password</b></label>
+            <input type="password" class="loginInput" placeholder="Enter Password" class="loginInput" name="psw" required>
+
+            <input type="submit" id="loginButton" value="Login" />
+         </form>
+      </div>
+      
       <!-- footer -->
       <footer id="index">
 <!--          <a href="https://rpi.edu/" target="_blank"><img id="seal" src="resources/images/seal.png" alt="Rensselaer Polytechnic Institute"/></a>-->
-         RPI Interactive Campus Map -- Group 5 -- Justin Gaskins, Christopher Pence, Sebastien Boulas -- Professor Munasinghe -- 2018
+            RPI Interactive Campus Map -- Group 5 -- Justin Gaskins, Christopher Pence, Sebastien Boulas -- Professor Munasinghe -- 2018 -- <a href="#login">Admin Panel</a>
       </footer>
       
       <noscript>

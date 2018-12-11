@@ -458,3 +458,167 @@ input[type=text] {
   max-height: 400px;
   border-radius: 10pX;
 }
+
+
+/* ====================== Login Modal ============================= */
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 100ms ease-in;
+    -moz-transition: opacity 100ms ease-in;
+    transition: opacity 100ms ease-in;
+    pointer-events: none;
+}
+.modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+}
+
+.modalDialog > form {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 13px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+/*
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+*/
+}
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+/*
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+*/
+    border-radius: 50%;
+/*
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+*/
+    box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { background: #ff0000; }
+
+/* Bordered form */
+.borderedForm {
+    border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+.loginInput {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+#loginButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Add a hover effect for buttons */
+#loginButton:hover {
+    opacity: 0.8;
+}
+
+
+/* ====================== Admin Page =========================== */
+/*
+<div id="locationForm">
+   <form action="admin.php#locationList" method="post" autocomplete="off">
+      <input required="true" class="locationInput" type="text" name="name" placeholder="Location Name" autocomplete="off">
+      <input required="true" class="locationInput" type="text" name="name" placeholder="Coordinates [x,y]" autocomplete="off">
+      <input required="true" class="locationInput" type="text" name="name" placeholder="Location Name" autocomplete="off">
+      <textarea required="true" rows="10" cols="60" id="locationDesc" name="text" placeholder="Write a description of the location." maxlength="512" autocomplete="off"></textarea>
+      <input id="addLocationSubmit" type="submit" name="submit" value="Add Location">
+      <!-- dont edit -->
+      <input name="location" value=<?php echo "\"";echo $search_term;echo "\"";?> style="display: none;">
+      <input name="type" value="comment" type="text" style="display:none;">
+   </form>
+</div>
+*/
+
+/*
+#locationForm {
+   background-color: oldlace;
+   width: 100%;
+}
+*/
+
+/*
+#locationForm form {
+   width: 500px;
+   margin: auto;
+   border: 3px solid #f1f1f1;
+}
+*/
+
+/* Full-width inputs */
+/*
+#locationForm input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+*/
+
+/* Set a style for all buttons */
+/*
+#addLocationSubmit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+*/
+
+/* Add a hover effect for buttons */
+/*
+#addLocationSubmit:hover {
+    opacity: 0.8;
+}
+*/
+
+
+
+
+
+
+
+
+
