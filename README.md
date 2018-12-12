@@ -7,6 +7,3 @@ Group Members:
 * Justin Gaskins
 * Christopher Pence
 * ~~Pengqin Wu~~ (dropped)
-
-
-Uploaded the searchResults tab to keep you guys updated. Done a very light styling to the spacing and such. Using background colors to highlight div sections. Im going to keep finishing up the other HTML and I think we need to start laying out or database. That way we can finalize the PHP code, which I started to outline and is working on the searchResults.php. 
