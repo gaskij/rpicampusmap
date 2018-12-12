@@ -20,14 +20,12 @@
       <div id="header">
          <a href="/index.php"><img id="logo" src="resources/images/logo.png" alt="RPI Campus Map"/></a>
          <!-- Search bar-->    
-          
           <div id="mapsearch"> 
             <form action="searchResults.php" method="post">
                <input name="searchText" id="searchText" type="text" placeholder="Enter a location...">
                <input id="searchButton" type="submit" value="Search">
             </form>
          </div>
-        
       </div>
 
       <!-- Main content -->
@@ -35,6 +33,7 @@
             <!-- Insert Map here-->
       </div>
        
+      <!-- login code, not fully functional -->
       <div id="login" class="modalDialog">
          <form action="admin.php" class="borderedForm">
             <a href="#close" title="Close" class="close">X</a>
@@ -54,6 +53,7 @@
             RPI Interactive Campus Map -- Group 5 -- Justin Gaskins, Christopher Pence, Sebastien Boulas -- Professor Munasinghe -- 2018 -- <a href="#login">Admin Panel</a>
       </footer>
       
+      <!-- code to run if browser doesnt support javascript and therefore the map -->
       <noscript>
          <div id="noscript">
             <p>You are either using a browser that does not support JavaScript, or you have disabled JavaScript.</p>
@@ -61,9 +61,11 @@
          </div>
       </noscript>
       
+      <!-- include the map files -->
       <script src="resources/geolocations.js"></script>
       <script src="resources/map.js"></script>
 
+      <!-- code to load after "show on map" is clicked -->
       <?php
          //check for post request
          if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -72,12 +74,10 @@
             echo "<script type=\"text/javascript\">var building = \"";
             echo $location;
             echo "\";var point = getCoords(building);showOnMap(building, point[1], point[0]);</script>";
+            //this code will run the javascript function to highlight a certain location on the map, and pull up the info preview
          }
       ?>
-
-      
    </body>
-
 </html>
 
 <!--

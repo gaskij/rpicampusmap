@@ -13,9 +13,9 @@
    <body>
       <!-- Header -->
       <div id="header">
-<!--         <a href="https://rpi.edu/" target="_blank"><img id="logo" src="resources/images/rensselaer_logo.png" alt="Rensselaer Polytechnic Institute"/></a>-->
          <a href="/index.php"><img id="logo" src="resources/images/logo.png" alt="RPI Campus Map"/></a>
-          <div id="mapsearch"> 
+         <!-- search bar -->
+         <div id="mapsearch"> 
             <form action="searchResults.php" method="post">
                <input name="searchText" id="searchText" type="text" placeholder="Enter a location...">
                <input id="searchButton" type="submit" placeholder="Search" value="Search">
@@ -28,31 +28,11 @@
 
       <!-- Main content -->
       <div id="container">
-         <!--
-         <form id="loadInfo" action="info.php" method="post">
-            <div class="resultBox" onclick="document.forms['loadInfo'].submit();"></div>
-            <input name="bean" value="John" type="text" style="display:none;">
-         </form>
-         -->
-
-         <!-- Example output for search results, all will be echoed from PHP-->
-         <!--
-         <div class="resultBox">
-            <div class="resultInfo">
-               <h1 class="resultTitle">Darrin Communication Center</h1>
-               <p class="resultDesc">Something about the DCC. It was built in the 50s im pretty sure, so thats pretty cool. Maybe more info here so we can see the css truncation</p>
-               <p class="resultNicks">DCC</p>
-            </div>
-            <img class="resultImg" src="resources/images/dcc.jpg" alt="Image of Location" />
-         </div>
-         -->
-
          <!-- Actual PHP that is called after the form is submitted-->
          <?php
             //Check to see when the button is clicked
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
                $search_term = $_POST['searchText'];
-
                //check to see if nothing was entered the search term
                if($search_term == ""){
                   echo "<div class=\"noResult\">";
@@ -80,11 +60,12 @@
                         $sql = "SELECT * FROM main";
                      }
                      else{
+                        //regular search
                         $sql = "SELECT * FROM main WHERE `location` LIKE '%" . $search_term . "%'";
                      }
                   }
                   else{
-                     //altered search
+                     //Nickname search
                      $search_term_2 = $result->fetch_assoc()['location'];
                      $sql = "SELECT * FROM main WHERE `location` LIKE '%" . $search_term . "%' OR `location` LIKE '%" . $search_term_2 . "%'";
                   }
@@ -177,11 +158,9 @@
             }
          ?>
       </div>
-
       <!-- footer -->
       <footer>
          RPI Interactive Campus Map -- Group 5 -- Justin Gaskins, Christopher Pence, Sebastien Boulas -- Professor Munasinghe -- 2018
       </footer>
    </body>
-
 </html>

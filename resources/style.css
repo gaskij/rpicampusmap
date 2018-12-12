@@ -217,19 +217,6 @@ input[type=text] {
 .infoInlineText p{ /*Style div to force two p tags next to each other*/
   display: inline;
 }
-/*#infoName{
-
-}
-#infoNick{
-
-}
-#infoAddress{
-
-}
-#infoPhone{
-
-}*/
-
 #infoImage{
   float: right;
   height: 400px;
@@ -613,12 +600,3 @@ input[type=text] {
     opacity: 0.8;
 }
 */
-
-
-
-
-
-
-
-
-

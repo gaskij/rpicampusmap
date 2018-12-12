@@ -134,7 +134,8 @@ function getCoords(name) {
     }   
     return 0;
 }
- 
+
+//this function is called to pull up popup info for each page
 function showOnMap(building, latitude, longitude) {
     $.ajax({
        url: "resources/infoPreview.php",
@@ -145,6 +146,7 @@ function showOnMap(building, latitude, longitude) {
        },
        success: function(response){
           var info = JSON.parse(response);
+          //load the data into html to go into the popup based on the mysql query in infopreview.php
           var popupContent = '<form method="post" action="info.php"><div class="popup" onclick="javascript:this.parentNode.submit();"><h2>';
           popupContent += info['location'] + '</h2>';
           popupContent += '<p>Nicknames: ' + info['nicks'] + '</p>';
@@ -162,6 +164,7 @@ function showOnMap(building, latitude, longitude) {
     });
 }
 
+//function called when a location popup is clicked
 function toInfoPage(locationName) {
   $.ajax({
     url: "info.php",

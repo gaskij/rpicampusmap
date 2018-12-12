@@ -7,10 +7,8 @@
    //Dynamically set the tab title based on info displayed
    if($_SERVER['REQUEST_METHOD'] == 'POST'){
       $title = "RPI - " . $_POST['location'];
-
       //connect to the database for this session
       $mysqli = mysqli_connect("localhost", "termproject", "It18BrigitteRes_ume", "campusmap");
-
       //Check if there was an error connecting to the database
       if($mysqli-> connect_error){
          die("Connect Failed:". $mysqli-> connect_error);
@@ -32,18 +30,25 @@
    if($_POST['type'] == "image"){
       //check to see if the image is a valid link
 
-      //Check with professor
+      //use php curl functions to ping the image link to verify it is valid
       $link = $_POST['link'];
+      //initialize the curl session
       $send = curl_init($link);
-      curl_setopt($send, CURLOPT_TIMEOUT, 5);
-      curl_setopt($send, CURLOPT_CONNECTTIMEOUT, 5);
+      //set curl settings
       curl_setopt($send, CURLOPT_RETURNTRANSFER, true);
+      //ensure that the connection fails after 5 seconds, this counts as a fail
+      curl_setopt($send, CURLOPT_CONNECTTIMEOUT, 5);
+      curl_setopt($send, CURLOPT_TIMEOUT, 5);
+      
+      //execute the curl session
       $result = curl_exec($send);
+      //save the info
       $result = curl_getinfo($send, CURLINFO_HTTP_CODE);
+      //close the session
       curl_close($send);
 
       $imageSubmit = 'true';
-      //check if the connection was a success
+      //check if the connection was a success using HTTP codes
       if($result>=200 && $result<300){
          //create the insert query
          $sql = "INSERT INTO `images` (`location`, `link`) VALUES ('" . $_POST['location'] . "', '" . $link  . "')";
@@ -71,9 +76,9 @@
    <body>
       <!-- Header -->
       <div id="header">
-<!--         <a href="https://rpi.edu/" target="_blank"><img id="logo" src="resources/images/rensselaer_logo.png" alt="Rensselaer Polytechnic Institute"/></a>-->
          <a href="/index.php"><img id="logo" src="resources/images/logo.png" alt="RPI Campus Map"/></a>
-          <div id="mapsearch"> 
+         <!-- search bar -->
+         <div id="mapsearch"> 
             <form action="searchResults.php" method="post">
                <input name="searchText" id="searchText" type="text" placeholder="Enter a location...">
                <input id="searchButton" type="submit" placeholder="Search" value="Search">
@@ -86,8 +91,6 @@
 
       <!-- Main content -->
       <div id="containerInfo">
-         <!-- PHP to load information-->
-
          <div id="info">
             <!-- Image slider start  -->
             <script type="text/javascript" src="resources/slideshow.js"></script>
@@ -103,15 +106,13 @@
                      //query the database
                      $result = $mysqli->query($sql);
 
-                     //output the html for the images
-
-                     $length = $result->num_rows;
                      //check for images
+                     $length = $result->num_rows;
                      if($length == 0){
                         echo "NO IMAGES";
                      }
                      else{
-                        //there are images, output the first script
+                        //only output the script if there are images
                         echo "<script type=\"text/javascript\" src=\"resources/slideshow.js\"></script>";
                         //output the html for the images
                         $i = 1;
@@ -133,23 +134,15 @@
                      }
                   }
                ?>
-
-               <!-- Example image for the slider -->
-               <!-- <div class="mySlides fade">
-                  <div class="numbertext">1 / 4</div>
-                  <img class="sliderImage" src="resources/images/img1.jpg">
-               </div> -->
-
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-               
+               <!-- image slider buttons -->
+               <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+               <a class="next" onclick="plusSlides(1)">&#10095;</a>   
             </div>
-
             <script type="text/javascript">var slideIndex = 1;showSlides(slideIndex);</script>
             <!-- Image slider end -->
             
             <?php
-            //Php that will load the data, this will move to the top of the page
+               //Php that will load the data
                if($_SERVER['REQUEST_METHOD'] == 'POST'){
                   $search_term = $_POST['location'];
 
@@ -207,17 +200,11 @@
                   }
                }
             ?>
-
-            <!-- <form action="index.php" method="post">
-               <input type="submit" value="Show on Map">
-               <input type="text" name="location" value="Darrin Communications Center" style="display:none;">
-            </form> -->
          </div>
 
          <!-- Comments section-->
          <div id="infoExtra">
             <h2 id="commentSplash">Comments:</h2>
-
             <?php
                //php to load all of the comments for this location
                if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -252,13 +239,6 @@
                }
             ?>
 
-            <!-- Example comment
-            <div class="comment">
-               <h3 class="commentTitle">The DCC Cafe has good food!</h3>
-               <p class="commentText">I just ate the most amazing cookie from the DCC Cafe, you guys have to try that stuff!</p>
-               <p class="commentTime">5:16 11/27/18</p>
-            </div>-->
-
             <!-- Form to post a comment-->
             <h2 id="commentFormSplash">Post a Comment:</h2>
             <div id="commentForm">
@@ -287,6 +267,7 @@
             </div>
             <!-- script to make image preview change on edit -->
             <script type="text/javascript" src="resources/imagePreview.js"></script>
+
             <?php
                //check to see if image submit success
                if($imageSubmit != 'none'){
@@ -308,7 +289,4 @@
          RPI Interactive Campus Map -- Group 5 -- Justin Gaskins, Christopher Pence, Sebastien Boulas -- Professor Munasinghe -- 2018
       </footer>
    </body>
-
-
-
 </html>
