@@ -5,13 +5,13 @@
 */
 
 /*
-Display the map on the pag at id 'map'
+Display the map on the page at id 'map'
 
 setView() focuses the map around the given point.
-In this case, it does on creating of the map (pageload)
+In this case, it does so on creation of the map (pageload)
 Usage: setView([latitude, longitude], zoomlevel)
 */
-var mymap = L.map('map').setView([42.73131, -73.675218], 16);
+var mymap = L.map('mapContainer').setView([42.73131, -73.675218], 16);
 
 /* 
 Tile Layer is the display style (satellite, street, etc.)
@@ -25,16 +25,8 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
     id: 'mapbox.streets'
 }).addTo(mymap);
 
-/*
-// Highlight an area with a circle
-L.circle([42.729267, -73.677642], 100, {
-   color: 'red',
-   fillColor: '#f03',
-   fillOpacity: 0.5
-}).addTo(mymap).bindPopup("I am a circle.");
-*/
 
-// Highlight an area with custom points forming a polygon
+// Highlight campus on the map using points as an outline, connect-the-dots style
 var campus = [
    [42.728116, -73.684807],
    [42.73027, -73.684294],
@@ -58,8 +50,8 @@ L.polygon(campus, {color: 'gray', opacity: 0.1}).addTo(mymap);
 var popup = L.popup();
 
 function onMapClick(e) {
-popup
-   .setLatLng(e.latlng) // e refers to an event, in theis case a click
+  popup
+   .setLatLng(e.latlng) // e refers to an event, in this case a click
    .setContent("You clicked the map at " + e.latlng.toString())
    .openOn(mymap);
 }
@@ -71,11 +63,13 @@ mymap.on('click', onMapClick);
 function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.popupContent) {
-        //layer.bindPopup(feature.properties.popupContent);
+        layer.bindPopup(feature.properties.popupContent);
+      
         var building = feature.properties.name;
         var point = getCoords(building);
         var popupContent = '';
         
+        /*
         // Pull the Points from the 'geolocations.js' JSON file
         $.ajax({
            url: "resources/infoPreview.php",
@@ -99,7 +93,7 @@ function onEachFeature(feature, layer) {
               alert("error");
            }
         });
-        
+        */
     }
 }
 
