@@ -1,0 +1,590 @@
+html {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+   font-family: -apple-system, system-ui, BlinkMacSystemFont, 
+       "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", 
+       "Segoe UI Emoji", "Segoe UI Symbol"
+}
+
+a{
+  text-decoration: none;
+}
+
+body {
+   background-color: #ffffff;
+   height: 100%;
+   margin: 0;
+   padding: 0;
+}
+
+#logo{
+  height: 100%;
+}
+
+#header {
+   background-color: #cc0000;
+   padding: 0 1% 0 1%;
+/*   padding-right: 1%;*/
+   height: 7%;
+   margin: auto;
+}
+
+#container {
+   background-color: #ffffff;
+   min-height: 88%;
+   width: 80%;
+   margin: auto;
+}
+
+#containerInfo {
+   background-color: #ffffff;
+   min-height: 88%;
+   width: 100%;
+   margin: auto;
+}
+
+/*
+#search {
+   width: 37.5%;
+   display: inline-block;
+   clear: right;
+}
+*/
+
+#mapsearch {
+   float: right;
+   display: inline-block;
+}
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+   height: 88%;
+   width: 100%;
+}
+
+img {
+   max-height: 100%;
+   max-width: 100%;
+}
+
+.popup:hover {
+   cursor: pointer;
+}
+
+footer {
+   background-color: #cc0000;
+   vertical-align: middle;
+   height: 5%;  
+   color: aliceblue;
+   text-align: center; 
+}
+
+
+input[type=text] {
+/*    float: right;*/
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+}
+
+/*==================================*/
+/*Search Results*/
+
+.resultBox{/*Bounding box - div tag*/
+  border-bottom: 2px solid gainsboro;
+  display: block;
+  margin: 0;
+  padding: 10px 7.5% 0 7.5%;
+  width: 85%;
+  height: 200px;
+}
+.resultBox:hover{
+  cursor: pointer;
+  background-color: rgba(0,5,46,0.2);
+  backface-visibility: 20%;
+}
+.resultInfo{
+  max-width: 60%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+}
+.resultTitle{/*formal name of location - h1 tag*/
+/*  padding-left: .5em;*/
+  padding-top: .5em;
+  margin:0;
+}
+.resultNicks{/*list of nicknames - p tag*/
+/*  padding-left: 2em;*/
+}
+.resultDesc{/*description for the search result - p tag*/
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-height: 50px;
+  white-space: nowrap;
+  width: 100%;
+
+/*  padding-left: 2em;*/
+}
+.resultImg{/*Image for the search result - img tag*/
+  display: inline-block;
+  float: right;
+  max-width: 39%;
+  height:95%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.noResult{  /*Div displayed when no search results were found*/
+  padding: 1vh;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 2vh;
+}
+.yesResult{ /*Div displayed when there are enough search results found */
+  padding: 1vh;
+  text-align:center;
+}
+
+/*==================================*/
+/*Search Bar*/
+
+#search{ /* Div containing the search bar*/
+  width: 50%;
+  margin: auto;
+  margin-bottom: 1em;
+  background-color: lavender;
+}
+
+#mapsearch form{
+  display: inline;
+  margin: 0; 
+}
+
+#searchText{  /*Text area where user search entered*/
+  border-style: groove;
+  border-radius: 4px;
+  width: 50%;
+  display: inline;
+}
+
+#searchButton{  /*Button to submit the search query*/
+  height:2.5em;
+  border-radius: 4px;
+  display: inline;
+}
+
+#homeButton{ /*Button to bring you back to the map page*/
+  height: 2.5em;
+  border-radius: 4px;
+  display: inline;
+}
+
+
+/*==================================*/
+/*Information Page*/
+
+#info{ /*Div that containts all of the info*/
+  margin: 0;
+  width: 80%;
+  height: 400px;
+  background-color: oldlace;
+  padding: 4vh 10% 4vh 10%;
+}
+.infoInlineText{ /*Div to keep sections of text inline*/
+  line-height: 2;
+  vertical-align: middle;
+}
+.infoTopic{ /*Title of what information is being displayed*/
+  display: inline;
+  font-weight: bold;
+}
+.infoInlineText p{ /*Style div to force two p tags next to each other*/
+  display: inline;
+}
+#infoImage{
+  float: right;
+  height: 400px;
+  max-width: 50%;
+  background-color: ivory;
+}
+#infoImage div{ /*Div containing the buttons ensuring they are inline but below the image*/
+  display: block;
+  text-align: center;
+  background-color: lavender;
+}
+#infoImage button{ /*Buttons that control the slider*/
+  border: none;
+  background-color: transparent;
+  font-size: 1em;
+}
+#infoImage button:hover{ /*Hover over image slider buttons*/
+  background-color: gainsboro;
+  backface-visibility: 50%;
+}
+
+#infoDesc{ /*Description for location*/
+    max-width: 45%
+}
+
+#infoExtra{ /*div that stores the comments below the info*/
+  width: 80%
+  min-height: 400px;
+  margin: 0px;
+  padding: 4vh 10% 4vh 10%;
+}
+
+#infoRedirect{ /*Input field to show location on map*/
+
+}
+
+
+/*==================================*/
+/*Comment*/
+.comment{ /*Div containing the comment*/
+  width: 60%;
+  margin:auto;
+  border-bottom: 2px solid gainsboro;
+  margin-top: 10px;
+}
+.commentTitle{ /*h3 containing the title of the post*/
+  height: 20%;
+  padding-left: 5px;
+  margin: 0px;
+  text-align: left;
+}
+.commentText{/*p containing the text of the comment*/
+  height: 65%;
+  padding-left: 5px;
+  margin: 0px;
+  text-align: left;
+}
+.commentTime{/*p containing the time the comment was posted*/
+  height: 15%;
+  padding-right: 2px;
+  margin: 0px;
+  text-align: right;
+}
+#commentSplash{ /*Splash text for the comments section*/
+  width: 60%;
+  margin: auto;
+  padding-bottom:1em;
+  border-bottom: 2px solid gainsboro;
+}
+
+
+#commentFormSplash{ /*Splash text for the comment form*/
+  width: 60%;
+  margin: auto;
+  margin-top: 2em;
+}
+#commentForm{ /*div to write your own comment*/
+  width: 60%;
+  margin: auto;
+  border-style: ridge;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#commentFormTitle{ /*input containing the comment title*/
+  width: 70%;
+  margin-left: 5px;
+  border-bottom: 1px solid black;
+}
+#commentFormText{ /*Textare containing the comment*/
+  min-width: 97%;
+  max-width: 97%;
+  margin-top: 10px;
+  margin-left: 1%;
+  margin-bottom: 2%;
+}
+#commentFormSubmit{ /*Comment submit button*/
+  float: right;
+  height:2.5em;
+  border-radius: 4px;
+  margin-top: 1em;
+  margin-right: 1em;
+}
+
+#noComment{ /*used when there arent any comments*/
+  margin: auto;
+  text-align: center;
+}
+
+/*delete this*/
+#mapContainer{
+  width: 100%;
+  background-color: lavender;
+}
+
+/*=================================*/
+/*Image form*/
+
+#imageForm{ /*div to upload your own image*/
+  width: 60%;
+  margin: auto;
+  border-style: ridge;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  min-height: 60px;
+}
+#imageFormSplash{ /*Splash text for the image form*/
+  width: 60%;
+  margin: auto;
+  margin-top: 2em;
+}
+#imageFormLink{ /*input containing the image link*/
+  width: 70%;
+  margin-left: 5px;
+  border-bottom: 1px solid black;
+}
+#imageFormSubmit{ /*image form submit button*/
+  float: right;
+  height:2.5em;
+  border-radius: 4px;
+  margin-top: 1em;
+  margin-right: 1em;
+}
+#imageFormPreview{ /*img tag to preview the image link for upload*/
+  width: 50%;
+  margin:auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: none;
+  border-radius: 2px;
+  border-style: ridge;
+}
+
+/*==============================================*/
+/*image slider*/
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  float: right;
+/*  background-color: lavender;*/
+  width: 50%;
+  max-height: 100%;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 200px;
+  width: auto;
+  /*width: 50%;*/
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.sliderImage{
+  width: 100%;
+  max-height: 400px;
+  border-radius: 10pX;
+}
+
+
+/* ====================== Login Modal ============================= */
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 100ms ease-in;
+    -moz-transition: opacity 100ms ease-in;
+    transition: opacity 100ms ease-in;
+    pointer-events: none;
+}
+.modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+}
+
+.modalDialog > form {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 13px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+/*
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+*/
+}
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+/*
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+*/
+    border-radius: 50%;
+/*
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+*/
+    box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { background: #ff0000; }
+
+/* Bordered form */
+.borderedForm {
+    border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+.loginInput {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+#loginButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Add a hover effect for buttons */
+#loginButton:hover {
+    opacity: 0.8;
+}
+
+
+/* ====================== Admin Page =========================== */
+/*
+<div id="locationForm">
+   <form action="admin.php#locationList" method="post" autocomplete="off">
+      <input required="true" class="locationInput" type="text" name="name" placeholder="Location Name" autocomplete="off">
+      <input required="true" class="locationInput" type="text" name="name" placeholder="Coordinates [x,y]" autocomplete="off">
+      <input required="true" class="locationInput" type="text" name="name" placeholder="Location Name" autocomplete="off">
+      <textarea required="true" rows="10" cols="60" id="locationDesc" name="text" placeholder="Write a description of the location." maxlength="512" autocomplete="off"></textarea>
+      <input id="addLocationSubmit" type="submit" name="submit" value="Add Location">
+      <!-- dont edit -->
+      <input name="location" value=<?php echo "\"";echo $search_term;echo "\"";?> style="display: none;">
+      <input name="type" value="comment" type="text" style="display:none;">
+   </form>
+</div>
+*/
+
+/*
+#locationForm {
+   background-color: oldlace;
+   width: 100%;
+}
+*/
+
+/*
+#locationForm form {
+   width: 500px;
+   margin: auto;
+   border: 3px solid #f1f1f1;
+}
+*/
+
+/* Full-width inputs */
+/*
+#locationForm input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+*/
+
+/* Set a style for all buttons */
+/*
+#addLocationSubmit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+*/
+
+/* Add a hover effect for buttons */
+/*
+#addLocationSubmit:hover {
+    opacity: 0.8;
+}
+*/

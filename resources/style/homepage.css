@@ -1,0 +1,48 @@
+html {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+   background-color: #ffffff;
+   height: 100%;
+   margin: 0;
+   padding: 0;
+}
+
+header {
+   background-color: #cc0000;
+}
+
+#mapPopup {
+   background-color: #ffffff;
+   min-height: 88%;
+   width: 80%;
+   margin: auto;
+}
+
+#mapPopupInfo {
+   background-color: #ffffff;
+   min-height: 88%;
+   width: 100%;
+   margin: auto;
+}
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#mapContainer {
+   height: 85%;
+   width: 100%;
+}
+
+.popup:hover {
+   cursor: pointer;
+}
+
+footer {
+   background-color: #cc0000; 
+   color: aliceblue;
+}
