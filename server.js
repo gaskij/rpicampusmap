@@ -1,20 +1,56 @@
 const http = require('http');
 const express = require('express');
-const port = 3000;
+const dotenv = require('dotenv');
+const mongodb = require('mongodb');
+const MongoClient = require('mongodb').MongoClient;
 
-var app = express();
-
+const app = express();
 app.use(express.static(__dirname));
 
-app.get('/', function(req, res) {
-  res.sendfile('index.html');
-});
+dotenv.config({path: './.env'});
 
-app.listen(port, (err) => {
-    if (err) {
-        return console.log('Something bad happened', err)
-    }
-    else {
-        console.log("Server listening on port " + port);
-    }
-})
+/* =========================== DATABASE CONNECTION INFO ============================== */
+const user = process.env.DB_USER;
+const pass = process.env.DB_PASS;
+const uri = `mongodb+srv://${user}:${pass}@rpicampusmap-fwvzb.gcp.mongodb.net/test?retryWrites=true`;
+const options = {useNewUrlParser: true};
+/* =================================================================================== */
+
+/* ================================= SERVER START ==================================== */
+const port = process.env.PORT;
+MongoClient.connect(uri, options, function(err, database) {
+  if (err) {
+    throw err;
+  }
+  else {
+    console.log("Database connected in route '/'!");
+    // db = database.db("locations");
+
+    // Start server after initial database connection
+    app.listen(port);
+    console.log('Listening on port ' + port);
+  }
+
+  // db.close();
+});
+/* =================================================================================== */
+
+/* =================================== HOMEPAGE ====================================== */
+app.route('/index')
+  .get(function(req, res) {
+    MongoClient.connect(uri, options, function(err, database) {
+      if (err) {
+        throw err;
+      }
+      else {
+        console.log("Database connected in route '/'!");
+        // db = database.db("locations");
+      }
+
+      // db.close();
+    });
+    console.log("here")
+
+    res.sendFile(__dirname + '/index.html');
+  });
+/* =================================================================================== */
