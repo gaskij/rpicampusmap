@@ -52,6 +52,24 @@ MongoClient.connect(uri, options, function(err, db) {
 /* =================================================================================== */
 
 /* =================================== HOMEPAGE ====================================== */
+app.get('/', function(req, res) {
+    MongoClient.connect(uri, options, function(err, database) {
+      if (err) {
+        throw err;
+      }
+      else {
+        console.log("Database connected in route '/index'!");
+        // db = database.db("locations");
+      }
+
+      // db.close();
+    });
+    console.log("here")
+
+    res.sendFile(__dirname + '/public/views/index.html');
+    
+})
+
 app.route('/index')
 .get(function(req, res) {
   MongoClient.connect(uri, options, function(err, database) {
@@ -67,7 +85,7 @@ app.route('/index')
   });
   console.log("here")
 
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/public/views/index.html');
   })
 .post(jsonParser, function(req, res) {
   //get the location to highlight
@@ -85,7 +103,7 @@ app.route('/index')
 app.route('/search')
 .get(function(req, res) {
   console.log("Get search results!");
-  res.sendFile(__dirname + '/searchResults.html');
+  res.sendFile(__dirname + '/public/views/searchResults.html');
 })
 .post(jsonParser, function(req, res) {
 //  console.log(req);

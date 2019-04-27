@@ -9,16 +9,16 @@
 
     <title>Campus Map - Search Results</title>
 
-    <link rel="icon" href="resources/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/public/images/favicon.ico" type="image/x-icon">
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <!-- <link href="/resources/style/style.css" rel="stylesheet" type="text/css"/> -->
+    <!-- <link href="/public/style/style.css" rel="stylesheet" type="text/css"/> -->
 
     <!-- Map required Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/resources/angularMap.js"></script>
+    <script src="/public/controllers/angularMap.js"></script>
 
     <style>
       .bd-placeholder-img {
@@ -44,8 +44,8 @@
 
        <!-- Navbar -->
        <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-         <a class="navbar-brand" href="/index.html">
-           <img id="logo" src="resources/images/logo.png" height=40px alt="RPI Campus Map"/>
+         <a class="navbar-brand" href="/public/views/index.html">
+           <img id="logo" src="/public/images/logo.png" height=40px alt="RPI Campus Map"/>
          </a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
            <span class="navbar-toggler-icon"></span>
@@ -62,7 +62,7 @@
            </ul>
 
            <!-- Search bar-->
-           <form action="/searchResults.html" class="form-inline my-2 my-lg-0">
+           <form action="#" class="form-inline my-2 my-lg-0">
              <input id="searchText" ng-model="query" type="search" name="query" placeholder="Enter a location..." class="form-control mr-sm-2" aria-label="Search">
              <input id="searchButton" type="submit" value="Search" class="btn btn-light my-2 my-sm-0" ng-click="search(query);">
            </form>
@@ -78,7 +78,7 @@
           <a href="/info&loc={{b.id}}" ng-repeat="b in buildings" class="bg-light card mb-3 container-fluid" style="text-decoration:none; color:black">
             <div class="row no-gutters">
               <div class="col-md-4">
-                <img src="/resources/images/pin.png" style="max-width: 100px;" class="card-img" alt="...">
+                <img src="/public/images/pin.png" style="max-width: 100px;" class="card-img" alt="...">
               </div>
               <div class="col-md-8">
                 <div class="card-body">

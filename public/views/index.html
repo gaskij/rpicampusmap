@@ -9,12 +9,12 @@
 
         <title>RPI Interactive Campus Map</title>
 
-        <link rel="icon" href="resources/images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/public/images/favicon.ico" type="image/x-icon">
 
         <!-- CSS Files -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
-        <link href="/resources/style/homepage.css" rel="stylesheet" type="text/css"/>
+        <link href="/public/style/homepage.css" rel="stylesheet" type="text/css"/>
 
         <!-- Map required Scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
@@ -28,8 +28,8 @@
 
           <!-- Navbar -->
           <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-            <a class="navbar-brand" href="/index.html">
-              <img id="logo" src="resources/images/logo.png" height=40px alt="RPI Campus Map"/>
+            <a class="navbar-brand" href="#">
+              <img id="logo" src="/public/images/logo.png" height=40px alt="RPI Campus Map"/>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -46,7 +46,7 @@
               </ul>
 
               <!-- Search bar-->
-              <form action="/searchResults.html" method="get" class="form-inline my-2 my-lg-0">
+              <form action="/public/views/searchResults.html" method="get" class="form-inline my-2 my-lg-0">
                 <input id="searchText" type="search" name="query" placeholder="Enter a location..." class="form-control mr-sm-2" aria-label="Search">
                 <input id="searchButton" type="submit" value="Search" class="btn btn-light my-2 my-sm-0">
               </form>
@@ -54,8 +54,8 @@
           </nav>
 
 <!--
-          <a href="/index.html">
-            <img id="logo" src="resources/images/logo.png" alt="RPI Campus Map"/>
+          <a href="index.html">
+            <img id="logo" src="public/images/logo.png" alt="RPI Campus Map"/>
           </a>
 
           <div id="mapsearch">
@@ -94,7 +94,7 @@
 
             <div class="col-2 text-right">
                 <a href="https://rpi.edu/" target="_blank">
-                    <img id="seal" src="resources/images/seal.png" width=50 height=50 alt="Rensselaer Polytechnic Institute"/>
+                    <img id="seal" src="public/images/seal.png" width=50 height=50 alt="Rensselaer Polytechnic Institute"/>
                 </a>
             </div>
             <div id="footerText" class="col-6 text-left">
@@ -115,9 +115,9 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
         <!-- Custom Map Scripts -->
-        <script src="/resources/geolocations.js"></script>
-        <script src="/resources/map.js"></script>
-        <script src="/resources/angularMap.js"></script>
+        <script src="/public/geolocations.js"></script>
+        <script src="/public/map.js"></script>
+        <script src="/public/controllers/angularMap.js"></script>
 
         <!-- code to load after "show on map" is clicked -->
     </body>
