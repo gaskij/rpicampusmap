@@ -20,25 +20,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/public/controllers/angularMap.js"></script>
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
    </head>
 
-   <body ng-controller="searchController">
+   <body ng-controller="infoPageController">
      <!-- Header -->
      <header id="header">
 
@@ -75,7 +59,7 @@
         <div id="container" class="container">
           <h5 class="py-4">Search Results - "{{params.query}}"</h5>
           <!-- <a style="text-decoration:none; color:black;" href="/info&loc={{b.id}}" ng-repeat="b in buildings"> -->
-          <a href="/info?loc={{b.id}}" ng-repeat="b in buildings" class="bg-light card mb-3 container-fluid" style="text-decoration:none; color:black">
+          <a href="/info&loc={{b.id}}" ng-repeat="b in buildings" class="bg-light card mb-3 container-fluid" style="text-decoration:none; color:black">
             <div class="row no-gutters">
               <div class="col-md-4">
                 <img src="/public/images/pin.png" style="max-width: 100px;" class="card-img" alt="...">

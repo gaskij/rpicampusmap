@@ -23,7 +23,7 @@ const options = {useNewUrlParser: true};
 
 /* ================================= SERVER START ==================================== */
 const port = process.env.PORT;
-var locations; // = require(__dirname + '/geo.json');
+
 MongoClient.connect(uri, options, function(err, db) {
   if (err) {
     throw err;
@@ -31,23 +31,35 @@ MongoClient.connect(uri, options, function(err, db) {
   else {
     console.log("Database connected in route '/'!");
     dbo = db.db("rpicampusmap");
-    locations = dbo.collection('locations').find();
 
-//    console.log(locations);
-//    dbo.collection("locations").insertMany(locations, {ordered: false})
-//    .then(function(success) {
-//      console.log("Successfully added to database");
-//    })
-//    .catch(function(err) {
-//      console.error("ERROR:", err);
-//    });
+    /* Populate Database with locations if need be.
+    console.log(locations);
+    dbo.collection("locations").insertMany(locations, {ordered: false})
+    .then(function(success) {
+      console.log("Successfully added to database");
+    })
+    .catch(function(err) {
+      console.error("ERROR:", err);
+    });
+    */
 
-    // Start server after initial database connection
-    app.listen(port);
-    console.log('Listening on port ' + port);
+    // Download initiallocation data from database before starting server
+    dbo.collection('locations').find().toArray()
+    .then(function(result) {
+      // console.log(result);
+
+      var locationData = result;
+
+      // Start server after initial database connection
+      app.listen(port);
+      console.log('Listening on port ' + port);
+    })
+    .catch(function(err) {
+      if (err) throw err;
+    });
+
+    db.close();
   }
-
-   db.close();
 });
 /* =================================================================================== */
 
@@ -67,7 +79,7 @@ app.get('/', function(req, res) {
     console.log("here")
 
     res.sendFile(__dirname + '/public/views/index.html');
-    
+
 })
 
 app.route('/index')
@@ -135,8 +147,32 @@ app.route('/search')
 });
 
 /* ===================================== INFO ======================================== */
-app.route('/info:id')
+app.route('/info')
 .get(function (req, res) {
-  res.sendFile('infoPreview.php')
+  res.sendFile(__dirname + '/public/views/info.html')
+})
+.post(jsonParser, function(req, res) {
+  const query = req.body.query;
+  console.log(req.body);
+  console.log("Query:", query);
+  MongoClient.connect(uri, options, function(err, db) {
+    if (err)
+      throw err;
+    else {
+      console.log("Database connected in route '/info'!")
+      dbo = db.db("rpicampusmap");
+
+      dbo.collection("locations").find({'id': query}).toArray()
+      .then(function(result) {
+        console.log("Results:\n", result);
+        res.send(result);
+      })
+      .catch(function(err) {
+        if (err)
+          console.error("ERROR:", err);
+      });
+      db.close();
+    }
+  });
 });
 /* ================================================================================== */
