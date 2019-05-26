@@ -13,7 +13,7 @@
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <!-- <link href="/public/style/style.css" rel="stylesheet" type="text/css"/> -->
+    <link href="/public/style/locationInfo.css" rel="stylesheet" type="text/css"/>
 
     <!-- Map required Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
@@ -56,12 +56,20 @@
 
       <!-- Main content -->
       <main role="main" class="flex-shrink-0 container pt-4">
+
         <div id="infoSection" class="row">
           <div id="info" class="col">
             <h2>{{name}}</h2>
             <p>{{nick}}</p>
             <p>{{desc}}</p>
+
+            <a href="/index?loc={{id}}" class="btn btn-light my-2 my-sm-0">Show On Map</a>
+            <!-- <form action="/index?loc={{id}}" method="get" class="form-inline my-2 my-lg-0">
+              <input id="showOnMapButton" ng-model="query" type="search" name="query" placeholder="Enter a location..." class="form-control mr-sm-2" aria-label="Show On Map">
+              <input id="searchButton" type="submit" value="Search" class="btn btn-light my-2 my-sm-0" ng-click="search(query);">
+            </form> -->
           </div>
+
           <div id="photos" class="col">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
               <ol class="carousel-indicators">
@@ -91,11 +99,12 @@
             </div>
           </div>
         </div>
+
       </main>
 
       <!-- footer -->
-      <footer class="row justify-content-center py-2 bg-danger align-items-center">
-
+      <footer class="py-2 mt-5 bg-danger">
+        <div class="row justify-content-center align-items-center">
           <div class="col-2 text-right">
               <a href="https://rpi.edu/" target="_blank">
                   <img id="seal" src="/public/images/seal.png" width=50 height=50 alt="Rensselaer Polytechnic Institute"/>
@@ -104,6 +113,7 @@
           <div id="footerText" class="col-6 text-left">
               RPI Interactive Campus Map -- <a href="https://rcos.io/projects/gaskij/rpicampusmap/profile" target="_blank">An RCOS Project</a> -- 2018 -- <a href="#login">Admin Panel</a>
           </div>
+        </div>
       </footer>
 
       <!-- Bootstrap Scripts -->
