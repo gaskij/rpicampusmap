@@ -57,12 +57,12 @@
                <a class="nav-link" href="/">Back to Map</a>
              </li>
              <li class="nav-item">
-               <a class="nav-link" href="search('')">Browse</a>
+               <a class="nav-link" href="/public/views/searchResults.html" ng-click="search();">Browse</a>
              </li>
            </ul>
 
            <!-- Search bar-->
-           <form action="#" class="form-inline my-2 my-lg-0">
+           <form action="/public/views/searchResults.html" method="get" class="form-inline my-2 my-lg-0">
              <input id="searchText" ng-model="query" type="search" name="query" placeholder="Enter a location..." class="form-control mr-sm-2" aria-label="Search">
              <input id="searchButton" type="submit" value="Search" class="btn btn-light my-2 my-sm-0" ng-click="search(query);">
            </form>
@@ -95,10 +95,16 @@
       </main>
 
       <!-- footer -->
-      <footer class="footer mt-auto py-3">
-        <div class="container">
-          RPI Interactive Campus Map -- Group 5 -- Justin Gaskins, Christopher Pence, Sebastien Boulas -- Professor Munasinghe -- 2018
-        </div>
+      <footer class="row justify-content-center py-2 bg-danger align-items-center">
+
+          <div class="col-2 text-right">
+              <a href="https://rpi.edu/" target="_blank">
+                  <img id="seal" src="/public/images/seal.png" width=50 height=50 alt="Rensselaer Polytechnic Institute"/>
+              </a>
+          </div>
+          <div id="footerText" class="col-6 text-left">
+              RPI Interactive Campus Map -- <a href="https://rcos.io/projects/gaskij/rpicampusmap/profile" target="_blank">An RCOS Project</a> -- 2018 -- <a href="#login">Admin Panel</a>
+          </div>
       </footer>
    </body>
 </html>
