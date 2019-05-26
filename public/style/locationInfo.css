@@ -1,0 +1,20 @@
+html,body {
+  height: 100%;
+}
+
+header {
+  max-height: 11vh;
+}
+
+main {
+  min-height: 81vh;
+}
+
+footer {
+  max-height: 11vh;
+  max-width: 100%;
+}
+
+.row {
+  max-width: 100%;
+}

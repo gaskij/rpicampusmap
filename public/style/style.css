@@ -2,8 +2,8 @@ html {
    height: 100%;
    margin: 0;
    padding: 0;
-   font-family: -apple-system, system-ui, BlinkMacSystemFont, 
-       "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", 
+   font-family: -apple-system, system-ui, BlinkMacSystemFont,
+       "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
        "Segoe UI Emoji", "Segoe UI Symbol"
 }
 
@@ -76,9 +76,9 @@ img {
 footer {
    background-color: #cc0000;
    vertical-align: middle;
-   height: 5%;  
+   height: 5%;
    color: aliceblue;
-   text-align: center; 
+   text-align: center;
 }
 
 
@@ -161,7 +161,7 @@ input[type=text] {
 
 #mapsearch form{
   display: inline;
-  margin: 0; 
+  margin: 0;
 }
 
 #searchText{  /*Text area where user search entered*/
@@ -419,12 +419,12 @@ input[type=text] {
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
