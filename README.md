@@ -6,15 +6,15 @@ This project was started as a term project for the ITWS-2110 (Web Systems Develo
 
 We are currently in the middle of a large refactor, but heavy construction will be over soon!
 
-###### Current Contributors:
+### Current Contributors:
 * Justin Gaskins
 
-###### Founders:
+### Founders:
 * Justin Gaskins
 * Christopher Pence
 * Sebastien Boulas
 
-###### Version History:
+### Version History:
 * 5/27/2019 - v0.3.0 All basic map functionality is now restored! You can show a location on the map from the info page, search for locations, or go to the information page from the location on the map.
 * 3/26/2019 - v0.2.0 Began refactor and translation from XAMPP to MEAN Stack!
 * 1/25/2019 - v0.1.0 Initial stages of functionality are complete! More locations and authorization will be added for the release of v1.0.
