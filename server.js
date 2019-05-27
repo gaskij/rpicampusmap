@@ -32,7 +32,7 @@ MongoClient.connect(uri, options, function(err, db) {
     console.log("Database connected in route '/'!");
     dbo = db.db("rpicampusmap");
 
-    /* Populate Database with locations if need be.
+    /* Populate Database with locations if need be (ONLY FOR USERS WITH WRITE ACCESS).
     console.log(locations);
     dbo.collection("locations").insertMany(locations, {ordered: false})
     .then(function(success) {
