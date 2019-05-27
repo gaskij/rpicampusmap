@@ -28,7 +28,7 @@
 
           <!-- Navbar -->
           <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
               <img id="logo" src="/public/images/logo.png" height=40px alt="RPI Campus Map"/>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,12 +41,12 @@
                   <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Browse</a>
+                  <a class="nav-link" href="/search?query=">Browse</a>
                 </li>
               </ul>
 
               <!-- Search bar-->
-              <form action="/public/views/searchResults.html" method="get" class="form-inline my-2 my-lg-0">
+              <form action="/search" method="get" class="form-inline my-2 my-lg-0">
                 <input id="searchText" type="search" name="query" placeholder="Enter a location..." class="form-control mr-sm-2" aria-label="Search">
                 <input id="searchButton" type="submit" value="Search" class="btn btn-light my-2 my-sm-0">
               </form>
@@ -94,7 +94,7 @@
 
             <div class="col-2 text-right">
                 <a href="https://rpi.edu/" target="_blank">
-                    <img id="seal" src="public/images/seal.png" width=50 height=50 alt="Rensselaer Polytechnic Institute"/>
+                    <img id="seal" src="/public/images/seal.png" width=50 height=50 alt="Rensselaer Polytechnic Institute"/>
                 </a>
             </div>
             <div id="footerText" class="col-6 text-left">
@@ -116,8 +116,10 @@
 
         <!-- Custom Map Scripts -->
         <script src="/public/geolocations.js"></script>
-        <script src="/public/map.js"></script>
-        <script src="/public/controllers/angularMap.js"></script>
+        <script src="/public/mapOpt.js"></script>
+        <script src="/public/controllers/app.js"></script>
+        <script src="/public/controllers/mapController.js"></script>
+        <div id="mapShowScript"></div>
 
         <!-- code to load after "show on map" is clicked -->
     </body>

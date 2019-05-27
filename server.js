@@ -32,7 +32,7 @@ MongoClient.connect(uri, options, function(err, db) {
     console.log("Database connected in route '/'!");
     dbo = db.db("rpicampusmap");
 
-    /* Populate Database with locations if need be.
+    /* Populate Database with locations if need be (ONLY FOR USERS WITH WRITE ACCESS).
     console.log(locations);
     dbo.collection("locations").insertMany(locations, {ordered: false})
     .then(function(success) {
@@ -101,12 +101,36 @@ app.route('/index')
   })
 .post(jsonParser, function(req, res) {
   //get the location to highlight
-  let location = req.body.location;
-  let script = '<script type="text/javascript">var building = ' + location
-    + ';var point = getCoords(building);showOnMap(building, point[1], point[0]);</script>';
+  let location = req.body.loc;
+  // let script = `<script type="text/javascript">\
+  //   var building = "${location}";\
+  //   var point = getCoords(building);\
+  //   showOnMap(building, point[1], point[0]);\
+  //   </script>`;
+
   console.log(location);
-  console.log(script);
-  res.send(script);
+  // console.log(script);
+
+  MongoClient.connect(uri, options, function(err, db) {
+    if (err)
+      throw err;
+    else {
+      dbo = db.db("rpicampusmap");
+
+      dbo.collection("locations").find({'id': location}).toArray()
+      .then(function(result) {
+        console.log("Results:\n", result);
+        res.send(result);
+      })
+      .catch(function(err) {
+        if (err)
+          console.error("ERROR:", err);
+      });
+      db.close();
+    }
+  });
+
+
   //this code will run the javascript function to highlight a certain location on the map, and pull up the info preview
 });
 /* =================================================================================== */

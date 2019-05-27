@@ -2,7 +2,17 @@
 * This is the main file responsible for handling the map.
 *
 * In all locations below, "L" refers to the Leaflet API.
+
+Each point on the map is a "Feature" type object. These Features
+specifically are "Points" that show on the map.
+There are many methods that can be used on points, described here:
+https://leafletjs.com/reference-1.3.4.html#point
+
+**IMPORTANT**
+**Coordinates for Point objects are used backwards (long, lat)
+for some reason according to the API**
 */
+
 
 /*
 Display the map on the page at id 'map'
@@ -46,7 +56,7 @@ var campus = [
 ];
 L.polygon(campus, {color: 'gray', opacity: 0.1}).addTo(mymap);
 
-// Popup object that would show on the map
+// Default popup object that would show on the map if a nonregistered point is clicked
 var popup = L.popup();
 
 function onMapClick(e) {
@@ -67,8 +77,20 @@ function onEachFeature(feature, layer) {
 
         var building = feature.properties.name;
         var point = getCoords(building);
-        var popupContent = '';
+        var newPopupContent = `\
+          <a href="/info?loc=${feature.id}"> \
+            <div class="popup"> \
+              <h5>${feature.properties.name}</h5> \
+              <img src="${feature.properties.image}" alt="${feature.properties.name}" width="100%"/> \
+              <p>Nicknames: ${feature.properties.nick}</p> \
+            </div> \
+          </a> \
+        `;
+        layer.bindPopup(newPopupContent);
 
+        // feature.on('click', function() {
+        //   alert(`Feature '${feature.properties.name}' clicked!`)
+        // });
         /*
         // Pull the Points from the 'geolocations.js' JSON file
         $.ajax({
@@ -97,14 +119,19 @@ function onEachFeature(feature, layer) {
     }
 }
 
-// Style and add the points to the map
+/**
+  * Style and add the points to the map
+  * @param locations The variable containing an array of Features, which are each added
+  * to the geoJSON layer of the map.
+*/
 L.geoJSON(locations, {
     style: function (feature) {
         return feature.properties && feature.properties.style;
     },
-
+    // For each feature added to the map, it will perform the onEachFeature() function
     onEachFeature: onEachFeature,
 
+    // Adds a circleMarker at the point specified by the coords of the feature
     pointToLayer: function (feature, latlng) {
         return L.circleMarker(latlng, { // circleMarker shows at the Point's location
             radius: 8,
@@ -113,10 +140,14 @@ L.geoJSON(locations, {
             weight: 1,
             opacity: 1,
             fillOpacity: 0.8
+        }).on('click', function() {
+          alert('Feature clicked!');
         });
     }
 }).addTo(mymap);
 
+
+/* ======================= HELPER FUNCTIONS ========================= */
 
 // Fetch the coordinates of a given location (name)
 function getCoords(name) {
@@ -174,14 +205,3 @@ function toInfoPage(locationName) {
     }
   });
 }
-
-/**
-Each point on the map is a "Feature" type object. These Features
-specifically are "Points" that show on the map.
-There are many methods that can be used on points, described here:
-https://leafletjs.com/reference-1.3.4.html#point
-
-**IMPORTANT**
-**Coordinates for Point objects are used backwards (long, lat)
-for some reason according to the API**
-*/

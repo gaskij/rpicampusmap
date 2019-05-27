@@ -1,6 +1,6 @@
-/* 
+/*
 Each point on the map is a "Feature" type object. These Features
-specifically are "Points" that show on the map. 
+specifically are "Points" that show on the map.
 There are many methods that can be used on points, described here:
 https://leafletjs.com/reference-1.3.4.html#point
 
@@ -32,14 +32,15 @@ var locations = {
             "properties": {
                 "name": "Darrin Communications Center",
                 "nick": "DCC",
-                "amenity": "CCPD",
+                "thumbnail": "http://tours.pocketsights.com/media/1/11ef2a38f7884fd58ecc6a78e3e70ea7_large.jpg",
+                "description": "Large lecture hall where most lectures are held.",
                 "popupContent": "Darrin Communications Center"
             },
             "geometry": {
                "type": "Point",
                "coordinates": [-73.679059, 42.729226]
             }
-        }, 
+        },
         {
             "type": "Feature",
             "id": "ae",
@@ -60,6 +61,7 @@ var locations = {
             "properties": {
                 "name": "Folsom Library",
                 "nick": "Lib-Lob",
+                "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/2/26/Folsom_Library-_RPI.JPG",
                 "description": "Engineering Department",
                 "popupContent": "Folsom Library"
             },

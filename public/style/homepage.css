@@ -2,10 +2,6 @@ html {
   height: 100%;
 }
 
-a {
-  text-decoration: none;
-}
-
 body {
    background-color: #ffffff;
    height: 100%;
@@ -14,7 +10,17 @@ body {
 }
 
 header {
-   background-color: #cc0000;
+  max-height: 11vh;
+}
+
+footer {
+  max-height: 11vh;
+  max-width: 100%;
+  color: aliceblue;
+}
+
+a {
+  text-decoration: none;
 }
 
 #mapPopup {
@@ -40,9 +46,4 @@ header {
 
 .popup:hover {
    cursor: pointer;
-}
-
-footer {
-   background-color: #cc0000; 
-   color: aliceblue;
 }
