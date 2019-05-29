@@ -21,7 +21,7 @@ app.controller('mapController', function($scope, $http) {
         <a href="/info?loc=${httpResponse.data[0].id}"> \
           <div class="popup"> \
             <h5>${httpResponse.data[0].properties.name}</h5> \
-            <img src="${httpResponse.data[0].properties.thumbnail}" alt="${httpResponse.data[0].properties.name}" width="100%"/> \
+            <img src="${httpResponse.data[0].properties.image}" alt="${httpResponse.data[0].properties.name}" width="100%"/> \
             <p>Nicknames: ${httpResponse.data[0].properties.nick}</p> \
           </div> \
         </a> \

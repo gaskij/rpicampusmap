@@ -30,7 +30,7 @@ MongoClient.connect(uri, options, function(err, db) {
   }
   else {
     console.log("Database connected in route '/'!");
-    dbo = db.db("rpicampusmap");
+    let dbo = db.db("rpicampusmap");
 
     /* Populate Database with locations if need be (ONLY FOR USERS WITH WRITE ACCESS).
     console.log(locations);
@@ -43,7 +43,7 @@ MongoClient.connect(uri, options, function(err, db) {
     });
     */
 
-    // Download initiallocation data from database before starting server
+    // Download initial location data from database before starting server
     dbo.collection('locations').find().toArray()
     .then(function(result) {
       // console.log(result);
@@ -65,16 +65,16 @@ MongoClient.connect(uri, options, function(err, db) {
 
 /* =================================== HOMEPAGE ====================================== */
 app.get('/', function(req, res) {
-    MongoClient.connect(uri, options, function(err, database) {
+    MongoClient.connect(uri, options, function(err, db) {
       if (err) {
         throw err;
       }
       else {
         console.log("Database connected in route '/index'!");
-        // db = database.db("locations");
+        let dbo = db.db("locations");
       }
 
-      // db.close();
+      db.close();
     });
     console.log("here")
 
@@ -84,16 +84,16 @@ app.get('/', function(req, res) {
 
 app.route('/index')
 .get(function(req, res) {
-  MongoClient.connect(uri, options, function(err, database) {
+  MongoClient.connect(uri, options, function(err, db) {
     if (err) {
       throw err;
     }
     else {
       console.log("Database connected in route '/index'!");
-      // db = database.db("locations");
+      let dbo = db.db("locations");
     }
 
-    // db.close();
+    db.close();
   });
   console.log("here")
 
@@ -102,20 +102,13 @@ app.route('/index')
 .post(jsonParser, function(req, res) {
   //get the location to highlight
   let location = req.body.loc;
-  // let script = `<script type="text/javascript">\
-  //   var building = "${location}";\
-  //   var point = getCoords(building);\
-  //   showOnMap(building, point[1], point[0]);\
-  //   </script>`;
-
   console.log(location);
-  // console.log(script);
 
   MongoClient.connect(uri, options, function(err, db) {
     if (err)
       throw err;
     else {
-      dbo = db.db("rpicampusmap");
+      let dbo = db.db("rpicampusmap");
 
       dbo.collection("locations").find({'id': location}).toArray()
       .then(function(result) {
@@ -130,8 +123,6 @@ app.route('/index')
     }
   });
 
-
-  //this code will run the javascript function to highlight a certain location on the map, and pull up the info preview
 });
 /* =================================================================================== */
 
@@ -142,7 +133,6 @@ app.route('/search')
   res.sendFile(__dirname + '/public/views/searchResults.html');
 })
 .post(jsonParser, function(req, res) {
-//  console.log(req);
   const query = req.body.query;
   console.log("Query:", query);
 
@@ -151,7 +141,7 @@ app.route('/search')
       throw err;
     else {
       console.log("Database connected in route '/search'!")
-      dbo = db.db("rpicampusmap");
+      let dbo = db.db("rpicampusmap");
 
       dbo.collection("locations").find({'$or': [
         {'properties.name': {'$regex': query, '$options': 'i'} },
@@ -168,6 +158,7 @@ app.route('/search')
       db.close();
     }
   });
+
 });
 
 /* ===================================== INFO ======================================== */
@@ -179,12 +170,13 @@ app.route('/info')
   const query = req.body.query;
   console.log(req.body);
   console.log("Query:", query);
+
   MongoClient.connect(uri, options, function(err, db) {
     if (err)
       throw err;
     else {
       console.log("Database connected in route '/info'!")
-      dbo = db.db("rpicampusmap");
+      let dbo = db.db("rpicampusmap");
 
       dbo.collection("locations").find({'id': query}).toArray()
       .then(function(result) {
@@ -198,5 +190,6 @@ app.route('/info')
       db.close();
     }
   });
+
 });
 /* ================================================================================== */

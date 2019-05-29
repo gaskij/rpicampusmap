@@ -21,7 +21,7 @@ We are currently in the middle of a large refactor, but heavy construction will 
 * 1/25/2019 - v0.1.0 Initial stages of functionality are complete! More locations and authorization will be added for the release of v1.0.
 
 ### Getting Started
-This project uses the MEAN stack (MongoDB, Express.JS, AngularJS, Node.js). You will need a working installation of [Node.js](https://nodejs.org/en/) (LTS version recommended), and a [MongoDB Atlas Cloud account](https://www.mongodb.com/cloud/atlas) (free is fine).
+This project uses the MEAN stack (MongoDB, Express.JS, AngularJS 1.7, Node.js). You will need a working installation of [Node.js](https://nodejs.org/en/) (LTS version recommended), and a [MongoDB Atlas Cloud account](https://www.mongodb.com/cloud/atlas) (free is fine).
 
 Once you have that taken care of, there are a few more steps before you can begin work.
 1. Install the nodemon package by running `npm install -g nodemon` in your node configured shell.

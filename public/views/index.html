@@ -14,6 +14,7 @@
         <!-- CSS Files -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+        <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
         <link href="/public/style/homepage.css" rel="stylesheet" type="text/css"/>
 
         <!-- Map required Scripts -->
@@ -52,19 +53,6 @@
               </form>
             </div>
           </nav>
-
-<!--
-          <a href="index.html">
-            <img id="logo" src="public/images/logo.png" alt="RPI Campus Map"/>
-          </a>
-
-          <div id="mapsearch">
-            <form action="searchResults.php" method="post">
-            <input name="searchText" id="searchText" type="text" placeholder="Enter a location...">
-            <input id="searchButton" type="submit" value="Search">
-            </form>
-          </div>
--->
         </header>
 
         <!-- Main content -->
@@ -98,7 +86,10 @@
                 </a>
             </div>
             <div id="footerText" class="col-6 text-left">
-                RPI Interactive Campus Map -- <a href="https://rcos.io/projects/gaskij/rpicampusmap/profile" target="_blank">An RCOS Project</a> -- 2018 -- <a href="#login">Admin Panel</a>
+                RPI Interactive Campus Map --
+                <a href="https://rcos.io/projects/gaskij/rpicampusmap/profile" target="_blank">An RCOS Project</a> --
+                <a href="https://github.com/gaskij/rpicampusmap"><i class="fab fa-github"></i> GitHub</a> --
+                <a href="#login">Admin Panel</a>
             </div>
         </footer>
 
@@ -116,11 +107,8 @@
 
         <!-- Custom Map Scripts -->
         <script src="/public/geolocations.js"></script>
-        <script src="/public/mapOpt.js"></script>
+        <script src="/public/map.js"></script>
         <script src="/public/controllers/app.js"></script>
         <script src="/public/controllers/mapController.js"></script>
-        <div id="mapShowScript"></div>
-
-        <!-- code to load after "show on map" is clicked -->
     </body>
 </html>
