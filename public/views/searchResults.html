@@ -21,22 +21,6 @@
     <script src="/public/controllers/app.js"></script>
     <script src="/public/controllers/searchController.js"></script>
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
    </head>
 
    <body ng-controller="searchController">
@@ -73,9 +57,10 @@
 
       <!-- Main content -->
       <main role="main" class="flex-shrink-0">
-        <div id="container" class="container">
+        <div class="container">
+          
           <h5 class="py-4">Search Results - "{{params.query}}"</h5>
-          <!-- <a style="text-decoration:none; color:black;" href="/info&loc={{b.id}}" ng-repeat="b in buildings"> -->
+          
           <a href="/info?loc={{b.id}}" ng-repeat="b in buildings" class="bg-light card mb-3 container-fluid" style="text-decoration:none; color:black">
             <div class="row no-gutters">
               <div class="col-md-4">
@@ -88,8 +73,7 @@
                   <p class="card-text">Nicknames: {{b.properties.nick}}</p>
                 </div>
               </div>
-            <!-- </div> -->
-          </div>
+            </div>
           </a>
 
         </div>

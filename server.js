@@ -65,6 +65,7 @@ MongoClient.connect(uri, options, function(err, db) {
 
 /* =================================== HOMEPAGE ====================================== */
 app.get('/', function(req, res) {
+    /*
     MongoClient.connect(uri, options, function(err, db) {
       if (err) {
         throw err;
@@ -77,13 +78,14 @@ app.get('/', function(req, res) {
       db.close();
     });
     console.log("here")
+    */
 
     res.sendFile(__dirname + '/public/views/index.html');
-
 })
 
 app.route('/index')
 .get(function(req, res) {
+  /*
   MongoClient.connect(uri, options, function(err, db) {
     if (err) {
       throw err;
@@ -96,6 +98,7 @@ app.route('/index')
     db.close();
   });
   console.log("here")
+  */
 
   res.sendFile(__dirname + '/public/views/index.html');
   })
@@ -104,12 +107,14 @@ app.route('/index')
   let location = req.body.loc;
   console.log(location);
 
+  // Connect to the Mongo database to get information of given location
   MongoClient.connect(uri, options, function(err, db) {
     if (err)
       throw err;
     else {
       let dbo = db.db("rpicampusmap");
 
+      // Find the location in the database with the matching id property
       dbo.collection("locations").find({'id': location}).toArray()
       .then(function(result) {
         console.log("Results:\n", result);
@@ -143,6 +148,8 @@ app.route('/search')
       console.log("Database connected in route '/search'!")
       let dbo = db.db("rpicampusmap");
 
+      // Search the database for locations matching the given regular expression
+      // Search by name and by nickname for any match of the substring
       dbo.collection("locations").find({'$or': [
         {'properties.name': {'$regex': query, '$options': 'i'} },
         {'properties.nick': {'$regex': query, '$options': 'i'} }

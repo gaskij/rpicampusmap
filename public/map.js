@@ -59,16 +59,23 @@ L.polygon(campus, {color: 'gray', opacity: 0.1}).addTo(mymap);
 // Default popup object that would show on the map if a nonregistered point is clicked
 const popup = L.popup();
 
+/**
+ * Perform the following operations every time the map layer is clicked
+ * @param e an event, in this case a click
+ */
 const onMapClick = function(e) {
   popup
-   .setLatLng(e.latlng) // e refers to an event, in this case a click
+   .setLatLng(e.latlng)
    .setContent("You clicked the map at " + e.latlng.toString())
    .openOn(mymap);
 }
 
 mymap.on('click', onMapClick);
 
-// Fetch the coordinates of a given location (name)
+/**
+ * Fetch the coordinates of a location in an array [longitude, latitude]
+ * @param id The id of the given location
+ */
 const getCoords = function(id) {
     for (let i=0; i < locations['features'].length; i++) {
         if (locations['features'][i]['id'] == id) {
@@ -79,7 +86,11 @@ const getCoords = function(id) {
     return 0;
 }
 
-// Binds properties to each Feature in a Feature Collection
+/**
+ * Binds properties to each Feature in a Feature Collection
+ * @param feature the feature object that will be operated on
+ * @param layer the layer the feature will be added to
+ */
 const onEachFeature = function(feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.popupContent) {
@@ -103,8 +114,6 @@ const onEachFeature = function(feature, layer) {
 
 /**
   * Style and add the points to the map
-  * @param locations The variable containing an array of Features, which are each added
-  * to the geoJSON layer of the map.
 */
 L.geoJSON(locations, {
     style: function (feature) {
