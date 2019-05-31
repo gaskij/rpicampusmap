@@ -21,7 +21,7 @@ setView() focuses the map around the given point.
 In this case, it does so on creation of the map (pageload)
 Usage: setView([latitude, longitude], zoomlevel)
 */
-var mymap = L.map('mapContainer').setView([42.73131, -73.675218], 16);
+const mymap = L.map('mapContainer').setView([42.73131, -73.675218], 16);
 
 /*
 Tile Layer is the display style (satellite, street, etc.)
@@ -37,7 +37,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 
 
 // Highlight campus on the map using points as an outline, connect-the-dots style
-var campus = [
+const campus = [
    [42.728116, -73.684807],
    [42.73027, -73.684294],
    [42.730538, -73.686504],
@@ -57,72 +57,63 @@ var campus = [
 L.polygon(campus, {color: 'gray', opacity: 0.1}).addTo(mymap);
 
 // Default popup object that would show on the map if a nonregistered point is clicked
-var popup = L.popup();
+const popup = L.popup();
 
-function onMapClick(e) {
+/**
+ * Perform the following operations every time the map layer is clicked
+ * @param e an event, in this case a click
+ */
+const onMapClick = function(e) {
   popup
-   .setLatLng(e.latlng) // e refers to an event, in this case a click
+   .setLatLng(e.latlng)
    .setContent("You clicked the map at " + e.latlng.toString())
    .openOn(mymap);
 }
 
 mymap.on('click', onMapClick);
 
+/**
+ * Fetch the coordinates of a location in an array [longitude, latitude]
+ * @param id The id of the given location
+ */
+const getCoords = function(id) {
+    for (let i=0; i < locations['features'].length; i++) {
+        if (locations['features'][i]['id'] == id) {
+            point = locations['features'][i]['geometry']['coordinates'];
+            return point;
+        }
+    }
+    return 0;
+}
 
-// Binds properties to each Feature in a Feature Collection
-function onEachFeature(feature, layer) {
+/**
+ * Binds properties to each Feature in a Feature Collection
+ * @param feature the feature object that will be operated on
+ * @param layer the layer the feature will be added to
+ */
+const onEachFeature = function(feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.popupContent) {
-        layer.bindPopup(feature.properties.popupContent);
+        layer.bindPopup(`<div id="featurePopup">${feature.properties.popupContent}</div>`);
 
-        var building = feature.properties.name;
-        var point = getCoords(building);
-        var newPopupContent = `\
+        const building = feature.id;
+        const point = getCoords(building);
+
+        const newPopupContent = `\
           <a href="/info?loc=${feature.id}"> \
             <div class="popup"> \
               <h5>${feature.properties.name}</h5> \
-              <img src="${feature.properties.image}" alt="${feature.properties.name}" width="100%"/> \
+              <img src="${feature.properties.thumbnail}" alt="${feature.properties.name}" width="100%"/> \
               <p>Nicknames: ${feature.properties.nick}</p> \
             </div> \
           </a> \
         `;
         layer.bindPopup(newPopupContent);
-
-        // feature.on('click', function() {
-        //   alert(`Feature '${feature.properties.name}' clicked!`)
-        // });
-        /*
-        // Pull the Points from the 'geolocations.js' JSON file
-        $.ajax({
-           url: "public/infoPreview.php",
-           type: "get",
-           datatype: "json",
-           data: {
-              "location": building
-           },
-           success: function(response){
-              // Create popup based on which point is chosen
-              var info = JSON.parse(response);
-              var popupContent = '<form method="post" action="info.php"><div class="popup" onclick="javascript:this.parentNode.submit();"><h2>';
-              popupContent += info['location'] + '</h2>';
-              popupContent += '<p>Nicknames: ' + info['nicks'] + '</p>';
-              popupContent += '<img src="' + info['image'] + '" alt="' + info['location'] + '" width="100%"/><input type="text" name="location" value="';
-              popupContent += info['location'];
-              popupContent += '" style="display:none"><input type="text" name="type" value="none" style="display:none"></div></form>';
-              layer.bindPopup(popupContent);
-           },
-           error: function(xhr){
-              alert("error");
-           }
-        });
-        */
     }
 }
 
 /**
   * Style and add the points to the map
-  * @param locations The variable containing an array of Features, which are each added
-  * to the geoJSON layer of the map.
 */
 L.geoJSON(locations, {
     style: function (feature) {
@@ -140,68 +131,6 @@ L.geoJSON(locations, {
             weight: 1,
             opacity: 1,
             fillOpacity: 0.8
-        }).on('click', function() {
-          alert('Feature clicked!');
         });
     }
 }).addTo(mymap);
-
-
-/* ======================= HELPER FUNCTIONS ========================= */
-
-// Fetch the coordinates of a given location (name)
-function getCoords(name) {
-    for (var i=0; i < locations['features'].length; i++) {
-        if (locations['features'][i]['properties']['name'] == name) {
-            point = locations['features'][i]['geometry']['coordinates'];
-            return point;
-        }
-    }
-    return 0;
-}
-
-//this function is called to pull up popup info for each page
-function showOnMap(building, latitude, longitude) {
-    $.ajax({
-       url: "public/infoPreview.php",
-       type: "get",
-       datatype: "json",
-       data: {
-          "location": building
-       },
-       success: function(response){
-          var info = JSON.parse(response);
-          //load the data into html to go into the popup based on the mysql query in infopreview.php
-          var popupContent = '<form method="post" action="info.php"><div class="popup" onclick="javascript:this.parentNode.submit();"><h2>';
-          popupContent += info['location'] + '</h2>';
-          popupContent += '<p>Nicknames: ' + info['nicks'] + '</p>';
-          popupContent += '<img src="' + info['image'] + '" alt="' + info['location'] + '" width="100%"/><input type="text" name="location" value="';
-          popupContent += info['location'];
-          popupContent += '" style="display:none"><input type="text" name="type" value="none" style="display:none"></div></form>';
-
-          mymap.setView([latitude, longitude], 19);
-          L.marker([latitude, longitude]).addTo(mymap)
-              .bindPopup(popupContent).openPopup();
-       },
-       error: function(xhr){
-          alert(xhr);
-       }
-    });
-}
-
-//function called when a location popup is clicked
-function toInfoPage(locationName) {
-  $.ajax({
-    url: "info.php",
-    type: "post",
-    data: {
-      "location": locationName,
-    },
-    success: function(response){
-
-    },
-    error: function(xhr){
-      alert(xhr);
-    }
-  });
-}
