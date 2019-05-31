@@ -1,7 +1,0 @@
-NODE_ENV = development
-
-PORT = 3000
-
-# Database Info
-DB_USER = <username>
-DB_PASS = <password>
