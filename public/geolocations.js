@@ -195,21 +195,6 @@ var locations = {
                 "type": "Point",
                 "coordinates": [-73.677091, 42.732331]
             }
-        },
-        {
-            "type": "Feature",
-            "id": "dke",
-            "properties": {
-                "name": "Delta Kappa Epsilon",
-                "nick": "DKE",
-                "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Delta_Kappa_Epsilon_Coat_of_Arms.png/255px-Delta_Kappa_Epsilon_Coat_of_Arms.png",
-                "description": "yeet",
-                "popupContent": "Delta Kappa Epsilon"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [-73.683242, 42.733722]
-            }
         }
     ]
 };
