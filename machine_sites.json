@@ -1,0 +1,25 @@
+[
+    {
+        "type": "Feature",
+        "id": "jec",
+        "properties": {
+            "name": "Jonsson Engineering Center",
+            "nick": "JEC",
+            "description": "Engineering Department",
+            "popupContent": "Jonsson Engineering Center"
+        },
+        "geometry": {
+           "type": "Point",
+           "coordinates": [-73.6804, 42.72957]
+       },
+        "room": {
+            "hours": "",
+            "permissions": ""
+        },
+        "contents": {
+            "machines": "",
+            "materials": "",
+            "equipment": ""
+        }
+    }
+]
