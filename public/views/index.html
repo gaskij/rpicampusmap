@@ -1,15 +1,26 @@
-<!DOCTYPE html>
+<!-- 
+  Portions of this document were modified from 
+  Your First PWA Codelab (https://g.co/codelabs/pwa)
+  Copyright 2019 Google Inc. All rights reserved.
+  Obtained under the Apache License, Version 2.0 (the "License").
+  You may obtain a copy of the License at
+ 
+      https://www.apache.org/licenses/LICENSE-2.0
+-->
+<doctype> html </doctype>
 <html lang="en" ng-app="CampusMap">
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta content="RPI Interactive Campus Map" name="description">
-        <meta content="Interactive, rpi map, rpi campus map, map, rpi" name="keywords">
-
+        <meta content="Interactive, rpi map, rpi campus map, map, rpi" name="keywords">          
+        <!-- ADDD APPLE META TAGS HERE -->
+      
         <title>RPI Interactive Campus Map</title>
 
         <link rel="icon" href="/public/images/favicon.ico" type="image/x-icon">
+        <link rel="manifest" href="/public/manifest.json">
 
         <!-- CSS Files -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -110,5 +121,17 @@
         <!-- Bootstrap Scripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    </body>
+        <!-- Register Service Worker -->
+        <script> 
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/public/service-worker.js')
+                .then((reg) => {
+                  console.log('Service worker registered.', reg);
+                });
+          });
+        }
+        </script>
+  
+  </body>
 </html>

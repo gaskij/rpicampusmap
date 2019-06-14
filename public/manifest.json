@@ -1,0 +1,22 @@
+/* 
+ * Portions of this document were modified from 
+ * Your First PWA Codelab (https://g.co/codelabs/pwa)
+ * Copyright 2019 Google Inc. All rights reserved.
+ * Obtained under the Apache License, Version 2.0 (the "License").
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ */
+{
+  "name": "RPI Campus Map",
+  "short_name": "Campus Map",
+  "icons": [{
+    "src": "/public/images/favicon.ico",
+      "sizes": "256x256",
+      "type": "image/x-icon"
+    }],
+  "start_url": "/public/views/index.html",
+  "display": "standalone",
+  "background_color": "#3E4EB8",
+  "theme_color": "#2F3BA2"
+}
