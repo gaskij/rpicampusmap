@@ -20,6 +20,9 @@ app.controller('machineInfoController', function($scope, $http) {
     $scope.friHours = httpResponse.data[0].room.hours.fri;
     $scope.satHours = httpResponse.data[0].room.hours.sat;
     $scope.sunHours = httpResponse.data[0].room.hours.sun;
+    $scope.permissions = httpResponse.data[0].room.permissions;
     $scope.machines = httpResponse.data[0].contents.machines;
+    $scope.materials = httpResponse.data[0].contents.materials;
+    $scope.equipment = httpResponse.data[0].contents.equipment;
   })
 });

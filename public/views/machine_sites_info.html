@@ -21,19 +21,15 @@
     <script src="/public/controllers/app.js"></script>
     <script src="/public/controllers/machineInfoController.js"></script>
 
-
-    <!-- test style for the collapsible hours table
-
-        TESTING STYLE, REMOVE LATER
-
-    -->
+    <!-- test code for collapsible hours -->
     <style>
         /* Style the button that is used to open and close the collapsible content */
         .collapsible {
+            margin: auto;
             background-color: #eee;
             color: #444;
             cursor: pointer;
-            padding: 15px;
+            padding: 10px;
             width: 100%;
             border: none;
             text-align: left;
@@ -42,7 +38,7 @@
         }
 
         /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-        .activeCollapse, .collapsible:hover {
+        .collapsibleActive, .collapsible:hover {
             background-color: #ccc;
         }
 
@@ -62,11 +58,11 @@
             margin-left: 5px;
         }
 
-        .activeCollapse:after {
+        .collapsibleActive:after {
             content: "\2796"; /* Unicode character for "minus" sign (-) */
         }
-    </style>
 
+    </style>
 
    </head>
 
@@ -111,23 +107,39 @@
             <p>{{nick}}</p>
             <p>{{desc}}</p>
 
+            <button class="collapsible">Shop Hours</button>
+            <div class="collapsibleContent">
+                <p>Sunday: {{sunHours}}</p>
+                <p>Monday: {{monHours}}</p>
+                <p>Tuesday: {{tuesHours}}</p>
+                <p>Wednesday: {{wedHours}}</p>
+                <p>Thursday: {{thurHours}}</p>
+                <p>Friday: {{friHours}}</p>
+                <p>Saturday: {{satHours}}</p>
+            </div>
+
+            <p>{{"Room permissions: " + permissions}}</p>
+            <p>List of Machines</p>
+            <li ng-repeat="x in machines">
+                {{x}}
+            </li>
+
+            <p>Materials Inventory</p>
+            <li ng-repeat="x in materials">
+                {{x}}
+            </li>
+
+            <p>Available Equipment</p>
+            <li ng-repeat="x in equipment">
+                {{x}}
+            </li>
+
+
             <a href="/index?loc={{id}}" class="btn btn-light my-2 my-sm-0">Show On Map</a>
             <!-- <form action="/index?loc={{id}}" method="get" class="form-inline my-2 my-lg-0">
               <input id="showOnMapButton" ng-model="query" type="search" name="query" placeholder="Enter a location..." class="form-control mr-sm-2" aria-label="Show On Map">
               <input id="searchButton" type="submit" value="Search" class="btn btn-light my-2 my-sm-0" ng-click="search(query);">
             </form> -->
-
-            <button class="collapsible">Weekly hours</button>
-            <div class="collapsibleContent">
-                <p>Monday: {{monHours}}<p>
-                <p>Tuesday: {{tueHours}}<p>
-                <p>Wednesday: <p>
-                <p>Thursday: <p>
-                <p>Friday: <p>
-                <p>Saturday: <p>
-                <p>Sunday: <p>
-            </div>
-
           </div>
 
           <div id="photos" class="col">
@@ -176,28 +188,25 @@
         </div>
       </footer>
 
-        <!-- test script for the collapsible hours table
 
-            TESTING SCRIPT, REMOVE LATER
-
-        -->
+      <!-- test script for collapsible hours -->
       <script>
-          var coll = document.getElementsByClassName("collapsible");
-          var i;
 
-          for (i = 0; i < coll.length; i++) {
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
             coll[i].addEventListener("click", function() {
-              this.classList.toggle("activeCollapse");
-              var content = this.nextElementSibling;
-              if (content.style.display === "block") {
-                content.style.display = "none";
-              } else {
-                content.style.display = "block";
-              }
+                  this.classList.toggle("collapsibleActive");
+                  var content = this.nextElementSibling;
+                  if (content.style.display === "block") {
+                    content.style.display = "none";
+                  } else {
+                    content.style.display = "block";
+                  }
             });
-          }
+        }
       </script>
-
 
 
       <!-- Bootstrap Scripts -->
