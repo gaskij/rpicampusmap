@@ -61,7 +61,7 @@
             "permissions": ""
         },
         "contents": {
-            "machines": ["Haas CNC Control Simulators", "Haas Mini Mill", "Haas SL 10", 
+            "machines": ["Haas CNC Control Simulators", "Haas Mini Mill", "Haas SL 10",
                 "Haas Super VF 2", "Haas Tool Room Mill", "Mitutoyo Crysta-Plus M574 CMM",
                 "Paint Booth", "General Machining and Fabrication Equipment",
                 "Electronic Scopes and Meters"],
