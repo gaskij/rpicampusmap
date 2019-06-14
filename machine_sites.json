@@ -25,11 +25,11 @@
             "permissions": ""
         },
         "contents": {
-            "machines": ["Haas TL 1 CNC Lathe", "Acer 3-Axis CNC Milling Machine", 
-                "Laguna Swift 4’x4’ CNC Router", "Thunder Mars90 100w laser Cutter", 
-                "Snap-on Sandblaster", "General Machining and Fabrication Equipment", 
-                "General Machining and Fabrication Equipment", 
-                "Metal and Plastic Forming and Shearing Equipment", 
+            "machines": ["Haas TL 1 CNC Lathe", "Acer 3-Axis CNC Milling Machine",
+                "Laguna Swift 4’x4’ CNC Router", "Thunder Mars90 100w laser Cutter",
+                "Snap-on Sandblaster", "General Machining and Fabrication Equipment",
+                "General Machining and Fabrication Equipment",
+                "Metal and Plastic Forming and Shearing Equipment",
                 "Steel and Plastic Welding Equipment" ],
             "materials": "",
             "equipment": ""

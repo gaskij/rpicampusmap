@@ -19,11 +19,58 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/public/controllers/app.js"></script>
-    <script src="/public/controllers/infoController.js"></script>
+    <script src="/public/controllers/machineInfoController.js"></script>
+
+
+    <!-- test style for the collapsible hours table
+
+        TESTING STYLE, REMOVE LATER
+
+    -->
+    <style>
+        /* Style the button that is used to open and close the collapsible content */
+        .collapsible {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+
+        /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+        .activeCollapse, .collapsible:hover {
+            background-color: #ccc;
+        }
+
+        /* Style the collapsible content. Note: hidden by default */
+        .collapsibleContent {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+
+        .collapsible:after {
+            content: '\02795'; /* Unicode character for "plus" sign (+) */
+            font-size: 13px;
+            color: white;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .activeCollapse:after {
+            content: "\2796"; /* Unicode character for "minus" sign (-) */
+        }
+    </style>
+
 
    </head>
 
-   <body ng-controller="infoController">
+   <body ng-controller="machineInfoController">
      <!-- Header -->
      <header id="header">
 
@@ -69,6 +116,18 @@
               <input id="showOnMapButton" ng-model="query" type="search" name="query" placeholder="Enter a location..." class="form-control mr-sm-2" aria-label="Show On Map">
               <input id="searchButton" type="submit" value="Search" class="btn btn-light my-2 my-sm-0" ng-click="search(query);">
             </form> -->
+
+            <button class="collapsible">Weekly hours</button>
+            <div class="collapsibleContent">
+                <p>Monday: {{monHours}}<p>
+                <p>Tuesday: {{tueHours}}<p>
+                <p>Wednesday: <p>
+                <p>Thursday: <p>
+                <p>Friday: <p>
+                <p>Saturday: <p>
+                <p>Sunday: <p>
+            </div>
+
           </div>
 
           <div id="photos" class="col">
@@ -116,6 +175,30 @@
           </div>
         </div>
       </footer>
+
+        <!-- test script for the collapsible hours table
+
+            TESTING SCRIPT, REMOVE LATER
+
+        -->
+      <script>
+          var coll = document.getElementsByClassName("collapsible");
+          var i;
+
+          for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+              this.classList.toggle("activeCollapse");
+              var content = this.nextElementSibling;
+              if (content.style.display === "block") {
+                content.style.display = "none";
+              } else {
+                content.style.display = "block";
+              }
+            });
+          }
+      </script>
+
+
 
       <!-- Bootstrap Scripts -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
