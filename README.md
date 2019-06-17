@@ -42,5 +42,5 @@ To start the server, run `npm start` to have the server auto-restart if you make
 
 Have fun making a big impact on campus!
 
-### License
-Portions of this project were modified from [https://github.com/googlecodelabs/your-first-pwapp](https://github.com/googlecodelabs/your-first-pwapp). This code is licensed using the Apachce License, Version 2.0. The full text can be found here: [https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0).  
+### License	
+Portions of this project were modified from [https://github.com/googlecodelabs/your-first-pwapp](https://github.com/googlecodelabs/your-first-pwapp). This code is licensed using the Apachce License, Version 2.0. The full text can be found here: [https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0).
