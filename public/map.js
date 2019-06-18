@@ -56,6 +56,8 @@ const campus = [
 ];
 L.polygon(campus, {color: 'gray', opacity: 0.1}).addTo(mymap);
 
+//test comment
+
 // Default popup object that would show on the map if a nonregistered point is clicked
 const popup = L.popup();
 
