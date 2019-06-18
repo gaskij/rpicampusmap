@@ -21,7 +21,22 @@ setView() focuses the map around the given point.
 In this case, it does so on creation of the map (pageload)
 Usage: setView([latitude, longitude], zoomlevel)
 */
-const mymap = L.map('mapContainer').setView([42.73131, -73.675218], 16);
+//const mymap = L.map('mapContainer').setView([42.73131, -73.675218], 16);
+
+
+///work here next time
+const mymap = L.map('mapContainer', {
+    center: [42.73131, -73.675218],
+    zoom: 16,
+    layers: []
+})
+/*
+var map = L.map('map', {
+    center: [39.73, -104.99],
+    zoom: 10,
+    layers: [grayscale, cities]
+});
+*/
 
 /*
 Tile Layer is the display style (satellite, street, etc.)
@@ -113,6 +128,8 @@ const onEachFeature = function(feature, layer) {
         layer.bindPopup(newPopupContent);
     }
 }
+
+
 
 /**
   * Style and add the points to the map
