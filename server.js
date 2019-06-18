@@ -6,6 +6,7 @@ const mongodb = require('mongodb');
 const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
+const locations = require('./public/machine_sites.js');
 
 const app = express();
 app.use(express.static(__dirname))
@@ -23,25 +24,25 @@ const options = {useNewUrlParser: true};
 
 /* ================================= SERVER START ==================================== */
 const port = process.env.PORT;
-
+console.log(user, pass);
 MongoClient.connect(uri, options, function(err, db) {
   if (err) {
     throw err;
   }
   else {
     console.log("Database connected in route '/'!");
-    let dbo = db.db("rpicampusmap");
+    let dbo = db.db("forgemill");
 
-    /* Populate Database with locations if need be (ONLY FOR USERS WITH WRITE ACCESS).
+    /* Populate Database with locations if need be (ONLY FOR USERS WITH WRITE ACCESS).*/
+
     console.log(locations);
-    dbo.collection("locations").insertMany(locations, {ordered: false})
+    dbo.collection("locations").insertMany(locations.features, {ordered: false})
     .then(function(success) {
       console.log("Successfully added to database");
     })
     .catch(function(err) {
       console.error("ERROR:", err);
     });
-    */
 
     // Download initial location data from database before starting server
     dbo.collection('locations').find().toArray()
@@ -171,7 +172,7 @@ app.route('/search')
 /* ===================================== INFO ======================================== */
 app.route('/info')
 .get(function (req, res) {
-  res.sendFile(__dirname + '/public/views/info.html')
+  res.sendFile(__dirname + '/public/views/machine_sites_info.html')
 })
 .post(jsonParser, function(req, res) {
   const query = req.body.query;
@@ -182,7 +183,7 @@ app.route('/info')
     if (err)
       throw err;
     else {
-      console.log("Database connected in route '/info'!")
+      console.log("Database connected in route '/machine_sites_info'!")
       let dbo = db.db("rpicampusmap");
 
       dbo.collection("locations").find({'id': query}).toArray()
