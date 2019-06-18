@@ -1,4 +1,4 @@
-var machine_sites = {
+module.exports = {
     "type": "FeatureCollection",
     "features": [
         {
@@ -24,21 +24,21 @@ var machine_sites = {
                     "sat":"11 a.m. -3 p.m.,",
                     "sun":"2-6 p.m."
                 },
-                "info": "All students who intend to use the machines in this room\n
-                must pass the SOE Safety Test Rensselaer Manufacturing and Prototyping\n
-                Laboratories-Safety Orientation listed on RPI HR Skillport Site. \n
-                They must show proof of taking and passing the class to shop supervisors.\n
-                Afterwards, all students are welcome to use the machines in the JEC Student Machines Shop.\n
-                No prior knowledge of machining is required. However, it is recommended\n
+                "info": "All students who intend to use the machines in this room\n\
+                must pass the SOE Safety Test Rensselaer Manufacturing and Prototyping\n\
+                Laboratories-Safety Orientation listed on RPI HR Skillport Site. \n\
+                They must show proof of taking and passing the class to shop supervisors.\n\
+                Afterwards, all students are welcome to use the machines in the JEC Student Machines Shop.\n\
+                No prior knowledge of machining is required. However, it is recommended\n\
                 that students take Engineering Processes (ENGR 1300).",
                 "location": "Jonsson Engineering Center (JEC) 1010"
             },
             "contents": {
-                "machines": ["Haas TL 1 CNC Lathe", "Acer 3-Axis CNC Milling Machine", 
-                    "Laguna Swift 4’x4’ CNC Router", "Thunder Mars90 100w laser Cutter", 
-                    "Snap-on Sandblaster", "General Machining and Fabrication Equipment", 
-                    "General Machining and Fabrication Equipment", 
-                    "Metal and Plastic Forming and Shearing Equipment", 
+                "machines": ["Haas TL 1 CNC Lathe", "Acer 3-Axis CNC Milling Machine",
+                    "Laguna Swift 4’x4’ CNC Router", "Thunder Mars90 100w laser Cutter",
+                    "Snap-on Sandblaster", "General Machining and Fabrication Equipment",
+                    "General Machining and Fabrication Equipment",
+                    "Metal and Plastic Forming and Shearing Equipment",
                     "Steel and Plastic Welding Equipment" ],
                 "available_materials": "",
                 "equipment": ""
@@ -67,16 +67,16 @@ var machine_sites = {
                     "sat":"",
                     "sun":""
                 },
-                "info": "All students who intend to use the machines in this room\n
-                must pass the SOE Safety Test Rensselaer Manufacturing and Prototyping\n
-                Laboratories-Safety Orientation listed on RPI HR Skillport Site. \n
-                They must show proof of taking and passing the class to shop supervisors.\n
-                Afterwards, usage of machines is determined on case-by-case basis.\n
+                "info": "All students who intend to use the machines in this room\n\
+                must pass the SOE Safety Test Rensselaer Manufacturing and Prototyping\n\
+                Laboratories-Safety Orientation listed on RPI HR Skillport Site. \n\
+                They must show proof of taking and passing the class to shop supervisors.\n\
+                Afterwards, usage of machines is determined on case-by-case basis.\n\
                 Students are always welcome to see the shop supervisor to discuss their projects.",
                 "location": "Jonsson Engineering Center (JEC) Room 2332"
             },
             "contents": {
-                "machines": ["Haas CNC Control Simulators", "Haas Mini Mill", "Haas SL 10", 
+                "machines": ["Haas CNC Control Simulators", "Haas Mini Mill", "Haas SL 10",
                     "Haas Super VF 2", "Haas Tool Room Mill", "Mitutoyo Crysta-Plus M574 CMM",
                     "Paint Booth", "General Machining and Fabrication Equipment",
                     "Electronic Scopes and Meters"],
@@ -107,8 +107,8 @@ var machine_sites = {
                     "sat":"",
                     "sun":""
                 },
-                "info": "The Forge charges $10 per semester for students to gain access to\n
-                all of the machines. Afterwards, students are charged $0.05/gram of filament\n
+                "info": "The Forge charges $10 per semester for students to gain access to\n\
+                all of the machines. Afterwards, students are charged $0.05/gram of filament\n\
                 for the 3D Printer and $0.50 per hour of light time for the laser cutter.",
                 "location": "George M. Low Center for Industrial Innovation (CII) Room 2037"
             },
@@ -144,11 +144,11 @@ var machine_sites = {
                     "sat":"",
                     "sun":""
                 },
-                "info": "All students who intend to use the machines in this room\n
-                must pass the SOE Safety Test Rensselaer Manufacturing and Prototyping\n
-                Laboratories-Safety Orientation listed on RPI HR Skillport Site. \n
-                They must show proof of taking and passing the class to shop supervisors.\n
-                Afterwards, usage of machines is determined on case-by-case basis.\n
+                "info": "All students who intend to use the machines in this room\n\
+                must pass the SOE Safety Test Rensselaer Manufacturing and Prototyping\n\
+                Laboratories-Safety Orientation listed on RPI HR Skillport Site. \n\
+                They must show proof of taking and passing the class to shop supervisors.\n\
+                Afterwards, usage of machines is determined on case-by-case basis.\n\
                 Students are always welcome to see the shop supervisor to discuss their projects.",
                 "location": "George M. Low Center for Industrial Innovation (CII) Room 1027"
             },
@@ -182,7 +182,7 @@ var machine_sites = {
                 "equipment": ""
             }
         }
-    ]    
+    ]
 };
 
 /*
