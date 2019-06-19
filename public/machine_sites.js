@@ -12,7 +12,7 @@ module.exports = {
             },
             "geometry": {
                "type": "Point",
-               "coordinates": [-73.6804, 42.72957]
+               "coordinates": [-73.680042, 42.729716]
            },
             "room": {
                 "hours": {
@@ -132,7 +132,7 @@ module.exports = {
             },
             "geometry": {
                "type": "Point",
-               "coordinates": [-73.678974, 42.729574]
+               "coordinates": [-73.679208, 42.72975]
            },
             "room": {
                 "hours": {
@@ -190,4 +190,5 @@ Locations:
 JEC Student Machines Shop
 Design Lab/IED Shop
 Maker Space: The Forge
+Manufacturing Innovation Learning Laboratory
 */
