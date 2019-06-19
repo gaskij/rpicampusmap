@@ -13,14 +13,20 @@ https://leafletjs.com/reference-1.3.4.html#point
 for some reason according to the API**
 */
 
+
 /*
-Creates map and focuses the map around the given point.
+Display the map on the page at id 'map'
+
+setView() focuses the map around the given point.
 In this case, it does so on creation of the map (pageload)
+Usage: setView([latitude, longitude], zoomlevel)
 */
+
 let mymap = L.map('mapContainer', {
     center: [42.73131, -73.675218],
-    zoom: 16
-});
+    zoom: 16,
+    layers: []
+})
 
 /*
 Tile Layer is the display style (satellite, street, etc.)
@@ -111,44 +117,62 @@ const onEachFeature = function(feature, layer) {
     }
 }
 
-/*
-this line broke it for some reason? is it because its nodejs?
-const machine_sites = require('./public/machine_sites.js');
-const machine_locations_layer = L.layerGroup(machine_locations);
-*/
 
-/*
 /**
-  * Style and add the points to the correct layer
+  * Style and add the points to the map
 */
-const campus_locations_layer = L.layerGroup();
-
 L.geoJSON(locations, {
     style: function (feature) {
         return feature.properties && feature.properties.style;
     },
     // For each feature added to the map, it will perform the onEachFeature() function
-    onEachFeature: onEachFeature(feature, campus_locations_layer),
+    onEachFeature: onEachFeature,
 
     // Adds a circleMarker at the point specified by the coords of the feature
     pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng, { // circleMarker shows at the Point's location
+        const campus_circle_settings = { 
             radius: 8,
             fillColor: "#ff7800",
             color: "#000",
             weight: 1,
             opacity: 1,
             fillOpacity: 0.8
-        });
-    }
-})
+        }
+        return L.circleMarker(latlng,campus_circle_settings);
+    },
+}).addTo(mymap);
 
-// variable holding all non-base layers
+L.geoJSON(locations_shops, {
+    style: function (feature) {
+        return feature.properties && feature.properties.style;
+    },
+    // For each feature added to the map, it will perform the onEachFeature() function
+    onEachFeature: onEachFeature,
+
+    // Adds a circleMarker at the point specified by the coords of the feature
+    pointToLayer: function (feature, latlng) {
+        const machine_circle_settings = { 
+            // circleMarker shows at the Point's location
+            radius: 8,
+            fillColor: "#0000ff",
+            color: "#000",
+            weight: 1,
+            opacity: 1,
+            fillOpacity: 0.8
+        }
+        
+        return L.circleMarker(latlng, machine_circle_settings);
+    },
+}).addTo(mymap);
+
+//still need to figure out how to create layergroups!!
+const campus_locations_layer = L.layerGroup();
+const machine_locations_layer = L.layerGroup();
+
 let overlayMaps = {
-    //"Machine sites": machine_locations_layer
-    "Campus locations": campus_locations_layer
-    // add more additional layers here
+    "Campus Locations": campus_locations_layer,
+    "Machine Shop Locations": machine_locations_layer
 };
 
-// Adding the non-base layers to the map
 L.control.layers(null, overlayMaps).addTo(mymap);
+
