@@ -10,7 +10,16 @@
     <title>Campus Map - Search Results</title>
 
     <link rel="icon" href="/public/images/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/public/manifest.json">
+    <meta name="theme-color" content="#000000" />
 
+
+    <!-- IOS Meta Tags Here -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="RPI Campus Map">
+    <link rel="apple-touch-icon" href="/public/images/pin-152x152.png">
+    
     <!-- CSS Files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link href="/public/style/locationInfo.css" rel="stylesheet" type="text/css"/>
@@ -20,6 +29,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/public/controllers/app.js"></script>
     <script src="/public/controllers/infoController.js"></script>
+    
+    <!-- Register Service Worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+              .then((reg) => {
+                console.log('Service worker registered.', reg);
+              });
+        });
+      }
+    </script>
 
    </head>
 
@@ -80,10 +101,10 @@
               </ol>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="http://tours.pocketsights.com/media/1/11ef2a38f7884fd58ecc6a78e3e70ea7_large.jpg" class="d-block w-100" alt="...">
+                  <img src="https://www.usnews.com/img/college-photo_3847.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="http://www.alpha6294.com/History/ThetaXionCampus/DarrinCommunicationsCenter/Building/DarrinCommunicationsCenter.jpg" class="d-block w-100" alt="...">
+                  <img src="https://www.usnews.com/img/college-photo_3861.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
                   <img src="https://www.bing.com/th?id=OIP.npiBC_gFZvex2KDN16YTZAHaFj&pid=Api&rs=1&p=0" class="d-block w-100" alt="...">
@@ -120,5 +141,6 @@
       <!-- Bootstrap Scripts -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-   </body>
+     
+  </body>
 </html>
