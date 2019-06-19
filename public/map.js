@@ -13,30 +13,14 @@ https://leafletjs.com/reference-1.3.4.html#point
 for some reason according to the API**
 */
 
-
 /*
-Display the map on the page at id 'map'
-
-setView() focuses the map around the given point.
+Creates map and focuses the map around the given point.
 In this case, it does so on creation of the map (pageload)
-Usage: setView([latitude, longitude], zoomlevel)
 */
-//const mymap = L.map('mapContainer').setView([42.73131, -73.675218], 16);
-
-
-///work here next time
-const mymap = L.map('mapContainer', {
+let mymap = L.map('mapContainer', {
     center: [42.73131, -73.675218],
-    zoom: 16,
-    layers: []
-})
-/*
-var map = L.map('map', {
-    center: [39.73, -104.99],
-    zoom: 10,
-    layers: [grayscale, cities]
+    zoom: 16
 });
-*/
 
 /*
 Tile Layer is the display style (satellite, street, etc.)
@@ -70,8 +54,6 @@ const campus = [
    [42.728116, -73.684765]
 ];
 L.polygon(campus, {color: 'gray', opacity: 0.1}).addTo(mymap);
-
-//test comment
 
 // Default popup object that would show on the map if a nonregistered point is clicked
 const popup = L.popup();
@@ -129,17 +111,24 @@ const onEachFeature = function(feature, layer) {
     }
 }
 
-
-
-/**
-  * Style and add the points to the map
+/*
+this line broke it for some reason? is it because its nodejs?
+const machine_sites = require('./public/machine_sites.js');
+const machine_locations_layer = L.layerGroup(machine_locations);
 */
+
+/*
+/**
+  * Style and add the points to the correct layer
+*/
+const campus_locations_layer = L.layerGroup();
+
 L.geoJSON(locations, {
     style: function (feature) {
         return feature.properties && feature.properties.style;
     },
     // For each feature added to the map, it will perform the onEachFeature() function
-    onEachFeature: onEachFeature,
+    onEachFeature: onEachFeature(feature, campus_locations_layer),
 
     // Adds a circleMarker at the point specified by the coords of the feature
     pointToLayer: function (feature, latlng) {
@@ -152,4 +141,14 @@ L.geoJSON(locations, {
             fillOpacity: 0.8
         });
     }
-}).addTo(mymap);
+})
+
+// variable holding all non-base layers
+let overlayMaps = {
+    //"Machine sites": machine_locations_layer
+    "Campus locations": campus_locations_layer
+    // add more additional layers here
+};
+
+// Adding the non-base layers to the map
+L.control.layers(null, overlayMaps).addTo(mymap);
