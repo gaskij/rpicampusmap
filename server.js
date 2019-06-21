@@ -36,13 +36,13 @@ MongoClient.connect(uri, options, function(err, db) {
     /* Populate Database with locations if need be (ONLY FOR USERS WITH WRITE ACCESS).*/
 
     console.log(locations);
-    dbo.collection("locations").insertMany(locations.features, {ordered: false})
-    .then(function(success) {
-      console.log("Successfully added to database");
-    })
-    .catch(function(err) {
-      console.error("ERROR:", err);
-    });
+    // dbo.collection("locations").insertMany(locations.features, {ordered: false})
+    // .then(function(success) {
+    //   console.log("Successfully added to database");
+    // })
+    // .catch(function(err) {
+    //   console.error("ERROR:", err);
+    // });
 
     // Download initial location data from database before starting server
     dbo.collection('locations').find().toArray()
@@ -54,12 +54,13 @@ MongoClient.connect(uri, options, function(err, db) {
       // Start server after initial database connection
       app.listen(port);
       console.log('Listening on port ' + port);
+      db.close();
     })
     .catch(function(err) {
       if (err) throw err;
     });
 
-    db.close();
+    
   }
 });
 /* =================================================================================== */
