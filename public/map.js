@@ -117,10 +117,14 @@ const onEachFeature = function(feature, layer) {
     }
 }
 
+//Array of circleMakers
+let locations_arr = [];
+let locations_shops_arr = [];
 
 /**
   * Style and add the points to the map
 */
+
 L.geoJSON(locations, {
     style: function (feature) {
         return feature.properties && feature.properties.style;
@@ -138,9 +142,11 @@ L.geoJSON(locations, {
             opacity: 1,
             fillOpacity: 0.8
         }
-        return L.circleMarker(latlng,campus_circle_settings);
+        locations_arr.push(L.circleMarker(latlng,campus_circle_settings));
+        return locations_arr[locations_arr.length-1];
     },
 }).addTo(mymap);
+
 
 L.geoJSON(locations_shops, {
     style: function (feature) {
@@ -160,14 +166,14 @@ L.geoJSON(locations_shops, {
             opacity: 1,
             fillOpacity: 0.8
         }
-        
-        return L.circleMarker(latlng, machine_circle_settings);
+        locations_shops_arr.push(L.circleMarker(latlng,machine_circle_settings));
+        return locations_shops_arr[locations_shops_arr.length-1];
     },
 }).addTo(mymap);
 
-//still need to figure out how to create layergroups!!
-const campus_locations_layer = L.layerGroup();
-const machine_locations_layer = L.layerGroup();
+
+let campus_locations_layer = L.layerGroup(locations_arr);
+let machine_locations_layer = L.layerGroup(locations_shops_arr);
 
 let overlayMaps = {
     "Campus Locations": campus_locations_layer,

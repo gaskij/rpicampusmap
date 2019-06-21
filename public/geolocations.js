@@ -272,7 +272,7 @@ var locations_shops = {
             },
             "geometry": {
                "type": "Point",
-               "coordinates": [-73.6804, 42.72957]
+               "coordinates": [-73.680647,42.729606]
            },
             "room": {
                 "hours": {
