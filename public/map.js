@@ -145,8 +145,7 @@ L.geoJSON(locations, {
         locations_arr.push(L.circleMarker(latlng,campus_circle_settings));
         return locations_arr[locations_arr.length-1];
     },
-}).addTo(mymap);
-
+});
 
 L.geoJSON(locations_shops, {
     style: function (feature) {
@@ -169,7 +168,7 @@ L.geoJSON(locations_shops, {
         locations_shops_arr.push(L.circleMarker(latlng,machine_circle_settings));
         return locations_shops_arr[locations_shops_arr.length-1];
     },
-}).addTo(mymap);
+});
 
 
 let campus_locations_layer = L.layerGroup(locations_arr);
