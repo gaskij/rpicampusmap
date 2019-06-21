@@ -117,12 +117,12 @@ const onEachFeature = function(feature, layer) {
     }
 }
 
-//Array of circleMakers
+//Array of circleMarkers
 let locations_arr = [];
 let locations_shops_arr = [];
 
 /**
-  * Style and add the points to the map
+  * Style and add the campus points to the map
 */
 
 L.geoJSON(locations, {
@@ -134,7 +134,7 @@ L.geoJSON(locations, {
 
     // Adds a circleMarker at the point specified by the coords of the feature
     pointToLayer: function (feature, latlng) {
-        const campus_circle_settings = { 
+        const campus_circle_settings = {
             radius: 8,
             fillColor: "#ff7800",
             color: "#000",
@@ -145,9 +145,11 @@ L.geoJSON(locations, {
         locations_arr.push(L.circleMarker(latlng,campus_circle_settings));
         return locations_arr[locations_arr.length-1];
     },
-}).addTo(mymap);
+})
 
-
+/**
+  * Style and add the machine site points to the map
+*/
 L.geoJSON(locations_shops, {
     style: function (feature) {
         return feature.properties && feature.properties.style;
@@ -157,7 +159,7 @@ L.geoJSON(locations_shops, {
 
     // Adds a circleMarker at the point specified by the coords of the feature
     pointToLayer: function (feature, latlng) {
-        const machine_circle_settings = { 
+        const machine_circle_settings = {
             // circleMarker shows at the Point's location
             radius: 8,
             fillColor: "#0000ff",
@@ -169,16 +171,20 @@ L.geoJSON(locations_shops, {
         locations_shops_arr.push(L.circleMarker(latlng,machine_circle_settings));
         return locations_shops_arr[locations_shops_arr.length-1];
     },
-}).addTo(mymap);
+})
 
-
+/* Creating layer groups to hold arrays of locations
+*  These layer groups will be added to the map, and will be represented by
+*  the map keys. The maps keys filter which dots are shown on the map.
+*/
 let campus_locations_layer = L.layerGroup(locations_arr);
 let machine_locations_layer = L.layerGroup(locations_shops_arr);
 
 let overlayMaps = {
     "Campus Locations": campus_locations_layer,
     "Machine Shop Locations": machine_locations_layer
+    // add more layer groups here
 };
 
+// adding the layer groups in overlayMaps to the map (but it doesn't render yet)
 L.control.layers(null, overlayMaps).addTo(mymap);
-
