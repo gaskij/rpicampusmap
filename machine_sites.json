@@ -2,6 +2,7 @@
     {
         "type": "Feature",
         "id": "jec_shop",
+        "_id": "jec_shop",
         "properties": {
             "name": "JEC Student Machines Shop",
             "nick": "Processes Shop",
@@ -45,6 +46,7 @@
     {
         "type": "Feature",
         "id": "ied_shop",
+        "_id": "ied_shop",
         "properties": {
             "name": "Design Lab/IED Shop",
             "nick": "IED Shop",
@@ -85,6 +87,7 @@
     {
         "type": "Feature",
         "id": "forge_shop",
+        "_id": "forge_shop",
         "properties": {
             "name": "Maker Space: The Forge",
             "nick": "The Forge",
@@ -122,6 +125,7 @@
     {
         "type": "Feature",
         "id": "mill_shop",
+        "_id": "mill_shop",
         "properties": {
             "name": "Manufacturing Innovation Learning Laboratory",
             "nick": "The MILL",
