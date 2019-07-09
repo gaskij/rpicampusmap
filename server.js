@@ -43,7 +43,7 @@ MongoClient.connect(uri, options, function(err, db) {
       console.error("ERROR:", err);
     });
     */
-
+    
     // Download initial location data from database before starting server
     dbo.collection('locations').find().toArray()
     .then(function(result) {
