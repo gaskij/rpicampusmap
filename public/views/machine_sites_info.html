@@ -107,33 +107,34 @@
             <p>{{nick}}</p>
             <p>{{desc}}</p>
 
-            <button class="collapsible">Shop Hours</button>
-            <div class="collapsibleContent">
-                <p>Sunday: {{sunHours}}</p>
-                <p>Monday: {{monHours}}</p>
-                <p>Tuesday: {{tuesHours}}</p>
-                <p>Wednesday: {{wedHours}}</p>
-                <p>Thursday: {{thurHours}}</p>
-                <p>Friday: {{friHours}}</p>
-                <p>Saturday: {{satHours}}</p>
+            <div id="machineInfo" ng-show="{{isMachine}} == 1">
+                <button class="collapsible">Shop Hours</button>
+                <div class="collapsibleContent">
+                    <p>Sunday: {{sunHours}}</p>
+                    <p>Monday: {{monHours}}</p>
+                    <p>Tuesday: {{tuesHours}}</p>
+                    <p>Wednesday: {{wedHours}}</p>
+                    <p>Thursday: {{thurHours}}</p>
+                    <p>Friday: {{friHours}}</p>
+                    <p>Saturday: {{satHours}}</p>
+                </div>
+
+                <p>Room info/permissions: {{info}}</p>
+                <p>List of Machines</p>
+                <li ng-repeat="x in machines">
+                    {{x}}
+                </li>
+
+                <p>Materials Inventory</p>
+                <li ng-repeat="x in materials">
+                    {{x}}
+                </li>
+
+                <p>Available Equipment</p>
+                <li ng-repeat="x in equipment">
+                    {{x}}
+                </li>
             </div>
-
-            <p>Room info/permissions: {{info}}</p>
-            <p>List of Machines</p>
-            <li ng-repeat="x in machines">
-                {{x}}
-            </li>
-
-            <p>Materials Inventory</p>
-            <li ng-repeat="x in materials">
-                {{x}}
-            </li>
-
-            <p>Available Equipment</p>
-            <li ng-repeat="x in equipment">
-                {{x}}
-            </li>
-
 
             <a href="/index?loc={{id}}" class="btn btn-light my-2 my-sm-0">Show On Map</a>
             <!-- <form action="/index?loc={{id}}" method="get" class="form-inline my-2 my-lg-0">
