@@ -10,7 +10,16 @@
         <title>RPI Interactive Campus Map</title>
 
         <link rel="icon" href="/public/images/favicon.ico" type="image/x-icon">
+        <link rel="manifest" href="/public/manifest.json">
+        <meta name="theme-color" content="#000000" />
 
+      
+        <!-- IOS Meta Tags Here -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="RPI Campus Map">
+        <link rel="apple-touch-icon" href="/public/images/pin-152x152.png">
+      
         <!-- CSS Files -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
@@ -21,6 +30,19 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+        
+        <!-- Register Service Worker -->
+        <script>
+          if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/service-worker.js')
+                  .then((reg) => {
+                    console.log('Service worker registered.', reg);
+                  });
+            });
+          }
+        </script>
+      
     </head>
 
     <body ng-controller="mapController">
@@ -97,7 +119,7 @@
         <noscript>
             <div id="noscript">
                 <p>You are either using a browser that does not support JavaScript, or you have disabled JavaScript.</p>
-                <p>RPICampusMap uses JavaScript for its map.</p>
+                <p>RPICampusMap uses JavaScript.</p>
             </div>
         </noscript>
 
@@ -110,5 +132,6 @@
         <!-- Bootstrap Scripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+      
     </body>
 </html>
