@@ -1,22 +1,8 @@
-html {
-  height: 100%;
-}
-
 body {
-   background-color: #ffffff;
+   background-color: #000000;
    height: 100%;
    margin: 0;
    padding: 0;
-}
-
-header {
-  max-height: 11vh;
-}
-
-footer {
-  max-height: 11vh;
-  max-width: 100%;
-  color: aliceblue;
 }
 
 a {

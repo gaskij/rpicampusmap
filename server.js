@@ -202,3 +202,14 @@ app.route('/info')
 
 });
 /* ================================================================================== */
+
+// Handle 404
+ app.use(function(req, res) {
+    res.status(404)
+    .sendFile(__dirname + '/public/views/notfound.html', {error: '404: Page not Found'});
+ });
+
+ // Handle 500
+ app.use(function(error, req, res, next) {
+    res.status(500).send('Error 500: Internal Server Error');
+ });
