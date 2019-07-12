@@ -1,4 +1,4 @@
-module.exports = {
+var locations_shops = {
     "type": "FeatureCollection",
     "features": [
         {
@@ -8,7 +8,8 @@ module.exports = {
                 "name": "JEC Student Machines Shop",
                 "nick": "Processes Shop",
                 "description": "Machine Shop located in JEC",
-                "popupContent": "JEC Student Machines Shop"
+                "popupContent": "JEC Student Machines Shop",
+                "type": "machine"
             },
             "geometry": {
                "type": "Point",
@@ -51,7 +52,8 @@ module.exports = {
                 "name": "Design Lab/IED Shop",
                 "nick": "IED Shop",
                 "description": "Machine Shop located in JEC",
-                "popupContent": "Design Lab/IED Shop"
+                "popupContent": "Design Lab/IED Shop",
+                "type": "machine"
             },
             "geometry": {
                "type": "Point",
@@ -91,7 +93,8 @@ module.exports = {
                 "name": "Maker Space: The Forge",
                 "nick": "The Forge",
                 "description": "Maker Space located in",
-                "popupContent": "Design Lab/IED Shop"
+                "popupContent": "Design Lab/IED Shop",
+                "type": "machine"
             },
             "geometry": {
                "type": "Point",
@@ -128,7 +131,8 @@ module.exports = {
                 "name": "Manufacturing Innovation Learning Laboratory",
                 "nick": "The MILL",
                 "description": "Manufacturing/maching shop located in the CII.",
-                "popupContent": "Manufacturing Innovation Learning Laboratory"
+                "popupContent": "Manufacturing Innovation Learning Laboratory",
+                "type": "machine"
             },
             "geometry": {
                "type": "Point",

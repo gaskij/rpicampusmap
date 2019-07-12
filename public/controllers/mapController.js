@@ -2,7 +2,7 @@ app.controller('mapController', function($scope, $http) {
   console.log("mapController activated!");
 
   const location = getParams();
-  console.log(location != null);
+  console.log(location);
 
   if (location != null) {
     $http.post(`/index?loc=${location.loc}`, {loc: location.loc})
@@ -17,12 +17,19 @@ app.controller('mapController', function($scope, $http) {
       let latitude = httpResponse.data[0].geometry.coordinates[1];
       let longitude = httpResponse.data[0].geometry.coordinates[0];
 
-      let popupContent = `\
-        <a href="/info?loc=${httpResponse.data[0].id}"> \
+      let newPopupContent = '';
+      if (feature.properties.type == "machine") {
+        newPopupContent += `<a href="/info?loc=${feature.id}&machine=true">`
+      }
+      else {
+          console.log(feature.properties.type);
+        newPopupContent += `<a href="/info?loc=${feature.id}">`;
+      }
+      newPopupContent += `
           <div class="popup"> \
-            <h5>${httpResponse.data[0].properties.name}</h5> \
-            <img src="${httpResponse.data[0].properties.image}" alt="${httpResponse.data[0].properties.name}" width="100%"/> \
-            <p>Nicknames: ${httpResponse.data[0].properties.nick}</p> \
+            <h5>${feature.properties.name}</h5> \
+            <img src="${feature.properties.thumbnail}" alt="${feature.properties.name}" width="100%"/> \
+            <p>Nicknames: ${feature.properties.nick}</p> \
           </div> \
         </a> \
       `;

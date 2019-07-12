@@ -60,7 +60,7 @@ MongoClient.connect(uri, options, function(err, db) {
       if (err) throw err;
     });
 
-    
+
   }
 });
 /* =================================================================================== */
@@ -155,6 +155,7 @@ app.route('/search')
       dbo.collection("locations").find({'$or': [
         {'properties.name': {'$regex': query, '$options': 'i'} },
         {'properties.nick': {'$regex': query, '$options': 'i'} }
+        // add here to look through machines
       ]}).toArray()
       .then(function(result) {
         console.log("Results:\n", result);
@@ -177,15 +178,22 @@ app.route('/info')
 })
 .post(jsonParser, function(req, res) {
   const query = req.body.query;
+  const machine = req.body.machine;
   console.log(req.body);
   console.log("Query:", query);
+  console.log("Machine:", machine);
 
   MongoClient.connect(uri, options, function(err, db) {
     if (err)
       throw err;
     else {
-      console.log("Database connected in route '/machine_sites_info'!")
+      console.log("Database connected in route '/info'!")
+
       let dbo = db.db("rpicampusmap");
+
+      // switch database if necessary
+      if (machine)
+        dbo = db.db("forgemill");
 
       dbo.collection("locations").find({'id': query}).toArray()
       .then(function(result) {
@@ -201,6 +209,7 @@ app.route('/info')
   });
 
 });
+
 /* ================================================================================== */
 
 // Handle 404
