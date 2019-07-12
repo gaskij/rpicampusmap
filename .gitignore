@@ -4,3 +4,4 @@ node_modules/
 # Ignore .env file, to be kept locally on machine running the server for security
 .env
 .envTEMPLATE
+RPI Campus Map Project Proposal Summer 19.pdf
