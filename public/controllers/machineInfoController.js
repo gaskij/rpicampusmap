@@ -1,19 +1,20 @@
 app.controller('machineInfoController', function($scope, $http) {
   console.log("machineInfoController activated!");
 
-  const location = getParams();
-  console.log(location);
+  const parameters = getParams();
+  console.log(parameters);
+  const location = parameters.loc;
+  $scope.isMachine = parameters.machine;
 
-  $http.post(`/info?loc=${location.loc}`, {query: location.loc, machine: true})
+  $http.post(`/info?loc=${location}`, {query: location, machine: $scope.isMachine})
   .then(function(httpResponse, err) {
     if (err) throw err;
     console.log(httpResponse.data);
 
-    $scope.id = location.loc;
+    $scope.id = location;
     $scope.name = httpResponse.data[0].properties.name;
     $scope.nick = 'Nicknames: ' + httpResponse.data[0].properties.nick;
     $scope.desc = httpResponse.data[0].properties.description;
-    $scope.isMachine = 1;
     if ($scope.isMachine) {
         $scope.monHours = httpResponse.data[0].room.hours.mon;
         $scope.tuesHours = httpResponse.data[0].room.hours.tues;
