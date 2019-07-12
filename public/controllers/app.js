@@ -9,11 +9,12 @@ let getParams = function() {
     console.log("no queries given");
     return null;
   }
-
-  for (let i = 1; i < queryString.length; i++) {
-    let param = queryString[i].split('=');
+  paramString = queryString[1].split('&');
+  let param;
+  for (let i = 0; i < paramString.length; i++) {
+    param = paramString[i].split('=');
     params[param[0]] = param[1];
   }
-
+  console.log(params);
   return params;
 }
