@@ -23,7 +23,7 @@ Usage: setView([latitude, longitude], zoomlevel)
 */
 
 let mymap = L.map('mapContainer', {
-    center: [42.73131, -73.675218],
+    center: [42.729453, -73.6802],
     zoom: 16,
     layers: []
 })
