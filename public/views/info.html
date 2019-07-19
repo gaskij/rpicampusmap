@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us" ng-app="CampusMap">
+<html lang="en-us" ng-app="CampusMap" ng-controller="infoController">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -7,7 +7,7 @@
     <meta content="RPI Interactive Campus Map" name="description">
     <meta content="Interactive, rpi map, rpi campus map, map, rpi" name="keywords">
 
-    <title>Campus Map - Search Results</title>
+    <title>Info - {{name}}</title>
 
     <link rel="icon" href="/public/images/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="/public/manifest.json">
@@ -22,6 +22,7 @@
     
     <!-- CSS Files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="/public/style/style.css" rel="stylesheet" type="text/css"/>
     <link href="/public/style/locationInfo.css" rel="stylesheet" type="text/css"/>
 
     <!-- Map required Scripts -->
@@ -44,7 +45,7 @@
 
    </head>
 
-   <body ng-controller="infoController">
+   <body>
      <!-- Header -->
      <header id="header">
 
@@ -125,15 +126,18 @@
       </main>
 
       <!-- footer -->
-      <footer class="py-2 mt-5 bg-danger">
-        <div class="row justify-content-center align-items-center">
-          <div class="col-2 text-right">
+      <footer class="container-fluid py-2 bg-danger align-items-center">
+        <div class="row justify-content-center">
+          <!-- <div class="col-2 text-right">
               <a href="https://rpi.edu/" target="_blank">
                   <img id="seal" src="/public/images/seal.png" width=50 height=50 alt="Rensselaer Polytechnic Institute"/>
               </a>
-          </div>
-          <div id="footerText" class="col-6 text-left">
-              RPI Interactive Campus Map -- <a href="https://rcos.io/projects/gaskij/rpicampusmap/profile" target="_blank">An RCOS Project</a> -- 2018 -- <a href="#login">Admin Panel</a>
+          </div> -->
+          <div id="footerText" class="col text-center">
+              RPI Interactive Campus Map --
+              <a href="https://rcos.io/projects/gaskij/rpicampusmap/profile" target="_blank">An RCOS Project</a> --
+              <a href="https://github.com/gaskij/rpicampusmap"><i class="fab fa-github"></i> GitHub</a> --
+              <a href="/admin">Admin Panel</a>
           </div>
         </div>
       </footer>

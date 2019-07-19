@@ -2,11 +2,13 @@
     {
         "type": "Feature",
         "id": "jec_shop",
+        "_id": "jec_shop",
         "properties": {
             "name": "JEC Student Machines Shop",
             "nick": "Processes Shop",
             "description": "Machine Shop located in JEC",
-            "popupContent": "JEC Student Machines Shop"
+            "popupContent": "JEC Student Machines Shop",
+            "type": "machine"
         },
         "geometry": {
            "type": "Point",
@@ -45,11 +47,13 @@
     {
         "type": "Feature",
         "id": "ied_shop",
+        "_id": "ied_shop",
         "properties": {
             "name": "Design Lab/IED Shop",
             "nick": "IED Shop",
             "description": "Machine Shop located in JEC",
-            "popupContent": "Design Lab/IED Shop"
+            "popupContent": "Design Lab/IED Shop",
+            "type": "machine"
         },
         "geometry": {
            "type": "Point",
@@ -85,11 +89,13 @@
     {
         "type": "Feature",
         "id": "forge_shop",
+        "_id": "forge_shop",
         "properties": {
             "name": "Maker Space: The Forge",
             "nick": "The Forge",
             "description": "Maker Space located in",
-            "popupContent": "Design Lab/IED Shop"
+            "popupContent": "Design Lab/IED Shop",
+            "type": "machine"
         },
         "geometry": {
            "type": "Point",
@@ -122,11 +128,13 @@
     {
         "type": "Feature",
         "id": "mill_shop",
+        "_id": "mill_shop",
         "properties": {
             "name": "Manufacturing Innovation Learning Laboratory",
             "nick": "The MILL",
             "description": "Manufacturing/maching shop located in the CII.",
-            "popupContent": "Manufacturing Innovation Learning Laboratory"
+            "popupContent": "Manufacturing Innovation Learning Laboratory",
+            "type": "machine"
         },
         "geometry": {
            "type": "Point",
