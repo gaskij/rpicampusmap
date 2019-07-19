@@ -1,6 +1,6 @@
 {
   "name": "RPI Campus Map",
-  "short_name": "Campus Map",
+  "short_name" : "RPI Map",
   "icons": [{
     "src": "/public/images/pin-128x128.png",
       "sizes": "128x128",
@@ -26,8 +26,11 @@
       "sizes": "512x512",
       "type": "image/png"
     }],
-  "start_url": "/public/views/index.html",
+  "start_url": "https://rpicampusmap.glitch.me/public/views/index.html",
   "display": "standalone",
   "background_color": "#dc3545",
-  "theme_color": "#000000"
+  "theme_color": "#000000",
+  "lang": "English",
+  "orientation": "portrait",
+  "scope": "https://rpicampusmap.glitch.me/public/views/"
 }
