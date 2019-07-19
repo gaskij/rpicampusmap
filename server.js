@@ -34,8 +34,8 @@ MongoClient.connect(uri, options, function(err, db) {
     let dbo = db.db("forgemill");
 
     // Populate Database with locations if need be (ONLY FOR USERS WITH WRITE ACCESS).
-    console.log(locations);
-    // dbo.collection("locations").insertMany(locations.features, {ordered: false})
+    // console.log(locations);
+    // dbo.collection("locations").insertMany(locations, {ordered: false})
     // .then(function(success) {
     //   console.log("Successfully added to database");
     // })
