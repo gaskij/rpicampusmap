@@ -6,7 +6,7 @@ const mongodb = require('mongodb');
 const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
-const locations = require('./public/machine_sites.js');
+const locations = require('./machine_sites.json');
 
 const app = express();
 app.use(express.static(__dirname))
@@ -33,17 +33,17 @@ MongoClient.connect(uri, options, function(err, db) {
     console.log("Database connected in route '/'!");
     let dbo = db.db("forgemill");
 
-    /* Populate Database with locations if need be (ONLY FOR USERS WITH WRITE ACCESS).
-    console.log(locations);
-    dbo.collection("locations").insertMany(locations.features, {ordered: false})
-    .then(function(success) {
-      console.log("Successfully added to database");
-    })
-    .catch(function(err) {
-      console.error("ERROR:", err);
-    });
-    */
-    
+    // Populate Database with locations if need be (ONLY FOR USERS WITH WRITE ACCESS).
+    // console.log(locations);
+    // dbo.collection("locations").insertMany(locations, {ordered: false})
+    // .then(function(success) {
+    //   console.log("Successfully added to database");
+    // })
+    // .catch(function(err) {
+    //   console.error("ERROR:", err);
+    // });
+
+
     // Download initial location data from database before starting server
     dbo.collection('locations').find().toArray()
     .then(function(result) {
@@ -106,18 +106,25 @@ app.route('/index')
   })
 .post(jsonParser, function(req, res) {
   //get the location to highlight
-  let location = req.body.loc;
-  console.log(location);
+  const query = req.body.query;
+  const machine = req.body.machine;
+  console.log(req.body);
+  console.log("Query:", query);
+  console.log("Machine:", machine);
 
-  // Connect to the Mongo database to get information of given location
   MongoClient.connect(uri, options, function(err, db) {
     if (err)
       throw err;
     else {
+      console.log("Database connected in route '/index'!")
+
       let dbo = db.db("rpicampusmap");
 
-      // Find the location in the database with the matching id property
-      dbo.collection("locations").find({'id': location}).toArray()
+      // switch database if necessary
+      if (machine)
+        dbo = db.db("forgemill");
+
+      dbo.collection("locations").find({'id': query}).toArray()
       .then(function(result) {
         console.log("Results:\n", result);
         res.send(result);

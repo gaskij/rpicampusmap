@@ -16,13 +16,13 @@ app.controller('machineInfoController', function($scope, $http) {
     $scope.nick = 'Nicknames: ' + httpResponse.data[0].properties.nick;
     $scope.desc = httpResponse.data[0].properties.description;
     if ($scope.isMachine) {
+        $scope.sunHours = httpResponse.data[0].room.hours.sun;
         $scope.monHours = httpResponse.data[0].room.hours.mon;
         $scope.tuesHours = httpResponse.data[0].room.hours.tues;
         $scope.wedHours = httpResponse.data[0].room.hours.weds;
         $scope.thurHours = httpResponse.data[0].room.hours.thurs;
         $scope.friHours = httpResponse.data[0].room.hours.fri;
         $scope.satHours = httpResponse.data[0].room.hours.sat;
-        $scope.sunHours = httpResponse.data[0].room.hours.sun;
         $scope.info = httpResponse.data[0].room.info;
         $scope.machines = httpResponse.data[0].contents.machines;
         $scope.materials = httpResponse.data[0].contents.materials;
