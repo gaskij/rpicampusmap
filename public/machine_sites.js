@@ -40,7 +40,7 @@ var locations_shops = {
                     "Snap-on Sandblaster", "General Machining and Fabrication Equipment",
                     "Metal and Plastic Forming and Shearing Equipment",
                     "Steel and Plastic Welding Equipment" ],
-                "materials": "",
+                "available_materials": "",
                 "equipment": ""
             }
         },
@@ -81,7 +81,7 @@ var locations_shops = {
                     "Haas Super VF 2", "Haas Tool Room Mill", "Mitutoyo Crysta-Plus M574 CMM",
                     "Paint Booth", "General Machining and Fabrication Equipment",
                     "Electronic Scopes and Meters"],
-                "materials": "",
+                "available_materials": "",
                 "equipment": ""
             }
         },
@@ -119,7 +119,7 @@ var locations_shops = {
                     "Laser Cutter","Makerbot Mini","Makerbot Z18’s","Prusa i3’s",
                     "Sewing Machine","Taz 5","Taz Mini","Taz MOAR-Struder","Taz Quadfusion",
                     "Vinyl Cutter"],
-                "materials": ["PLA", "ABS", "PETG"],
+                "available_materials": ["PLA", "ABS", "PETG"],
                 "equipment": ""
             }
         },
@@ -181,7 +181,7 @@ var locations_shops = {
                     "Branson Ultrasonic Welder 2000 D",
                     "Branson Ultrasonic Welder 2000 DT",
                     "General Machining Equipment"],
-                "materials": [],
+                "available_materials": [],
                 "equipment": ""
             }
         }

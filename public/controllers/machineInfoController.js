@@ -25,7 +25,7 @@ app.controller('machineInfoController', function($scope, $http) {
         $scope.satHours = httpResponse.data[0].room.hours.sat;
         $scope.info = httpResponse.data[0].room.info;
         $scope.machines = httpResponse.data[0].contents.machines;
-        $scope.materials = httpResponse.data[0].contents.materials;
+        $scope.materials = httpResponse.data[0].contents.available_materials;
         $scope.equipment = httpResponse.data[0].contents.equipment;
     }
   })

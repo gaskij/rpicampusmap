@@ -146,14 +146,14 @@
                 <li ng-repeat="x in machines track by $index">
                     {{x}}
                 </li>
-
+                <br>
                 <p>Materials Inventory</p>
-                <li ng-repeat="x in materials">
+                <li ng-repeat="x in materials track by $index">
                     {{x}}
                 </li>
-
+                <br>
                 <p>Available Equipment</p>
-                <li ng-repeat="x in equipment">
+                <li ng-repeat="x in equipment track by $index">
                     {{x}}
                 </li>
             </div>
