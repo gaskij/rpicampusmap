@@ -7,6 +7,7 @@ var locations_shops = {
             "properties": {
                 "name": "JEC Student Machines Shop",
                 "nick": "Processes Shop",
+                "thumbnail":"https://www.rpiviews.com/images/rpi/card00188_fr.jpg",
                 "description": "Machine Shop located in JEC",
                 "popupContent": "JEC Student Machines Shop",
                 "type": "machine"
@@ -50,13 +51,14 @@ var locations_shops = {
             "properties": {
                 "name": "Design Lab/IED Shop",
                 "nick": "IED Shop",
+                "thumbnail": "",
                 "description": "Machine Shop located in JEC",
                 "popupContent": "Design Lab/IED Shop",
                 "type": "machine"
             },
             "geometry": {
                "type": "Point",
-               "coordinates": [-73.6804, 42.72957]
+               "coordinates": [-73.68053,42.729704]
            },
             "room": {
                 "hours": {
@@ -91,6 +93,7 @@ var locations_shops = {
             "properties": {
                 "name": "Maker Space: The Forge",
                 "nick": "The Forge",
+                "thumbnail": "http://manufacturing.eng.rpi.edu/sites/default/files/facilities/Forge.jpg",
                 "description": "Maker Space located in",
                 "popupContent": "Design Lab/IED Shop",
                 "type": "machine"
@@ -129,6 +132,7 @@ var locations_shops = {
             "properties": {
                 "name": "Manufacturing Innovation Learning Laboratory",
                 "nick": "The MILL",
+                "thumbnail":"",
                 "description": "Manufacturing/maching shop located in the CII.",
                 "popupContent": "Manufacturing Innovation Learning Laboratory",
                 "type": "machine"
