@@ -38,10 +38,9 @@ var locations_shops = {
                 "machines": ["Haas TL 1 CNC Lathe", "Acer 3-Axis CNC Milling Machine",
                     "Laguna Swift 4’x4’ CNC Router", "Thunder Mars90 100w laser Cutter",
                     "Snap-on Sandblaster", "General Machining and Fabrication Equipment",
-                    "General Machining and Fabrication Equipment",
                     "Metal and Plastic Forming and Shearing Equipment",
                     "Steel and Plastic Welding Equipment" ],
-                "available_materials": "",
+                "materials": "",
                 "equipment": ""
             }
         },
@@ -82,7 +81,7 @@ var locations_shops = {
                     "Haas Super VF 2", "Haas Tool Room Mill", "Mitutoyo Crysta-Plus M574 CMM",
                     "Paint Booth", "General Machining and Fabrication Equipment",
                     "Electronic Scopes and Meters"],
-                "available_materials": "",
+                "materials": "",
                 "equipment": ""
             }
         },
@@ -120,7 +119,7 @@ var locations_shops = {
                     "Laser Cutter","Makerbot Mini","Makerbot Z18’s","Prusa i3’s",
                     "Sewing Machine","Taz 5","Taz Mini","Taz MOAR-Struder","Taz Quadfusion",
                     "Vinyl Cutter"],
-                "available_materials": ["PLA", "ABS", "PETG"],
+                "materials": ["PLA", "ABS", "PETG"],
                 "equipment": ""
             }
         },
@@ -182,7 +181,7 @@ var locations_shops = {
                     "Branson Ultrasonic Welder 2000 D",
                     "Branson Ultrasonic Welder 2000 DT",
                     "General Machining Equipment"],
-                "available_materials": [],
+                "materials": [],
                 "equipment": ""
             }
         }
