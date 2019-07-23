@@ -121,7 +121,7 @@ app.route('/index')
       let dbo = db.db("rpicampusmap");
 
       // switch database if necessary
-      if (machine)
+      if (machine == "true")
         dbo = db.db("forgemill");
 
       dbo.collection("locations").find({'id': query}).toArray()
