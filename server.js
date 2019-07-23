@@ -155,23 +155,42 @@ app.route('/search')
       throw err;
     else {
       console.log("Database connected in route '/search'!")
-      let dbo = db.db("rpicampusmap");
+      let db1 = db.db("rpicampusmap");
+      let db2 = db.db("forgemill");
+      let results = [];
 
       // Search the database for locations matching the given regular expression
       // Search by name and by nickname for any match of the substring
-      dbo.collection("locations").find({'$or': [
+      db1.collection("locations").find({'$or': [
         {'properties.name': {'$regex': query, '$options': 'i'} },
         {'properties.nick': {'$regex': query, '$options': 'i'} }
         // add here to look through machines
       ]}).toArray()
-      .then(function(result) {
-        console.log("Results:\n", result);
-        res.send(result);
+      .then(function(result1) {
+        console.log("Result1:\n", result1);
+        results = results.concat(result1);
       })
       .catch(function(err) {
         if (err)
           console.error("ERROR:", err);
       });
+
+      db2.collection("locations").find({'$or': [
+        {'properties.name': {'$regex': query, '$options': 'i'} },
+        {'properties.nick': {'$regex': query, '$options': 'i'} },
+        {'contents.machines': {'$regex': query, '$options': 'i'} }
+      ]}).toArray()
+      .then(function(result2) {
+        console.log("Result2:\n", result2);
+        results = results.concat(result2);
+        console.log("Results:\n", results);
+        res.send(results);
+      })
+      .catch(function(err) {
+        if (err)
+          console.error("ERROR:", err);
+      });
+
       db.close();
     }
   });
