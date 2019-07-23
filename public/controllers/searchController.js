@@ -14,6 +14,8 @@ app.controller('searchController', function($scope, $http) {
   $scope.search($scope.params.query).then(function(httpResponse, err) {
     if (err) console.error(err);
     $scope.buildings = httpResponse.data;
-    // console.log($scope.buildings);
+    console.log($scope.buildings);
   });
 });
+
+// fix search reuslts buildings ng-repeat
