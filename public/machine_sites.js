@@ -1,0 +1,201 @@
+var locations_shops = {
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "id": "jec_shop",
+            "properties": {
+                "name": "JEC Student Machines Shop",
+                "nick": "Processes Shop",
+                "thumbnail":"https://www.rpiviews.com/images/rpi/card00188_fr.jpg",
+                "description": "Machine Shop located in JEC",
+                "popupContent": "JEC Student Machines Shop",
+                "type": "machine"
+            },
+            "geometry": {
+               "type": "Point",
+               "coordinates": [-73.680042, 42.729716]
+           },
+            "room": {
+                "hours": {
+                    "mon":"9 a.m.-noon and 2-8 p.m.",
+                    "tues":"9 a.m.—noon and 1-7 p.m. ",
+                    "weds": "10 a.m.—1 p.m.  and 2-8 p.m.",
+                    "thurs":"9 a.m.—noon and 2-8 p.m.",
+                    "fri":"8-11 a.m. and noon-3 p.m.",
+                    "sat":"11 a.m. -3 p.m.,",
+                    "sun":"2-6 p.m."
+                },
+                "info": "All students who intend to use the machines in this room\n\
+                must pass the SOE Safety Test Rensselaer Manufacturing and Prototyping\n\
+                Laboratories-Safety Orientation listed on RPI HR Skillport Site. \n\
+                They must show proof of taking and passing the class to shop supervisors.\n\
+                Afterwards, all students are welcome to use the machines in the JEC Student Machines Shop.\n\
+                No prior knowledge of machining is required. However, it is recommended\n\
+                that students take Engineering Processes (ENGR 1300).",
+                "location": "Jonsson Engineering Center (JEC) 1010"
+            },
+            "contents": {
+                "machines": ["Haas TL 1 CNC Lathe", "Acer 3-Axis CNC Milling Machine",
+                    "Laguna Swift 4’x4’ CNC Router", "Thunder Mars90 100w laser Cutter",
+                    "Snap-on Sandblaster", "General Machining and Fabrication Equipment",
+                    "Metal and Plastic Forming and Shearing Equipment",
+                    "Steel and Plastic Welding Equipment" ],
+                "available_materials": "",
+                "equipment": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "ied_shop",
+            "properties": {
+                "name": "Design Lab/IED Shop",
+                "nick": "IED Shop",
+                "thumbnail": "",
+                "description": "Machine Shop located in JEC",
+                "popupContent": "Design Lab/IED Shop",
+                "type": "machine"
+            },
+            "geometry": {
+               "type": "Point",
+               "coordinates": [-73.68053,42.729704]
+           },
+            "room": {
+                "hours": {
+                    "mon":"9 am - 4 pm and 5-9 pm",
+                    "tues":"9 am - 4 pm and 5-9 pm",
+                    "weds":"9 am - 4 pm and 5-9 pm",
+                    "thurs":"9 am - 4 pm and 5-9 pm",
+                    "fri":"9 am - 4 pm and 5-7 pm",
+                    "sat":"",
+                    "sun":""
+                },
+                "info": "All students who intend to use the machines in this room\n\
+                must pass the SOE Safety Test Rensselaer Manufacturing and Prototyping\n\
+                Laboratories-Safety Orientation listed on RPI HR Skillport Site. \n\
+                They must show proof of taking and passing the class to shop supervisors.\n\
+                Afterwards, usage of machines is determined on case-by-case basis.\n\
+                Students are always welcome to see the shop supervisor to discuss their projects.",
+                "location": "Jonsson Engineering Center (JEC) Room 2332"
+            },
+            "contents": {
+                "machines": ["Haas CNC Control Simulators", "Haas Mini Mill", "Haas SL 10",
+                    "Haas Super VF 2", "Haas Tool Room Mill", "Mitutoyo Crysta-Plus M574 CMM",
+                    "Paint Booth", "General Machining and Fabrication Equipment",
+                    "Electronic Scopes and Meters"],
+                "available_materials": "",
+                "equipment": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "forge_shop",
+            "properties": {
+                "name": "Maker Space: The Forge",
+                "nick": "The Forge",
+                "thumbnail": "http://manufacturing.eng.rpi.edu/sites/default/files/facilities/Forge.jpg",
+                "description": "Maker Space located in",
+                "popupContent": "Design Lab/IED Shop",
+                "type": "machine"
+            },
+            "geometry": {
+               "type": "Point",
+               "coordinates": [-73.678974, 42.729574]
+           },
+            "room": {
+                "hours": {
+                    "mon":"",
+                    "tues":"",
+                    "weds": "",
+                    "thurs":"",
+                    "fri":"",
+                    "sat":"",
+                    "sun":""
+                },
+                "info": "The Forge charges $10 per semester for students to gain access to\n\
+                all of the machines. Afterwards, students are charged $0.05/gram of filament\n\
+                for the 3D Printer and $0.50 per hour of light time for the laser cutter.",
+                "location": "George M. Low Center for Industrial Innovation (CII) Room 2037"
+            },
+            "contents": {
+                "machines": ["3D Scanners","Form 1+ 3D Printer","gCreate 3D Printer",
+                    "Laser Cutter","Makerbot Mini","Makerbot Z18’s","Prusa i3’s",
+                    "Sewing Machine","Taz 5","Taz Mini","Taz MOAR-Struder","Taz Quadfusion",
+                    "Vinyl Cutter"],
+                "available_materials": ["PLA", "ABS", "PETG"],
+                "equipment": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "mill_shop",
+            "properties": {
+                "name": "Manufacturing Innovation Learning Laboratory",
+                "nick": "The MILL",
+                "thumbnail":"",
+                "description": "Manufacturing/maching shop located in the CII.",
+                "popupContent": "Manufacturing Innovation Learning Laboratory",
+                "type": "machine"
+            },
+            "geometry": {
+               "type": "Point",
+               "coordinates": [-73.679208, 42.72975]
+           },
+            "room": {
+                "hours": {
+                    "mon":"",
+                    "tues":"",
+                    "weds": "",
+                    "thurs":"",
+                    "fri":"",
+                    "sat":"",
+                    "sun":""
+                },
+                "info": "All students who intend to use the machines in this room\n\
+                must pass the SOE Safety Test Rensselaer Manufacturing and Prototyping\n\
+                Laboratories-Safety Orientation listed on RPI HR Skillport Site. \n\
+                They must show proof of taking and passing the class to shop supervisors.\n\
+                Afterwards, usage of machines is determined on case-by-case basis.\n\
+                Students are always welcome to see the shop supervisor to discuss their projects.",
+                "location": "George M. Low Center for Industrial Innovation (CII) Room 1027"
+            },
+            "contents": {
+                "machines": ["Haas VF 1 – CNC Milling Machine",
+                    "Haas OM-2 CNC Milling Machine",
+                    "Moore Nanotechnology Systems 350 UPL Lathe",
+                    "Hurricane Laser Cutter Category 4 Charley 80W",
+                    "Adept Cobra 800 SCARA Robot",
+                    "SONY Conveyor System",
+                    "Staubli RX 90 Robot",
+                    "Fanuc LR Mate, with Vision, Robot Educational Training System",
+                    "Stratasys Dimension FDM Machine",
+                    "Stratasys UPrint FDM Machine",
+                    "Z-Corporation Z310 3D Printer",
+                    "B-9 Creator Stereolithography Printer",
+                    "Phenix Direct Metal Selective Laser Sintering 3D Printer",
+                    "Brown and Sharpe Gage 2000 CMM",
+                    "Faro Platinum Inspection Arm",
+                    "Arburg Allrounder 270c Injection Molder",
+                    "Arburg Allrounder 221k Injection Molder",
+                    "Battenfeld Injection Molder",
+                    "Formech 660 Vacuum Former",
+                    "Flow Mach2 Abrasive Water-Jet Cutter",
+                    "Sonitek S840 Ultrasonic Welder",
+                    "Sonitek TS500 Thermal Press",
+                    "Branson Ultrasonic Welder 2000 D",
+                    "Branson Ultrasonic Welder 2000 DT",
+                    "General Machining Equipment"],
+                "available_materials": [],
+                "equipment": ""
+            }
+        }
+    ]
+};
+
+/*
+Locations:
+JEC Student Machines Shop
+Design Lab/IED Shop
+Maker Space: The Forge
+Manufacturing Innovation Learning Laboratory
+*/

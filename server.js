@@ -6,6 +6,7 @@ const mongodb = require('mongodb');
 const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
+const locations = require('./machine_sites.json');
 
 const app = express();
 app.use(express.static(__dirname))
@@ -30,18 +31,18 @@ MongoClient.connect(uri, options, function(err, db) {
   }
   else {
     console.log("Database connected in route '/'!");
-    let dbo = db.db("rpicampusmap");
+    let dbo = db.db("forgemill");
 
-    /* Populate Database with locations if need be (ONLY FOR USERS WITH WRITE ACCESS).
-    console.log(locations);
-    dbo.collection("locations").insertMany(locations, {ordered: false})
-    .then(function(success) {
-      console.log("Successfully added to database");
-    })
-    .catch(function(err) {
-      console.error("ERROR:", err);
-    });
-    */
+    // Populate Database with locations if need be (ONLY FOR USERS WITH WRITE ACCESS).
+    // console.log(locations);
+    // dbo.collection("locations").insertMany(locations, {ordered: false})
+    // .then(function(success) {
+    //   console.log("Successfully added to database");
+    // })
+    // .catch(function(err) {
+    //   console.error("ERROR:", err);
+    // });
+
 
     // Download initial location data from database before starting server
     dbo.collection('locations').find().toArray()
@@ -53,12 +54,13 @@ MongoClient.connect(uri, options, function(err, db) {
       // Start server after initial database connection
       app.listen(port);
       console.log('Listening on port ' + port);
+      db.close();
     })
     .catch(function(err) {
       if (err) throw err;
     });
 
-    db.close();
+
   }
 });
 /* =================================================================================== */
@@ -104,18 +106,25 @@ app.route('/index')
   })
 .post(jsonParser, function(req, res) {
   //get the location to highlight
-  let location = req.body.loc;
-  console.log(location);
+  const query = req.body.query;
+  const machine = req.body.machine;
+  console.log(req.body);
+  console.log("Query:", query);
+  console.log("Machine:", machine);
 
-  // Connect to the Mongo database to get information of given location
   MongoClient.connect(uri, options, function(err, db) {
     if (err)
       throw err;
     else {
+      console.log("Database connected in route '/index'!")
+
       let dbo = db.db("rpicampusmap");
 
-      // Find the location in the database with the matching id property
-      dbo.collection("locations").find({'id': location}).toArray()
+      // switch database if necessary
+      if (machine == "true")
+        dbo = db.db("forgemill");
+
+      dbo.collection("locations").find({'id': query}).toArray()
       .then(function(result) {
         console.log("Results:\n", result);
         res.send(result);
@@ -146,22 +155,42 @@ app.route('/search')
       throw err;
     else {
       console.log("Database connected in route '/search'!")
-      let dbo = db.db("rpicampusmap");
+      let db1 = db.db("rpicampusmap");
+      let db2 = db.db("forgemill");
+      let results = [];
 
       // Search the database for locations matching the given regular expression
       // Search by name and by nickname for any match of the substring
-      dbo.collection("locations").find({'$or': [
+      db1.collection("locations").find({'$or': [
         {'properties.name': {'$regex': query, '$options': 'i'} },
         {'properties.nick': {'$regex': query, '$options': 'i'} }
+        // add here to look through machines
       ]}).toArray()
-      .then(function(result) {
-        console.log("Results:\n", result);
-        res.send(result);
+      .then(function(result1) {
+        console.log("Result1:\n", result1);
+        results = results.concat(result1);
       })
       .catch(function(err) {
         if (err)
           console.error("ERROR:", err);
       });
+
+      db2.collection("locations").find({'$or': [
+        {'properties.name': {'$regex': query, '$options': 'i'} },
+        {'properties.nick': {'$regex': query, '$options': 'i'} },
+        {'contents.machines': {'$regex': query, '$options': 'i'} }
+      ]}).toArray()
+      .then(function(result2) {
+        console.log("Result2:\n", result2);
+        results = results.concat(result2);
+        console.log("Results:\n", results);
+        res.send(results);
+      })
+      .catch(function(err) {
+        if (err)
+          console.error("ERROR:", err);
+      });
+
       db.close();
     }
   });
@@ -171,19 +200,29 @@ app.route('/search')
 /* ===================================== INFO ======================================== */
 app.route('/info')
 .get(function (req, res) {
-  res.sendFile(__dirname + '/public/views/info.html')
+  res.sendFile(__dirname + '/public/views/machine_sites_info.html')
 })
 .post(jsonParser, function(req, res) {
   const query = req.body.query;
+  const machine = req.body.machine;
   console.log(req.body);
   console.log("Query:", query);
+  console.log("Machine:", machine);
 
   MongoClient.connect(uri, options, function(err, db) {
     if (err)
       throw err;
     else {
       console.log("Database connected in route '/info'!")
+
       let dbo = db.db("rpicampusmap");
+
+      // switch database if necessary
+
+      if (machine == "true"){
+          dbo = db.db("forgemill");
+      }
+
 
       dbo.collection("locations").find({'id': query}).toArray()
       .then(function(result) {
@@ -199,6 +238,7 @@ app.route('/info')
   });
 
 });
+
 /* ================================================================================== */
 
 // Handle 404
