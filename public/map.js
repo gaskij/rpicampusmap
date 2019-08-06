@@ -144,9 +144,9 @@ mymap.on('click', onMapClick);
  * @param id The id of the given location
  */
 const getCoords = function(id) {
-    for (let i=0; i < locations['features'].length; i++) {
-        if (locations['features'][i]['id'] == id) {
-            point = locations['features'][i]['geometry']['coordinates'];
+    for (let i=0; i < campus_locations['features'].length; i++) {
+        if (campus_locations['features'][i]['id'] == id) {
+            point = campus_locations['features'][i]['geometry']['coordinates'];
             return point;
         }
     }
@@ -186,8 +186,8 @@ const onEachFeature = function(feature, layer) {
 }
 
 //Array of circleMarkers
-let locations_arr = [];
-let locations_shops_arr = [];
+let campus_arr = [];
+let machines_arr = [];
 
 /**
   * Style and add the campus points to the map
@@ -210,8 +210,8 @@ L.geoJSON(campus_locations, {
             opacity: 1,
             fillOpacity: 0.8
         }
-        locations_arr.push(L.circleMarker(latlng,campus_circle_settings));
-        return locations_arr[locations_arr.length-1];
+        campus_arr.push(L.circleMarker(latlng,campus_circle_settings));
+        return campus_arr[campus_arr.length-1];
     },
 });
 
@@ -236,8 +236,8 @@ L.geoJSON(machine_locations, {
             opacity: 1,
             fillOpacity: 0.8
         }
-        locations_shops_arr.push(L.circleMarker(latlng,machine_circle_settings));
-        return locations_shops_arr[locations_shops_arr.length-1];
+        machines_arr.push(L.circleMarker(latlng,machine_circle_settings));
+        return machines_arr[machines_arr.length-1];
     },
 });
 
@@ -246,8 +246,8 @@ L.geoJSON(machine_locations, {
 *  These layer groups will be added to the map, and will be represented by
 *  the map keys. The maps keys filter which dots are shown on the map.
 */
-let campus_locations_layer = L.layerGroup(locations_arr);
-let machine_locations_layer = L.layerGroup(locations_shops_arr);
+let campus_locations_layer = L.layerGroup(campus_arr);
+let machine_locations_layer = L.layerGroup(machines_arr);
 
 let overlayMaps = {
     "Campus Locations": campus_locations_layer,
