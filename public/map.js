@@ -193,7 +193,7 @@ let locations_shops_arr = [];
   * Style and add the campus points to the map
 */
 
-L.geoJSON(locations, {
+L.geoJSON(campus_locations, {
     style: function (feature) {
         return feature.properties && feature.properties.style;
     },
@@ -218,7 +218,7 @@ L.geoJSON(locations, {
 /**
   * Style and add the machine site points to the map
 */
-L.geoJSON(locations_shops, {
+L.geoJSON(machine_locations, {
     style: function (feature) {
         return feature.properties && feature.properties.style;
     },
