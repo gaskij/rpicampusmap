@@ -22,15 +22,15 @@ const networkFirstPaths = [
   "/public/infoPreview.js",
   "/public/views/info.html",
   "/public/views/machine_sites_info.html",
-  "/public/geolocations.js",
-  "/public/machine_sites.js"
+  "/public/campus_locations.js",
+  "/public/machine_locations.js"
   /* Add an array of regex of paths that should go network first */
   // Example: /\/api\/.*/
 ];
 
 const avoidCachingPaths = [
   "/server.js",
-  
+
   /* Add an array of regex of paths that shouldn't be cached */
   // Example: /\/api\/.*/
 ];
