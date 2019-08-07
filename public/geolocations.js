@@ -15,6 +15,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "amos",
+            "id": "amos",
             "properties": {
                 "name": "Amos Eaton Hall",
                 "nick": "JEC",
@@ -30,6 +31,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "carn",
+            "id": "carn",
             "properties": {
                 "name": "Carnegie Building",
                 "nick": "CARNEG",
@@ -45,6 +47,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "cbis",
+            "id": "cbis",
             "properties": {
                 "name": "Center for Biotechnology and Interdisciplinary Studies",
                 "nick": "CBIS",
@@ -60,6 +63,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "cogs",
+            "id": "cogs",
             "properties": {
                 "name": "Cogswell Laboratory",
                 "nick": "Cogswell",
@@ -75,6 +79,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "dcc",
+            "id": "dcc",
             "properties": {
                 "name": "Darrin Communications Center",
                 "nick": "DCC, DARRIN",
@@ -91,6 +96,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "empire",
+            "id": "empire",
             "properties": {
                 "name": "Empire State Hall",
                 "nick": "Empire",
@@ -106,6 +112,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "empac",
+            "id": "empac",
             "properties": {
                 "name": "Experimental Media and Performing Arts Center at Rensselaer",
                 "nick": "EMPAC",
@@ -121,6 +128,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "lib",
+            "id": "lib",
             "properties": {
                 "name": "Folsom Library",
                 "nick": "FOLSOM, LIB",
@@ -137,6 +145,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "greene",
+            "id": "greene",
             "properties": {
                 "name": "Greene Building",
                 "nick": "Greene",
@@ -152,6 +161,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "jec",
+            "id": "jec",
             "properties": {
                 "name": "Jonsson Engineering Center",
                 "nick": "JEC",
@@ -167,6 +177,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "jrowl",
+            "id": "jrowl",
             "properties": {
                 "name": "Jonsson Rowland Science Center",
                 "nick": "J-ROWL, JROWL",
@@ -182,6 +193,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "lally",
+            "id": "lally",
             "properties": {
                 "name": "Lally Hall",
                 "nick": "LALLY",
@@ -197,6 +209,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "linac",
+            "id": "linac",
             "properties": {
                 "name": "LINAC Facility (Gaerttner Laboratory)",
                 "nick": "LINAC",
@@ -212,6 +225,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "cii",
+            "id": "cii",
             "properties": {
                 "name": "Low Center for Industrial Innovation",
                 "nick": "LOW, CII",
@@ -228,6 +242,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "mrc",
+            "id": "mrc",
             "properties": {
                 "name": "Materials Research Center",
                 "nick": "MRC",
@@ -243,6 +258,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "pitt",
+            "id": "pitt",
             "properties": {
                 "name": "Pittsburgh Building",
                 "nick": "PITT",
@@ -258,6 +274,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "rick",
+            "id": "rick",
             "properties": {
                 "name": "Ricketts Building",
                 "nick": "Ricketts, RIC",
@@ -273,6 +290,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "sage",
+            "id": "sage",
             "properties": {
                 "name": "Russell Sage Laboratory",
                 "nick": "SAGE, RIC",
@@ -289,6 +307,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "walk",
+            "id": "walk",
             "properties": {
                 "name": "Walker Laboratory",
                 "nick": "WALKER",
@@ -304,6 +323,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "west",
+            "id": "west",
             "properties": {
                 "name": "West Hall",
                 "nick": "WEST",
@@ -319,6 +339,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "winslow",
+            "id": "winslow",
             "properties": {
                 "name": "Winslow Building",
                 "nick": "Winslow",
@@ -334,6 +355,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "87",
+            "id": "87",
             "properties": {
                 "name": "87 Gymnasium",
                 "nick": "87",
@@ -349,6 +371,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "acad",
+            "id": "acad",
             "properties": {
                 "name": "Academy Hall",
                 "nick": "ACADMY",
@@ -365,6 +388,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "asrc",
+            "id": "asrc",
             "properties": {
                 "name": "Alumni Sports & Recreation Center",
                 "nick": "ASRC",
@@ -380,6 +404,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "anderson",
+            "id": "anderson",
             "properties": {
                 "name": "Anderson Field",
                 "nick": "Rugby Field",
@@ -395,6 +420,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "chapel",
+            "id": "chapel",
             "properties": {
                 "name": "Chapel + Cultural Center",
                 "nick": "Chapel",
@@ -410,6 +436,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "commons",
+            "id": "commons",
             "properties": {
                 "name": "Commons Dining Hall",
                 "nick": "Commons",
@@ -425,6 +452,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "ecav",
+            "id": "ecav",
             "properties": {
                 "name": "East Campus Athletic Village Arena",
                 "nick": "ECAV",
@@ -440,6 +468,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "ecavstad",
+            "id": "ecavstad",
             "properties": {
                 "name": "East Campus Athletic Village Stadium",
                 "nick": "ECAV Stadium",
@@ -455,6 +484,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "houston",
+            "id": "houston",
             "properties": {
                 "name": "Houston Field House",
                 "nick": "field house",
@@ -470,6 +500,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "mueller",
+            "id": "mueller",
             "properties": {
                 "name": "Mueller Center",
                 "nick": "Mueller",
@@ -485,6 +516,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "play",
+            "id": "play",
             "properties": {
                 "name": "Rensselaer Playhouse",
                 "nick": "Playhouse",
@@ -500,6 +532,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "radio",
+            "id": "radio",
             "properties": {
                 "name": "Radio Club W2SZ",
                 "nick": "Radio",
@@ -515,6 +548,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "union",
+            "id": "union",
             "properties": {
                 "name": "Rensselaer Student Union",
                 "nick": "Union",
@@ -531,6 +565,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "pool",
+            "id": "pool",
             "properties": {
                 "name": "Robison Swimming Pool",
                 "nick": "Pool",
@@ -546,6 +581,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "sagedin",
+            "id": "sagedin",
             "properties": {
                 "name": "Russell Sage Dining Hall",
                 "nick": "RSDH, Sage",
@@ -562,6 +598,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "barton",
+            "id": "barton",
             "properties": {
                 "name": "Barton Hall",
                 "nick": "Barton",
@@ -577,6 +614,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "blitman",
+            "id": "blitman",
             "properties": {
                 "name": "Blitman Commons",
                 "nick": "blitman",
@@ -592,6 +630,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "bray",
+            "id": "bray",
             "properties": {
                 "name": "Bray Hall",
                 "nick": "Bray, Freshman Five, Freshman Hill",
@@ -607,6 +646,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "bryck",
+            "id": "bryck",
             "properties": {
                 "name": "Bryckwyck",
                 "nick": "Bryck",
@@ -622,6 +662,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "barh",
+            "id": "barh",
             "properties": {
                 "name": "Burdett Avenue Residence Hall",
                 "nick": "BARH, BAR-H",
@@ -637,6 +678,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "colonie",
+            "id": "colonie",
             "properties": {
                 "name": "Colonie Apartments",
                 "nick": "Colonie",
@@ -652,6 +694,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "hall",
+            "id": "hall",
             "properties": {
                 "name": "Hall Hall",
                 "nick": "Hall Hall",
@@ -667,6 +710,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "nason",
+            "id": "nason",
             "properties": {
                 "name": "Nason Hall",
                 "nick": "Nason",
@@ -682,8 +726,9 @@ var locations = {
         {
             "type": "Feature",
             "_id": "north",
+            "id": "north",
             "properties": {
-                "name": "North Halls",
+                "name": "North Hall",
                 "nick": "North",
                 "category": "Student Housing",
                 "description": "Residence Hall",
@@ -691,12 +736,13 @@ var locations = {
             },
             "geometry": {
                 "type": "Point",
-                "coordinates": [-73.680525, 42.731029]
+                "coordinates": [-73.679844, 42.731357]
             }
         },
         {
             "type": "Feature",
             "_id": "nugent",
+            "id": "nugent",
             "properties": {
                 "name": "Nugent Hall",
                 "nick": "Nugent",
@@ -712,6 +758,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "poly",
+            "id": "poly",
             "properties": {
                 "name": "Polytechnic Residence Commons",
                 "nick": "Poly",
@@ -727,6 +774,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "quad",
+            "id": "quad",
             "properties": {
                 "name": "Quadrangle Complex",
                 "nick": "Quad",
@@ -742,6 +790,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "rahpsa",
+            "id": "rahpsa",
             "properties": {
                 "name": "Rensselaer Apartment Housing Project A",
                 "nick": "RAHPS A, RAHP",
@@ -757,6 +806,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "rahpsb",
+            "id": "rahpsb",
             "properties": {
                 "name": "Rensselaer Apartment Housing Project B",
                 "nick": "RAHPS B, RAHP",
@@ -772,6 +822,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "rousseau",
+            "id": "rousseau",
             "properties": {
                 "name": "Rousseau Apartments",
                 "nick": "Rousseau, Stack, Stacwyck",
@@ -787,6 +838,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "sharp",
+            "id": "sharp",
             "properties": {
                 "name": "Sharp Hall",
                 "nick": "Sharp",
@@ -802,6 +854,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "stack",
+            "id": "stack",
             "properties": {
                 "name": "Stacwyck Apartments",
                 "nick": "Staccc, Stack",
@@ -817,6 +870,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "warren",
+            "id": "warren",
             "properties": {
                 "name": "Warren Hall",
                 "nick": "Warren",
@@ -832,6 +886,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "williams",
+            "id": "williams",
             "properties": {
                 "name": "Williams Apartments",
                 "nick": "Williams, Stack",
@@ -847,6 +902,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "exops",
+            "id": "exops",
             "properties": {
                 "name": "2021 15th Street",
                 "nick": "Government & Community Relations, Media Relations",
@@ -862,6 +918,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "parking",
+            "id": "parking",
             "properties": {
                 "name": "2144 Burdett Avenue",
                 "nick": "Parking Building",
@@ -877,6 +934,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "419th",
+            "id": "419th",
             "properties": {
                 "name": "41 Ninth Street",
                 "nick": "41 Ninth Street",
@@ -892,6 +950,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "admissions",
+            "id": "admissions",
             "properties": {
                 "name": "Admissions Building",
                 "nick": "Admissions",
@@ -907,6 +966,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "alumni",
+            "id": "alumni",
             "properties": {
                 "name": "Heffner Alumni House",
                 "nick": "Heffner Alumni House",
@@ -922,6 +982,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "blaw",
+            "id": "blaw",
             "properties": {
                 "name": "Blaw Knox 1 & 2",
                 "nick": "Blaw",
@@ -937,6 +998,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "alumni",
+            "id": "alumni",
             "properties": {
                 "name": "Heffner Alumni House",
                 "nick": "Heffner Alumni House",
@@ -952,6 +1014,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "boiler11",
+            "id": "boiler11",
             "properties": {
                 "name": "Boiler House, 11th Street",
                 "nick": "Boiler House",
@@ -961,12 +1024,13 @@ var locations = {
             },
             "geometry": {
                 "type": "Point",
-                "coordinates": [-73.681052, 42.732793]
+                "coordinates": [-73.680229, 42.73268]
             }
         },
         {
             "type": "Feature",
             "_id": "boilersage",
+            "id": "boilersage",
             "properties": {
                 "name": "Boiler House, Sage Avenue",
                 "nick": "Boiler House",
@@ -982,6 +1046,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "grad",
+            "id": "grad",
             "properties": {
                 "name": "Graduate Education",
                 "nick": "Graduate Education",
@@ -997,6 +1062,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "grounds",
+            "id": "grounds",
             "properties": {
                 "name": "Greenhouses and Grounds Barn",
                 "nick": "Greenhouses and Grounds Barn",
@@ -1012,6 +1078,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "hbuild",
+            "id": "hbuild",
             "properties": {
                 "name": "H Building",
                 "nick": "H Building",
@@ -1027,6 +1094,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "jbuild",
+            "id": "jbuild",
             "properties": {
                 "name": "J Building",
                 "nick": "J Building",
@@ -1042,6 +1110,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "patroon",
+            "id": "patroon",
             "properties": {
                 "name": "Patroon Manor",
                 "nick": "Patroon Manor",
@@ -1057,6 +1126,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "pubsafe",
+            "id": "pubsafe",
             "properties": {
                 "name": "Public Safety",
                 "nick": "pubsafe",
@@ -1071,22 +1141,8 @@ var locations = {
         },
         {
             "type": "Feature",
-            "_id": "sll",
-            "properties": {
-                "name": "Student Living and Learning Office",
-                "nick": "SLL",
-                "category": "Operations & Administration",
-                "description": "SLL Office, home of the famous Randi Mogul",
-                "popupContent": "Student Living & Learning Office"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [-73.674611, 42.728278]
-            }
-        },
-        {
-            "type": "Feature",
             "_id": "service",
+            "id": "service",
             "properties": {
                 "name": "Service Building",
                 "nick": "Service",
@@ -1102,6 +1158,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "troy",
+            "id": "troy",
             "properties": {
                 "name": "Troy Building",
                 "nick": "TROY",
@@ -1117,6 +1174,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "vcc",
+            "id": "vcc",
             "properties": {
                 "name": "Voorhees Computing Center",
                 "nick": "VCC",
@@ -1132,6 +1190,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "garage",
+            "id": "garage",
             "properties": {
                 "name": "College Ave Parking Garage",
                 "nick": "Parking Garage",
@@ -1147,6 +1206,7 @@ var locations = {
         {
             "type": "Feature",
             "_id": "sigep",
+            "id": "sigep",
             "properties": {
                 "name": "Sigma Phi Epsilon (ΣΦΕ)",
                 "nick": "SigEp, SPE",
