@@ -33,6 +33,9 @@ Once you have that taken care of, there are a few more steps before you can begi
 ### Running the Server
 To start the server, run `npm start` to have the server auto-restart if you make any changes, or `node server.js` if you would rather manually restart in case of changes.
 
+### Contributing to RPI Machines Map
+RPI Machines Map is a separate project that branches from RPI Campus Map. While it has many of the same features, it has additional features that allow users to easily find machine shops on campus, and the contents of those shops. To contribute to this project, use `git checkout forgemill` to access the stable project branch, and `git checkout forgemill-dev` to access the developer's branch, where we are working to build and improve the Machine Map. Also, check out the README in those branches for more information.
+
 ### Project Guidelines
 * We use JavaScript ES6 syntax for defining variables (const, let)
   * You can use Arrow functions or more conventional ES5 functions.

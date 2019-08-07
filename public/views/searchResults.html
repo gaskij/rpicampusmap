@@ -59,10 +59,10 @@
       <!-- Main content -->
       <main role="main" class="flex-shrink-0">
         <div class="container">
-          
+
           <h5 class="py-4">Search Results - "{{params.query}}"</h5>
-          
-          <a href="/info?loc={{b.id}}" ng-repeat="b in buildings" class="bg-light card mb-3 container-fluid" style="text-decoration:none; color:black">
+
+          <a href="/info?loc={{b.id}}&machine={{b.properties.type == 'machine'}}" ng-repeat="b in buildings" class="bg-light card mb-3 container-fluid" style="text-decoration:none; color:black">
             <div class="row no-gutters">
               <div class="col-md-4">
                 <img src="/public/images/pin.png" style="max-width: 100px;" class="card-img" alt="...">
