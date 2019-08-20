@@ -41,3 +41,6 @@ To start the server, run `npm start` to have the server auto-restart if you make
   * You can switch branches with the command `git checkout [branch]`
 
 Have fun making a big impact on campus!
+
+### LICENSING
+The service worker and manifest were modified from MIT licensed code found at PWABuilder.
