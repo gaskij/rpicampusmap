@@ -9,6 +9,7 @@ We are currently in the middle of a large refactor, but heavy construction will 
 
 ### Current Contributors:
 * Justin Gaskins
+* Gabriel Wild
 
 ### Founders:
 * Justin Gaskins
