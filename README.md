@@ -44,4 +44,7 @@ RPI Machines Map is a separate project that branches from RPI Campus Map. While 
 * Please do not attempt to commit directly to master! Commit instead to the branch for the feature currently being worked on.
   * You can switch branches with the command `git checkout [branch]`
 
+### LICENSING
+The service worker and manifest were modified from MIT licensed code found at PWABuilder.
+
 Have fun making a big impact on campus!
