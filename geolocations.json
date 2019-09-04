@@ -2,6 +2,7 @@
     {
         "type": "Feature",
         "id": "jec",
+        "_id": "jec",
         "properties": {
             "name": "Jonsson Engineering Center",
             "nick": "JEC",
@@ -16,6 +17,7 @@
     {
         "type": "Feature",
         "id": "dcc",
+        "_id": "dcc",
         "properties": {
             "name": "Darrin Communications Center",
             "nick": "DCC",
@@ -26,10 +28,11 @@
            "type": "Point",
            "coordinates": [-73.679059, 42.729226]
         }
-    }, 
+    },
     {
         "type": "Feature",
         "id": "ae",
+        "_id": "ae",
         "properties": {
             "name": "Amos Eaton Hall",
             "nick": "JEC",
@@ -44,6 +47,7 @@
     {
         "type": "Feature",
         "id": "lib",
+        "_id": "lib",
         "properties": {
             "name": "Folsom Library",
             "nick": "Lib-Lob",
@@ -58,6 +62,7 @@
     {
         "type": "Feature",
         "id": "lally",
+        "_id": "lally",
         "properties": {
             "name": "Lally Hall",
             "nick": "lally",
@@ -72,6 +77,7 @@
     {
         "type": "Feature",
         "id": "empac",
+        "_id": "empac",
         "properties": {
             "name": "Experimental Media and Performing Arts Center at Rensselaer",
             "nick": "EMPAC",
@@ -86,6 +92,7 @@
     {
         "type": "Feature",
         "id": "blitman",
+        "_id": "blitman",
         "properties": {
             "name": "Blitman Commons",
             "nick": "blitman",
@@ -100,6 +107,7 @@
     {
         "type": "Feature",
         "id": "jrowl",
+        "_id": "jrowl",
         "properties": {
             "name": "Jonsson Rowland Science Center",
             "nick": "jrowl",
@@ -114,6 +122,7 @@
     {
         "type": "Feature",
         "id": "pubsafe",
+        "_id": "pubsafe",
         "properties": {
             "name": "Public Safety",
             "nick": "pubsafe",
@@ -128,6 +137,7 @@
     {
         "type": "Feature",
         "id": "alumni",
+        "_id": "alumni",
         "properties": {
             "name": "Heffner Alumni House",
             "nick": "Heffner Alumni House",
@@ -142,6 +152,7 @@
     {
         "type": "Feature",
         "id": "houston",
+        "_id": "houston",
         "properties": {
             "name": "Houston Field House",
             "nick": "field house",
@@ -156,6 +167,7 @@
     {
         "type": "Feature",
         "id": "rugby",
+        "_id": "rugby",
         "properties": {
             "name": "Rugby Field",
             "nick": "rugby",
@@ -170,6 +182,7 @@
     {
         "type": "Feature",
         "id": "sigep",
+        "_id": "sigep",
         "properties": {
             "name": "Sigma Phi Epsilon",
             "nick": "SigEp",
