@@ -46,7 +46,7 @@ MongoClient.connect(uri, options, function(err, db) {
     // Download initial location data from database before starting server
     dbo.collection('locations').find().toArray()
     .then(function(result) {
-      // console.log(result);
+      // console.log(result);(location
 
       var locationData = result;
 
@@ -81,7 +81,7 @@ app.get('/', function(req, res) {
     */
 
     res.sendFile(__dirname + '/public/views/index.html');
-})
+});
 
 app.route('/index')
 .get(function(req, res) {
@@ -174,6 +174,7 @@ app.route('/info')
   res.sendFile(__dirname + '/public/views/info.html')
 })
 .post(jsonParser, function(req, res) {
+  const comment = req.body.comment;
   const query = req.body.query;
   console.log(req.body);
   console.log("Query:", query);
@@ -198,7 +199,52 @@ app.route('/info')
     }
   });
 
+  if (comment) {
+    console.log(comment);
+  }
+
 });
+/* ================================================================================== */
+
+/* ==================================== ADMIN ======================================= */
+app.route('/admin/request')
+.get(function (req, res) {
+  res.sendFile(__dirname + '/public/views/register.html');
+})
+.post(function (req, res, next) {
+  const username = req.body.rcsID;
+  const password = req.body.password;
+
+  console.log("Username:", username);
+  console.log("Password:", password);
+
+  MongoClient.connect(uri, options, function(err, db) {
+    if (err)
+      throw err;
+    else {
+      console.log("Database connected in route '/admin'!")
+    }
+  });
+});
+
+app.route('/login')
+.get(function (req, res) {
+  res.sendFile(__dirname + '/public/views/login.html');
+})
+.post(function (req, res) {
+  res.send("Logged in Successfully");
+});
+
+app.route('/admin')
+.get(function (req, res) {
+  // if (req.body.admin)
+    res.sendFile(__dirname + '/public/views/admin.html');
+  // else
+  //   res.sendFile(__dirname + '/public/views/login.html');
+}).post(function (req, res) {
+  console.log("Post request in /admin");
+});
+
 /* ================================================================================== */
 
 // Handle 404
