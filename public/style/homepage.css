@@ -33,3 +33,8 @@ a {
 .popup:hover {
    cursor: pointer;
 }
+
+/*Changes the width of the search bar */
+input#searchText {
+   width: 320px;
+}

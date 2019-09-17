@@ -1,4 +1,4 @@
-var locations_shops = {
+var machine_locations = {
     "type": "FeatureCollection",
     "features": [
         {

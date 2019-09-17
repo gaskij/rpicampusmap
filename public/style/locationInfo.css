@@ -6,3 +6,8 @@
   width: 100%;
   background-color: beige;
 }
+
+/*Changes the width of the search bar */
+input#searchText {
+  width: 320px;
+}

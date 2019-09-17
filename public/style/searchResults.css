@@ -1,3 +1,8 @@
 .row {
   max-width: 100%;
 }
+
+/*Changes the width of the search bar */
+input#searchText {
+  width: 320px;
+}

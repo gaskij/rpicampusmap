@@ -6,7 +6,7 @@ const mongodb = require('mongodb');
 const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
-const locations = require('./machine_sites.json');
+const locations = require('./machine_locations.json');
 
 const app = express();
 app.use(express.static(__dirname))

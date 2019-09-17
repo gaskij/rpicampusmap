@@ -9,7 +9,7 @@ https://leafletjs.com/reference-1.3.4.html#point
 for some reason according to the API**
 */
 
-var locations = {
+var campus_locations = {
     "type": "FeatureCollection",
     "features": [
         {
