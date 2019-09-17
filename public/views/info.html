@@ -10,9 +10,6 @@
     <title>Info - {{name}}</title>
 
     <link rel="icon" href="/public/images/favicon.ico" type="image/x-icon">
-    <link rel="manifest" href="/public/manifest.json">
-    <meta name="theme-color" content="#000000" />
-
 
     <!-- IOS Meta Tags Here -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -30,18 +27,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/public/controllers/app.js"></script>
     <script src="/public/controllers/infoController.js"></script>
-    
-    <!-- Register Service Worker -->
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/service-worker.js')
-              .then((reg) => {
-                console.log('Service worker registered.', reg);
-              });
-        });
-      }
-    </script>
 
    </head>
 
