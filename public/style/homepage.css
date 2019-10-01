@@ -6,7 +6,7 @@ body {
 }
 
 a {
-  text-decoration: none;
+   text-decoration: none;
 }
 
 #mapPopup {
@@ -26,7 +26,8 @@ a {
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
 #mapContainer {
-   height: 85%;
+   font-size: medium;
+   height: calc(100% - 8em);
    width: 100%;
 }
 
