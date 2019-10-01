@@ -40,6 +40,15 @@
     integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
     crossorigin=""></script>
 
+  <!-- PWA stuff here -->
+  <link rel='manifest' href='/manifest.json'>
+  <script src="/public/views/sw-register.js"></script>
+  <meta name="theme-color" content="#dc3545" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="RPI Campus Map">
+  <link rel="apple-touch-icon" href="/public/images/pin-192x192.png">
+
 </head>
 
 <body ng-controller="mapController">

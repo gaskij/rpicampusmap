@@ -9,6 +9,7 @@ We are currently in the middle of a large refactor, but heavy construction will 
 
 ### Current Contributors:
 * Justin Gaskins
+* Gabriel Wild
 
 ### Founders:
 * Justin Gaskins
@@ -42,5 +43,8 @@ RPI Machines Map is a separate project that branches from RPI Campus Map. While 
 * Try to use [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) instead of string concatenation when possible.
 * Please do not attempt to commit directly to master! Commit instead to the branch for the feature currently being worked on.
   * You can switch branches with the command `git checkout [branch]`
+
+### LICENSING
+The service worker and manifest were modified from MIT licensed code found at PWABuilder.
 
 Have fun making a big impact on campus!

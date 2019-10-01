@@ -26,8 +26,8 @@ a {
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
 #mapContainer {
-   font-size: medium;
-   height: calc(100% - 8em);
+   font-size: small;
+   height: calc(100% - 9em);
    width: 100%;
 }
 
