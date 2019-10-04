@@ -1,3 +1,9 @@
+screenshots/
+
+# Ignore the node modules. They will be installed through 'npm install'
+node_modules/
+
+# Ignore .env file, to be kept locally on machine running the server for security
 .env
-screenshots
-node_modules
+
+RPI Campus Map Project Proposal Summer 19.pdf

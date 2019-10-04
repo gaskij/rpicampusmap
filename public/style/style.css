@@ -1,0 +1,39 @@
+html, body {
+  height: 100%;
+}
+
+main {
+  min-height: 81vh;
+}
+
+header {
+  max-height: 11vh;
+  position: relative;
+  z-index: 100000;
+}
+
+footer {
+  max-height: 11vh;
+  max-width: 100%;
+  color: #eeeeee;
+}
+
+footer a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}

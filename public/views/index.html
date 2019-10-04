@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CampusMap">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta content="RPI Interactive Campus Map" name="description">
+        <meta content="Interactive, rpi map, rpi campus map, map, rpi" name="keywords">
+
+        <title>RPI Campus Map</title>
+
+        <link rel="icon" href="/public/images/favicon.ico" type="image/x-icon">
+
+        <!-- CSS Files -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+        <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+        <link href="/public/style/style.css" rel="stylesheet" type="text/css"/>
+        <link href="/public/style/homepage.css" rel="stylesheet" type="text/css"/>
+
+        <!-- Map required Scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+
+        <!-- PWA stuff here -->
+        <link rel='manifest' href='/manifest.json'>
+        <script src="/public/views/sw-register.js"></script>
+        <meta name="theme-color" content="#000000" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="RPI Campus Map">
+        <link rel="apple-touch-icon" href="/public/images/pin-192x192.png">
+
+    </head>
+
+    <body ng-controller="mapController">
+        <!-- Header -->
+        <header id="header">
+          <!-- Navbar -->
+          <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+            <a class="navbar-brand" href="/">
+              <img id="logo" src="/public/images/logo.png" height=40px alt="RPI Campus Map"/>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/search?query=">Browse</a>
+                </li>
+              </ul>
+
+              <!-- Search bar-->
+              <form action="/search" method="get" class="form-inline my-2 my-lg-0">
+                <input id="searchText" type="search" name="query" placeholder="Enter a location..." class="form-control mr-sm-2" aria-label="Search">
+                <input id="searchButton" type="submit" value="Search" class="btn btn-light my-2 my-sm-0">
+              </form>
+            </div>
+          </nav>
+        </header>
+
+        <!-- Main content -->
+        <div id="mapContainer">
+          <!-- Insert Map here-->
+          <p>This is where the map goes... lol</p>
+        </div>
+
+        <!-- footer -->
+        <footer class="container-fluid py-2 bg-danger align-items-center">
+          <div class="row justify-content-center">
+            <!-- <div class="col-2 text-right">
+                <a href="https://rpi.edu/" target="_blank">
+                    <img id="seal" src="/public/images/seal.png" width=50 height=50 alt="Rensselaer Polytechnic Institute"/>
+                </a>
+            </div> -->
+            <div id="footerText" class="col text-center">
+                RPI Interactive Campus Map --
+                <a href="https://rcos.io/projects/gaskij/rpicampusmap/profile" target="_blank">An RCOS Project</a> --
+                <a href="https://github.com/gaskij/rpicampusmap" target="_blank"><i class="fab fa-github"></i> GitHub</a> --
+                <a href="/admin">Admin Panel</a>
+            </div>
+          </div>
+        </footer>
+
+        <!-- code to run if browser doesnt support javascript and therefore the map -->
+        <noscript>
+            <div id="noscript">
+                <p>You are either using a browser that does not support JavaScript, or you have disabled JavaScript.</p>
+                <p>RPICampusMap uses JavaScript.</p>
+            </div>
+        </noscript>
+
+        <!-- Custom Map Scripts -->
+        <script src="/public/geolocations.js"></script>
+        <script src="/public/machine_sites.js"></script>
+        <script src="/public/map.js"></script>
+        <script src="/public/controllers/app.js"></script>
+        <script src="/public/controllers/mapController.js"></script>
+
+        <!-- Bootstrap Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    </body>
+</html>

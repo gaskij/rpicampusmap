@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="CampusMap">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="RPI Interactive Campus Map" name="description">
+    <meta content="Interactive, rpi map, rpi campus map, map, rpi" name="keywords">
+
+    <title>Page Not Found</title>
+
+    <link rel="icon" href="/public/images/favicon.ico" type="image/x-icon">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="/public/style/style.css" rel="stylesheet" type="text/css"/>
+    <link href="/public/style/404.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Map required Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/public/controllers/app.js"></script>
+
+   </head>
+
+   <body>
+     <!-- Header -->
+     <header id="header">
+       <!-- Navbar -->
+       <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+         <a class="navbar-brand" href="/">
+           <img id="logo" src="/public/images/logo.png" height=40px alt="RPI Campus Map"/>
+         </a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <ul class="navbar-nav mr-auto">
+             <li class="nav-item active">
+               <a class="nav-link" href="/">Back to Map</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="/search?query=">Browse</a>
+             </li>
+           </ul>
+
+           <!-- Search bar-->
+           <form action="/search" method="get" class="form-inline my-2 my-lg-0">
+             <input id="searchText" ng-model="query" type="search" name="query" placeholder="Enter a location..." class="form-control mr-sm-2" aria-label="Search">
+             <input id="searchButton" type="submit" value="Search" class="btn btn-light my-2 my-sm-0" ng-click="search(query);">
+           </form>
+         </div>
+       </nav>
+     </header>
+
+      <!-- Main content -->
+      <main role="main" class="flex-shrink-0 py-4">
+        <div class="container">
+          <h2 class="pb-4">We couldn't find the page you were looking for 😢</h2>
+
+          <p>The URL may have been mistyped or the page may have moved:</p>
+          <ul>
+            <li>Please try navigating back to the <a href="/index">homepage</a> to find what you are looking for.</li>
+            <li>Alternatively you can <a href="/contact">contact us here.</a></li>
+          </ul>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <footer class="container-fluid py-2 bg-danger align-items-center">
+        <div class="row justify-content-center">
+          <!-- <div class="col-2 text-right">
+              <a href="https://rpi.edu/" target="_blank">
+                  <img id="seal" src="/public/images/seal.png" width=50 height=50 alt="Rensselaer Polytechnic Institute"/>
+              </a>
+          </div> -->
+          <div id="footerText" class="col text-center">
+              RPI Interactive Campus Map --
+              <a href="https://rcos.io/projects/gaskij/rpicampusmap/profile" target="_blank">An RCOS Project</a> --
+              <a href="https://github.com/gaskij/rpicampusmap"><i class="fab fa-github"></i> GitHub</a> --
+              <a href="/admin">Admin Panel</a>
+          </div>
+        </div>
+      </footer>
+
+      <!-- script to make image preview change on edit -->
+      <script type="text/javascript" src="/public/imagePreview.js"></script>
+
+      <!-- Bootstrap Scripts -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+   </body>
+</html>
