@@ -11,28 +11,20 @@
   <title>Campus Map - Search Results</title>
 
   <link rel="icon" href="/public/images/favicon.ico" type="image/x-icon">
-  <link rel="manifest" href="/public/manifest.json">
-  <meta name="theme-color" content="#000000" />
 
   <!-- CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-  <link href="/public/style/locationInfo.css" rel="stylesheet" type="text/css" />
+  <link href="/public/style/style.css" rel="stylesheet" type="text/css" >
+  <link href="/public/style/locationInfo.css" rel="stylesheet" type="text/css" >
 
   <!-- Map required Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="/public/controllers/app.js"></script>
   <script src="/public/controllers/machineInfoController.js"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"
-    integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous">
-  </script>
 
   <meta name="theme-color" content="#dc3545" />
-
-
-  <!-- Register Service Worker -->
-  <script src="/public/views/pwabuilder-sw-register.js"></script>
 
   <!-- test code for collapsible hours -->
   <style>
@@ -213,23 +205,22 @@
     </div>
 
   </main>
-
+  
   <!-- footer -->
   <footer class="container-fluid py-2 bg-danger align-items-center">
-    <div class="row justify-content-center">
-      <!-- <div class="col-2 text-right">
-                <a href="https://rpi.edu/" target="_blank">
-                    <img id="seal" src="/public/images/seal.png" width=50 height=50 alt="Rensselaer Polytechnic Institute"/>
-                </a>
-            </div> -->
-      <div id="footerText" class="col text-center">
-        -- RPI Interactive Campus Map --<br>
-        <a href="https://rcos.io/projects/gaskij/rpicampusmap/profile" target="_blank">An RCOS Project</a> --
-        <a href="https://github.com/gaskij/rpicampusmap"><i class="fab fa-github"></i> GitHub</a> --
-        <a href="/admin">Admin Panel</a>
+      <div id="seal">
+        <a href="https://rpi.edu/" target="_blank">
+            <img id="seal" src="/public/images/seal.png" width=50 height=50 alt="Rensselaer Polytechnic Institute"/>
+        </a>
       </div>
-    </div>
-  </footer>
+      <div class="row justify-content-center">
+        <div id="footerText" class="col text-center">
+          <a href="https://rcos.io/projects/gaskij/rpicampusmap/profile" target="_blank">An RCOS Project</a> --
+          <a href="https://github.com/gaskij/rpicampusmap"><i class="fab fa-github"></i> GitHub</a> --
+          <br><a href="/admin">Admin Panel</a>
+        </div>
+      </div>
+    </footer>
 
 
   <!-- test script for collapsible hours -->
