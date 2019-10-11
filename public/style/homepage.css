@@ -6,7 +6,7 @@ body {
 }
 
 a {
-  text-decoration: none;
+   text-decoration: none;
 }
 
 #mapPopup {
@@ -29,12 +29,9 @@ a {
 
 
 #mapContainer {
+   font-size: small;
+   height: calc(100% - 9em);
    width: 100%;
-   min-height: 100%;
-   height: auto !important;
-   height: 100%;
-   margin: 0 auto -30px;
-   vertical-align:bottom;
 }
 
 #push {
