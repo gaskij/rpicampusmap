@@ -25,7 +25,7 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
         <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
         <link href="/public/style/style.css" rel="stylesheet" type="text/css"/>
-        <link href="/public/style/homepage.css" rel="stylesheet" type="text/css"/>
+        <link href="/public/style/homepage.css" rel="stylesheet"/>
 
         <!-- Map required Scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
@@ -73,15 +73,16 @@
           <!-- Insert Map here-->
           <p>This is where the map goes... lol</p>
         </div>
+        <div id="push"></div>
 
         <!-- footer -->
         <footer class="container-fluid py-2 bg-danger align-items-center">
           <div class="row justify-content-center">
-            <!-- <div class="col-2 text-right">
+            <div class="col-2 text-right">
                 <a href="https://rpi.edu/" target="_blank">
                     <img id="seal" src="/public/images/seal.png" width=50 height=50 alt="Rensselaer Polytechnic Institute"/>
                 </a>
-            </div> -->
+            </div>
             <div id="footerText" class="col text-center">
                 RPI Interactive Campus Map --
                 <a href="https://rcos.io/projects/gaskij/rpicampusmap/profile" target="_blank">An RCOS Project</a> --

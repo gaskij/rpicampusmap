@@ -13,7 +13,7 @@ header {
 }
 
 footer {
-  max-height: 11vh;
+  justify-content: center;
   max-width: 100%;
   color: #eeeeee;
 }

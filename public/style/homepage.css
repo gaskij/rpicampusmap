@@ -11,23 +11,40 @@ a {
 
 #mapPopup {
    background-color: #ffffff;
-   min-height: 88%;
+   min-height: 85%;
    width: 80%;
    margin: auto;
 }
 
 #mapPopupInfo {
    background-color: #ffffff;
-   min-height: 88%;
+   min-height: 85%;
    width: 100%;
    margin: auto;
 }
 
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
+
+
+
 #mapContainer {
-   height: 85%;
    width: 100%;
+   min-height: 100%;
+   height: auto !important;
+   height: 100%;
+   margin: 0 auto -30px;
+   vertical-align:bottom;
+}
+
+#push {
+   height: 30px;
+}
+
+footer {
+   height: 30px;
+   width: 100%;
+   bottom:0;
 }
 
 .popup:hover {
