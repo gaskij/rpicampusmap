@@ -38,12 +38,6 @@ a {
    height: 30px;
 }
 
-footer {
-   height: 30px;
-   width: 100%;
-   bottom:0;
-}
-
 .popup:hover {
    cursor: pointer;
 }
