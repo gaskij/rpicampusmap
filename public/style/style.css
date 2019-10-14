@@ -13,12 +13,6 @@ header {
   z-index: 100000;
 }
 
-
-#divfooter {
-  bottom: 0;
-  
-}
-
 footer {
   font-size: small;
   position: absolute;
