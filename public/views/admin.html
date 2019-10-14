@@ -22,60 +22,61 @@
     <script src="/public/controllers/app.js"></script>
     <script src="/public/controllers/adminController.js"></script>
 
-   </head>
+  </head>
 
-   <body ng-controller="adminController">
-     <!-- Header -->
-     <header id="header">
-       <!-- Navbar -->
-       <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-         <a class="navbar-brand" href="/">
-           <img id="logo" src="/public/images/logo.png" height=40px alt="RPI Campus Map"/>
-         </a>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-           <span class="navbar-toggler-icon"></span>
-         </button>
+  <body ng-controller="adminController">
+    <!-- Header -->
+    <header id="header">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <a class="navbar-brand" href="/">
+          <img id="logo" src="/public/images/logo.png" height=40px alt="RPI Campus Map"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-           <ul class="navbar-nav mr-auto">
-             <li class="nav-item active">
-               <a class="nav-link" href="/">Back to Map</a>
-             </li>
-             <li class="nav-item">
-               <a class="nav-link" href="/search?query=">Browse</a>
-             </li>
-           </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Back to Map</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/search?query=">Browse</a>
+            </li>
+          </ul>
 
-           <!-- Search bar-->
-           <form action="/search" method="get" class="form-inline my-2 my-lg-0">
-             <input id="searchText" ng-model="query" type="search" name="query" placeholder="Enter a location..." class="form-control mr-sm-2" aria-label="Search">
-             <input id="searchButton" type="submit" value="Search" class="btn btn-light my-2 my-sm-0" ng-click="search(query);">
-           </form>
-         </div>
-       </nav>
-     </header>
+          <!-- Search bar-->
+          <form action="/search" method="get" class="form-inline my-2 my-lg-0">
+            <input id="searchText" ng-model="query" type="search" name="query" placeholder="Enter a location..." class="form-control mr-sm-2" aria-label="Search">
+            <input id="searchButton" type="submit" value="Search" class="btn btn-light my-2 my-sm-0" ng-click="search(query);">
+          </form>
+        </div>
+      </nav>
+    </header>
 
-      <!-- Main content -->
-      <main role="main" class="flex-shrink-0">
+    <!-- Main content -->
+    <main role="main" class="flex-shrink-0">
           Hello
 
-      </main>
+    </main>
 
   <!-- footer -->
-  <footer class="container-fluid py-2 bg-danger align-items-center">
-    <div id="seal">
-      <a href="https://rpi.edu/" target="_blank">
-          <img id="seal" src="/public/images/seal.png" width=50 height=50 alt="Rensselaer Polytechnic Institute"/>
-      </a>
-    </div>
-    <div class="row justify-content-center">
-      <div id="footerText" class="col text-center">
-        <a href="https://rcos.io/projects/gaskij/rpicampusmap/profile" target="_blank">An RCOS Project</a> --
-        <a href="https://github.com/gaskij/rpicampusmap"><i class="fab fa-github"></i> GitHub</a> --
-        <br><a href="/admin">Admin Panel</a>
+  <footer id="divFooter" class="container-fluid py-2 bg-danger align-items-center">
+      <div class="row justify-content-center">
+        <div id="seal" class="col-sm-1">
+          <a href="https://rpi.edu/" target="_blank">
+            <img id="seal" src="/public/images/seal.png" width=50 height=50 alt="Rensselaer Polytechnic Institute"/>
+          </a>
+        </div>
+        
+        <div id="footerText" class="col text-center">
+          <a href="https://rcos.io/projects/gaskij/rpicampusmap/profile" target="_blank">An RCOS Project</a> --
+          <a href="https://github.com/gaskij/rpicampusmap"><i class="fab fa-github"></i> GitHub</a> --
+          <br><a href="/admin">Admin Panel</a>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
       <!-- script to make image preview change on edit -->
       <script type="text/javascript" src="/public/imagePreview.js"></script>

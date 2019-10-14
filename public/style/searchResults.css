@@ -1,3 +1,14 @@
 .row {
   max-width: 100%;
 }
+
+footer {
+  font-size: small;
+  position: relative !important;
+  bottom: 0;
+  width: 100%;
+  min-height: 3%;
+  height: 4em;
+  color: #eeeeee;
+  z-index: 950;
+}
