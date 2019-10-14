@@ -1,5 +1,4 @@
-html,
-body {
+html,body {
   height: 100%;
   overflow: auto;
 }
@@ -14,13 +13,21 @@ header {
   z-index: 100000;
 }
 
+
+#divfooter {
+  bottom: 0;
+  
+}
+
 footer {
   font-size: small;
   position: absolute;
   bottom: 0;
   width: 100%;
+  min-height: 3%;
   height: 4em;
   color: #eeeeee;
+  z-index: 950;
 }
 
 footer a {

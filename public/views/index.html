@@ -30,8 +30,8 @@
   <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"
     integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous">
   </script>
-  <link href="/public/style/style.css" rel="stylesheet" type="text/css" />
-  <link href="/public/style/homepage.css" rel="stylesheet" type="text/css" />
+  <link href="/public/style/style.css" rel="stylesheet"/>
+  <link href="/public/style/homepage.css" rel="stylesheet" />
 
   <!-- Map required Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
@@ -85,13 +85,16 @@
   </header>
 
   <!-- Main content -->
-  <div id="mapContainer">
-    <!-- Insert Map here-->
-    <p>This is where the map goes... lol</p>
+  <div id="divContent">
+    <div class = "container fill">
+      <div id="mapContainer">
+        <!-- Insert Map here-->
+        <p>This is where the map goes... lol</p>
+    </div>
   </div>
 
   <!-- footer -->
-  <footer class="container-fluid py-2 bg-danger align-items-center">
+  <footer id="divFooter" class="container-fluid py-2 bg-danger align-items-center">
     <div id="seal">
       <a href="https://rpi.edu/" target="_blank">
           <img id="seal" src="/public/images/seal.png" width=50 height=50 alt="Rensselaer Polytechnic Institute"/>
