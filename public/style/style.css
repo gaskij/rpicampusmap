@@ -1,10 +1,12 @@
-html,body {
+html,
+body {
   height: 100%;
   overflow: auto;
 }
 
 main {
   min-height: 81vh;
+  padding-bottom: 4em;
 }
 
 header {
@@ -15,7 +17,7 @@ header {
 
 footer {
   font-size: small;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   min-height: 3%;
@@ -53,4 +55,3 @@ footer a {
 
 #footerText {
   margin: 0 3em 0 0;
-}
