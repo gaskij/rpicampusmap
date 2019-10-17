@@ -1,0 +1,41 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+
+.background{
+    position: absolute;
+    background-image: url("/images/rpi_image.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size:cover;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+
+    height: 100%;
+    width: 100%;
+}
+
+
+#main_img{
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+};
+
+.card-body{
+    justify-content: center;
+    width: 10%;
+};

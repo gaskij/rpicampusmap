@@ -9,13 +9,28 @@ We are currently in the middle of a large refactor, but heavy construction will 
 
 ### Current Contributors:
 * Justin Gaskins
-* Gabriel Wild
 * Jon-Pierre Antoine
+* Darrian Gardea
+* Aidan Duane		
+* Cody Messina
+* Kristina Adams      
+
+### Project Managers:
+* Spring 2020: Jon-Pierre Antoine
+* Fall 2019: Justin Gaskins
+* Spring 2019: ?
 
 ### Founders:
 * Justin Gaskins
 * Christopher Pence
 * Sebastien Boulas
+
+### Version History:
+* 2/16/2020 - v0.4.0 Login and registration implemented. Messages are flashed on error state i.e. invalid email,
+user not found, login to see admin page etc. New welcome page also added (page before map access). Code has been rebased making it more modular. All html converted to ejs and views used (modularity).
+* 5/27/2019 - v0.3.0 All basic map functionality is now restored! You can show a location on the map from the info page, search for locations, or go to the information page from the location on the map.
+* 3/26/2019 - v0.2.0 Began refactor and translation from XAMPP to MEAN Stack!
+* 1/25/2019 - v0.1.0 Initial stages of functionality are complete! More locations and authorization will be added for the release of v1.0.
 
 ### Getting Started
 This project uses the MEAN stack (MongoDB, Express.JS, AngularJS 1.7, Node.js). You will need a working installation of [Node.js](https://nodejs.org/en/) (LTS version recommended), and a [MongoDB Atlas Cloud account](https://www.mongodb.com/cloud/atlas) (free is fine).
@@ -45,8 +60,5 @@ To start the server, run `npm start` to have the server auto-restart if you make
 
 ### Contributing to RPI Machines Map
 RPI Machines Map is a separate project that branches from RPI Campus Map. While it has many of the same features, it has additional features that allow users to easily find machine shops on campus, and the contents of those shops. To contribute to that project, see the [RPI Machines repo](https://github.com/gwild37/RPI-Machines).
-
-### LICENSING
-The service worker and manifest were modified from MIT licensed code found at PWABuilder.
 
 Have fun making a big impact on campus!

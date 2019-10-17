@@ -1,0 +1,29 @@
+html, body {
+    background-color: #e6e6e6;
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
+
+div.wrapper{
+    /*this is the height of the footer and header minus the total file length)
+    so that all remaining space% is given to the body --- this keeps the footer at the
+    bottom of the page*/
+    min-height: calc(100% - 140px);
+    position: relative;
+}
+
+#footerText{
+    color: white;
+}
+
+#divFooter {
+    bottom: 0%;
+    height: 100px;
+}
+
+a {
+    color: white;
+}

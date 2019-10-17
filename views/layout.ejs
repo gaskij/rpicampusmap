@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="CampusMap" ng-controller="mapController">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="RPI Interactive Campus Map" name="description">
+  <meta content="Interactive, rpi map, rpi campus map, map, rpi" name="keywords">
+
+  <title><%= page_name%></title>
+
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#000000" />
+
+
+  <!-- IOS Meta Tags Here -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="RPI Campus Map">
+  <link rel="apple-touch-icon" href="/images/pin-152x152.png">
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"
+    integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous">
+  </script>
+  <!-- <link href="/style/layout.css" rel="stylesheet"  type="text/css"/> -->
+  <%- style %>
+
+  <meta name="theme-color" content="#dc3545" />
+
+
+</head>
+
+<body>
+  <!-- Main content -->
+  <div class="background"></div>
+  <div class="wrapper">
+    <%- body %>
+  </div>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+  </script>
+
+</body>
+
+</html>

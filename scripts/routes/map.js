@@ -15,7 +15,7 @@ for some reason according to the API**
 
 
 /*
-Display the map on the page at id 'map'
+Display the map on the page at id 'mapContainer'
 
 setView() focuses the map around the given point.
 In this case, it does so on creation of the map (pageload)
@@ -28,10 +28,10 @@ let mymap = L.map('mapContainer', {
   layers: []
 });
 
-/*
-Tile Layer is the display style (satellite, street, etc.)
-Attribution refers to the creeator of the layer (accreditation)
-*/
+
+//////////////////////////////////  MAP STYLE    ////////////////////////////////
+/* Tile Layer is the display style (satellite, street, etc.)
+Attribution refers to the creeator of the layer (accreditation)*/
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
   maxZoom: 18,
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
@@ -41,6 +41,9 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 }).addTo(mymap);
 
 
+//////////////////////////////////  CAMPUS HIGHLIGHT    ////////////////////////////////
+// TODO?: Change this to do a query to the database for the cordinates then add them to the list
+//        so that we don't have to hard code the points here
 // Highlight campus on the map using points as an outline, connect-the-dots style
 const campus = [
   [42.728116, -73.684807],
@@ -61,6 +64,8 @@ const campus = [
 ];
 L.polygon(campus, {color: 'gray', opacity: 0.1}).addTo(mymap);
 
+
+//////////////////////////////////  MAP POPUPS & ONCLICKS    ////////////////////////////////
 // Default popup object that would show on the map if a nonregistered point is clicked
 const popup = L.popup();
 
@@ -130,7 +135,6 @@ let locations_shops_arr = [];
 /**
   * Style and add the campus points to the map
 */
-
 L.geoJSON(locations, {
   style: function (feature) {
     return feature.properties && feature.properties.style;
