@@ -200,7 +200,7 @@ app.route('/search')
 /* ===================================== INFO ======================================== */
 app.route('/info')
 .get(function (req, res) {
-  res.sendFile(__dirname + '/public/views/machine_sites_info.html')
+  res.sendFile(__dirname + '/public/views/info.html')
 })
 .post(jsonParser, function(req, res) {
   const comment = req.body.comment;
