@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
   height: 100%;
   overflow: auto;
 }
@@ -17,11 +16,10 @@ header {
 
 footer {
   font-size: small;
-  position: fixed;
+  /* position: absolute; */
   bottom: 0;
   width: 100%;
-  min-height: 3%;
-  height: 4em;
+  /* height: 4em; */
   color: #eeeeee;
   z-index: 950;
 }
@@ -55,3 +53,4 @@ footer a {
 
 #footerText {
   margin: 0 3em 0 0;
+}

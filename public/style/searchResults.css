@@ -2,13 +2,12 @@
   max-width: 100%;
 }
 
+main {
+  min-height: calc(92vh - 4em);
+}
+
 footer {
-  font-size: small;
-  position: relative !important;
+  position: relative;
   bottom: 0;
-  width: 100%;
-  min-height: 3%;
   height: 4em;
-  color: #eeeeee;
-  z-index: 950;
 }
