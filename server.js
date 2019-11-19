@@ -3,6 +3,7 @@ const express = require('express');
 const request = require('request');
 const dotenv = require('dotenv');
 const mongodb = require('mongodb');
+const mongoose = require('mongoose');
 const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
@@ -24,6 +25,7 @@ const options = {useNewUrlParser: true};
 
 /* ================================= SERVER START ==================================== */
 const port = process.env.PORT;
+
 
 MongoClient.connect(uri, options, function(err, db) {
   if (err) {
