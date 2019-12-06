@@ -7,11 +7,12 @@ html, body {
 }
 
 
-.wrapper{
+div.wrapper{
     /*this is the height of the footer and header minus the total file length)
     so that all remaining space% is given to the body --- this keeps the footer at the
     bottom of the page*/
     min-height: calc(100% - 140px);
+    position: relative;
 }
 
 #footerText{

@@ -7,7 +7,7 @@ const passport = require('passport');
 const User = require('../models/User');
 
 //  login page
-router.get('/login', (req, res) => res.render('login',{layout: "layout2.ejs", extractStyles: true}));
+router.get('/login', (req, res) => res.render('login',{page_name: "Login",layout: "layout2.ejs", extractStyles: true}));
 
 //  Login Handle
 router.post('/login', (req,res,next) => {
@@ -26,7 +26,7 @@ router.get('/logout', (req, res) => {
 });
 
 //  registration page
-router.get('/register', (req, res) => res.render('register', {layout: "layout2.ejs", extractStyles: true}));
+router.get('/register', (req, res) => res.render('register', {page_name: "Register", layout: "layout2.ejs", extractStyles: true}));
 
 //  Register Handle
 router.post('/register', (req, res) => {
@@ -99,9 +99,8 @@ router.post('/register', (req, res) => {
 
 
 
-
 // main page --- the map
-router.get('/main_page', (req, res) => res.render('main_page', {layout: "layout2.ejs", extractStyles: true}));
+router.get('/main_page', (req, res) => res.render('map', {layout: "layout2.ejs", extractStyles: true}));
 
 
 

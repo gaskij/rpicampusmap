@@ -8,7 +8,7 @@
   <meta content="RPI Interactive Campus Map" name="description">
   <meta content="Interactive, rpi map, rpi campus map, map, rpi" name="keywords">
 
-  <title>Info - {{name}}</title>
+  <title>Info - {{page_name}}</title>
 
   <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
   <link rel="manifest" href="/manifest.json">
@@ -30,6 +30,8 @@
   <link href="/style/layout2.css" rel="stylesheet"  type="text/css"/>
   <%- style %>
 
+  <%- defineContent('map_scripts') %>
+
   <meta name="theme-color" content="#dc3545" />
 
 
@@ -40,7 +42,7 @@
   <header id="header">
     <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="/user/main_page">
           <img id="logo" src="/images/logo.png" height=40px alt="RPI Campus Map"/>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,7 +73,7 @@
   <div class="wrapper">
     <%- body %>
   </div>
-  </main>
+  
 
   <!-- footer -->
   <footer id="divFooter" class="container-fluid py-2 bg-danger align-items-center">
@@ -85,10 +87,12 @@
         <div id="footerText" class="col text-center">
           <a href="https://rcos.io/projects/gaskij/rpicampusmap/profile" target="_blank">An RCOS Project</a> --
           <a href="https://github.com/gaskij/rpicampusmap"><i class="fab fa-github"></i> GitHub</a> --
-        <br><a href="/public/views/login.html">Admin Panel</a>
+        <br><a href="/user/login">Admin Panel</a>
       </div>
     </div>
   </footer>
+
+  <%- defineContent('bottom_map_scripts') %>
 
   <!-- Bootstrap Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
