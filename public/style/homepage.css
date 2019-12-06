@@ -9,6 +9,11 @@ a {
    text-decoration: none;
 }
 
+footer a {
+  text-decoration: underline;
+  color: inherit;
+}
+
 #mapPopup {
    background-color: #ffffff;
    min-height: 85%;
@@ -50,6 +55,9 @@ a {
 .container{
    height: 50%;
    padding: 0;
+   font-size: small;
+   height: calc(100% - 8em);
+   width: 100%;
 }
 
 .popup:hover {
