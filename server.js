@@ -30,8 +30,8 @@ MongoClient.connect(uri, options, function (err, db) {
     throw err;
   }
   else {
-    console.log("Database connected in route '/'!");
-    let dbo = db.db("forgemill");
+    console.log('Database connected in route \'/\'!');
+    let dbo = db.db('forgemill');
 
     // Populate Database with locations if need be (ONLY FOR USERS WITH WRITE ACCESS).
     // console.log(locations);
@@ -109,29 +109,29 @@ app.route('/index')
     const query = req.body.query;
     const machine = req.body.machine;
     console.log(req.body);
-    console.log("Query:", query);
-    console.log("Machine:", machine);
+    console.log('Query:', query);
+    console.log('Machine:', machine);
 
     MongoClient.connect(uri, options, function (err, db) {
       if (err)
         throw err;
       else {
-        console.log("Database connected in route '/index'!")
+        console.log('Database connected in route \'/index\'!');
 
-        let dbo = db.db("rpicampusmap");
+        let dbo = db.db('rpicampusmap');
 
         // switch database if necessary
-        if (machine == "true")
-          dbo = db.db("forgemill");
+        if (machine == 'true')
+          dbo = db.db('forgemill');
 
-        dbo.collection("locations").find({ 'id': query }).toArray()
+        dbo.collection('locations').find({ 'id': query }).toArray()
           .then(function (result) {
-            console.log("Results:\n", result);
+            console.log('Results:\n', result);
             res.send(result);
           })
           .catch(function (err) {
             if (err)
-              console.error("ERROR:", err);
+              console.error('ERROR:', err);
           });
         db.close();
       }
@@ -143,25 +143,25 @@ app.route('/index')
 /* ==================================== SEARCH ======================================= */
 app.route('/search')
   .get(function (req, res) {
-    console.log("Get search results!");
+    console.log('Get search results!');
     res.sendFile(__dirname + '/public/views/searchResults.html');
   })
   .post(jsonParser, function (req, res) {
     const query = req.body.query;
-    console.log("Query:", query);
+    console.log('Query:', query);
 
     MongoClient.connect(uri, options, function (err, db) {
       if (err)
         throw err;
       else {
-        console.log("Database connected in route '/search'!")
-        let db1 = db.db("rpicampusmap");
-        let db2 = db.db("forgemill");
+        console.log('Database connected in route \'/search\'!');
+        let db1 = db.db('rpicampusmap');
+        let db2 = db.db('forgemill');
         let results = [];
 
         // Search the database for locations matching the given regular expression
         // Search by name and by nickname for any match of the substring
-        db1.collection("locations").find({
+        db1.collection('locations').find({
           '$or': [
             { 'properties.name': { '$regex': query, '$options': 'i' } },
             { 'properties.nick': { '$regex': query, '$options': 'i' } }
@@ -169,15 +169,15 @@ app.route('/search')
           ]
         }).toArray()
           .then(function (result1) {
-            console.log("Result1:\n", result1);
+            console.log('Result1:\n', result1);
             results = results.concat(result1);
           })
           .catch(function (err) {
             if (err)
-              console.error("ERROR:", err);
+              console.error('ERROR:', err);
           });
 
-        db2.collection("locations").find({
+        db2.collection('locations').find({
           '$or': [
             { 'properties.name': { '$regex': query, '$options': 'i' } },
             { 'properties.nick': { '$regex': query, '$options': 'i' } },
@@ -185,14 +185,14 @@ app.route('/search')
           ]
         }).toArray()
           .then(function (result2) {
-            console.log("Result2:\n", result2);
+            console.log('Result2:\n', result2);
             results = results.concat(result2);
-            console.log("Results:\n", results);
+            console.log('Results:\n', results);
             res.send(results);
           })
           .catch(function (err) {
             if (err)
-              console.error("ERROR:", err);
+              console.error('ERROR:', err);
           });
 
         db.close();
@@ -205,39 +205,39 @@ app.route('/search')
 /* ===================================== INFO ======================================== */
 app.route('/info')
   .get(function (req, res) {
-    res.sendFile(__dirname + '/public/views/info.html')
+    res.sendFile(__dirname + '/public/views/info.html');
   })
   .post(jsonParser, function (req, res) {
     const comment = req.body.comment;
     const query = req.body.query;
     const machine = req.body.machine;
     console.log(req.body);
-    console.log("Query:", query);
-    console.log("Machine:", machine);
+    console.log('Query:', query);
+    console.log('Machine:', machine);
 
     MongoClient.connect(uri, options, function (err, db) {
       if (err)
         throw err;
       else {
-        console.log("Database connected in route '/info'!")
+        console.log('Database connected in route \'/info\'!');
 
-        let dbo = db.db("rpicampusmap");
+        let dbo = db.db('rpicampusmap');
 
         // switch database if necessary
 
-        if (machine == "true") {
-          dbo = db.db("forgemill");
+        if (machine == 'true') {
+          dbo = db.db('forgemill');
         }
 
 
-        dbo.collection("locations").find({ 'id': query }).toArray()
+        dbo.collection('locations').find({ 'id': query }).toArray()
           .then(function (result) {
-            console.log("Results:\n", result);
+            console.log('Results:\n', result);
             res.send(result);
           })
           .catch(function (err) {
             if (err)
-              console.error("ERROR:", err);
+              console.error('ERROR:', err);
           });
         db.close();
       }
@@ -259,32 +259,32 @@ app.route('/comment')
     const text = req.body.text;
     const date = req.body.date;
     console.log(req.body);
-    console.log("author:", author);
-    console.log("text:", text);
-    console.log("date:", date);
+    console.log('author:', author);
+    console.log('text:', text);
+    console.log('date:', date);
 
     MongoClient.connect(uri, options, function (err, db) {
       if (err)
         throw err;
       else {
-        console.log("Database connected in route '/info'!")
+        console.log('Database connected in route \'/info\'!');
 
-        let dbo = db.db("rpicampusmap");
+        let dbo = db.db('rpicampusmap');
 
         // switch database if necessary
 
-        if (machine == "true") {
-          dbo = db.db("forgemill");
+        if (machine == 'true') {
+          dbo = db.db('forgemill');
         }
 
-        dbo.collection("locations").findOne({ '_id': loq })
+        dbo.collection('locations').findOne({ '_id': loq })
           .then(function (result) {
-            console.log("Results:\n", result);
+            console.log('Results:\n', result);
             res.send(result);
           })
           .catch(function (err) {
             if (err)
-              console.error("ERROR:", err);
+              console.error('ERROR:', err);
           });
         db.close();
       }
@@ -307,14 +307,14 @@ app.route('/admin/request')
     const username = req.body.rcsID;
     const password = req.body.password;
 
-    console.log("Username:", username);
-    console.log("Password:", password);
+    console.log('Username:', username);
+    console.log('Password:', password);
 
     MongoClient.connect(uri, options, function (err, db) {
       if (err)
         throw err;
       else {
-        console.log("Database connected in route '/admin'!")
+        console.log('Database connected in route \'/admin\'!');
       }
     });
   });
@@ -324,7 +324,7 @@ app.route('/login')
     res.sendFile(__dirname + '/public/views/login.html');
   })
   .post(function (req, res) {
-    res.send("Logged in Successfully");
+    res.send('Logged in Successfully');
   });
 
 app.route('/admin')
@@ -334,7 +334,7 @@ app.route('/admin')
     // else
     //   res.sendFile(__dirname + '/public/views/login.html');
   }).post(function (req, res) {
-    console.log("Post request in /admin");
+    console.log('Post request in /admin');
   });
 
 /* ================================================================================== */

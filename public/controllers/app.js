@@ -6,7 +6,7 @@ let getParams = function() {
   let queryString = url.split('?');
 
   if (queryString.length == 1) {
-    console.log("no queries given");
+    console.log('no queries given');
     return null;
   }
   paramString = queryString[1].split('&');
@@ -17,4 +17,4 @@ let getParams = function() {
   }
   console.log(params);
   return params;
-}
+};
