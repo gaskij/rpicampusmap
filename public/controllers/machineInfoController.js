@@ -1,5 +1,5 @@
 app.controller('machineInfoController', function($scope, $http) {
-  console.log("machineInfoController activated!");
+  console.log('machineInfoController activated!');
 
   const parameters = getParams();
   console.log(parameters);
@@ -7,15 +7,15 @@ app.controller('machineInfoController', function($scope, $http) {
   $scope.isMachine = parameters.machine;
 
   $http.post(`/info?loc=${location}`, {query: location, machine: $scope.isMachine})
-  .then(function(httpResponse, err) {
-    if (err) throw err;
-    console.log(httpResponse.data);
+    .then(function(httpResponse, err) {
+      if (err) throw err;
+      console.log(httpResponse.data);
 
-    $scope.id = location;
-    $scope.name = httpResponse.data[0].properties.name;
-    $scope.nick = 'Nicknames: ' + httpResponse.data[0].properties.nick;
-    $scope.desc = httpResponse.data[0].properties.description;
-    if ($scope.isMachine) {
+      $scope.id = location;
+      $scope.name = httpResponse.data[0].properties.name;
+      $scope.nick = 'Nicknames: ' + httpResponse.data[0].properties.nick;
+      $scope.desc = httpResponse.data[0].properties.description;
+      if ($scope.isMachine) {
         $scope.sunHours = httpResponse.data[0].room.hours.sun;
         $scope.monHours = httpResponse.data[0].room.hours.mon;
         $scope.tuesHours = httpResponse.data[0].room.hours.tues;
@@ -27,6 +27,6 @@ app.controller('machineInfoController', function($scope, $http) {
         $scope.machines = httpResponse.data[0].contents.machines;
         $scope.materials = httpResponse.data[0].contents.available_materials;
         $scope.equipment = httpResponse.data[0].contents.equipment;
-    }
-  })
+      }
+    });
 });
