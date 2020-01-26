@@ -23,6 +23,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/public/controllers/app.js"></script>
 
+    <meta name="theme-color" content="#dc3545" />
+
 </head>
 
 <body>
@@ -62,42 +64,40 @@
     <!-- Main content -->
     <main role="main" class="flex-shrink-0 py-4">
         <div class="container">
-            <h2 class="pb-4">Sorry this page doesn't work offline 😢</h2>
+            <h2 class="pb-4">Sorry, this app doesn't work offline yet 😢</h2>
 
-            <p>Some pages on this app may not work correcly offline:</p>
-            <ul>
-                <li>Please try returning to a previous page,</li>
-                <li>or reconnect to the internet and reload the page.</li>
-            </ul>
+            <p>Please try reconnecting to the internet before trying to access this app.</p>
         </div>
     </main>
 
     <!-- footer -->
-    <footer class="container-fluid py-2 bg-danger align-items-center">
+    <footer id="divFooter" class="container-fluid py-2 bg-danger align-items-center">
         <div class="row justify-content-center">
-            <!-- <div class="col-2 text-right">
-              <a href="https://rpi.edu/" target="_blank">
-                  <img id="seal" src="/public/images/seal.png" width=50 height=50 alt="Rensselaer Polytechnic Institute"/>
-              </a>
-          </div> -->
-            <div id="footerText" class="col text-center">
-                RPI Interactive Campus Map --
-                <a href="https://rcos.io/projects/gaskij/rpicampusmap/profile" target="_blank">An RCOS Project</a> --
-                <a href="https://github.com/gaskij/rpicampusmap"><i class="fab fa-github"></i> GitHub</a> --
-                <a href="/admin">Admin Panel</a>
+            <div id="seal" class="col-sm-1">
+                <a href="https://rpi.edu/" target="_blank">
+                <img id="seal" src="/public/images/seal.png" width=50 height=50 alt="Rensselaer Polytechnic Institute"/>
+                </a>
             </div>
+          
+        <div id="footerText" class="col text-center">
+            <a href="https://rcos.io/projects/gaskij/rpicampusmap/profile" target="_blank">An RCOS Project</a> --
+            <a href="https://github.com/gaskij/rpicampusmap"><i class="fab fa-github"></i> GitHub</a> --
+            <br><a href="/admin">Admin Panel</a>
+          </div>
         </div>
     </footer>
+  
 
     <!-- script to make image preview change on edit -->
     <script type="text/javascript" src="/public/imagePreview.js"></script>
 
     <!-- Bootstrap Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>

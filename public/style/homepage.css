@@ -6,27 +6,57 @@ body {
 }
 
 a {
-  text-decoration: none;
+   text-decoration: none;
+}
+
+footer a {
+  text-decoration: underline;
+  color: inherit;
 }
 
 #mapPopup {
    background-color: #ffffff;
-   min-height: 88%;
+   min-height: 85%;
    width: 80%;
    margin: auto;
 }
 
 #mapPopupInfo {
    background-color: #ffffff;
-   min-height: 88%;
+   min-height: 85%;
    width: 100%;
    margin: auto;
 }
 
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
+
+#divContent{
+   height: 100%;
+   position: flex;
+}
+
+.fill{
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+}
+
+
 #mapContainer {
-   height: 85%;
+   width: 100px;
+   height:100px;
+   min-height: 100%;
+   min-width: 100%;
+   display: block;
+}
+
+.container{
+   height: 50%;
+   padding: 0;
+   font-size: small;
+   height: calc(100% - 8em);
    width: 100%;
 }
 

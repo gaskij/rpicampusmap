@@ -5,7 +5,7 @@ app.controller('searchController', function($scope, $http) {
     if (q == undefined) // Browse All Results
       q='';
     console.log(`Angular get '${q}'`);
-    return $http.post('http://localhost:3000/search', {query: q});
+    return $http.post('/search', {query: q});
   }
 
   $scope.params = getParams();
