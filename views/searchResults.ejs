@@ -28,7 +28,7 @@
 
 
 
-        <h5 class="py-4">Search Results - "{{params.query}}"</h5>
+        <h5 class="py-4">Search Results - "{{que_res}}"</h5>
 
         <a href="/info?loc={{b.id}}" ng-repeat="b in buildings" class="bg-light card mb-3 container-fluid"
           style="text-decoration:none; color:black">
@@ -49,3 +49,6 @@
       </div>
     </main>
   </div>
+
+  <script src="/public/controllers/app.js"></script>
+  <script src="/public/controllers/searchController.js"></script>

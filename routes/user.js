@@ -13,7 +13,7 @@ router.get('/login', (req, res) => res.render('login',{page_name: "Login",layout
 
 //  Login Handle
 router.post('/login', (req,res,next) => {
-    //console.log('authenticating');
+    console.log('authenticating');
     passport.authenticate('local', {
         successRedirect: '/admin',
         failureRedirect: '/user/login', 
@@ -22,6 +22,7 @@ router.post('/login', (req,res,next) => {
 });
 
 router.get('/logout', (req, res) => {
+    console.log('logging out');
     req.logOut();
     req.flash('success_msg', 'You are logged out');
     res.redirect('/user/login');
@@ -139,6 +140,7 @@ router.post('/search', jsonParser, function(req, res) {
           results = results.concat(result2);
           console.log("Results:\n", results);
           res.send(results);
+          res.render('searchResults', {page_name: "Search", que_res: results.query, layout: "layout2.ejs", extractStyles: true})
         })
         .catch(function(err) {
           if (err)
