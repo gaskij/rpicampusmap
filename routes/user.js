@@ -191,4 +191,7 @@ router.post('/main_page', jsonParser, function(req, res) {
   });
 
 
+router.get('/info', (req, res) => res.render('info', {layout: "layout2.ejs", extractStyles: true}));
+
+
 module.exports = router; 
