@@ -988,22 +988,6 @@
     },
     {
         "type": "Feature",
-        "_id": "alumni",
-        "id": "alumni",
-        "properties": {
-            "name": "Heffner Alumni House",
-            "nick": "Heffner Alumni House",
-            "category": "Operations & Administration",
-            "description": "alumni events",
-            "popupContent": "Alumni House (Heffner)"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-73.678216, 42.732883]
-        }
-    },
-    {
-        "type": "Feature",
         "_id": "boiler11",
         "id": "boiler11",
         "properties": {
