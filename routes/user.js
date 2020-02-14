@@ -115,7 +115,7 @@ router.get('/search', jsonParser, (req, res) => {
       /*results.forEach(element => {
         console.log(element['properties']['name']);
       });*/
-      res.render('searchResults', { page_name: "Search", layout: "layout2.ejs", extractStyles: true, results: results});
+      res.render('searchResults', { page_name: "Search", layout: "layout2.ejs", extractStyles: true, results: results, results_count: results.length});
     })
     .catch(err => {
       console.log(err)
