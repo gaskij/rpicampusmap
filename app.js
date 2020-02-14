@@ -2,11 +2,13 @@ const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
 const expressLayouts = require('express-ejs-layouts');
-const mongodb = require('mongodb');
-const mongoose = require('mongoose');
 const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
+const geolocations = require('./geolocations.json');
+const Location = require('./models/Locations');
+const database = require('./database');
+const assert = require('assert');
 
 const app = express();
 
@@ -14,13 +16,11 @@ const app = express();
 //  Passport Config
 require('./config/passport')(passport);
 
-//  DB Config
-const db = require('./config/keys').MongoURI;
-
-// Connect to Mongo
-mongoose.connect(db, {useUnifiedTopology: true,useNewUrlParser: true})
-    .then(() => console.log('MongoDB Connected...'))
-    .catch(err=> console.log(err));
+//adding locations for first run
+let db = database._connect();
+Location.collection.insertMany(geolocations, {ordered: false})
+.then(() => console.log("DONE Loading"))
+.catch((err) => console.log(err));
 
 // EJS 
 app.use(expressLayouts);
@@ -63,3 +63,4 @@ app.use( express.static( "public" ) );
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, console.log(`Server started on port ${PORT}`));    
+

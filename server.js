@@ -145,6 +145,7 @@ app.route('/index')
 /* ==================================== SEARCH ======================================= */
 app.route('/search')
 .get(function(req, res) {
+  console.log(req.body);
   console.log("Get search results!");
   res.sendFile(__dirname + '/public/views/searchResults.html');
 })
