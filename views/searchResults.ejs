@@ -1,4 +1,4 @@
-<link href="/style/searchResults.css" rel="stylesheet" type="text/css" />
+<link href="/css/searchResults.css" rel="stylesheet" type="text/css" />
 
 <!-- Main content -->
 <main role="main" class="flex-shrink-0">
@@ -7,11 +7,10 @@
 
     <form action="/user/search" method="get" class="form-inline py-2">
       <div class="form-group">
-
         <input id="searchText" ng-model="query" style="width: 90%;" type="search" name="query"
           placeholder="Enter a location..." class="form-control form-control-lg mr-sm-2" aria-label="Search">
       </div>
-      <button type="button" class="btn btn-primary">Go</button>
+      <button type="submit" class="btn btn-primary" ng-click="search(query);">Go</button>
     </form>
 
 

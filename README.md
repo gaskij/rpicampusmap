@@ -9,7 +9,16 @@ We are currently in the middle of a large refactor, but heavy construction will 
 
 ### Current Contributors:
 * Justin Gaskins
-* Gabriel Wild
+* Jon-Pierre Antoine
+* Darrian Gardea
+* Aidan Duane		
+* Cody Messina
+* Kristina Adams      
+
+### Project Managers:
+* Spring 2020: Jon-Pierre Antoine
+* Fall 2019: Justin Gaskins
+* Spring 2019: ?
 
 ### Founders:
 * Justin Gaskins
@@ -17,6 +26,8 @@ We are currently in the middle of a large refactor, but heavy construction will 
 * Sebastien Boulas
 
 ### Version History:
+* 2/16/2020 - v0.4.0 Login and registration implemented. Messages are flashed on error state i.e. invalid email,
+user not found, login to see admin page etc. New welcome page also added (page before map access). Code has been rebased making it more modular. All html converted to ejs and views used (modularity).
 * 5/27/2019 - v0.3.0 All basic map functionality is now restored! You can show a location on the map from the info page, search for locations, or go to the information page from the location on the map.
 * 3/26/2019 - v0.2.0 Began refactor and translation from XAMPP to MEAN Stack!
 * 1/25/2019 - v0.1.0 Initial stages of functionality are complete! More locations and authorization will be added for the release of v1.0.

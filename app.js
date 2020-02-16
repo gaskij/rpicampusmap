@@ -7,7 +7,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const geolocations = require('./geolocations.json');
 const Location = require('./models/Locations');
-const database = require('./database');
+const database = require('./scripts/database');
 const assert = require('assert');
 
 const app = express();
@@ -55,9 +55,9 @@ app.use((req, res, next) => {
 });
 
 // Routers
-app.use('/', require('./routes/index'));
-app.use('/user', require('./routes/user'));
-app.use( express.static( "public" ) );
+app.use('/', require('./scripts/routes/index'));
+app.use('/user', require('./scripts/routes/user'));
+app.use(express.static(__dirname));
 
 
 const PORT = process.env.PORT || 5000;

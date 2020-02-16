@@ -7,15 +7,15 @@ const mongoose = require('mongoose');
 const jsonParser = bodyParser.json();
 
 //  UserModel
-const User = require('../models/User');
-const Location = require('../models/Locations');
+const User = require('../../models/User');
+const Location = require('../../models/Locations');
 
 //  login page
 router.get('/login', (req, res) => res.render('login', { page_name: "Login", layout: "layout2.ejs", extractStyles: true }));
 
 //  Login Handle
 router.post('/login', (req, res, next) => {
-  console.log('authenticating');
+  console.log('authenticating\n');
   passport.authenticate('local', {
     successRedirect: '/admin',
     failureRedirect: '/user/login',
@@ -138,40 +138,6 @@ router.get('/search', jsonParser, (req, res) => {
 
 // main page --- the map
 router.get('/main_page', (req, res) => res.render('map', { page_name: "Map", layout: "layout2.ejs", extractStyles: true }));
-router.post('/main_page', jsonParser, function (req, res) {
-  //get the location to highlight
-  const query = req.body.query;
-  const machine = req.body.machine;
-  console.log(req.body);
-  console.log("Query:", query);
-  console.log("Machine:", machine);
-
-  MongoClient.connect(uri, options, function (err, db) {
-    if (err)
-      throw err;
-    else {
-      console.log("Database connected in route '/index'!")
-
-      let dbo = db.db("rpicampusmap");
-
-      // switch database if necessary
-      if (machine == "true")
-        dbo = db.db("forgemill");
-
-      dbo.collection("locations").find({ 'id': query }).toArray()
-        .then(function (result) {
-          console.log("Results:\n", result);
-          res.send(result);
-        })
-        .catch(function (err) {
-          if (err)
-            console.error("ERROR:", err);
-        });
-      db.close();
-    }
-  });
-
-});
 
 
 router.get('/info', (req, res) => res.render('info', { page_name: "Info", layout: "layout2.ejs", extractStyles: true }));
