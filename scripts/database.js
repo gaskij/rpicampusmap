@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 //  DB Config
-const db = require('./config/keys').MongoURI;
+const db = require('../config/keys').MongoURI;
 
 // Connect to Mongo
 class Database {
