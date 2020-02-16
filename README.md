@@ -11,6 +11,10 @@ We are currently in the middle of a large refactor, but heavy construction will 
 * Justin Gaskins
 * Gabriel Wild
 * Jon-Pierre Antoine
+* Darrian Gardea
+* Aidan Duane		
+* Cody Messina
+* Kristina Adams
 
 ### Founders:
 * Justin Gaskins
