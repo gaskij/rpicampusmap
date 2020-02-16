@@ -68,7 +68,7 @@ router.post('/register', (req, res) => {
         if (user) {
           // User exists
           errors.push({ msg: 'Email is already registered' })
-          res.render('register', {
+          res.render('register', {page_name: "Register", extractStyles: true },{
             errors,
             name,
             email,
@@ -126,7 +126,7 @@ router.get('/search', jsonParser, (req, res) => {
       _id: query["query"]
     })
     .then(results => {
-      res.render('searchResults', { page_name: "Search", layout: "layout2.ejs", extractStyles: true, results: results });
+      res.render('searchResults', { page_name: "Search", layout: "layout2.ejs", extractStyles: true, results: results, results_count: results.length});
     })
     .catch(err => {
       console.log(err)
@@ -174,7 +174,7 @@ router.post('/main_page', jsonParser, function (req, res) {
 });
 
 
-router.get('/info', (req, res) => res.render('info', { layout: "layout2.ejs", extractStyles: true }));
+router.get('/info', (req, res) => res.render('info', { page_name: "Info", layout: "layout2.ejs", extractStyles: true }));
 router.post('/info', jsonParser, function (req, res) {
   const comment = req.body.comment;
   const query = req.body.query;
