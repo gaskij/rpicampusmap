@@ -141,47 +141,6 @@ router.get('/main_page', (req, res) => res.render('map', { page_name: "Map", lay
 
 
 router.get('/info', (req, res) => res.render('info', { page_name: "Info", layout: "layout2.ejs", extractStyles: true }));
-router.post('/info', jsonParser, function (req, res) {
-  const comment = req.body.comment;
-  const query = req.body.query;
-  const machine = req.body.machine;
-  console.log(req.body);
-  console.log("Query:", query);
-  console.log("Machine:", machine);
-
-  MongoClient.connect(uri, options, function (err, db) {
-    if (err)
-      throw err;
-    else {
-      console.log("Database connected in route '/info'!")
-
-      let dbo = db.db("rpicampusmap");
-
-      // switch database if necessary
-
-      if (machine == "true") {
-        dbo = db.db("forgemill");
-      }
-
-
-      dbo.collection("locations").find({ 'id': query }).toArray()
-        .then(function (result) {
-          console.log("Results:\n", result);
-          res.send(result);
-        })
-        .catch(function (err) {
-          if (err)
-            console.error("ERROR:", err);
-        });
-      db.close();
-    }
-  });
-
-  if (comment) {
-    console.log(comment);
-  }
-
-});
 
 
 module.exports = router; 

@@ -114,7 +114,7 @@ const onEachFeature = function(feature, layer) {
           newPopupContent += `<a href="/info?loc=${feature.id}&machine=true">`
         }
         else {
-          newPopupContent += `<a href="/info?loc=${feature.id}">`;
+          newPopupContent += `<a href="/user/info?loc=${feature.id}">`;
         }
         newPopupContent += `
             <div class="popup"> \
