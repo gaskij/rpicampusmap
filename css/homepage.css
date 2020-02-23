@@ -29,6 +29,10 @@ footer a {
    margin: auto;
 }
 
+map-page {
+   height: 100%;
+}
+
 #mapContainer {
    height: 100%;
 }
