@@ -6,24 +6,21 @@ html, body {
     padding: 0%;
 }
 
-
-div.wrapper{
-    /*this is the height of the footer and header minus the total file length)
-    so that all remaining space% is given to the body --- this keeps the footer at the
-    bottom of the page*/
-    min-height: calc(100% - 140px);
-    position: relative;
+a {
+    color: white;
 }
 
 #footerText{
     color: white;
 }
 
-#divFooter {
+#footer {
     bottom: 0%;
-    height: 100px;
+    position: relative;
 }
 
-a {
-    color: white;
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }

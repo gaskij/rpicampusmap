@@ -29,39 +29,12 @@ footer a {
    margin: auto;
 }
 
-/* Always set the map height explicitly to define the size of the div
- * element that contains the map. */
-
-div.divContent{
-   position: absolute;
-   top: 0;
-   bottom: 0;
-   left: 0;
-   right: 0;
+map-page {
+   height: 100%;
 }
-
-.fill{
-    min-height: 100%;
-    height: 100%;
-    width: 100%;
-    max-width: 100%;
-}
-
 
 #mapContainer {
-   width: 100px;
-   height:100px;
-   min-height: 100%;
-   min-width: 100%;
-   display: block;
-}
-
-.container{
-   height: 50%;
-   padding: 0;
-   font-size: small;
-   height: calc(100% - 8em);
-   width: 100%;
+   height: 100%;
 }
 
 .popup:hover {

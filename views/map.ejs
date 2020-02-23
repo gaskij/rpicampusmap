@@ -3,38 +3,31 @@
   crossorigin="" />
 <link href="/css/homepage.css" rel="stylesheet" type="text/css"/>
 
-<!-- Main content -->
-<div class="divContent">
-  <div class="container fill">
-    <div id="mapContainer">
-      <!-- Insert Map here-->
-      <p>This is where the map goes... lol</p>
-    </div>
+<map-page>
+  <div id="mapContainer">
+    <!-- Insert Map here-->
+    <p>This is where the map goes... lol</p>
   </div>
-</div>
+</map-page>
 
-  <!-- code to run if browser doesnt support javascript and therefore the map -->
-  <noscript>
-    <div id="noscript">
-      <p>You are either using a browser that does not support JavaScript, or you have disabled JavaScript.</p>
-      <p>RPICampusMap uses JavaScript.</p>
-    </div>
-  </noscript>
-
-
+<!-- code to run if browser doesnt support javascript and therefore the map -->
+<noscript>
+  <div id="noscript">
+    <p>You are either using a browser that does not support JavaScript, or you have disabled JavaScript.</p>
+    <p>RPICampusMap uses JavaScript.</p>
+  </div>
+</noscript>
 
 <%- contentFor('map_scripts') %>
 <!-- Map required Scripts -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
-  crossorigin=""></script>
+  crossorigin="">
+</script>
 
 <%- contentFor('bottom_map_scripts') %>
 <!-- Custom Map Scripts -->
 <script type="text/javascript" src="/scripts/routes/geolocations.js"></script>
 <script type="text/javascript" src="/scripts/routes/machine_sites.js"></script>
 <script type="text/javascript" src="/scripts/routes/map.js"></script>
-<script type="text/javascript" src="/scripts/controllers/mapApp.js"></script>
 <script type="text/javascript" src="/scripts/controllers/mapController.js"></script>

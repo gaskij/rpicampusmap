@@ -110,20 +110,20 @@ const onEachFeature = function(feature, layer) {
     const point = getCoords(building);
     console.log(feature.properties);
     let newPopupContent = '';
-    if (feature.properties.type == 'machine') {
-      newPopupContent += `<a href="/info?loc=${feature.id}&machine=true">`;
+    if (feature.properties.type == "machine") {
+      newPopupContent += `<a href="/info?loc=${feature.id}&machine=true">`
     }
     else {
-      newPopupContent += `<a href="/info?loc=${feature.id}">`;
+      newPopupContent += `<a href="/user/info?loc=${feature.id}">`;
     }
     newPopupContent += `
-            <div class="popup"> \
-              <h5>${feature.properties.name}</h5> \
-              <img src="${feature.properties.thumbnail}" alt="${feature.properties.name}" width="100%"/> \
-              <p>Nicknames: ${feature.properties.nick}</p> \
-            </div> \
-          </a> \
-        `;
+        <div class="popup"> \
+          <h5>${feature.properties.name}</h5> \
+          <img src="${feature.properties.thumbnail}" alt="${feature.properties.name}" width="100%"/> \
+          <p>Nicknames: ${feature.properties.nick}</p> \
+        </div> \
+      </a> \
+    `;
     layer.bindPopup(newPopupContent);
   }
 };

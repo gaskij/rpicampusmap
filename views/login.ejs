@@ -1,9 +1,8 @@
 <link href="/css/login.css" rel="stylesheet" type="text/css" />
-<!-- Main content -->
-<main role="main" class="flex-shrink-0 py-4">
-  <section class="container">
-    <h4>You must login with an administrator account to view this page.</h4>
 
+<login-page>
+  <section class="container py-4">
+    <h4>You must login with an administrator account to view this page.</h4>
     <br>
     <% include ./partials/messages %>
     <form action="/user/login" method="POST">
@@ -20,11 +19,9 @@
 
       <button type="submit" class="btn btn-primary">Login</button>
     </form>
-
     <br>
     <div id=get_acc>
-      <p>Don't have an account?</p> <a href="/user/register" target="_blank">Request admin access.</a>
+      <p>Don't have an account?</p> <a href="/user/register">Request admin access.</a>
     </div>
   </section>
-
-</main>
+</login-page>
