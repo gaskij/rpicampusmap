@@ -4,24 +4,18 @@
 <link href="/css/homepage.css" rel="stylesheet" type="text/css"/>
 
 <!-- Main content -->
-<div class="divContent">
-  <div class="container fill">
-    <div id="mapContainer">
-      <!-- Insert Map here-->
-      <p>This is where the map goes... lol</p>
-    </div>
-  </div>
+<div id="mapContainer">
+  <!-- Insert Map here-->
+  <p>This is where the map goes... lol</p>
 </div>
 
-  <!-- code to run if browser doesnt support javascript and therefore the map -->
-  <noscript>
-    <div id="noscript">
-      <p>You are either using a browser that does not support JavaScript, or you have disabled JavaScript.</p>
-      <p>RPICampusMap uses JavaScript.</p>
-    </div>
-  </noscript>
-
-
+<!-- code to run if browser doesnt support javascript and therefore the map -->
+<noscript>
+  <div id="noscript">
+    <p>You are either using a browser that does not support JavaScript, or you have disabled JavaScript.</p>
+    <p>RPICampusMap uses JavaScript.</p>
+  </div>
+</noscript>
 
 <%- contentFor('map_scripts') %>
 <!-- Map required Scripts -->
