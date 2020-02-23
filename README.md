@@ -60,7 +60,4 @@ To start the server, run `npm start` to have the server auto-restart if you make
 ### Contributing to RPI Machines Map
 RPI Machines Map is a separate project that branches from RPI Campus Map. While it has many of the same features, it has additional features that allow users to easily find machine shops on campus, and the contents of those shops. To contribute to that project, see the [RPI Machines repo](https://github.com/gwild37/RPI-Machines).
 
-### LICENSING
-The service worker and manifest were modified from MIT licensed code found at PWABuilder.
-
 Have fun making a big impact on campus!
