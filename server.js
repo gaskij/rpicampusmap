@@ -31,7 +31,7 @@ MongoClient.connect(uri, options, function (err, db) {
   }
   else {
     console.log('Database connected in route \'/\'!');
-    let dbo = db.db('forgemill');
+    const dbo = db.db('forgemill');
 
     // Populate Database with locations if need be (ONLY FOR USERS WITH WRITE ACCESS).
     // console.log(locations);
@@ -49,7 +49,7 @@ MongoClient.connect(uri, options, function (err, db) {
       .then(function (result) {
         // console.log(result);(location
 
-        var locationData = result;
+        const locationData = result;
 
         // Start server after initial database connection
         app.listen(port);
@@ -155,8 +155,8 @@ app.route('/search')
         throw err;
       else {
         console.log('Database connected in route \'/search\'!');
-        let db1 = db.db('rpicampusmap');
-        let db2 = db.db('forgemill');
+        const db1 = db.db('rpicampusmap');
+        const db2 = db.db('forgemill');
         let results = [];
 
         // Search the database for locations matching the given regular expression

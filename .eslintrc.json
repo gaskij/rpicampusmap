@@ -18,9 +18,15 @@
             "error",
             2
         ],
-        "linebreak-style": [
-            "error",
-            "windows"
+        "no-var": [
+            "error"
+        ],
+        "prefer-const": [
+            "error", 
+            {
+                "destructuring": "any",
+                "ignoreReadBeforeAssign": false
+            }
         ],
         "quotes": [
             "error",

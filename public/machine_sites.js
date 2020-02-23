@@ -1,4 +1,4 @@
-var locations_shops = {
+const locations_shops = {
   'type': 'FeatureCollection',
   'features': [
     {

@@ -22,7 +22,7 @@ In this case, it does so on creation of the map (pageload)
 Usage: setView([latitude, longitude], zoomlevel)
 */
 
-let mymap = L.map('mapContainer', {
+const mymap = L.map('mapContainer', {
   center: [42.729453, -73.6802],
   zoom: 16,
   layers: []
@@ -124,8 +124,8 @@ const onEachFeature = function(feature, layer) {
 };
 
 //Array of circleMarkers
-let locations_arr = [];
-let locations_shops_arr = [];
+const locations_arr = [];
+const locations_shops_arr = [];
 
 /**
   * Style and add the campus points to the map
@@ -184,10 +184,10 @@ L.geoJSON(locations_shops, {
 *  These layer groups will be added to the map, and will be represented by
 *  the map keys. The maps keys filter which dots are shown on the map.
 */
-let campus_locations_layer = L.layerGroup(locations_arr);
-let machine_locations_layer = L.layerGroup(locations_shops_arr);
+const campus_locations_layer = L.layerGroup(locations_arr);
+const machine_locations_layer = L.layerGroup(locations_shops_arr);
 
-let overlayMaps = {
+const overlayMaps = {
   'Campus Locations': campus_locations_layer,
   'Machine Shop Locations': machine_locations_layer
   // add more layer groups here

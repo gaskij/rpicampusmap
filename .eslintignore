@@ -1,0 +1,12 @@
+node_modules/
+public/controllers/admin.js
+public/controllers/app.js
+public/controllers/infoController.js
+public/controllers/machineInfoController.js
+public/controllers/mapController.js
+public/controllers/searchController.js
+public/geolocations.js
+public/imagePreview.js
+public/machine_sites.js
+public/map.js
+server.js
