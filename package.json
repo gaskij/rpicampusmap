@@ -5,7 +5,10 @@
   "main": "index.html",
   "scripts": {
     "start": "nodemon server.js",
-    "test": "ECHO \"no test command found\"; exit(1);"
+    "lint": "eslint --ext .js,.ts \"./\"",
+    "lint-fix": "eslint --fix --ext .js,.ts \"./\"",
+    "test": "jest",
+    "test-coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -27,5 +30,8 @@
     "mongodb": "^3.2.3",
     "nodemon": "^1.19.1",
     "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0"
   }
 }
