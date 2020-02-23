@@ -1,12 +1,12 @@
 app.controller('searchController', function($scope, $http) {
-  console.log("searchController activated!");
+  console.log('searchController activated!');
 
   $scope.search = function(q) {
     if (q == undefined) // Browse All Results
       q='';
     console.log(`Angular get '${q}'`);
     return $http.post('/search', {query: q});
-  }
+  };
 
   $scope.params = getParams();
   console.log($scope.params);

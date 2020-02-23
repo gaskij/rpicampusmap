@@ -6,6 +6,8 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
+    "lint": "eslint --ext .js,.ts \"./\"",
+    "lint-fix": "eslint --fix --ext .js,.ts \"./\"",
     "test": "ECHO \"no test command found\"; exit(1);"
   },
   "repository": {
@@ -35,5 +37,8 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
   }
 }
