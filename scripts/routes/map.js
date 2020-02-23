@@ -102,21 +102,21 @@ const getCoords = function(id) {
  * @param layer the layer the feature will be added to
  */
 const onEachFeature = function(feature, layer) {
-  // does this feature have a property named popupContent?
-  if (feature.properties && feature.properties.popupContent) {
-    layer.bindPopup(`<div id="featurePopup">${feature.properties.popupContent}</div>`);
+    // does this feature have a property named popupContent?
+    if (feature.properties && feature.properties.popupContent) {
+        layer.bindPopup(`<div id="featurePopup">${feature.properties.popupContent}</div>`);
 
-    const building = feature.id;
-    const point = getCoords(building);
-    console.log(feature.properties);
-    let newPopupContent = '';
-    if (feature.properties.type == 'machine') {
-      newPopupContent += `<a href="/info?loc=${feature.id}&machine=true">`;
-    }
-    else {
-      newPopupContent += `<a href="/info?loc=${feature.id}">`;
-    }
-    newPopupContent += `
+        const building = feature.id;
+        const point = getCoords(building);
+        console.log(feature.properties);
+        let newPopupContent = '';
+        if (feature.properties.type == "machine") {
+          newPopupContent += `<a href="/info?loc=${feature.id}&machine=true">`
+        }
+        else {
+          newPopupContent += `<a href="/user/info?loc=${feature.id}">`;
+        }
+        newPopupContent += `
             <div class="popup"> \
               <h5>${feature.properties.name}</h5> \
               <img src="${feature.properties.thumbnail}" alt="${feature.properties.name}" width="100%"/> \
