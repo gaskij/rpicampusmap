@@ -23,21 +23,21 @@ Usage: setView([latitude, longitude], zoomlevel)
 */
 
 let mymap = L.map('mapContainer', {
-    center: [42.729453, -73.6802],
-    zoom: 16,
-    layers: []
-})
+  center: [42.729453, -73.6802],
+  zoom: 16,
+  layers: []
+});
 
 
 //////////////////////////////////  MAP STYLE    ////////////////////////////////
 /* Tile Layer is the display style (satellite, street, etc.)
 Attribution refers to the creeator of the layer (accreditation)*/
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-    maxZoom: 18,
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+  maxZoom: 18,
+  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
         '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
         'Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>',
-    id: 'mapbox.streets'
+  id: 'mapbox.streets'
 }).addTo(mymap);
 
 
@@ -46,21 +46,21 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 //        so that we don't have to hard code the points here
 // Highlight campus on the map using points as an outline, connect-the-dots style
 const campus = [
-   [42.728116, -73.684807],
-   [42.73027, -73.684294],
-   [42.730538, -73.686504],
-   [42.733585, -73.685709],
-   [42.733408, -73.684616],
-   [42.73396, -73.682277],
-   [42.732967, -73.676569],
-   [42.738941, -73.674831],
-   [42.737521, -73.665197],
-   [42.737805, -73.662837],
-   [42.733979, -73.66342],
-   [42.730811, -73.667131],
-   [42.732214, -73.671357],
-   [42.726067, -73.673395],
-   [42.728116, -73.684765]
+  [42.728116, -73.684807],
+  [42.73027, -73.684294],
+  [42.730538, -73.686504],
+  [42.733585, -73.685709],
+  [42.733408, -73.684616],
+  [42.73396, -73.682277],
+  [42.732967, -73.676569],
+  [42.738941, -73.674831],
+  [42.737521, -73.665197],
+  [42.737805, -73.662837],
+  [42.733979, -73.66342],
+  [42.730811, -73.667131],
+  [42.732214, -73.671357],
+  [42.726067, -73.673395],
+  [42.728116, -73.684765]
 ];
 L.polygon(campus, {color: 'gray', opacity: 0.1}).addTo(mymap);
 
@@ -75,10 +75,10 @@ const popup = L.popup();
  */
 const onMapClick = function(e) {
   popup
-   .setLatLng(e.latlng)
-   .setContent("You clicked the map at " + e.latlng.toString())
-   .openOn(mymap);
-}
+    .setLatLng(e.latlng)
+    .setContent('You clicked the map at ' + e.latlng.toString())
+    .openOn(mymap);
+};
 
 mymap.on('click', onMapClick);
 
@@ -87,14 +87,14 @@ mymap.on('click', onMapClick);
  * @param id The id of the given location
  */
 const getCoords = function(id) {
-    for (let i=0; i < locations['features'].length; i++) {
-        if (locations['features'][i]['id'] == id) {
-            point = locations['features'][i]['geometry']['coordinates'];
-            return point;
-        }
+  for (let i=0; i < locations['features'].length; i++) {
+    if (locations['features'][i]['id'] == id) {
+      point = locations['features'][i]['geometry']['coordinates'];
+      return point;
     }
-    return 0;
-}
+  }
+  return 0;
+};
 
 /**
  * Binds properties to each Feature in a Feature Collection
@@ -124,9 +124,9 @@ const onEachFeature = function(feature, layer) {
             </div> \
           </a> \
         `;
-        layer.bindPopup(newPopupContent);
-    }
-}
+    layer.bindPopup(newPopupContent);
+  }
+};
 
 //Array of circleMarkers
 let locations_arr = [];
@@ -136,51 +136,51 @@ let locations_shops_arr = [];
   * Style and add the campus points to the map
 */
 L.geoJSON(locations, {
-    style: function (feature) {
-        return feature.properties && feature.properties.style;
-    },
-    // For each feature added to the map, it will perform the onEachFeature() function
-    onEachFeature: onEachFeature,
+  style: function (feature) {
+    return feature.properties && feature.properties.style;
+  },
+  // For each feature added to the map, it will perform the onEachFeature() function
+  onEachFeature: onEachFeature,
 
-    // Adds a circleMarker at the point specified by the coords of the feature
-    pointToLayer: function (feature, latlng) {
-        const campus_circle_settings = {
-            radius: 8,
-            fillColor: "#ff7800",
-            color: "#000",
-            weight: 1,
-            opacity: 1,
-            fillOpacity: 0.8
-        }
-        locations_arr.push(L.circleMarker(latlng,campus_circle_settings));
-        return locations_arr[locations_arr.length-1];
-    },
+  // Adds a circleMarker at the point specified by the coords of the feature
+  pointToLayer: function (feature, latlng) {
+    const campus_circle_settings = {
+      radius: 8,
+      fillColor: '#ff7800',
+      color: '#000',
+      weight: 1,
+      opacity: 1,
+      fillOpacity: 0.8
+    };
+    locations_arr.push(L.circleMarker(latlng,campus_circle_settings));
+    return locations_arr[locations_arr.length-1];
+  },
 });
 
 /**
   * Style and add the machine site points to the map
 */
 L.geoJSON(locations_shops, {
-    style: function (feature) {
-        return feature.properties && feature.properties.style;
-    },
-    // For each feature added to the map, it will perform the onEachFeature() function
-    onEachFeature: onEachFeature,
+  style: function (feature) {
+    return feature.properties && feature.properties.style;
+  },
+  // For each feature added to the map, it will perform the onEachFeature() function
+  onEachFeature: onEachFeature,
 
-    // Adds a circleMarker at the point specified by the coords of the feature
-    pointToLayer: function (feature, latlng) {
-        const machine_circle_settings = {
-            // circleMarker shows at the Point's location
-            radius: 8,
-            fillColor: "#0000ff",
-            color: "#000",
-            weight: 1,
-            opacity: 1,
-            fillOpacity: 0.8
-        }
-        locations_shops_arr.push(L.circleMarker(latlng,machine_circle_settings));
-        return locations_shops_arr[locations_shops_arr.length-1];
-    },
+  // Adds a circleMarker at the point specified by the coords of the feature
+  pointToLayer: function (feature, latlng) {
+    const machine_circle_settings = {
+      // circleMarker shows at the Point's location
+      radius: 8,
+      fillColor: '#0000ff',
+      color: '#000',
+      weight: 1,
+      opacity: 1,
+      fillOpacity: 0.8
+    };
+    locations_shops_arr.push(L.circleMarker(latlng,machine_circle_settings));
+    return locations_shops_arr[locations_shops_arr.length-1];
+  },
 });
 
 
@@ -192,9 +192,9 @@ let campus_locations_layer = L.layerGroup(locations_arr);
 let machine_locations_layer = L.layerGroup(locations_shops_arr);
 
 let overlayMaps = {
-    "Campus Locations": campus_locations_layer,
-    "Machine Shop Locations": machine_locations_layer
-    // add more layer groups here
+  'Campus Locations': campus_locations_layer,
+  'Machine Shop Locations': machine_locations_layer
+  // add more layer groups here
 };
 
 // adding the layer groups in overlayMaps to the map (but it doesn't render yet)
