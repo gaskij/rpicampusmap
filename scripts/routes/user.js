@@ -109,7 +109,8 @@ router.get('/search', jsonParser, (req, res) => {
   console.log(query);
   
   
-  if(req.query["query"]== null || req.query["query"]== ''){
+  // Display all location results if search with no query 
+  if(query["query"]== null || query["query"]== ''){
     Location.find()
     .then(results => {
       /*results.forEach(element => {
@@ -122,8 +123,28 @@ router.get('/search', jsonParser, (req, res) => {
     });
   }
   else{
-    Location.find({
-      _id: query["query"]
+    Location.find({ 
+      // Find case insensitive query matches based on id, name, or nickname
+      $or: [
+        {
+          _id: { 
+            $regex: query["query"], 
+            $options: "i" 
+          }
+        },
+        {
+          "properties.name": { 
+            $regex: query["query"], 
+            $options: "i" 
+          }
+        },
+        {
+          "properties.nick": { 
+            $regex: query["query"], 
+            $options: "i"
+          }
+        }
+      ]
     })
     .then(results => {
       res.render('searchResults', { page_name: "Search", layout: "layout2.ejs", extractStyles: true, results: results, results_count: results.length});
