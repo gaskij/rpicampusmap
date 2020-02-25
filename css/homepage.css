@@ -31,10 +31,17 @@ footer a {
 
 map-page {
    height: 100%;
+   position: absolute;
+   min-height: 100%;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
 }
 
 #mapContainer {
    height: 100%;
+   min-height: 100%;
 }
 
 .popup:hover {
