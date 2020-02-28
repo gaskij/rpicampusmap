@@ -1218,6 +1218,86 @@ var locations = {
         'type': 'Point',
         'coordinates': [-73.677091, 42.732331]
       }
+    },
+    {
+      'type': 'Feature',
+      '_id': 'cary',
+      'id': 'cary',
+      'properties': {
+        'name': 'Cary Hall',
+        'nick': 'Cary, Freshman Five, Freshman Hill',
+        'category': 'Student Housing',
+        'description': 'One of five identical housing buildings in the \'Freshman Five\'',
+        'popupContent': 'Cary Hall'
+      },
+      'geometry': {
+        'type': 'Point',
+        'coordinates': [-73.67459, 42.728845]
+      }
+    },
+    {
+      'type': 'Feature',
+      '_id': 'davison',
+      'id': 'davison',
+      'properties': {
+        'name': 'Davison Hall',
+        'nick': 'Davison',
+        'category': 'Student Housing',
+        'description': 'Residence Hall',
+        'popupContent': 'Davison Hall'
+      },
+      'geometry': {
+        'type': 'Point',
+        'coordinates': [-73.674021, 42.727277]
+      }
+    },
+    {
+      'type': 'Feature',
+      '_id': 'crockett',
+      'id': 'crockett',
+      'properties': {
+        'name': 'Crockett Hall',
+        'nick': 'Crockett',
+        'category': 'Student Housing',
+        'description': 'Freshman Five Residence Hall',
+        'popupContent': 'Crockett Hall'
+      },
+      'geometry': {
+        'type': 'Point',
+        'coordinates': [-73.673421, 42.728285]
+      }
+    },
+    {
+      'type': 'Feature',
+      '_id': 'robinson',
+      'id': 'robinson',
+      'properties': {
+        'name': 'Robinson Field',
+        'nick': 'Baseball Field',
+        'category': 'Student Life',
+        'description': 'Used for baseball practice',
+        'popupContent': 'Robinson Field'
+      },
+      'geometry': {
+        'type': 'Point',
+        'coordinates': [-73.672997, 42.735666]
+      }
+    },
+    {
+      'type': 'Feature',
+      '_id': 'ecomplex',
+      'id': 'ecomplex',
+      'properties': {
+        'name': 'E-Complex',
+        'nick': 'E-Complex',
+        'category': 'Student Housing',
+        'description': 'Residence Hall',
+        'popupContent': 'E-Complex'
+      },
+      'geometry': {
+        'type': 'Point',
+        'coordinates': [-73.679182, 42.731394]
+      }
     }
   ]
 };
@@ -1260,6 +1340,7 @@ Mueller Center
 Playhouse
 Radio Club W2SZ
 Rensselaer Union
+Robinson Field
 Robison Swimming Pool
 Russell Sage Dining Hall
 
@@ -1269,7 +1350,11 @@ Blitman Commons
 Bray Hall
 Bryckwyck
 Burdett Avenue Residence Hall
+Cary Hall
 Colonie Apartments
+Crockett Hall
+Davison Hall
+E-Complex
 Hall Hall
 Nason Hall
 North Hall
