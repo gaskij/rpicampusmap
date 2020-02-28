@@ -108,6 +108,7 @@ INSERT INTO `images` (`location`, `link`) VALUES
 ('Nugent Hall', 'http://www.rpi.edu/dept/cct/apps/reslife/images/pictures/nugent1.jpg'),
 ('Experimental Media and Performing Arts Center at Rensselaer', 'http://empac.rpi.edu/sites/default/files/styles/empac_cms_slideshow__default/public/ESTO_AaronEsto_50.jpg?itok=9rVzDof9');
 
+
 -- --------------------------------------------------------
 
 --
@@ -130,14 +131,19 @@ INSERT INTO `main` (`location`, `description`, `address`, `phone`) VALUES
 ('Academy Hall', 'Home to the Student Health Center, Bursar, and registrar. This building also includes an auditorium.', '110 8th St, Troy, NY 12180', 518),
 ('Admissions', 'This is where the admissions department is located at RPI.', '110 8th St, Troy, NY 12180', 518),
 ('Amos Eaton Hall', 'Home of the Mathematics Department and part of the Computer Science Department. Many Math and Computer science courses are taught inside. It is names after Amos Eaton, Co-Founder of RPI.', 'Amos Eaton Hall, 110 8th Street, Troy, NY, 12180', NULL),
+('Anderson Field', 'Sports field on campus. Many other sports play here besides rugby', 'Sage Ave, Troy, NY 12180', NULL),
 ('Barton Hall', 'One of the residence halls on campus. Located on freshman hill.', '1999 Burdett Ave, Troy, NY 12180', NULL),
 ('Blitman Commons', 'Campus residence hall. Includes various ammenities such as a dining hall.', '1800 6th Ave, Troy, NY 12180', NULL),
 ('Bray Hall', 'One of the residence halls on campus. Located on freshman hill.', '1999 Burdett Ave, Troy, NY 12180', NULL),
+('Cary Hall', 'One of the residence halls on campus. Located on freshman hill.', '1999 Burdett Ave, Troy, NY 12180', NULL),
 ('Carnegie Building', 'Academic building on campus.', '110 8th St, Troy, NY 12180', NULL),
 ('Center for Biotechnology and Interdisciplinary Studies', 'Research facility on campus. This is a popular destination for guest speakers on campus.', '1623 15th St, Troy, NY 12180', 518),
 ('Cogswell Laboratory', 'A chemistry-biology research center on campus. Recieves government funding from the National Science Foundation as well as the New York State Dormitory Authority.', '110 8th St, Troy, NY 12180', NULL),
 ('Commons Dining Hall', 'One of the main dining hills on campus. Located on freshman hill. The mailing center is also located in this building.', '1999 Burdett Ave, Troy, NY 12180', 518),
+('Crockett Hall', 'One of the residence halls on campus. Located on freshman hill.', '1999 Burdett Ave, Troy, NY 12180', NULL),
 ('Darrin Communications Center', 'Main lecture hall on campus. Also where the CCPD has their office. This is the building where most large lectures are held.', '110 8th Street, Troy, NY, 12180', NULL),
+('Davison Hall', 'One of the residence halls on campus. Located on freshman hill.', '1999 Burdett Ave, Troy, NY 12180', NULL),
+('E-Complex', 'One of the residence halls on campus. Located on Sage Ave.', '110 8th St, Troy, NY 12180', NULL),
 ('Experimental Media and Performing Arts Center at Rensselaer', 'Alot of extracurricular activities happen here. The building includes a 1,200 seat concert hall and a 400 seat theater.', '44 8th St, Troy, NY 12180', 518),
 ('Folsom Library', 'The main library on campus. 4 floors of study spaces, bookshelves and even a cafe. A great place to study quietly.', '110 8th St, Troy, NY 12180', NULL),
 ('Greene Building', 'Academic building on campus. Home to the School of Architecture.', '110 8th St, Troy, NY 12180', NULL),
@@ -150,12 +156,13 @@ INSERT INTO `main` (`location`, `description`, `address`, `phone`) VALUES
 ('Low Center for Industrial Innovation', 'Commonly known as the CII. Acadmic building on campus that has a number of larger academic buildings and auditoriums.', '110 8th St, Troy, NY 12180', NULL),
 ('Mueller Center', 'Fitness and wellness center on campus. This building has a gym that extends for two floors with various yoga and wellness classes offered on the third floor. This building also includes the armory and the campus swimming pools.', '110 8th St, Troy, NY 12180', 518),
 ('Nason Hall', 'One of the residence halls on campus. Located on freshman hill.', '1999 Burdett Ave, Troy, NY 12180', NULL),
+('North Hall', 'One of the residence halls on campus. Located on Sage Ave.', '110 8th St, Troy, NY 12180', NULL),
 ('Nugent Hall', 'One of the residence halls on campus. Located on freshman hill.', '1999 Burdett Ave, Troy, NY 12180', NULL),
 ('Pittsburgh Building', 'Academic building on campus. Home of the Lally School of Management.', '110 8th St, Troy, NY 12180', 518),
 ('Public Safety', 'Home to the campus police.', '110 8th St, Troy, NY 12180', NULL),
 ('Rensselaer Union', 'Home to a number of different recreation centers, food courts, study rooms, and the campus store.', '110 8th St, Troy, NY 12180', 518),
 ('Rickets Building', 'Academic building on campus. Home to the Chemical Engineering Department.', '110 8th St, Troy, NY 12180', NULL),
-('Rugby Field', 'Sports field on campus. Many other sports play here besides rugby', 'Sage Ave, Troy, NY 12180', NULL),
+('Robinson Field', 'Sports field on campus. Mainly used for baseball', 'Eagle St, Troy, NY 12180', NULL),
 ('Russell Sage Laboratory', 'Academic building on campus. Home of the School of Humanities, Arts, and Social Sciences.', '110 8th St, Troy, NY 12180', NULL),
 ('Sage Dining Hall', 'One of the main dining halls on campus', '110 8th St, Troy, NY 12180', NULL),
 ('Sigma Phi Epsilon', 'Worst frat on campus, don\'t join!', '2005 15th St, Troy, NY 12180', NULL),
