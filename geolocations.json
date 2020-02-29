@@ -67,7 +67,6 @@
         "type": "Feature",
         "_id": "dcc",
         "id": "dcc",
-        "_id": "dcc",
         "properties": {
             "name": "Darrin Communications Center",
             "nick": "DCC, DARRIN",
@@ -117,7 +116,6 @@
         "type": "Feature",
         "_id": "lib",
         "id": "lib",
-        "_id": "lib",
         "properties": {
             "name": "Folsom Library",
             "nick": "FOLSOM, LIB",
@@ -183,7 +181,6 @@
         "type": "Feature",
         "_id": "lally",
         "id": "lally",
-        "_id": "lally",
         "properties": {
             "name": "Lally Hall",
             "nick": "LALLY",
@@ -475,7 +472,6 @@
         "type": "Feature",
         "_id": "houston",
         "id": "houston",
-        "_id": "houston",
         "properties": {
             "name": "Houston Field House",
             "nick": "field house",
@@ -1182,7 +1178,6 @@
         "type": "Feature",
         "_id": "sigep",
         "id": "sigep",
-        "_id": "sigep",
         "properties": {
             "name": "Sigma Phi Epsilon (ΣΦΕ)",
             "nick": "SigEp, SPE",

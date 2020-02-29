@@ -8,7 +8,7 @@ const jsonParser = bodyParser.json();
 
 //  UserModel
 const User = require('../../models/User');
-const Location = require('../../models/Locations');
+const Location = require('../../models/Location');
 
 //  login page
 router.get('/login', (req, res) => res.render('login', { page_name: "Login", layout: "layout2.ejs", extractStyles: true }));

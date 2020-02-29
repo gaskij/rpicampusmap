@@ -6,7 +6,7 @@ const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
 const geolocations = require('./geolocations.json');
-const Location = require('./models/Locations');
+const Location = require('./models/Location');
 const database = require('./scripts/database');
 const assert = require('assert');
 

@@ -1,0 +1,36 @@
+<link href="/css/register.css" rel="stylesheet" type="text/css" />
+
+<registration-page>
+  <section class="container py-4">
+    <h4>Sign up to request access to an administrator account.</h4>
+    <br>
+    <% include ./partials/messages %>
+    <form action="/user/register" method="POST">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="name" aria-describedby="emailHelp"
+          placeholder="rcsID" value="<%= typeof username != 'undefined' ? username : '' %>" />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email" name="email" placeholder="email"
+          value="<%= typeof email != 'undefined' ? email : '' %>" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password"
+          value="<%= typeof password != 'undefined' ? password : '' %>" />
+      </div>
+      <div class="form-group">
+        <label for="password2">Confirm Password</label>
+        <input type="password" class="form-control" id="password2" name="password2" placeholder="Password"
+          value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
+      </div>
+      <!-- <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div> -->
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+  </section>
+</registration-page>
