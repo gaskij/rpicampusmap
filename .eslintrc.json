@@ -2,12 +2,15 @@
     "env": {
         "browser": true,
         "es6": true,
-        "node": true
+        "node": true,
+        "jest": true
     },
     "extends": [
         "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
         "airbnb"
     ],
+    "plugins": ["import"],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
@@ -22,6 +25,13 @@
           "files": ["src/**/*.{js,ts}"]
         }
     ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": ["ts", "js"]
+            }
+        }
+    },
     "rules": {
         "comma-dangle": [
             "error",
@@ -41,9 +51,6 @@
                 "allowForLoopAfterthoughts": true
             }
         ],
-        "prefer-destructuring": [
-            "off"
-        ],
         "quotes": [
             "error",
             "single"
@@ -51,6 +58,11 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "file-extension": "off",
+        "prefer-destructuring": "off",
+        "import/extensions": "off",
+        "import/no-extra-dependencies": "off",
+        "import/no-unresolved": "off"
     }
 }

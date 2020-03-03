@@ -1,11 +1,10 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const LocationSchema = new mongoose.Schema({
   _id: {
     type: String,
     require: true,
   },
-
   id: {
     type: String,
     require: true,
@@ -23,6 +22,10 @@ const LocationSchema = new mongoose.Schema({
       type: String,
       require: true,
     },
+    amenity: {
+      type: String,
+      require: false,
+    },
     description: {
       type: String,
       require: true,
@@ -31,6 +34,14 @@ const LocationSchema = new mongoose.Schema({
       type: String,
       require: true,
     },
+  },
+  comments: {
+    type: Array,
+    require: true,
+  },
+  photos: {
+    type: Array,
+    require: true,
   },
   geometry: {
     type: String,
@@ -43,4 +54,4 @@ const LocationSchema = new mongoose.Schema({
 
 const Location = mongoose.model('Location', LocationSchema);
 
-module.exports = Location;
+export default Location;

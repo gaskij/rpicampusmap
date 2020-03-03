@@ -1,0 +1,16 @@
+.form-row {
+  max-width: 100%;
+}
+
+#infoTop {
+  width: 100%;
+  background-color: beige;
+}
+
+#photos {
+  height: 50vh;
+}
+
+#photos img {
+  max-height: 100%;
+}

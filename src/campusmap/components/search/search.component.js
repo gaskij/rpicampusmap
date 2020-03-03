@@ -1,5 +1,5 @@
+import { getParams } from 'campusmap/utils';
 import searchModule from './search.module';
-import { getParams } from '../../utils';
 
 const SearchController = ($http, $routeParams, $scope) => {
   console.log('SearchController activated!');
@@ -28,9 +28,9 @@ const SearchController = ($http, $routeParams, $scope) => {
  * Register `search` component, along with its associated controller
  * and template.
  */
-searchModule.component('search', {
+searchModule.component('searchResults', {
   // This name is what AngularJS uses to match to the `<search>` element.
-  templateUrl: '/searchResults.html',
+  templateUrl: './components/search/searchResults.html',
   // This is the controller used when this template is rendered
   controller: ['$routeParams', SearchController],
 });

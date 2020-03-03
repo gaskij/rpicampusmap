@@ -1,3 +1,6 @@
 import angular from 'angular';
+import ngRoute from 'angular-route';
 
-export default angular.module('search', []);
+const searchModule = angular.module('searchResults', [ngRoute]);
+
+export default searchModule;
