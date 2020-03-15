@@ -43,23 +43,23 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 
 // Highlight campus on the map using points as an outline, connect-the-dots style
 const campus = [
-   [42.728116, -73.684807],
-   [42.73027, -73.684294],
-   [42.730538, -73.686504],
-   [42.733585, -73.685709],
-   [42.733408, -73.684616],
-   [42.73396, -73.682277],
-   [42.732967, -73.676569],
-   [42.738941, -73.674831],
-   [42.737521, -73.665197],
-   [42.737805, -73.662837],
-   [42.733979, -73.66342],
-   [42.730811, -73.667131],
-   [42.732214, -73.671357],
-   [42.726067, -73.673395],
-   [42.728116, -73.684765]
+    [42.728116, -73.684807],
+    [42.73027, -73.684294],
+    [42.730538, -73.686504],
+    [42.733585, -73.685709],
+    [42.733408, -73.684616],
+    [42.73396, -73.682277],
+    [42.732967, -73.676569],
+    [42.738941, -73.674831],
+    [42.737521, -73.665197],
+    [42.737805, -73.662837],
+    [42.733979, -73.66342],
+    [42.730811, -73.667131],
+    [42.732214, -73.671357],
+    [42.726067, -73.673395],
+    [42.728116, -73.684765]
 ];
-L.polygon(campus, {color: 'gray', opacity: 0.1}).addTo(mymap);
+L.polygon(campus, { color: 'gray', opacity: 0.1 }).addTo(mymap);
 
 // Default popup object that would show on the map if a nonregistered point is clicked
 const popup = L.popup();
@@ -68,11 +68,11 @@ const popup = L.popup();
  * Perform the following operations every time the map layer is clicked
  * @param e an event, in this case a click
  */
-const onMapClick = function(e) {
-  popup
-   .setLatLng(e.latlng)
-   .setContent("You clicked the map at " + e.latlng.toString())
-   .openOn(mymap);
+const onMapClick = function (e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(mymap);
 }
 
 mymap.on('click', onMapClick);
@@ -81,8 +81,8 @@ mymap.on('click', onMapClick);
  * Fetch the coordinates of a location in an array [longitude, latitude]
  * @param id The id of the given location
  */
-const getCoords = function(id) {
-    for (let i=0; i < locations['features'].length; i++) {
+const getCoords = function (id) {
+    for (let i = 0; i < locations['features'].length; i++) {
         if (locations['features'][i]['id'] == id) {
             point = locations['features'][i]['geometry']['coordinates'];
             return point;
@@ -96,7 +96,7 @@ const getCoords = function(id) {
  * @param feature the feature object that will be operated on
  * @param layer the layer the feature will be added to
  */
-const onEachFeature = function(feature, layer) {
+const onEachFeature = function (feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.popupContent) {
         layer.bindPopup(`<div id="featurePopup">${feature.properties.popupContent}</div>`);
@@ -106,10 +106,10 @@ const onEachFeature = function(feature, layer) {
         console.log(feature.properties);
         let newPopupContent = '';
         if (feature.properties.type == "machine") {
-          newPopupContent += `<a href="/info?loc=${feature.id}&machine=true">`
+            newPopupContent += `<a href="/info?loc=${feature.id}&machine=true">`
         }
         else {
-          newPopupContent += `<a href="/info?loc=${feature.id}">`;
+            newPopupContent += `<a href="/info?loc=${feature.id}">`;
         }
         newPopupContent += `
             <div class="popup"> \
@@ -148,8 +148,8 @@ L.geoJSON(locations, {
             opacity: 1,
             fillOpacity: 0.8
         }
-        locations_arr.push(L.circleMarker(latlng,campus_circle_settings));
-        return locations_arr[locations_arr.length-1];
+        locations_arr.push(L.circleMarker(latlng, campus_circle_settings));
+        return locations_arr[locations_arr.length - 1];
     },
 });
 
@@ -174,24 +174,10 @@ L.geoJSON(locations_shops, {
             opacity: 1,
             fillOpacity: 0.8
         }
-        locations_shops_arr.push(L.circleMarker(latlng,machine_circle_settings));
-        return locations_shops_arr[locations_shops_arr.length-1];
+        locations_shops_arr.push(L.circleMarker(latlng, machine_circle_settings));
+        return locations_shops_arr[locations_shops_arr.length - 1];
     },
 });
 
-
-/* Creating layer groups to hold arrays of locations
-*  These layer groups will be added to the map, and will be represented by
-*  the map keys. The maps keys filter which dots are shown on the map.
-*/
-let campus_locations_layer = L.layerGroup(locations_arr);
-let machine_locations_layer = L.layerGroup(locations_shops_arr);
-
-let overlayMaps = {
-    "Campus Locations": campus_locations_layer,
-    "Machine Shop Locations": machine_locations_layer
-    // add more layer groups here
-};
-
-// adding the layer groups in overlayMaps to the map (but it doesn't render yet)
-L.control.layers(null, overlayMaps).addTo(mymap);
+// Add the campus location points to the map (will automatically display when map is opened)
+let campus_locations_layer = L.layerGroup(locations_arr).addTo(mymap);
