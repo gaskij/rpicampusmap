@@ -41,6 +41,9 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 }).addTo(mymap);
 
 
+
+
+
 // Highlight campus on the map using points as an outline, connect-the-dots style
 const campus = [
   [42.728116, -73.684807],
@@ -76,6 +79,22 @@ const onMapClick = function(e) {
 };
 
 mymap.on('click', onMapClick);
+
+function onLocationFound(e) {
+    var radius = e.accuracy;
+
+    L.marker(e.latlng).addTo(mymap)
+        .bindPopup("You are within " + radius + " meters from this point").openPopup();
+
+    L.circle(e.latlng, radius).addTo(mymap);
+}
+
+mymap.on('locationfound', onLocationFound);
+mymap.locate({setView: true, watch: true,});
+
+
+
+
 
 /**
  * Fetch the coordinates of a location in an array [longitude, latitude]
@@ -178,6 +197,8 @@ L.geoJSON(locations_shops, {
     return locations_shops_arr[locations_shops_arr.length-1];
   },
 });
+
+
 
 
 /* Creating layer groups to hold arrays of locations
