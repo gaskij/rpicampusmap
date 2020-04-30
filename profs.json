@@ -1,0 +1,899 @@
+[
+    {
+        "type": "Feature",
+        "_id": "adali",
+        "id": "adali",
+        "properties": {
+            "name": "Sibel Adali",
+            "email": "adalis@rpi.edu",
+            "phone": "518-276-8047",
+            "office": "313 Lally Hall",
+            "department": "Computer Science",
+            "description": "Professor & Assoc. Dean, currently teaching CSCI 4380"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "anshelevich",
+        "id": "anshelevich",
+        "properties": {
+            "name": "Elliot Anshelevich",
+            "email": "anshee@rpi.edu",
+            "phone": "518-276-6491",
+            "office": "311 Lally Hall",
+            "department": "Computer Science",
+            "description": "Professor, currently teaching CSCI 4020"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "bennett",
+        "id": "bennett",
+        "properties": {
+            "name": "Kristin Bennett",
+            "email": "bennek@rpi.edu",
+            "phone": "518-276-6899",
+            "office": "Unknown",
+            "department": "Mathematical Sciences, Computer Science, School of Management",
+            "description": "Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "berman",
+        "id": "berman",
+        "properties": {
+            "name": "Francine Berman",
+            "email": "bermaf@rpi.edu",
+            "phone": "518-276-3794",
+            "office": "Amos Eaton 218",
+            "department": "Computer Science",
+            "description": "Edward P. Hamilton Distinguished Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "bringsjord",
+        "id": "bringsjord",
+        "properties": {
+            "name": "Selmer Bringsjord",
+            "email": "Selmer.Bringsjord@gmail.com",
+            "phone": "518-276-6472",
+            "office": "Carnegie Building 3rd Floor",
+            "department": "Cognitive Science, Computer Science, School of Management",
+            "description": "Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "bystroff",
+        "id": "bystroff",
+        "properties": {
+            "name": "Chris Bystroff",
+            "email": "bystrc@rpi.edu",
+            "phone": "518-276-3185",
+            "office": "3C07 Jonsson-Rowland Science Center",
+            "department": "Biological Sciences, Computer Science",
+            "description": "Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "carothers",
+        "id": "carothers",
+        "properties": {
+            "name": "Christopher D. Carothers",
+            "email": "carotc@rpi.edu",
+            "phone": "518-276-2930",
+            "office": "309A Materials Research Center",
+            "department": "Computer Science",
+            "description": "Director, Center for Computational Innovations; Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "cutler",
+        "id": "cutler",
+        "properties": {
+            "name": "Barbara Cutler",
+            "email": "cutleb@rpi.edu",
+            "phone": "518-276-3274",
+            "office": "Lally 302",
+            "department": "Computer Science",
+            "description": "Associate Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "fox",
+        "id": "fox",
+        "properties": {
+            "name": "Peter Fox",
+            "email": "foxp@rpi.edu",
+            "phone": "518-276-4862",
+            "office": "2120 Winslow Building",
+            "department": "Earth & Environmental Sciences, Computer Science, Cognitive Science",
+            "description": "Tetherless World Constellation Chair; Professor; Director, Information Technology & Web Science"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "franklin",
+        "id": "franklin",
+        "properties": {
+            "name": "W. Randolph Franklin",
+            "email": "frankwr@rpi.edu",
+            "phone": "518-276-6077",
+            "office": "JEC 6026",
+            "department": "Electrical, Computer, & Systems Engineering; Computer Science",
+            "description": "Professor; Manager, Computational Geometry Lab"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "gao",
+        "id": "gao",
+        "properties": {
+            "name": "Jianxi Gao",
+            "email": "gaoj8@rpi.edu",
+            "phone": "857-205-8958",
+            "office": "MRC 304",
+            "department": "Computer Science",
+            "description": "Assistant Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "gittens",
+        "id": "gittens",
+        "properties": {
+            "name": "Alex Gittens",
+            "email": "gittea@rpi.edu",
+            "phone": "518-276-6476",
+            "office": "Lally 316",
+            "department": "Computer Science",
+            "description": "Assistant Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "goldberg",
+        "id": "goldberg",
+        "properties": {
+            "name": "Mark K Goldberg",
+            "email": "goldbm@rpi.edu",
+            "phone": "518-276-2609",
+            "office": "Lally 302",
+            "department": "Computer Science",
+            "description": "Professor Emeritus"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "goldschmidt",
+        "id": "goldschmidt",
+        "properties": {
+            "name": "David Goldschmidt",
+            "email": "goldschmidt@gmail.com",
+            "phone": "518-276-2819",
+            "office": "Amos Eaton 115",
+            "department": "Computer Science",
+            "description": "Executive Officer, Department of Computer Science"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "gray",
+        "id": "gray",
+        "properties": {
+            "name": "Wayne Gray",
+            "email": "grayw@rpi.edu",
+            "phone": "518-276-3315",
+            "office": "301B Carnegie Building",
+            "department": "Cognitive Science, Computer Science",
+            "description": "Professor; Graduate Program Director, Cognitive Science"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "hendler",
+        "id": "hendler",
+        "properties": {
+            "name": "James A. Hendler",
+            "email": "hendlj2@rpi.edu",
+            "phone": "518-276-4401",
+            "office": "2103 Winslow Building",
+            "department": "Computer Science",
+            "description": "Tetherless World Senior Constellation Professor of Computer and Cognitive Science; Director, Rensselaer Institute for Data Exploration and Applications"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "holzbauer",
+        "id": "holzbauer",
+        "properties": {
+            "name": "Buster O. Holzbauer",
+            "email": "holzbh2@rpi.edu",
+            "phone": "518-276-6716",
+            "office": "Amos Eaton 205",
+            "department": "Computer Science",
+            "description": "Lecturer"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "isaacson",
+        "id": "isaacson",
+        "properties": {
+            "name": "David Isaacson",
+            "email": "isaacd@rpi.edu",
+            "phone": "518-276-6900",
+            "office": "Amos Eaton 328",
+            "department": "Mathematical Sciences, Computer Science",
+            "description": "Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "kuzmin",
+        "id": "kuzmin",
+        "properties": {
+            "name": "Konstantin Kuzmin",
+            "email": "kuzmik2@rpi.edu",
+            "phone": "518-276-2609",
+            "office": "Amos Eaton 112",
+            "department": "Computer Science",
+            "description": "Lecturer"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "liu",
+        "id": "liu",
+        "properties": {
+            "name": "Ingrid Liu",
+            "email": "liuy24@rpi.edu",
+            "phone": "518-276-3024",
+            "office": "Amos Eaton 134",
+            "department": "Computer Science",
+            "description": "Lecturer"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "magdon",
+        "id": "magdon",
+        "properties": {
+            "name": "Malik Magdon-Ismail",
+            "email": "magdon@rpi.edu",
+            "phone": "518-276-4857",
+            "office": "Lally 312",
+            "department": "Computer Science",
+            "description": "Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "mcguinness",
+        "id": "mcguinness",
+        "properties": {
+            "name": "Deborah McGuinness",
+            "email": "mcguid@rpi.edu",
+            "phone": "518-276-4404",
+            "office": "2104 Winslow Building",
+            "department": "Computer Science, Cognitive Science",
+            "description": "Tetherless World Senior Constellation Chair; Professor; Founding Director, Web Science Research Center"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "mclaughlin",
+        "id": "mclaughlin",
+        "properties": {
+            "name": "Harry McLaughlin",
+            "email": "mclauh@rpi.edu",
+            "phone": "518-276-6895",
+            "office": "Amos Eaton 333",
+            "department": "Mathematical Sciences, Computer Science",
+            "description": "Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "milanova",
+        "id": "milanova",
+        "properties": {
+            "name": "Ana Milanova",
+            "email": "milana2@rpi.edu",
+            "phone": "518-276-6887",
+            "office": "Lally 314",
+            "department": "Computer Science",
+            "description": "Associate Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "mushtaque",
+        "id": "mushtaque",
+        "properties": {
+            "name": "Uzma Mushtaque",
+            "email": "mushtu@rpi.edu",
+            "phone": "518-276-2712",
+            "office": "Amos Eaton 111",
+            "department": "Computer Science",
+            "description": "Lecturer"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "nirenburg",
+        "id": "nirenburg",
+        "properties": {
+            "name": "Sergei Nirenburg",
+            "email": "nirens@rpi.edu",
+            "phone": "518-276-3880",
+            "office": "312A Carnegie Building",
+            "department": "Cognitive Science, Computer Science",
+            "description": "Professor; Department Head, Department of Cognitive Science"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "patterson",
+        "id": "patterson",
+        "properties": {
+            "name": "Stacy Patterson",
+            "email": "pattes3@rpi.edu",
+            "phone": "518-276-2054",
+            "office": "Lally 301",
+            "department": "Computer Science",
+            "description": "Assistant Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "shephard",
+        "id": "shephard",
+        "properties": {
+            "name": "Mark S. Shephard",
+            "email": "shephm@rpi.edu",
+            "phone": "518-276-8044",
+            "office": "Low Center 4019",
+            "department": "Mechanical, Aerospace & Nuclear Engineering; Computer Science",
+            "description": "Director, Scientific Computation Research Center; Samuel A. Johnson '37 and Elizabeth C. Johnson Professor of Engineering., Mechanical Aerospace and Nuclear Engineering"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "slota",
+        "id": "slota",
+        "properties": {
+            "name": "George M. Slota",
+            "email": "slotag@rpi.edu",
+            "phone": "518-276-8265",
+            "office": "Lally 317",
+            "department": "Computer Science",
+            "description": "Assistant Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "stewart",
+        "id": "stewart",
+        "properties": {
+            "name": "Chuck Stewart",
+            "email": "stewart@rpi.edu",
+            "phone": "518-276-6731",
+            "office": "Lally 209",
+            "department": "Computer Science",
+            "description": "Professor and Department Head, Computer Science"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "su",
+        "id": "su",
+        "properties": {
+            "name": "Hui Su",
+            "email": "suh5@rpi.edu",
+            "phone": "518-276-8412",
+            "office": "110 8th St. EMPAC",
+            "department": "Computer Science",
+            "description": "Research Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "sun",
+        "id": "sun",
+        "properties": {
+            "name": "Ron Sun",
+            "email": "sunr@rpi.edu",
+            "phone": "518-276-3409",
+            "office": "302A Carnegie Building",
+            "department": "Cognitive Science, Computer Science",
+            "description": "Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "szymanski",
+        "id": "szymanski",
+        "properties": {
+            "name": "Bolek Szymanski",
+            "email": "szymab@rpi.edu",
+            "phone": "518-276-2714",
+            "office": "Lally 204",
+            "department": "Computer Science",
+            "description": "Claire & Roland Schmitt Distinguished Prof. of Computer Science"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "thompson",
+        "id": "thompson",
+        "properties": {
+            "name": "William Thompson",
+            "email": "thompw4@rpi.edu",
+            "phone": "518-276-6861",
+            "office": "Unknown",
+            "department": "Computer Science",
+            "description": "Senior Lecturer"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "turner",
+        "id": "turner",
+        "properties": {
+            "name": "Wes Turner",
+            "email": "turnew2@rpi.edu",
+            "phone": "518-276-8184",
+            "office": "Amos Eaton 207",
+            "department": "Computer Science",
+            "description": "Senior Lecturer"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "varela",
+        "id": "varela",
+        "properties": {
+            "name": "Carlos A Varela",
+            "email": "varelc@rpi.edu",
+            "phone": "518-276-6912",
+            "office": "Lally 308",
+            "department": "Computer Science",
+            "description": "Associate Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "wozny",
+        "id": "wozny",
+        "properties": {
+            "name": "Michael Wozny",
+            "email": "woznym@rpi.edu",
+            "phone": "518-276-6089",
+            "office": "6007 Jonsson Engineering Center",
+            "department": "Electrical, Computer & Systems Engineering; Computer Science",
+            "description": "Acting Department Head, Electrical, Computer, and Systems Engineering"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "xia",
+        "id": "xia",
+        "properties": {
+            "name": "Lirong Xia",
+            "email": "xialirong@gmail.com",
+            "phone": "518-276-6720",
+            "office": "Lally 306",
+            "department": "Computer Science",
+            "description": "Associate Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "yener",
+        "id": "yener",
+        "properties": {
+            "name": "Bulent Yener",
+            "email": "yener@rpi.edu",
+            "phone": "518-276-6907",
+            "office": "Lally 305",
+            "department": "Computer Science; Electrical, Computer & Systems Engineering",
+            "description": "Professor; Associate Director, IDEA; Director, Data Science Research Center"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "zaki",
+        "id": "zaki",
+        "properties": {
+            "name": "Mohammed J. Zaki",
+            "email": "zakim@rpi.edu",
+            "phone": "518-276-6340",
+            "office": "Lally 307",
+            "department": "Computer Science",
+            "description": "Professor; Associate Department Head, Computer Science; Graduate Program Director, Computer Science"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "bell",
+        "id": "bell",
+        "properties": {
+            "name": "David Bell",
+            "email": "belld@rpi.edu",
+            "phone": "518-276-6862",
+            "office": "Greene 209",
+            "department": "Architecture",
+            "description": "Associate Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "bhiwapurkar",
+        "id": "bhiwapurkar",
+        "properties": {
+            "name": "Pravin S. Bhiwapurkar",
+            "email": "bhiwap@rpi.edu",
+            "phone": "Unkown",
+            "office": "Unkown",
+            "department": "Architecture",
+            "description": "Clinical Assistant Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "braasch",
+        "id": "braasch",
+        "properties": {
+            "name": "Jonas Braasch",
+            "email": "braasj@rpi.edu",
+            "phone": "518-276-3864",
+            "office": "Greene 203",
+            "department": "Architecture",
+            "description": "Professor; Director of Operations, Cognitive and Immersive Systems Laboratory"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "combs",
+        "id": "combs",
+        "properties": {
+            "name": "Lonn Combs",
+            "email": "combsl@rpi.edu",
+            "phone": "518-276-6466",
+            "office": "Greene 212B",
+            "department": "Architecture",
+            "description": "Professor of Practice"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "comodromos",
+        "id": "comodromos",
+        "properties": {
+            "name": "Demetrios Comodromos",
+            "email": "comodd2@rpi.edu",
+            "phone": "Unkown",
+            "office": "Unknown",
+            "department": "Architecture",
+            "description": "Professor of Practice"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "crembil",
+        "id": "crembil",
+        "properties": {
+            "name": "Gustavo Enrique Alberto Crembil",
+            "email": "crembg@rpi.edu",
+            "phone": "518-276-2037",
+            "office": "Greene M109",
+            "department": "Architecture",
+            "description": "Assistant Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "douglis",
+        "id": "douglis",
+        "properties": {
+            "name": "Evan Douglis",
+            "email": "douglis@rpi.edu",
+            "phone": "518-276-6460",
+            "office": "Greene Building",
+            "department": "Architecture",
+            "description": "Professor; Dean, Architecture"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "dyson",
+        "id": "dyson",
+        "properties": {
+            "name": "Anna Dyson",
+            "email": "dysona@rpi.edu",
+            "phone": "212-618-3965",
+            "office": "Greene Building, 1st Floor",
+            "department": "Architecture",
+            "description": "Associate Professor; Director, Center for Architecture, Science and Ecology"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "ellinger",
+        "id": "ellinger",
+        "properties": {
+            "name": "Jefferson A Ellinger",
+            "email": "ellinj@rpi.edu",
+            "phone": "Unknown",
+            "office": "Unkown",
+            "department": "Architecture",
+            "description": "Assistant Professor; Associate Director, CASE"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "figueiro",
+        "id": "figueiro",
+        "properties": {
+            "name": "Mariana G. Figueiro",
+            "email": "figuem@rpi.edu",
+            "phone": "518-276-7142",
+            "office": "Gurley Building",
+            "department": "Architecture",
+            "description": "Professor; Director, LRC"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "freyssinier",
+        "id": "freyssinier",
+        "properties": {
+            "name": "Jean Paul Freyssinier",
+            "email": "freysj@rpi.edu",
+            "phone": "518-276-7146",
+            "office": "Gurley Building",
+            "department": "Architecture",
+            "description": "Research Scientist"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "garba",
+        "id": "garba",
+        "properties": {
+            "name": "Fareh E. Garba",
+            "email": "garbaf@rpi.edu",
+            "phone": "Unkown",
+            "office": "Unkown",
+            "department": "Architecture",
+            "description": "Assistant Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "gindlesparger",
+        "id": "gindlesparger",
+        "properties": {
+            "name": "Matthew Gindlesparger",
+            "email": "gindlm@rpi.edu",
+            "phone": "Unknown",
+            "office": "Unknown",
+            "department": "Architecture",
+            "description": "Clinical Assistant Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "kolatan",
+        "id": "kolatan",
+        "properties": {
+            "name": "Sulan Kolatan",
+            "email": "kolata@rpi.edu",
+            "phone": "Unknown",
+            "office": "Unknown",
+            "department": "Architecture",
+            "description": "Clinical Associate Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "krueger",
+        "id": "krueger",
+        "properties": {
+            "name": "Ted Krueger",
+            "email": "krueger@rpi.edu",
+            "phone": "518-276-8075",
+            "office": "Greene 212A",
+            "department": "Architecture",
+            "description": "Associate Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "leslie",
+        "id": "leslie",
+        "properties": {
+            "name": "Russ Leslie",
+            "email": "leslir@rpi.edu",
+            "phone": "518-687-7100",
+            "office": "Gurley Building",
+            "department": "Architecture",
+            "description": "Professor; Associate Director, LRC"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "markov",
+        "id": "markov",
+        "properties": {
+            "name": "Ivan Markov",
+            "email": "markoi@rpi.edu",
+            "phone": "Unknown",
+            "office": "Unknown",
+            "department": "Architecture",
+            "description": "Associate Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "mical",
+        "id": "mical",
+        "properties": {
+            "name": "Thomas Mical",
+            "email": "micalt@rpi.edu",
+            "phone": "Unknown",
+            "office": "Unknown",
+            "department": "Architecture",
+            "description": "Associate Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "narendran",
+        "id": "narendran",
+        "properties": {
+            "name": "Nadarajah Narendran",
+            "email": "narenn2@rpi.edu",
+            "phone": "518-687-7100",
+            "office": "Gurley Building",
+            "department": "Architecture",
+            "description": "Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "ngai",
+        "id": "ngai",
+        "properties": {
+            "name": "Ted T.C. Ngai",
+            "email": "ngait@rpi.edu",
+            "phone": "Unknown",
+            "office": "Unknown",
+            "department": "Architecture",
+            "description": "Professor of Practice"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "oatman",
+        "id": "oatman",
+        "properties": {
+            "name": "Michael James Oatman",
+            "email": "oatman@rpi.edu",
+            "phone": "518-276-3188",
+            "office": "Greene M113",
+            "department": "Architecture",
+            "description": "Associate Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "oksiuta",
+        "id": "oksiuta",
+        "properties": {
+            "name": "Zbigniew Oksiuta",
+            "email": "oksiuz@rpi.edu",
+            "phone": "518-276-8718",
+            "office": "Greene 304",
+            "department": "Architecture",
+            "description": "Professor of Practice"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "perry",
+        "id": "perry",
+        "properties": {
+            "name": "Christopher Perry",
+            "email": "perryc3@rpi.edu",
+            "phone": "518-276-8435",
+            "office": "Greene 105",
+            "department": "Architecture",
+            "description": "Assistant Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "rempel",
+        "id": "rempel",
+        "properties": {
+            "name": "Ariel Alexandra Rempel",
+            "email": "rempea@rpi.edu",
+            "phone": "Unknown",
+            "office": "Unknown",
+            "department": "Architecture",
+            "description": "Assistant Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "saunders",
+        "id": "saunders",
+        "properties": {
+            "name": "Andrew Saunders",
+            "email": "saunda2@rpi.edu",
+            "phone": "Unknown",
+            "office": "Unknown",
+            "department": "Architecture",
+            "description": "Assistant Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "stark",
+        "id": "stark",
+        "properties": {
+            "name": "Peter Stark",
+            "email": "starkp2@rpi.edu",
+            "phone": "Unknown",
+            "office": "Unknown",
+            "department": "Architecture",
+            "description": "Professor of Practice"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "titus",
+        "id": "titus",
+        "properties": {
+            "name": "Anthony Titus",
+            "email": "titusa@rpi.edu",
+            "phone": "518-276-6466",
+            "office": "Greene 009",
+            "department": "Architecture",
+            "description": "Associate Professor"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "vollen",
+        "id": "vollen",
+        "properties": {
+            "name": "Jason O. Vollen",
+            "email": "vollej@rpi.edu",
+            "phone": "Unknown",
+            "office": "Unknown",
+            "department": "Architecture",
+            "description": "Associate Professor; Associate Director, CASE"
+        }
+    },
+    {
+        "type": "Feature",
+        "_id": "watson",
+        "id": "watson",
+        "properties": {
+            "name": "Julia Watson",
+            "email": "watsoj5@rpi.edu",
+            "phone": "Unknown",
+            "office": "Unknown",
+            "department": "Architecture",
+            "description": "Assistant Professor"
+        }
+    }
+]

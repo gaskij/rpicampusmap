@@ -26,6 +26,7 @@
     "express": "^4.16.4",
     "mongodb": "^3.2.3",
     "nodemon": "^1.19.1",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "leaflet-sidebar" : "^0.2.2"
   }
 }
