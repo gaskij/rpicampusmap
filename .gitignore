@@ -1,7 +1,6 @@
-screenshots
-
 # Ignore the node modules. They will be installed through 'npm install'
-node_modules
+api/node_modules
+campusmap/node_modules
 
 # Ignore the built Javascript files, only the source files should be in the repo
 dist
