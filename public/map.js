@@ -179,19 +179,5 @@ L.geoJSON(locations_shops, {
   },
 });
 
-
-/* Creating layer groups to hold arrays of locations
-*  These layer groups will be added to the map, and will be represented by
-*  the map keys. The maps keys filter which dots are shown on the map.
-*/
-let campus_locations_layer = L.layerGroup(locations_arr);
-let machine_locations_layer = L.layerGroup(locations_shops_arr);
-
-let overlayMaps = {
-  'Campus Locations': campus_locations_layer,
-  'Machine Shop Locations': machine_locations_layer
-  // add more layer groups here
-};
-
-// adding the layer groups in overlayMaps to the map (but it doesn't render yet)
-L.control.layers(null, overlayMaps).addTo(mymap);
+// Add the campus location points to the map (will automatically display when map is opened)
+let campus_locations_layer = L.layerGroup(locations_arr).addTo(mymap);
