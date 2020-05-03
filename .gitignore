@@ -1,9 +1,9 @@
-screenshots/
-
 # Ignore the node modules. They will be installed through 'npm install'
-node_modules/
+api/node_modules
+campusmap/node_modules
+
+# Ignore the built Javascript files, only the source files should be in the repo
+dist
 
 # Ignore .env file, to be kept locally on machine running the server for security
 .env
-RPI Campus Map Project Proposal Summer 19.pdf
-RPI Campus Map Project Proposal Fall 19.pdf

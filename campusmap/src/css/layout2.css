@@ -1,0 +1,26 @@
+html, body {
+    background-color: #e6e6e6;
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
+a {
+    color: white;
+}
+
+#footerText{
+    color: white;
+}
+
+#footer {
+    bottom: 0%;
+    position: relative;
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}

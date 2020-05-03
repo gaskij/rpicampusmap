@@ -1,0 +1,42 @@
+body {
+   background-color: #000000;
+   height: 100%;
+   width: 100%;
+   margin: 0;
+   padding: 0;
+}
+
+a {
+   text-decoration: none;
+}
+
+footer a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+#mapPopup {
+   background-color: #ffffff;
+   min-height: 85%;
+   width: 80%;
+   margin: auto;
+}
+
+#mapPopupInfo {
+   background-color: #ffffff;
+   min-height: 85%;
+   width: 100%;
+   margin: auto;
+}
+
+map-page {
+   height: 100%;
+}
+
+#mapContainer {
+   height: 100%;
+}
+
+.popup:hover {
+   cursor: pointer;
+}

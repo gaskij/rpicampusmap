@@ -1,0 +1,27 @@
+<link href="/css/login.css" rel="stylesheet" type="text/css" />
+
+<login-page>
+  <section class="container py-4">
+    <h4>You must login with an administrator account to view this page.</h4>
+    <br>
+    <% include ./partials/messages %>
+    <form action="/user/login" method="POST">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email" name="email" placeholder="email"
+          value="<%= typeof email != 'undefined' ? email : '' %>" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password"
+          value="<%= typeof password != 'undefined' ? password : '' %>" />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    <br>
+    <div id=get_acc>
+      <p>Don't have an account?</p> <a href="/user/register">Request admin access.</a>
+    </div>
+  </section>
+</login-page>
