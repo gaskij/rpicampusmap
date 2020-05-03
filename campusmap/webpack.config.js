@@ -29,7 +29,7 @@ module.exports = {
       },
       {
         test: /\.(png|jp(e*)g|svg|ico)$/,
-        use: ['url-loader?mimetype=image/png'],
+        use: ['url-loader?limit=100000'],
       },
       {
         test: /\.html$/,

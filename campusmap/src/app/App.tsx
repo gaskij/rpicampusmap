@@ -10,11 +10,13 @@ const App = (): ReactElement => {
   return (
     <BrowserRouter>
       <Header />
-      <Switch>
-        <Route path="/search">
-          <SearchResultsPage />
-        </Route>
-      </Switch>
+      <main>
+        <Switch>
+          <Route path="/search">
+            <SearchResultsPage />
+          </Route>
+        </Switch>
+      </main>
       <Footer />
     </BrowserRouter>
   )

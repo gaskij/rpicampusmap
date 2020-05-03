@@ -1,0 +1,10 @@
+footer {
+  width: 100%;
+  color: #eeeeee;
+  z-index: 950;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
