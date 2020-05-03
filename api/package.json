@@ -26,6 +26,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
     "dotenv": "^7.0.0",
     "ejs": "^2.7.4",
     "express": "^4.17.1",
@@ -37,15 +38,14 @@
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.6",
     "@types/express": "^4.17.2",
     "@types/mongoose": "^5.7.1",
     "@typescript-eslint/eslint-plugin": "^2.21.0",
     "@typescript-eslint/parser": "^2.21.0",
-    "css-loader": "^3.4.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.10.0",
-    "eslint-import-resolver-webpack": "^0.12.1",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",

@@ -10,6 +10,7 @@ import express, {
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import path from 'path';
+import cors from 'cors';
 
 /** API Routes */
 import locationsRoutes from './routes/locations';
@@ -26,6 +27,7 @@ server
   .use(bodyParser.urlencoded({ extended: true }))
   .use(bodyParser.json())
   .use(express.static(path.join(__dirname, '../../campusmap/src/')))
+  .use(cors())
   .listen(port);
 console.log(`Listening on port ${port}`);
 
