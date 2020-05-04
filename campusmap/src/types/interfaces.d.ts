@@ -12,7 +12,7 @@ export interface Photo {
 }
 
 export interface Location {
-  id: string;
+  _id: string;
   properties: {
     name: string;
     nick: string;
