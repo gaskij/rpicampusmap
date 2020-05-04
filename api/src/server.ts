@@ -55,11 +55,11 @@ server.use('/api/info', infoRoutes);
 
 /* =============================== FRONT END ROUTE =================================== */
 server.get('/', ((req, res) => {
-  res.sendFile(path.join(__dirname, '../../campusmap/src/index.html'));
+  res.sendFile(path.join(__dirname, '../../campusmap/public/index.html'));
 }));
 
 server.get('/*', ((req, res) => {
-  res.sendFile(path.join(__dirname, '../../campusmap/src/index.html'));
+  res.sendFile(path.join(__dirname, '../../campusmap/public/index.html'));
 }));
 
 
@@ -67,7 +67,7 @@ server.get('/*', ((req, res) => {
 /** Handle 404 */
 server.use((req, res) => {
   res.status(404)
-    .sendFile(path.join(__dirname, '../../campusmap/src/index.html'), { error: '404: Page not Found' });
+    .sendFile(path.join(__dirname, '../../campusmap/public/index.html'), { error: '404: Page not Found' });
 });
 
 /** Handle 500 */

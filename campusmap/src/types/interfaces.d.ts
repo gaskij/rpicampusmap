@@ -19,6 +19,7 @@ export interface Location {
     category: string;
     description: string;
     popupContent: string;
+    amenity?: string;
     thumbnail?: string;
   };
   comments: Comment[];
