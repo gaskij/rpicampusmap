@@ -44,7 +44,10 @@ const LocationSchema = new mongoose.Schema({
     require: true,
   },
   geometry: {
-    type: String,
+    type: {
+      type: String,
+      require: true,
+    },
     coordinates: {
       type: Array,
       require: true,
