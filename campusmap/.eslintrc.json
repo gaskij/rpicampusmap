@@ -1,0 +1,68 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true,
+        "jest": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "airbnb"
+    ],
+    "plugins": ["import"],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2015,
+        "sourceType": "module"
+    },
+    "root": true,
+    "overrides": [
+        {
+          "files": ["src/**/*.{js,ts}"]
+        }
+    ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": ["ts", "js"]
+            }
+        }
+    },
+    "rules": {
+        "comma-dangle": [
+            "error",
+            "always-multiline"
+        ],
+        "indent": [
+            "error",
+            2
+        ],
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "no-plusplus": [
+            "error", 
+            {
+                "allowForLoopAfterthoughts": true
+            }
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "file-extension": "off",
+        "prefer-destructuring": "off",
+        "import/extensions": "off",
+        "import/no-extra-dependencies": "off",
+        "import/no-unresolved": "off"
+    }
+}
