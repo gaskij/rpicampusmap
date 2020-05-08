@@ -1,27 +1,33 @@
 import * as React from 'react';
-import { Fragment, ReactElement } from 'react';
-import { ProgressBar } from 'react-bootstrap';
+import { ReactElement } from 'react';
+import { Container, ProgressBar } from 'react-bootstrap';
 import useAxios from 'axios-hooks';
 
 import { Location } from 'campusmap/src/types';
-import SearchForm from 'campusmap/src/shared/SearchForm';
+import { getParams } from 'campusmap/src/utils';
 import SearchResult from './SearchResult';
 
+/**
+ * Top level component that renders the entire Search Results page.
+ */
 const SearchResultsPage = (): ReactElement => {
+  const [params, queryString] = getParams();
+
   const [{ data, loading }, getLocations] = useAxios<Location[]>({
-    url: 'http://localhost:5000/api/search',
+    url: `http://localhost:5000/api/search${queryString}`,
   }, { manual: false });
   
   return (
-    <>
-      <SearchForm />
+    <Container>
+      <h5 className="my-4">
+        {queryString ? `Search Results -- "${params.get('query')}"` : 'Browse All Locations'}
+      </h5>
       {loading && <ProgressBar animated variant="danger" now={100} />}
       {data && data.map((location) => (
-        <Fragment key={location.id}>
-          <SearchResult location={location} />
-        </Fragment>
+        <SearchResult location={location} key={location._id} />
       ))}
-    </>
+      {data && !data.length && <p>No results found.</p>}
+    </Container>
   );
 };
 
