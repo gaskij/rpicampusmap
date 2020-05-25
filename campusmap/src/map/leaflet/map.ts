@@ -15,7 +15,7 @@ const createLeafletMap = (targetId: string): L.Map => {
     zoomDelta: 0.5,
   });
 
-  /** 
+  /**
    * Set the tile layer to be used for the map.
    * This uses and accredits OpenStreetMap and Mapbox for the tile layers.
    */
@@ -33,9 +33,9 @@ const createLeafletMap = (targetId: string): L.Map => {
 
   /** Outline the area of the campus on the map with a gray translucency. */
   L.polygon(campusArea, { color: 'gray', opacity: 0.1 }).addTo(campusMap);
-  
+
   /** Return the created and configured map object. */
-  return campusMap; 
-}
+  return campusMap;
+};
 
 export default createLeafletMap;

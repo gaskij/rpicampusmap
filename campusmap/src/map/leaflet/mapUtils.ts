@@ -1,4 +1,12 @@
-import { marker, Popup, Map, LeafletMouseEvent } from 'leaflet';
+import { Feature, FeatureCollection } from 'geojson';
+import {
+  circleMarker,
+  geoJSON,
+  LeafletMouseEvent,
+  Map,
+  marker,
+  Popup,
+} from 'leaflet';
 
 import { Location } from 'campusmap/src/types';
 
@@ -13,72 +21,67 @@ export const onMapClick = (e: LeafletMouseEvent, popup: Popup, map: Map): void =
     .openOn(map);
 };
 
-export const createPopup = (map: Map, data: Location, error: boolean): void => {
-  if (error) {
-    console.log('There was an error getting location info :/');
-    return;
+/**
+ * Populate html for a location popup on the map.
+ * @param location The location to display information for.
+*/
+const makePopupContent = (location: Location | Feature): string => {
+  if (location.properties) {
+    return (`
+    <a href="/info?location=${location.id}">
+      <div className="popup">
+        <h5>${location.properties.popupContent}</h5>
+        <img src="${location.properties.thumbnail}" alt="${location.properties.name}" width="100%"/>
+        <p>Nicknames: ${location.properties.nick}</p>
+      </div>
+    </a>
+  `);
   }
+  return '';
+};
 
-  const { nick, popupContent, thumbnail } = data.properties;
-  const [latitude, longitude] = data.geometry.coordinates;
+/**
+ * Create marker and set view to the given loaction on the map.
+ * @param map The map to add the marker to.
+ * @param location The location that will be displayed.
+ * @param error Whether or not getting location data was successful.
+ */
+export const createPopup = (map: Map, location: Location, error: boolean): void => {
+  const [longitude, latitude] = location.geometry.coordinates;
+  map.setView([latitude, longitude], 18);
 
-  map.setView([parseInt(latitude, 10), parseInt(longitude, 10)], 19);
-  
-  marker([parseInt(latitude, 10), parseInt(longitude, 10)])
+  const popupContent = error ? 'There was an error getting location info :/' : makePopupContent(location);
+
+  // TODO: make marker go away when clicked away
+  marker([latitude, longitude])
     .addTo(map)
-    .bindPopup(`
-      <a href="/info?location=${data._id}">
-        <div class="popup"> \
-          <h5>${popupContent}</h5> \
-          <img src="${thumbnail}" alt="${popupContent}" width="100%"/> \
-          <p>Nicknames: ${nick}</p> \
-        </div> \
-      </a> \
-    `)
+    .bindPopup(popupContent)
     .openPopup();
 };
 
-// /**
-//  * Fetch the coordinates of a location in an array [longitude, latitude]
-//  * @param id The id of the given location
-//  */
-// export const getCoords = (id: string, locations: Feature[]): LatLngExpression[] => {
-//   for (let i = 0; i < locations.features.length; i++) {
-//     if (locations.features[i].id === id) {
-//       return locations.features[i].geometry.coordinates;
-//     }
-//   }
-//   return [];
-// };
-
-// /**
-//  * Binds properties to each Feature in a Feature Collection
-//  * @param feature the feature object that will be operated on
-//  * @param layer the layer the feature will be added to
-//  */
-// export const onEachFeature = function (feature, layer) {
-//   // does this feature have a property named popupContent?
-//   if (feature.properties && feature.properties.popupContent) {
-//     layer.bindPopup(`<div id="featurePopup">${feature.properties.popupContent}</div>`);
-
-//     const building = feature.id;
-//     const point = getCoords(building);
-//     console.log(feature.properties);
-//     let newPopupContent = '';
-//     if (feature.properties.type == 'machine') {
-//       newPopupContent += `<a href="/info?loc=${feature.id}&machine=true">`;
-//     } else {
-//       newPopupContent += `<a href="/user/info?loc=${feature.id}">`;
-//     }
-//     newPopupContent += `
-//             <div class="popup"> \
-//               <h5>${feature.properties.name}</h5> \
-//               <img src="${feature.properties.thumbnail}" alt="${feature.properties.name}"
-// width="100%"/> \
-//               <p>Nicknames: ${feature.properties.nick}</p> \
-//             </div> \
-//           </a> \
-//         `;
-//     layer.bindPopup(newPopupContent);
-//   }
-// };
+/**
+  * Style and add the campus points to a new GeoJSON layer of the map.
+  * @param map The map object the layer will be added to.
+  * @param locations A collection of GeoJSON locations to add to the map layer.
+  */
+export const createGeoJsonLayer = (map: Map, locations: FeatureCollection): void => {
+  geoJSON(locations, {
+    // For each feature added to the map, it will bind a popup with information about the
+    onEachFeature: (feature, layer) => {
+      if (feature.properties) {
+        layer.bindPopup(makePopupContent(feature));
+      }
+    },
+    // Adds an orange circleMarker at the point specified by the coordinates of the feature
+    pointToLayer: (point, latlng) => (
+      circleMarker(latlng, {
+        radius: 8,
+        fillColor: '#ff7800',
+        color: '#000',
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.8,
+      })
+    ),
+  }).addTo(map);
+};

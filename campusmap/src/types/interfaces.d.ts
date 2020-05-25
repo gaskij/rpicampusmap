@@ -1,3 +1,5 @@
+import { Feature, Point } from 'geojson';
+
 export interface Comment {
   author: string;
   text: string;
@@ -11,23 +13,23 @@ export interface Photo {
   date: Date;
 }
 
-export interface Location {
+export interface LocationProperties {
+  name: string;
+  nick: string;
+  category: string;
+  description: string;
+  popupContent: string;
+  thumbnail: string;
+  amenity?: string;
+}
+
+export interface Location extends Feature {
   _id: string;
-  properties: {
-    name: string;
-    nick: string;
-    category: string;
-    description: string;
-    popupContent: string;
-    amenity?: string;
-    thumbnail?: string;
-  };
-  comments: Comment[];
-  photos: Photo[];
-  geometry: {
-    type: string;
-    coordinates: string[];
-  };
+  id: string;
+  properties: LocationProperties;
+  geometry: Point;
+  comments?: Comment[];
+  photos?: Photo[];
 }
 
 export interface User {
