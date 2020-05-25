@@ -29,98 +29,90 @@
 </head>
 
 <body>
-  <div id="container">
+  <!-- Header -->
+  <header id="header">
 
-    <!-- Header -->
-    <header id="header">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+      <a class="navbar-brand" href="/">
+        <img id="logo" src="/public/images/logo.png" height=40px alt="RPI Campus Map" />
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-        <a class="navbar-brand" href="/">
-          <img id="logo" src="/public/images/logo.png" height=40px alt="RPI Campus Map" />
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Back to Map</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/search?query=">Browse</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="/">Back to Map</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/search?query=">Browse</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-
-    <!-- Main content -->
-    <main role="main" class="flex-shrink-0">
-      <div class="container">
-        <!-- Search bar-->
-        <!--
-          <form action="/search" method="get" class="form-inline my-2 my-lg-0">
-            <input id="searchText" ng-model="query" type="search" name="query" placeholder="Enter a location..." class="form-control mr-sm-2" aria-label="Search">
-            <input id="searchButton" type="submit" value="Search" class="btn btn-light my-2 my-sm-0" ng-click="search(query);">
-          </form>
-
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-            </div>
-          </div>
-        -->
-        <br>
-
-        <form action="/search" method="get" class="form-inline py-2">
-          <input id="searchText" ng-model="query" style="width: 90%;" type="search" name="query"
-            placeholder="Enter a location..." class="form-control form-control-lg mr-sm-2" aria-label="Search">
-          <input id="searchButton" type="submit" value="Search" class="btn btn-lg btn-light my-2 my-sm-0"
-            ng-click="search(query);">
+  <!-- Main content -->
+  <main role="main">
+    <div class="container">
+      <!-- Search bar-->
+      <!--
+        <form action="/search" method="get" class="form-inline my-2 my-lg-0">
+          <input id="searchText" ng-model="query" type="search" name="query" placeholder="Enter a location..." class="form-control mr-sm-2" aria-label="Search">
+          <input id="searchButton" type="submit" value="Search" class="btn btn-light my-2 my-sm-0" ng-click="search(query);">
         </form>
 
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+          </div>
+        </div>
+      -->
+      <br>
+
+      <form action="/search" method="get" class="form-inline py-2">
+        <input id="searchText" ng-model="query" style="width: 90%;" type="search" name="query"
+          placeholder="Enter a location..." class="form-control form-control-lg mr-sm-2" aria-label="Search">
+        <input id="searchButton" type="submit" value="Search" class="btn btn-lg btn-light my-2 my-sm-0"
+          ng-click="search(query);">
+      </form>
 
 
-        <h5 class="py-4">Search Results - "{{params.query}}"</h5>
 
-        <a href="/info?loc={{b.id}}" ng-repeat="b in buildings" class="bg-light card mb-3 container-fluid"
-          style="text-decoration:none; color:black">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="/public/images/pin.png" style="max-width: 100px;" class="card-img" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">{{b.properties.name}}</h5>
-                <p class="card-text">{{b.properties.description}}</p>
-                <p class="card-text">Nicknames: {{b.properties.nick}}</p>
-              </div>
+      <h5 class="py-4">Search Results - "{{params.query}}"</h5>
+
+      <a href="/info?loc={{b.id}}" ng-repeat="b in buildings" class="bg-light card mb-3 container-fluid"
+        style="text-decoration:none; color:black">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="/public/images/pin.png" style="max-width: 100px;" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{b.properties.name}}</h5>
+              <p class="card-text">{{b.properties.description}}</p>
+              <p class="card-text">Nicknames: {{b.properties.nick}}</p>
             </div>
           </div>
-        </a>
+        </div>
+      </a>
 
-      </div>
-    </main>
+    </div>
+  </main>
 
   <!-- footer -->
-  <footer id="divFooter" class="container-fluid py-2 bg-danger align-items-center">
-      <div class="row justify-content-center">
-          <div id="seal" class="col-sm-1">
-              <a href="https://rpi.edu/" target="_blank">
-              <img id="seal" src="/public/images/seal.png" width=50 height=50 alt="Rensselaer Polytechnic Institute"/>
-              </a>
-          </div>
-        
+  <footer class="container-fluid py-2 bg-danger align-items-center">
+    <div class="row justify-content-center">
       <div id="footerText" class="col text-center">
-          <a href="https://rcos.io/projects/gaskij/rpicampusmap/profile" target="_blank">An RCOS Project</a> --
-          <a href="https://github.com/gaskij/rpicampusmap"><i class="fab fa-github"></i> GitHub</a> --
-          <br><a href="/login">Admin Panel</a>
-        </div>
+        <a href="https://rcos.io/projects/gaskij/rpicampusmap/profile" target="_blank">An RCOS Project</a> --
+        <a href="https://github.com/gaskij/rpicampusmap"><i class="fab fa-github"></i> GitHub</a> --
+        <a href="/admin">Admin Panel</a>
       </div>
+    </div>
   </footer>
 
   <!-- Bootstrap Scripts -->

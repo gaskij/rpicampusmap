@@ -43,13 +43,8 @@ footer a {
     max-width: 100%;
 }
 
-
 #mapContainer {
-   width: 100px;
-   height:100px;
-   min-height: 100%;
-   min-width: 100%;
-   display: block;
+   height: 100%;
 }
 
 .container{
