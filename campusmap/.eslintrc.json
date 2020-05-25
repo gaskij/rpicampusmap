@@ -22,13 +22,13 @@
     "root": true,
     "overrides": [
         {
-          "files": ["src/**/*.{js,ts}"]
+          "files": ["src/**/*.{tsx,jsx,ts,js}"]
         }
     ],
     "settings": {
         "import/resolver": {
             "node": {
-                "extensions": ["ts", "js"]
+                "extensions": ["tsx", "jsx", "ts", "js"]
             }
         }
     },

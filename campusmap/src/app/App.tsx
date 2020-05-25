@@ -1,25 +1,43 @@
 import * as React from 'react';
 import { ReactElement } from 'react';
-import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import MapPage from 'campusmap/src/map';
+import NotFoundPage from 'campusmap/src/not-found';
 import SearchResultsPage from 'campusmap/src/search-results';
+import InfoPage from 'campusmap/src/search-results';
+
 import Header from './Header';
 import Footer from './Footer';
 
-const App = (): ReactElement => {
-  return (
-    <BrowserRouter>
-      <Header />
-      <main>
-        <Switch>
-          <Route path="/search">
-            <SearchResultsPage />
+/**
+ * Top level React App containing routes to all pages on the site.
+ * This component is rendered at the root element on the index page.
+ */
+const App = (): ReactElement => (
+  <BrowserRouter>
+    <Header />
+    <main>
+      <Switch>
+        <Route exact path="/">
+          <MapPage targetId="mapContainer" />
+        </Route>
+        <Route path="/index">
+          <MapPage targetId="mapContainer" />
+        </Route>
+        <Route path="/info">
+            <InfoPage />
           </Route>
-        </Switch>
-      </main>
-      <Footer />
-    </BrowserRouter>
-  )
-};
+        <Route path="/search">
+          <SearchResultsPage />
+        </Route>
+        <Route path="/*">
+          <NotFoundPage />
+        </Route>
+      </Switch>
+    </main>
+    <Footer />
+  </BrowserRouter>
+);
 
 export default App;

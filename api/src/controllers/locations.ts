@@ -1,18 +1,13 @@
 /* eslint-disable no-console */
 
-/** Node Imports */
 import { Request, Response } from 'express';
 import Mongoose, { MongooseDocument } from 'mongoose';
 
-/** Custom Imports */
 import {
   dbOptions as options,
   dbURI as uri,
 } from '../config/dbConfig';
-
-/** Mongoose Schemas */
 import Location from '../models/Location';
-
 import { CRUDController } from '../types/interfaces';
 
 const unsupported = (req: Request, res: Response): void => {
@@ -24,7 +19,7 @@ const readIndex = (req: Request, res: Response): void => {
   console.log('GET: /api/locations');
   // Use Mongoose to get all location in the database
   Mongoose.connect(uri, options).then(() => {
-    Location.find({}, { properties: 1, geometry: 1 })
+    Location.find({}, { type: 1, properties: 1, geometry: 1, _id: 0 })
       .then((locations: MongooseDocument[]) => {
         Mongoose.disconnect();
         res.json(locations);

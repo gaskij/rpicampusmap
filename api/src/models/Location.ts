@@ -5,6 +5,11 @@ const LocationSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  type: {
+    type: String,
+    enum: ['Feature'],
+    require: true,
+  },
   id: {
     type: String,
     require: true,
@@ -44,7 +49,11 @@ const LocationSchema = new mongoose.Schema({
     require: true,
   },
   geometry: {
-    type: String,
+    type: {
+      type: String,
+      enum: ['Point'],
+      require: true,
+    },
     coordinates: {
       type: Array,
       require: true,
