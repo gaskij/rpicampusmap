@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import MapPage from 'campusmap/src/map';
 import SearchResultsPage from 'campusmap/src/search-results';
+import InfoPage from 'campusmap/src/info';
+
 import Header from './Header';
 import Footer from './Footer';
 
