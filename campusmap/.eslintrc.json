@@ -69,6 +69,7 @@
     "import/no-unresolved": "off",
     "no-unused-vars": "off",
     "object-curly-newline": "off",
-    "prefer-destructuring": "off"
+    "prefer-destructuring": "off",
+    "react/jsx-one-expression-per-line": "off"
   }
 }

@@ -8,7 +8,7 @@ interface Props {
 }
 
 const CommentElement = ({ data }: Props): ReactElement => (
-  <div></div>
+  <div />
 );
 
 export default CommentElement;
