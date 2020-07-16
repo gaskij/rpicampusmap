@@ -23,7 +23,7 @@ const PhotoCarousel = ({ location }: Props): ReactElement => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="holder.js/800x400?text=First slide&bg=373940"
+          src="http://tours.pocketsights.com/media/1/11ef2a38f7884fd58ecc6a78e3e70ea7_large.jpg"
           alt="First slide"
         />
         <Carousel.Caption>
@@ -34,7 +34,7 @@ const PhotoCarousel = ({ location }: Props): ReactElement => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="holder.js/800x400?text=Second slide&bg=282c34"
+          src="http://www.alpha6294.com/History/ThetaXionCampus/DarrinCommunicationsCenter/Building/DarrinCommunicationsCenter.jpg"
           alt="Second slide"
         />
 
@@ -46,7 +46,7 @@ const PhotoCarousel = ({ location }: Props): ReactElement => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="holder.js/800x400?text=Third slide&bg=20232a"
+          src="https://www.bing.com/th?id=OIP.npiBC_gFZvex2KDN16YTZAHaFj&pid=Api&rs=1&p=0"
           alt="Third slide"
         />
 

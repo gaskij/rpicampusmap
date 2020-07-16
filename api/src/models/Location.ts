@@ -39,14 +39,14 @@ const LocationSchema = new mongoose.Schema({
       type: String,
       require: true,
     },
-  },
-  comments: {
-    type: Array,
-    require: true,
-  },
-  photos: {
-    type: Array,
-    require: true,
+    comments: {
+      type: Array,
+      require: true,
+    },
+    photos: {
+      type: Array,
+      require: true,
+    },
   },
   geometry: {
     type: {

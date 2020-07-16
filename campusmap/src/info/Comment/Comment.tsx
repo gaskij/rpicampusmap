@@ -1,7 +1,14 @@
+import * as React from 'react';
+import { ReactElement } from 'react';
 
+import { Comment } from 'src/types';
 
-const Comment = () => {
-
+interface Props {
+  data: Comment;
 }
 
-export default Comment;
+const CommentElement = ({ data }: Props): ReactElement => (
+  <div></div>
+);
+
+export default CommentElement;

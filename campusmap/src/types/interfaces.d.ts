@@ -21,6 +21,8 @@ export interface LocationProperties {
   popupContent: string;
   thumbnail: string;
   amenity?: string;
+  comments?: Comment[];
+  photos?: Photo[];
 }
 
 export interface Location extends Feature {
