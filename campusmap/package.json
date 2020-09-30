@@ -5,14 +5,13 @@
   "main": "index.ts",
   "private": true,
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --bail --progress --profile",
     "lint": "eslint --ext .js,.ts \"./src/**/*.{js,ts}\"",
     "lint-fix": "npm run lint -- --fix",
     "start": "npm run ui-dev",
     "test": "jest",
     "test-coverage": "jest --coverage",
-    "ui-dev": "webpack-dev-server --history-api-fallback --inline --progress --open --watch",
-    "ui-prod": "webpack --bail --progress --profile"
+    "ui-dev": "webpack-dev-server --history-api-fallback --inline --progress --open --watch"
   },
   "repository": {
     "type": "git",
