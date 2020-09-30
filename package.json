@@ -5,8 +5,10 @@
   "private": true,
   "scripts": {
     "build": "cd api && npm run build && cd ../campusmap && npm run build",
-    "install-all": "cd api && npm install && cd ../campusmap && npm install",
     "heroku-postbuild": "npm run install-all && npm run build",
+    "install-all": "cd api && npm install && cd ../campusmap && npm install",
+    "install-ui": "cd campusmap && npm install",
+    "test-ui": "cd campusmap && npm test",
     "start": "cd api && npm run api-prod"
   },
   "repository": {
