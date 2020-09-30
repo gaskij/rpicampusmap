@@ -1,0 +1,22 @@
+{
+  "name": "rpicampusmap",
+  "version": "1.0.0",
+  "description": "The RPICampusMap project.",
+  "private": true,
+  "scripts": {
+    "build": "cd api && npm run build && cd ../campusmap && npm run build",
+    "install-all": "cd api && npm install && cd ../campusmap && npm install",
+    "heroku-postbuild": "npm run install-all && npm run build",
+    "start": "cd api && npm run api-prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaskij/rpicampusmap.git"
+  },
+  "author": "Justin Gaskins",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/gaskij/rpicampusmap/issues"
+  },
+  "homepage": "https://github.com/gaskij/rpicampusmap#readme"
+}

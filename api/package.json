@@ -2,7 +2,6 @@
   "name": "campusmapapi",
   "version": "1.0.0",
   "description": "The backend API for the RPICampusMap project.",
-  "main": "app.js",
   "private": true,
   "scripts": {
     "api-dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts",

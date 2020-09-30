@@ -7,7 +7,7 @@ import Mongoose from 'mongoose';
 /** Custom Imports */
 import {
   dbOptions as options,
-  dbURI as uri,
+  DB_URI as uri,
 } from '../config/dbConfig';
 
 import { CRUDController } from '../types/interfaces';

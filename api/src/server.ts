@@ -19,17 +19,25 @@ import infoRoutes from './routes/info';
 
 /** General Configuration */
 dotenv.config({ path: '../../.env' });
-const port = 5000;
+const PORT = process.env.PORT || 5000;
 
 /** Instantiate Express Server */
 const server = express();
 server
   .use(bodyParser.urlencoded({ extended: true }))
   .use(bodyParser.json())
-  .use(express.static(path.join(__dirname, '../../campusmap/src/')))
-  .use(cors())
-  .listen(port);
-console.log(`Listening on port ${port}`);
+  .use(cors());
+
+/** Choose between production and development runtime environment */
+if (process.env.NODE_ENV === 'production') {
+  server.use(express.static(path.join(__dirname, '../../campusmap/dist/')))
+} else {
+  server.use(express.static(path.join(__dirname, '../../campusmap/src/')))
+}
+
+/** Run the server on the given port */
+server.listen(PORT);
+console.log(`Listening on port ${PORT}`);
 
 
 /** ================================== API ROUTES ===================================== */
