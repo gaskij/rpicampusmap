@@ -11,6 +11,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import path from 'path';
 import cors from 'cors';
+import morgan from 'morgan';
 
 /** API Routes */
 import locationsRoutes from './routes/locations';
@@ -26,19 +27,8 @@ const server = express();
 server
   .use(bodyParser.urlencoded({ extended: true }))
   .use(bodyParser.json())
-  .use(cors());
-
-/** Choose between production and development runtime environment */
-if (process.env.NODE_ENV === 'production') {
-  server.use(express.static(path.join(__dirname, '../../campusmap/dist/')))
-} else {
-  server.use(express.static(path.join(__dirname, '../../campusmap/src/')))
-}
-
-/** Run the server on the given port */
-server.listen(PORT);
-console.log(`Listening on port ${PORT}`);
-
+  .use(cors())
+  .use(morgan('common'));
 
 /** ================================== API ROUTES ===================================== */
 /** Locations */
@@ -62,24 +52,31 @@ server.use('/api/info', infoRoutes);
 
 
 /* =============================== FRONT END ROUTE =================================== */
-server.get('/', ((req, res) => {
-  res.sendFile(path.join(__dirname, '../../campusmap/public/index.html'));
-}));
+/** Serve the frontend in production */
+if (process.env.NODE_ENV === 'production') {
+  console.log('production mode');
 
-server.get('/*', ((req, res) => {
-  res.sendFile(path.join(__dirname, '../../campusmap/public/index.html'));
-}));
+  server
+    .use(express.static(path.join(__dirname, '../../campusmap/dist/webpack')));
 
+  server.get('*', ((req, res) => {
+    res.sendFile(path.join(__dirname, '../../campusmap/dist/webpack/index.html'));
+  }));
+}
 
 /* ================================ ERROR HANDLING =================================== */
 /** Handle 404 */
-server.use((req, res) => {
-  res.status(404)
-    .sendFile(path.join(__dirname, '../../campusmap/public/index.html'), { error: '404: Page not Found' });
-});
+// server.use((req, res) => {
+//   res.status(404)
+//     .sendFile(path.join(__dirname, '../../campusmap/dist/webpack/index.html'), { error: '404: Page not Found' });
+// });
 
 /** Handle 500 */
 server.use((error: ErrorRequestHandler, req: Request, res: Response, next: NextFunction) => {
   res.status(500).send(`Error 500: Internal Server Error\n${error}`);
   next();
 });
+
+/** Run the server on the given port */
+server.listen(PORT);
+console.log(`Listening on port ${PORT}`);
