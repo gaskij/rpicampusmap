@@ -7,8 +7,12 @@
     "build": "cd api && npm run build && cd ../campusmap && npm run build",
     "heroku-postbuild": "npm run install-all && npm run build",
     "install-all": "cd api && npm install && cd ../campusmap && npm install",
+    "install-api": "cd api && npm install",
     "install-ui": "cd campusmap && npm install",
-    "test-ui": "cd campusmap && npm test",
+    "lint-api": "cd api && npm run lint",
+    "lint-ui": "cd campusmap && npm run lint",
+    "test-api": "cd api && npm test-coverage",
+    "test-ui": "cd campusmap && npm test-coverage",
     "start": "cd api && npm run api-prod"
   },
   "repository": {
