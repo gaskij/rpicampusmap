@@ -17,6 +17,7 @@ import morgan from 'morgan';
 import locationsRoutes from './routes/locations';
 import searchRoutes from './routes/search';
 import infoRoutes from './routes/info';
+import casRoutes from './routes/case'
 
 /** General Configuration */
 dotenv.config({ path: '../../.env' });
@@ -49,6 +50,11 @@ server.use('/api/info', infoRoutes);
 /** Login */
 
 /** Register */
+
+/** CAS */
+server.use('/api/cas', casRoutes);
+
+
 
 /* =============================== FRONT END ROUTE =================================== */
 /** Serve the frontend in production */
