@@ -11,8 +11,8 @@
     "install-ui": "cd campusmap && npm install",
     "lint-api": "cd api && npm run lint",
     "lint-ui": "cd campusmap && npm run lint",
-    "test-api": "cd api && npm test-coverage",
-    "test-ui": "cd campusmap && npm test-coverage",
+    "test-api": "cd api && npm run test-coverage",
+    "test-ui": "cd campusmap && npm run test-coverage",
     "start": "cd api && npm run api-prod"
   },
   "repository": {

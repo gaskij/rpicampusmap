@@ -68,7 +68,8 @@ if (process.env.NODE_ENV === 'production') {
 /** Handle 404 */
 // server.use((req, res) => {
 //   res.status(404)
-//     .sendFile(path.join(__dirname, '../../campusmap/dist/webpack/index.html'), { error: '404: Page not Found' });
+//     .sendFile(path.join(__dirname, '../../campusmap/dist/webpack/index.html'),
+//      { error: '404: Page not Found' });
 // });
 
 /** Handle 500 */
