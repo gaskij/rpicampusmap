@@ -10,6 +10,8 @@
     "lint": "eslint --ext .js,.ts \"./src/**/*.{js,ts}\"",
     "lint-fix": "npm run lint -- --fix",
     "start": "npm run api-dev",
+    "test": "echo \"No test suite set up.\"",
+    "test-coverage": "echo \"No test suite set up.\"",
     "update-db": "node update_db.js"
   },
   "repository": {
@@ -39,13 +41,11 @@
     "@typescript-eslint/eslint-plugin": "^2.21.0",
     "@typescript-eslint/parser": "^2.21.0",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.18.3",
-    "eslint-plugin-react-hooks": "^2.5.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.21.3",
+    "eslint-plugin-react-hooks": "^4.1.2",
     "ts-node-dev": "^1.0.0-pre.44"
   }
 }

@@ -11,7 +11,8 @@
     "start": "npm run ui-dev",
     "test": "jest",
     "test-coverage": "jest --coverage",
-    "ui-dev": "webpack-dev-server --history-api-fallback --inline --progress --open --watch"
+    "ui-dev": "webpack-dev-server --history-api-fallback --inline --progress --open --watch",
+    "webpack": "webpack"
   },
   "repository": {
     "type": "git",
@@ -41,14 +42,16 @@
     "axios": "^0.19.2",
     "axios-hooks": "^1.10.0",
     "babel-loader": "^8.1.0",
-    "bootstrap": "^4.4.1",
-    "css-loader": "^3.4.2",
+    "bootstrap": "^4.5.2",
     "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.4.2",
     "dotenv": "^7.0.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "jquery": "^3.5.1",
     "leaflet": "^1.6.0",
     "leaflet-defaulticon-compatibility": "^0.1.1",
+    "popper.js": "^1.16.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
@@ -71,7 +74,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^2.5.0",
-    "jest": "^25.5.4",
+    "jest": "^26.4.1",
     "ts-jest": "^26.4.1",
     "webpack-dev-server": "^3.11.0"
   },
