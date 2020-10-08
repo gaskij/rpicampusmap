@@ -50,7 +50,6 @@ server.use('/api/info', infoRoutes);
 
 /** Register */
 
-
 /* =============================== FRONT END ROUTE =================================== */
 /** Serve the frontend in production */
 if (process.env.NODE_ENV === 'production') {
