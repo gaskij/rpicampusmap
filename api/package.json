@@ -4,7 +4,7 @@
   "description": "The backend API for the RPICampusMap project.",
   "private": true,
   "scripts": {
-    "api-dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts",
+    "api-dev": "ts-node-dev --respawn --transpile-only ./src/server.ts",
     "api-prod": "npm run build && NODE_ENV=production node dist/server.js",
     "build": "tsc",
     "lint": "eslint --ext .js,.ts \"./src/**/*.{js,ts}\"",
@@ -46,6 +46,6 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.21.3",
     "eslint-plugin-react-hooks": "^4.1.2",
-    "ts-node-dev": "^1.0.0-pre.44"
+    "ts-node-dev": "^1.0.0-pre.63"
   }
 }
