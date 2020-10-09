@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build": "webpack -p --bail --progress --profile",
-    "lint": "eslint --ext .js,.ts \"./src/**/*.{js,ts}\"",
+    "lint": "eslint --ext .js,.ts,.tsx \"./src/**/*.{js,ts,tsx}\"",
     "lint-fix": "npm run lint -- --fix",
     "start": "npm run ui-dev",
     "test": "jest",
