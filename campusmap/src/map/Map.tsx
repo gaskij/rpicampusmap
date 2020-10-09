@@ -25,14 +25,14 @@ interface Props {
 }
 
 /**
- * The top level component that renders the Leaflet map homepage. 
+ * The top level component that renders the Leaflet map homepage.
  */
 const Map = ({ targetId }: Props): ReactElement => {
   const [campusMap, setCampusMap] = useState<L.Map>();
   const [params, queryString] = getParams();
 
-  const [{ data, error }] = useAxios<Feature<Geometry, GeoJsonProperties>[]>({
-    url: `/api/locations`,
+  const [{ data }] = useAxios<Feature<Geometry, GeoJsonProperties>[]>({
+    url: '/api/locations',
   }, { manual: false, useCache: false });
 
   const [{ error: popupError }, fetchLocation] = useAxios<Location>({
@@ -55,19 +55,19 @@ const Map = ({ targetId }: Props): ReactElement => {
         features: data,
       };
       createGeoJsonLayer(campusMap, geoJSON);
-  
+
       if (queryString) {
         getLocationData()
-          .then(data => {
-            createPopup(campusMap, data, !!popupError);
+          .then((location) => {
+            createPopup(campusMap, location, !!popupError);
           });
       }
     }
   }, [createGeoJsonLayer, createPopup, campusMap, data, getLocationData, popupError]);
-  
+
   return (
-    <div id={targetId} style={{ height: '100%' }}></div>
+    <div id={targetId} style={{ height: '100%' }} />
   );
-}
+};
 
 export default Map;

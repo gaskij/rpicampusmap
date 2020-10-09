@@ -6,13 +6,11 @@ import {
   Button,
 } from 'react-bootstrap';
 
-const SearchForm = (): ReactElement => {
-  return (
-    <Form inline>
-      <FormControl type="text" placeholder="Enter a location" className="mr-sm-2" />
-      <Button variant="light">Search</Button>
-    </Form>
-  );
-};
+const SearchForm = (): ReactElement => (
+  <Form inline>
+    <FormControl type="text" placeholder="Enter a location" className="mr-sm-2" />
+    <Button variant="light">Search</Button>
+  </Form>
+);
 
 export default SearchForm;
