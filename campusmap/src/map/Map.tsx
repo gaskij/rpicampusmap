@@ -32,11 +32,11 @@ const Map = ({ targetId }: Props): ReactElement => {
   const [params, queryString] = getParams();
 
   const [{ data, error }] = useAxios<Feature<Geometry, GeoJsonProperties>[]>({
-    url: `http://localhost:5000/api/locations`,
+    url: `/api/locations`,
   }, { manual: false, useCache: false });
 
   const [{ error: popupError }, fetchLocation] = useAxios<Location>({
-    url: `http://localhost:5000/api/locations/${params.get('location')}`,
+    url: `/api/locations/${params.get('location')}`,
   }, { manual: true, useCache: false });
 
   const getLocationData = React.useCallback(async () => {

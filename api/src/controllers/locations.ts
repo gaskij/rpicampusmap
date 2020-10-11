@@ -5,7 +5,7 @@ import Mongoose, { MongooseDocument } from 'mongoose';
 
 import {
   dbOptions as options,
-  dbURI as uri,
+  DB_URI as uri,
 } from '../config/dbConfig';
 import Location from '../models/Location';
 import { CRUDController } from '../types/interfaces';
