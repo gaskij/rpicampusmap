@@ -7,7 +7,7 @@ Fixes #(issue name)
 (What did you do to fix this issue?)
 
 ## Known Issues
-(Are there any knew issues caused or exposed by your changes, or things you would like clarified before merging?)
+(Are there any new issues caused or exposed by your changes, or things you would like clarified before merging?)
 
 ## Testing Procedures
 (What should reviewers do to validate your changes? What steps should be taken and what is the expected outcome?)

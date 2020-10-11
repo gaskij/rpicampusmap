@@ -1,4 +1,4 @@
-# RPI Interactive Campus Map #
+# RPI CampusMap #
 
 
 This is a webapp that will allow users to easily find spots on campus and in the surrounding area, and map a route to their destination. Users can also post relevant photos and comments on locations' info pages.
@@ -7,17 +7,16 @@ This project was started as a term project for the ITWS-2110 (Web Systems Develo
 
 We are currently in the middle of a large refactor, but heavy construction will be over soon!
 
+Try it out at https://rpicampusmap.herokuapp.com/
+
 ### Current Contributors:
 * Justin Gaskins
-* Jon-Pierre Antoine
-* Darrian Gardea
-* Aidan Duane		
-* Cody Messina
-* Kristina Adams      
+* Priya Sapra
+* Carl Stadtler
+* Toluwaleke Semowo
 
-### Project Managers:
-* Spring 2020: Jon-Pierre Antoine
-* Fall 2019: Justin Gaskins
+### Project Lead:
+* Justin Gaskins
 
 ### Founders:
 * Justin Gaskins
@@ -25,6 +24,7 @@ We are currently in the middle of a large refactor, but heavy construction will 
 * Sebastien Boulas
 
 ### Version History:
+* 10/8/2020 - v1.1.0 Much of the project is converted now, and new features are being added again.
 * 5/3/2020 - v1.0.0 The project is being converted to React! All AngularJS code will be replaced at the end of this process.
 * 2/16/2020 - v0.4.0 Login and registration implemented. Messages are flashed on error state i.e. invalid email,
 user not found, login to see admin page etc. New welcome page also added (page before map access). Code has been rebased making it more modular. All html converted to ejs and views used (modularity).
@@ -51,7 +51,7 @@ Once you have that taken care of, there are a few more steps to take before you 
       cp default.env .env
     ```
 4. Open the new `.env` file in your preferred text editor (you may need to enable the option to "show hidden files" to see it). Change the `<username>` and `<password>` fields to match your Mongo Atlas account information. Don't worry, this file will only be saved on your local machine, so nobody will see it!
-5. You should now be ready to use the application. Don't forget to switch to a development branch before beginning work!
+5. You should now be ready to use the application. Don't forget to create a development branch before beginning work!
 
 ### Running the Servers
 To start the servers, run `npm start` in the respective folders (`api` or `campusmap`). You will need to have both running for full functionality.
@@ -70,6 +70,6 @@ To start the servers, run `npm start` in the respective folders (`api` or `campu
   * Use 2 spaces (not tabs) for indentation. Most IDEs and editors can be configured to use tab-width of 2 and use spaces instead of tabs.
 
 ### Contributing to RPI Machines Map
-RPI Machines Map is a separate project that branches from RPI Campus Map. While it has many of the same features, it has additional features that allow users to easily find machine shops on campus, and the contents of those shops. To contribute to that project, see the [RPI Machines repo](https://github.com/gwild37/RPI-Machines).
+RPI MachinesMap is a separate project that branches from RPI CampusMap. While it has many of the same features, it has additional features that allow users to easily find machine shops on campus, and the contents of those shops. To contribute to that project, see the [RPI Machines repo](https://github.com/gwild37/RPI-Machines).
 
 Have fun making a big impact on campus!

@@ -14,7 +14,7 @@ const SearchResultsPage = (): ReactElement => {
   const [params, queryString] = getParams();
 
   const [{ data, loading }, getLocations] = useAxios<Location[]>({
-    url: `http://localhost:5000/api/search${queryString}`,
+    url: `/api/search${queryString}`,
   }, { manual: false });
   
   return (
