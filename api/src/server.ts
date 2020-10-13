@@ -12,12 +12,14 @@ import dotenv from 'dotenv';
 import path from 'path';
 import cors from 'cors';
 import morgan from 'morgan';
+import session from 'express-session';
+
 
 /** API Routes */
 import locationsRoutes from './routes/locations';
 import searchRoutes from './routes/search';
 import infoRoutes from './routes/info';
-import casRoutes from './routes/case'
+import casRoutes from './routes/cas';
 
 /** General Configuration */
 dotenv.config({ path: '../../.env' });
