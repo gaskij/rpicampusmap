@@ -13,10 +13,10 @@ import SearchResult from './SearchResult';
 const SearchResultsPage = (): ReactElement => {
   const [params, queryString] = getParams();
 
-  const [{ data, loading }, getLocations] = useAxios<Location[]>({
+  const [{ data, loading }] = useAxios<Location[]>({
     url: `/api/search${queryString}`,
   }, { manual: false });
-  
+
   return (
     <Container>
       <h5 className="my-4">
@@ -24,6 +24,7 @@ const SearchResultsPage = (): ReactElement => {
       </h5>
       {loading && <ProgressBar animated variant="danger" now={100} />}
       {data && data.map((location) => (
+        // eslint-disable-next-line no-underscore-dangle
         <SearchResult location={location} key={location._id} />
       ))}
       {data && !data.length && <p>No results found.</p>}

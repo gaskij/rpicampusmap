@@ -7,26 +7,25 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import './Footer.css';
 
-const Footer = (): ReactElement => {
-  return (
-    <footer>
-      <Navbar bg="danger">
-        <Container className="justify-content-center" fluid>
-          <Row>        
-            <Col className="text-center">
-              <a href="https://rcos.io/projects/gaskij/rpicampusmap/profile" target="_blank">An RCOS Project</a>
-              &nbsp;--&nbsp;
-              <a href="https://github.com/gaskij/rpicampusmap" target="_blank">
-                <FontAwesomeIcon icon={faGithub} />&nbsp;GitHub
-              </a>
-              &nbsp;--&nbsp;
-              <Link to="/login">Admin Panel</Link>
-            </Col>
-          </Row>
-        </Container>
-      </Navbar>
-    </footer>
-  );
-}
+const Footer = (): ReactElement => (
+  <footer>
+    <Navbar bg="danger">
+      <Container className="justify-content-center" fluid>
+        <Row>
+          <Col className="text-center">
+            <a href="https://rcos.io/projects/gaskij/rpicampusmap/profile" target="_blank" rel="noopener noreferrer">An RCOS Project</a>
+            &nbsp;|&nbsp;
+            <a href="https://github.com/gaskij/rpicampusmap" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faGithub} />
+              &nbsp;GitHub
+            </a>
+            &nbsp;|&nbsp;
+            <Link to="/login">Admin Panel</Link>
+          </Col>
+        </Row>
+      </Container>
+    </Navbar>
+  </footer>
+);
 
 export default Footer;
