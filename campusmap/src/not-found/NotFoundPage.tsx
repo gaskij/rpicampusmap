@@ -9,7 +9,7 @@ import { ListGroup, Jumbotron } from 'react-bootstrap';
 const NotFoundPage = (): ReactElement => (
   <Jumbotron>
     <h1>
-      We couldn&apos;t find the page you were looking for
+      We couldn&apos;t find the page you were looking for&nbsp;
       <span role="img" aria-label="sad face">😢</span>
     </h1>
     <p>The URL may have been mistyped or the page may have moved:</p>
@@ -18,7 +18,7 @@ const NotFoundPage = (): ReactElement => (
         Please try navigating back to the <Link to="/">homepage</Link> to find what you are looking for.
       </ListGroup.Item>
       <ListGroup.Item>
-        Alternatively you can
+        Alternatively you can&nbsp;
         <a href="https://github.com/gaskij/rpicampusmap/issues/new" target="blank" rel="noopener noreferrer">
           report a suspected issue.
         </a>

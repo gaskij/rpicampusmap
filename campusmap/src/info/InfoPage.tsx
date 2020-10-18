@@ -8,10 +8,10 @@ import {
   ProgressBar,
   Row,
 } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 import useAxios from 'axios-hooks';
 
 import { Location } from 'campusmap/src/types';
-import { getParams } from 'campusmap/src/utils';
 import PhotoCarousel from './PhotoCarousel';
 import CommentElement from './Comment';
 
@@ -19,10 +19,10 @@ import CommentElement from './Comment';
  * Top level component that renders the entire Info page.
  */
 const InfoPage = (): ReactElement => {
-  const [params, queryString] = getParams();
+  const { id } = useParams();  
 
   const [{ data: location, loading, error }] = useAxios<Location>({
-    url: `http://localhost:5000/api/info/${params.get('loc')}`,
+    url: `http://localhost:5000/api/info/${id}`,
   }, { manual: false, useCache: false });
 
   return (
