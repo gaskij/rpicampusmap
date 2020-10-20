@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { ListGroup, Jumbotron } from 'react-bootstrap';
 
 /**
- * NotFoundPage element that specifies next steps for a not found page.
+ * NotFoundPage element that specifies next steps when a page is not found.
  */
 const NotFoundPage = (): ReactElement => (
   <Jumbotron>
