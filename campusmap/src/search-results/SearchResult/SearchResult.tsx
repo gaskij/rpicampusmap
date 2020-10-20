@@ -14,8 +14,7 @@ interface Props {
  * Individual Search Result component rendered as a card.
  */
 const SearchResult = ({ location }: Props): ReactElement => (
-  // eslint-disable-next-line no-underscore-dangle
-  <Link to={`/info?loc=${location._id}`}>
+  <Link to={`/info?loc=${location.id}`}>
     <Card className="mb-4">
       <Row className="p-4">
         <Col className="col-2">

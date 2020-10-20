@@ -21,15 +21,14 @@ export interface LocationProperties {
   popupContent: string;
   thumbnail: string;
   amenity?: string;
+  comments?: Comment[];
+  photos?: Photo[];
 }
 
 export interface Location extends Feature {
-  _id: string;
   id: string;
   properties: LocationProperties;
   geometry: Point;
-  comments?: Comment[];
-  photos?: Photo[];
 }
 
 export interface User {

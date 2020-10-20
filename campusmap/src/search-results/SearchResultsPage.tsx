@@ -24,8 +24,7 @@ const SearchResultsPage = (): ReactElement => {
       </h5>
       {loading && <ProgressBar animated variant="danger" now={100} />}
       {data && data.map((location) => (
-        // eslint-disable-next-line no-underscore-dangle
-        <SearchResult location={location} key={location._id} />
+        <SearchResult location={location} key={location.id} />
       ))}
       {data && !data.length && <p>No results found.</p>}
     </Container>

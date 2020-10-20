@@ -37,7 +37,7 @@ const readIndex = (req: Request, res: Response): void => {
     : {};
 
   Mongoose.connect(uri, options).then(() => {
-    Location.find(searchQuery, { properties: 1 }).then((results) => {
+    Location.find(searchQuery, { _id: 0, id: 1, properties: 1 }).then((results) => {
       console.log(`\tFound ${results.length} locations.`);
       Mongoose.disconnect();
       res.json(results);
