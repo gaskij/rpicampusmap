@@ -13,7 +13,7 @@ interface Props {
 const PhotoCarousel = ({ location }: Props): ReactElement => {
   const [index, setIndex] = useState(0);
 
-  const images: Photo[] = [
+  const images: Photo[] = location.photos || [
     {
       author: 'author 1',
       description: 'alt text 1',
@@ -44,7 +44,7 @@ const PhotoCarousel = ({ location }: Props): ReactElement => {
         <Carousel.Item key={image.src}>
           <img
             className="d-block w-100"
-            style={{maxHeight: '300px', minHeight: 'auto'}}
+            style={{ maxHeight: '300px', minHeight: 'auto' }}
             src={image.src}
             alt={image.description}
           />
