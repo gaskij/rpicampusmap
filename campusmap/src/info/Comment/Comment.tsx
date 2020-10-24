@@ -8,7 +8,10 @@ interface Props {
 }
 
 const CommentElement = ({ data }: Props): ReactElement => (
-  <div />
+    <div className="py-2 border-bottom">
+      <div><b>{data.author}</b> &#8226; {data.timestamp.toLocaleString()}</div>
+      <div>{data.text}</div>
+    </div>
 );
 
 export default CommentElement;
