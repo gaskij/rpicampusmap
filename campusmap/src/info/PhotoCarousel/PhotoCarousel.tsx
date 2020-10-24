@@ -1,38 +1,17 @@
 import * as React from 'react';
 import { ReactElement, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
-import { Location, Photo } from 'campusmap/src/types';
+import { Photo } from 'campusmap/src/types';
 
 interface Props {
-  location: Location;
+  photos: Photo[];
 }
 
 /**
- * Individual Info Result component rendered in a carousel.
+ * Location photos rendered in a periodically switching carousel.
  */
-const PhotoCarousel = ({ location }: Props): ReactElement => {
+const PhotoCarousel = ({ photos }: Props): ReactElement => {
   const [index, setIndex] = useState(0);
-
-  const images: Photo[] = location.photos || [
-    {
-      author: 'author 1',
-      description: 'alt text 1',
-      src: 'http://tours.pocketsights.com/media/1/11ef2a38f7884fd58ecc6a78e3e70ea7_large.jpg',
-      date: new Date(),
-    },
-    {
-      author: 'author 2',
-      description: 'alt text 2',
-      src: 'http://www.alpha6294.com/History/ThetaXionCampus/DarrinCommunicationsCenter/Building/DarrinCommunicationsCenter.jpg',
-      date: new Date(),
-    },
-    {
-      author: 'author 3',
-      description: 'alt text 3',
-      src: 'https://www.usnews.com/img/college-photo_3861.jpg',
-      date: new Date(),
-    },
-  ];
 
   const handleSelect = (selectedIndex: number, _e: object | null): void => {
     setIndex(selectedIndex);
@@ -40,13 +19,13 @@ const PhotoCarousel = ({ location }: Props): ReactElement => {
 
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
-      {images.map((image) => (
-        <Carousel.Item key={image.src}>
+      {photos.map((photo) => (
+        <Carousel.Item key={photo.src}>
           <img
             className="d-block w-100"
             style={{ maxHeight: '300px', minHeight: 'auto' }}
-            src={image.src}
-            alt={image.description}
+            src={photo.src}
+            alt={photo.description}
           />
         </Carousel.Item>
       ))}

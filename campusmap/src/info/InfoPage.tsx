@@ -11,10 +11,11 @@ import {
 import { useParams } from 'react-router-dom';
 import useAxios from 'axios-hooks';
 
-import { Comment, Location } from 'campusmap/src/types';
+import { Comment, Location, Photo } from 'campusmap/src/types';
 import PhotoCarousel from './PhotoCarousel';
 import CommentElement from './Comment';
 
+/** @todo Replace with API call once backend is hooked up */
 const comments: Comment[] = [
   {
     _id: '1',
@@ -27,6 +28,28 @@ const comments: Comment[] = [
     author: 'Priya Sapra',
     text: 'This is a second comment',
     timestamp: new Date(),
+  },
+];
+
+/** @todo Replace with API call once backend is hooked up */
+const photos: Photo[] = [
+  {
+    author: 'author 1',
+    description: 'alt text 1',
+    src: 'http://tours.pocketsights.com/media/1/11ef2a38f7884fd58ecc6a78e3e70ea7_large.jpg',
+    date: new Date(),
+  },
+  {
+    author: 'author 2',
+    description: 'alt text 2',
+    src: 'http://www.alpha6294.com/History/ThetaXionCampus/DarrinCommunicationsCenter/Building/DarrinCommunicationsCenter.jpg',
+    date: new Date(),
+  },
+  {
+    author: 'author 3',
+    description: 'alt text 3',
+    src: 'https://www.usnews.com/img/college-photo_3861.jpg',
+    date: new Date(),
   },
 ];
 
@@ -64,7 +87,7 @@ const InfoPage = (): ReactElement => {
                   <Button className="shadow" href={`/?location=${location.id}`} variant="danger">Show on Map</Button>
                 </Col>
                 <Col sm={6}>
-                  <PhotoCarousel location={location} />
+                  <PhotoCarousel photos={photos} />
                 </Col>
               </Row>
             </Container>
@@ -76,7 +99,7 @@ const InfoPage = (): ReactElement => {
                 <div className="pb-4">
                   {comments
                     ? comments.map((comment) => (
-                      // eslint-disable-next-line no-underscore-dangle
+                      /* eslint-disable-next-line no-underscore-dangle */
                       <CommentElement data={comment} key={comment._id} />
                     ))
                     : <p>No comments found. Be the first to leave a comment!</p>}
