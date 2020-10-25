@@ -14,6 +14,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'RPI CampusMap',
       template: './public/index.html',
+      favicon: './public/favicon.ico',
     }),
   ],
   module: {
