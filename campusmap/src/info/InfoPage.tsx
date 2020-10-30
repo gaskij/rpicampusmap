@@ -60,7 +60,7 @@ const InfoPage = (): ReactElement => {
   const { id }: { id: string } = useParams();
 
   const [{ data: location, loading, error }] = useAxios<Location>({
-    url: `http://localhost:5000/api/info/${id}`,
+    url: `/api/info/${id}`,
   }, { manual: false, useCache: false });
 
   return (
