@@ -19,7 +19,7 @@ const readIndex = (req: Request, res: Response): void => {
   console.log('GET: /api/locations');
   // Use Mongoose to get all location in the database
   Mongoose.connect(uri, options).then(() => {
-    Location.find({}, { type: 1, properties: 1, geometry: 1, _id: 0 })
+    Location.find({}, { _id: 0 })
       .then((locations: MongooseDocument[]) => {
         Mongoose.disconnect();
         res.json(locations);

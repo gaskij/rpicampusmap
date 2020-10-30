@@ -44,7 +44,7 @@ const readComments = (req: Request, res: Response): void => {
 
   /** Return all comments for matching location id */
   Mongoose.connect(uri, options).then(() => {
-    Location.findOne({ id }, { comments: 1 }).then((result) => {
+    Location.findOne({ id }, { id: 1, properties: 1 }).then((result) => {
       console.log('\tFound', result);
       Mongoose.disconnect();
       res.json(result);
@@ -71,7 +71,7 @@ const readPhotos = (req: Request, res: Response): void => {
 
   /** Return all photos for matching location id */
   Mongoose.connect(uri, options).then(() => {
-    Location.findOne({ id }, { photos: 1 }).then((result) => {
+    Location.findOne({ id }, { id: 1, properties: 1 }).then((result) => {
       console.log('\tFound', result);
       Mongoose.disconnect();
       res.json(result);
