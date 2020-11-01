@@ -4,6 +4,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import MapPage from 'campusmap/src/map';
 import SearchResultsPage from 'campusmap/src/search-results';
+import InfoPage from 'campusmap/src/info';
+import NotFoundPage from 'campusmap/src/not-found';
+
 import Header from './Header';
 import Footer from './Footer';
 
@@ -24,6 +27,12 @@ const App = (): ReactElement => (
         </Route>
         <Route path="/search">
           <SearchResultsPage />
+        </Route>
+        <Route path="/info/:id">
+          <InfoPage />
+        </Route>
+        <Route path="*">
+          <NotFoundPage />
         </Route>
       </Switch>
     </main>

@@ -28,7 +28,7 @@ export const onMapClick = (e: LeafletMouseEvent, popup: Popup, map: Map): void =
 const makePopupContent = (location: Location | Feature): string => {
   if (location.properties) {
     return (`
-    <a href="/info?location=${location.id}">
+    <a href="/info/${location.id}">
       <div className="popup">
         <h5>${location.properties.popupContent}</h5>
         <img src="${location.properties.thumbnail}" alt="${location.properties.name}" width="100%"/>

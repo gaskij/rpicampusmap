@@ -53,6 +53,7 @@ module.exports = {
   output: {
     filename: 'campusmap.bundle.js',
     path: path.resolve(__dirname, 'dist/webpack'),
+    publicPath: '/',
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist/webpack'),

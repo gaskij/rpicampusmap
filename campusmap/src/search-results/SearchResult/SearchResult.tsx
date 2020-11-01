@@ -14,7 +14,7 @@ interface Props {
  * Individual Search Result component rendered as a card.
  */
 const SearchResult = ({ location }: Props): ReactElement => (
-  <Link to={`/info?loc=${location.id}`}>
+  <Link to={`/info/${location.id}`}>
     <Card className="mb-4">
       <Row className="p-4">
         <Col className="col-2">

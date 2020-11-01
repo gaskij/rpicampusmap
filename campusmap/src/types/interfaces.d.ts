@@ -1,9 +1,10 @@
 import { Feature, Point } from 'geojson';
 
 export interface Comment {
+  _id: string;
   author: string;
   text: string;
-  date: Date;
+  timestamp: Date;
 }
 
 export interface Photo {
