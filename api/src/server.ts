@@ -17,6 +17,7 @@ import morgan from 'morgan';
 import locationsRoutes from './routes/locations';
 import searchRoutes from './routes/search';
 import infoRoutes from './routes/info';
+import commentRoutes from './routes/comments';
 
 /** General Configuration */
 dotenv.config({ path: '../../.env' });
@@ -41,6 +42,7 @@ server.use('/api/search', searchRoutes);
 server.use('/api/info', infoRoutes);
 
 /** Comment */
+server.use('/api/comments', commentRoutes);
 
 /** Users */
 
