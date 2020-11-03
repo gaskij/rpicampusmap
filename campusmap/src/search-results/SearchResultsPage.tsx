@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { ReactElement } from 'react';
 import { Container, ProgressBar } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
 import useAxios from 'axios-hooks';
 
 import { Location } from 'campusmap/src/types';
@@ -17,17 +18,22 @@ const SearchResultsPage = (): ReactElement => {
     url: `/api/search${queryString}`,
   }, { manual: false });
 
+  const query = queryString ? `Search Results -- "${params.get('query')}"` : 'Browse All Locations';
+
   return (
-    <Container>
-      <h5 className="my-4">
-        {queryString ? `Search Results -- "${params.get('query')}"` : 'Browse All Locations'}
-      </h5>
-      {loading && <ProgressBar animated variant="danger" now={100} />}
-      {data && data.map((location) => (
-        <SearchResult location={location} key={location.id} />
-      ))}
-      {data && !data.length && <p>No results found.</p>}
-    </Container>
+    <>
+      <Helmet>
+        <title>{query}</title>
+      </Helmet>
+      <Container>
+        <h5 className="my-4">{query}</h5>
+        {loading && <ProgressBar animated variant="danger" now={100} />}
+        {data && data.map((location) => (
+          <SearchResult location={location} key={location.id} />
+        ))}
+        {data && !data.length && <p>No results found.</p>}
+      </Container>
+    </>
   );
 };
 
