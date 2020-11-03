@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import MapPage from 'campusmap/src/map';
 import NotFoundPage from 'campusmap/src/not-found';
+import LoginPage from 'campusmap/src/login';
 import SearchResultsPage from 'campusmap/src/search-results';
 import InfoPage from 'campusmap/src/info';
 
@@ -30,6 +31,9 @@ const App = (): ReactElement => (
         </Route>
         <Route path="/info/:id">
           <InfoPage />
+        </Route>
+        <Route path="/login">
+          <LoginPage />
         </Route>
         <Route path="*">
           <NotFoundPage />
