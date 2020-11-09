@@ -26,7 +26,7 @@ const readComments = (req: Request, res: Response): void => {
 
   /** Return all comments */
   Mongoose.connect(uri, options).then(() => {
-    Comment.find({ location: location }).then((result) => {
+    Comment.find({ location }).then((result) => {
       console.log('\tFound', result);
       Mongoose.disconnect();
       res.json(result);
@@ -59,12 +59,12 @@ const createComment = (req: Request, res: Response): void => {
 };
 
 const readComment = (req: Request, res: Response): void => {
-  const { location, id  } = req.params;
+  const { location, id } = req.params;
   console.log(`GET: /api/comments/${location}/${id}`);
 
   /** Return comment matching id */
   Mongoose.connect(uri, options).then(() => {
-    Comment.findOne({ location: location, _id: id }).then((result) => {
+    Comment.findOne({ location, _id: id }).then((result) => {
       console.log('\tFound', result);
       Mongoose.disconnect();
       res.json(result);
@@ -77,17 +77,17 @@ const readComment = (req: Request, res: Response): void => {
 };
 
 const updateComment = (req: Request, res: Response): void => {
-  const { location, id  } = req.params;
+  const { location, id } = req.params;
   console.log(`PUT: /api/comments/${location}/${id}`);
 
   /** Update the specified comment */
   Mongoose.connect(uri, options).then(() => {
     Comment.findByIdAndUpdate(id, req.body, { new: true })
-    .then((result) => {
-      console.log('\tUpdated', result);
-      Mongoose.disconnect();
-      res.json(result);
-    });
+      .then((result) => {
+        console.log('\tUpdated', result);
+        Mongoose.disconnect();
+        res.json(result);
+      });
   }).catch((err) => {
     console.error('\tERROR:', err);
     Mongoose.disconnect();
@@ -96,7 +96,7 @@ const updateComment = (req: Request, res: Response): void => {
 };
 
 const deleteComment = (req: Request, res: Response): void => {
-  const { location, id  } = req.params;
+  const { location, id } = req.params;
   console.log(`DELETE: /api/comments/${location}/${id}`);
 
   /** Delete the specified comment */

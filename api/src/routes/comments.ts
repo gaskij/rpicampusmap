@@ -5,7 +5,7 @@ import bodyParser from 'body-parser';
 /** Custom Imports */
 import {
   AllComments,
-  SingleComment
+  SingleComment,
 } from '../controllers/comments';
 
 const jsonParser = bodyParser.json();
