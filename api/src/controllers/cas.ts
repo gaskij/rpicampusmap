@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 
 /** Node Imports */
-import Mongoose from 'mongoose';
 import { Request, Response } from 'express';
 
 // import cas from '../routes/cas';
@@ -14,29 +13,44 @@ const unsupported = (req: Request, res: Response): void => {
 };
 
 const readCasAPI = (req: Request, res: Response): void => {
-  if (req.session) {
-    if (req.session.casUser) {
-      res.json(req.session)
+  try {
+    if (req.session) {
+      if (req.session.casUser) {
+        res.json(req.session);
+      } else {
+        console.log('Not authenticated');
+      }
+
+      res.redirect(process.env.NODE_ENV === 'production' ? 'https://rpicampusmap.herokuapp.com' : 'http://localhost:3000');
     }
-    
-    res.redirect(process.env.NODE_ENV === "production" ? 'https://rpicampusmap.herokuapp.com' : 'http://localhost:3000');  
+  } catch (err) {
+    res.status(500).send(`ERROR: ${err}`);
   }
 };
 
 const readCasUser = (req: Request, res: Response): void => {
-  if (req.session) {
+  try {
     if (req.session) {
-      /* eslint-disable-next-line @typescript-eslint/camelcase */
+      if (req.session.casUser) {
+        /* eslint-disable-next-line @typescript-eslint/camelcase */
+        res.json(req.session.casUser);
+      } else {
+      // check empty req.session.cas_user
+      // for all controllers that require auth, write it with req.session.cas_user
+      // use cas.block for all routes
+      // have a button that goes to /api/cas
+      // redirect back to the pages
+
+        // check the session at api/authorize when trying to get to access admin
+        // endpoint should say yes or no about authorization and then proceed based on the
+        // information that is returned
+
+        console.log('Not authenticated');
+      }
       res.json(req.session);
     }
-    // check empty req.session.cas_user
-    // for all controllers that require auth, write it with req.session.cas_user
-    // use cas.block for all routes
-    // have a button that goes to /api/cas
-    // redirect back to the pages
-
-    // check the session at api/authorize when trying to get to access admin
-    // endpoint should say yes or no about authorization and then proceed based on the information that is returned
+  } catch (err) {
+    res.status(500).send(`ERROR: ${err}`);
   }
 };
 

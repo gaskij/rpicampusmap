@@ -8,22 +8,22 @@ import { User } from 'campusmap/src/types';
 /**
  * Top level component that renders the entire Search Results page.
  */
-const SearchResultsPage = (): ReactElement => {
+const LoginPage = (): ReactElement => {
   const [{ data, loading }] = useAxios<User>({
-    url: '/api/cas',
+    url: '/cas/user',
   }, { manual: false });
-  
+
   if (!loading) {
     return (
       <Container>
-        <code>{data}</code>
+        <code>{JSON.stringify(data)}</code>
       </Container>
     );
   }
 
   return (
     <ProgressBar animated variant="danger" now={100} />
-  )
+  );
 };
 
-export default SearchResultsPage;
+export default LoginPage;
