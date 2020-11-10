@@ -1,30 +1,31 @@
 import * as React from 'react';
 import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
-import { ListGroup, Jumbotron } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 /**
- * NotFoundPage element that specifies next steps for a not found page.
+ * NotFoundPage element that specifies next steps when a page is not found.
  */
 const NotFoundPage = (): ReactElement => (
-  <Jumbotron>
+  <Container className="my-4">
     <h1>
       We couldn&apos;t find the page you were looking for&nbsp;
       <span role="img" aria-label="sad face">😢</span>
     </h1>
+    <br />
     <p>The URL may have been mistyped or the page may have moved:</p>
-    <ListGroup>
-      <ListGroup.Item>
+    <ul>
+      <li>
         Please try navigating back to the <Link to="/">homepage</Link> to find what you are looking for.
-      </ListGroup.Item>
-      <ListGroup.Item>
+      </li>
+      <li>
         Alternatively you can&nbsp;
         <a href="https://github.com/gaskij/rpicampusmap/issues/new" target="blank" rel="noopener noreferrer">
           report a suspected issue.
         </a>
-      </ListGroup.Item>
-    </ListGroup>
-  </Jumbotron>
+      </li>
+    </ul>
+  </Container>
 );
 
 export default NotFoundPage;

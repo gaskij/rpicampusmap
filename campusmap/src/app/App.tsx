@@ -3,9 +3,9 @@ import { ReactElement } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import MapPage from 'campusmap/src/map';
+import NotFoundPage from 'campusmap/src/not-found';
 import SearchResultsPage from 'campusmap/src/search-results';
 import InfoPage from 'campusmap/src/info';
-import NotFoundPage from 'campusmap/src/not-found';
 
 import Header from './Header';
 import Footer from './Footer';
