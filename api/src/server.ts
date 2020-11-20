@@ -53,12 +53,8 @@ server.use('/api/info', infoRoutes);
 
 /** Photos */
 
-/** Login */
-
-/** Register */
-
 /** CAS */
-server.use('/cas', casRoutes);
+server.use('/api/cas', casRoutes);
 
 /* =============================== FRONT END ROUTE =================================== */
 /** Serve the frontend in production */

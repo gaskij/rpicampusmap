@@ -10,7 +10,7 @@ import { User } from 'campusmap/src/types';
  */
 const LoginPage = (): ReactElement => {
   const [{ data, loading }] = useAxios<User>({
-    url: '/cas/user',
+    url: '/api/cas/user',
   }, { manual: false });
 
   if (!loading) {

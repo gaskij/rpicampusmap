@@ -32,7 +32,7 @@ const App = (): ReactElement => (
         <Route path="/info/:id">
           <InfoPage />
         </Route>
-        <Route path="/cas">
+        <Route path="/user">
           <LoginPage />
         </Route>
         <Route path="*">
