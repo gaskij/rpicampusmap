@@ -6,10 +6,11 @@ import useAxios from 'axios-hooks';
 import { User } from 'campusmap/src/types';
 
 /**
- * Top level component that renders the entire Search Results page.
+ * Top level component to control login feature.
  */
 const LoginPage = (): ReactElement => {
   const [{ data, loading }] = useAxios<User>({
+    // Backend endpoint to confirm user login
     url: '/api/cas/user',
   }, { manual: false });
 

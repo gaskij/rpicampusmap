@@ -38,9 +38,6 @@ const readCasUser = (req: Request, res: Response): void => {
   }
 };
 
-// bounce when trying to access campusmap.com/admin
-// /login use bounce_redirect
-
 export const CasAPIController: CRUDController = {
   create: unsupported,
   read: readCasAPI,
