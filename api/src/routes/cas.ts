@@ -16,7 +16,7 @@ const cas = new CASAuthentication({
   /* eslint-disable-next-line @typescript-eslint/camelcase */
   cas_url: 'https://cas-auth.rpi.edu/cas',
   /* eslint-disable-next-line @typescript-eslint/camelcase */
-  service_url: process.env.NODE_ENV === 'production' ? 'https://rpicampusmap.herokuapp.com/' : 'http://localhost:3000',
+  service_url: process.env.NODE_ENV === 'production' ? 'https://rpicampusmap.herokuapp.com' : 'http://localhost:3000',
   /* eslint-disable-next-line @typescript-eslint/camelcase */
   session_name: 'casUser',
 });
