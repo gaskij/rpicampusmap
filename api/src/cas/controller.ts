@@ -28,11 +28,19 @@ const readCasUser = (req: Request, res: Response): void => {
   try {
     if (req.session) {
       if (req.session.casUser) {
-        res.json(req.session.casUser);
+        res.json({ casUser: req.session.casUser, admin: false });
       } else {
         res.json('Not authenticated');
       }
     }
+  } catch (err) {
+    res.status(500).send(`ERROR: ${err}`);
+  }
+};
+
+const readCasLogout = (req: Request, res: Response): void => {
+  try {
+    res.json({ casUser: 'Not authenticated', admin: false });
   } catch (err) {
     res.status(500).send(`ERROR: ${err}`);
   }
@@ -61,7 +69,7 @@ export const CasAuthController: CRUDController = {
 
 export const CasLogoutController: CRUDController = {
   create: unsupported,
-  read: unsupported,
+  read: readCasLogout,
   update: unsupported,
   delete: unsupported,
 };
