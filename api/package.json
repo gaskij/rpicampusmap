@@ -38,9 +38,7 @@
     "mongodb": "^3.2.3",
     "mongoose": "^5.8.1",
     "morgan": "^1.10.0",
-    "typescript": "^3.8.3",
-    "passport": "^0.4.1",
-    "passport-local": "^1.0.0"
+    "typescript": "^3.8.3"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.21.0",
