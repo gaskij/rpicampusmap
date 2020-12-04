@@ -33,8 +33,6 @@ export interface Location extends Feature {
 }
 
 export interface User {
-  name: string;
-  email: string;
-  password: string;
-  date: Date;
+  casUser: string;
+  admin: boolean;
 }

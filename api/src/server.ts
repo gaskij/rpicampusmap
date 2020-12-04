@@ -12,11 +12,13 @@ import dotenv from 'dotenv';
 import path from 'path';
 import cors from 'cors';
 import morgan from 'morgan';
+import session from 'express-session';
 
 /** API Routes */
 import locationsRoutes from './routes/locations';
 import searchRoutes from './routes/search';
 import infoRoutes from './routes/info';
+import casRoutes from './routes/cas';
 
 /** General Configuration */
 dotenv.config({ path: '../../.env' });
@@ -28,6 +30,11 @@ server
   .use(bodyParser.urlencoded({ extended: true }))
   .use(bodyParser.json())
   .use(cors())
+  .use(session({
+    secret: 'somesecretkey',
+    resave: false,
+    saveUninitialized: true,
+  }))
   .use(morgan('common'));
 
 /** ================================== API ROUTES ===================================== */
@@ -46,9 +53,8 @@ server.use('/api/info', infoRoutes);
 
 /** Photos */
 
-/** Login */
-
-/** Register */
+/** CAS */
+server.use('/api/cas', casRoutes);
 
 /* =============================== FRONT END ROUTE =================================== */
 /** Serve the frontend in production */
