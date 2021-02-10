@@ -13,7 +13,8 @@ Try it out at https://rpicampusmap.herokuapp.com/
 * Justin Gaskins
 * Priya Sapra
 * Carl Stadtler
-* Toluwaleke Semowo
+* Manusri Viswanathan
+* Erik Swanke
 
 ### Project Lead:
 * Justin Gaskins
@@ -33,7 +34,7 @@ user not found, login to see admin page etc. New welcome page also added (page b
 * 1/25/2019 - v0.1.0 Initial stages of functionality are complete! More locations and authorization will be added for the release of v1.0.
 
 ### Getting Started
-This project uses the MERN stack (MongoDB, Express.JS, ReactJs, Node.js). You will need a working installation of [Node.js](https://nodejs.org/en/) (LTS version recommended), and a [MongoDB Atlas Cloud account](https://www.mongodb.com/cloud/atlas) (free is fine).
+This project uses the MERN stack (MongoDB, Express.JS, ReactJs, Node.js). You will need a working installation of [Node.js](https://nodejs.org/en/) (LTS version recommended), and a [MongoDB Atlas Cloud account](https://www.mongodb.com/cloud/atlas) (free is fine). After creating an account, ask the project lead to provide you with the necessary credentials to access the RPI CampusMap cluster.
 
 Once you have that taken care of, there are a few more steps to take before you can begin work.
 1. Clone the repository by either running `git clone https://github.com/gaskij/rpicampusmap.git` in a terminal shell with Git installed, or using your preferred Git UI.
@@ -50,11 +51,12 @@ Once you have that taken care of, there are a few more steps to take before you 
       cd campusmap && npm install && cd ..
       cp default.env .env
     ```
-4. Open the new `.env` file in your preferred text editor (you may need to enable the option to "show hidden files" to see it). Change the `<username>` and `<password>` fields to match your Mongo Atlas account information. Don't worry, this file will only be saved on your local machine, so nobody will see it!
+    Note: If running the commands on a Windows command prompt, use `copy default.env .env` instead.
+4. Open the new `.env` file in your preferred text editor (you may need to enable the option to "show hidden files" to see it). Change the `<username>` and `<password>` fields in the `.env` file to match your given Mongo Atlas credentials. Be sure to omit the angle brackets (`<`,`>`) when entering your information. Don't worry, this file will only be saved on your local machine, so nobody will see it!
 5. You should now be ready to use the application. Don't forget to create a development branch before beginning work!
 
 ### Running the Servers
-To start the servers, run `npm start` in the respective folders (`api` or `campusmap`). You will need to have both running for full functionality.
+To start the servers, open two terminals and run `npm start` in each folder (`api` and `campusmap`). You will need to have both running for full functionality.
 
 ### Project Contribution Guidelines
 * DO **NOT** attempt to push directly to `master`! Instead, follow this basic workflow:
