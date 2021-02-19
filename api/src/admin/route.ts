@@ -1,3 +1,5 @@
+/** ADMIN ROUTE */
+
 /** Node Imports */
 import express from 'express';
 import bodyParser from 'body-parser';
@@ -6,7 +8,7 @@ import {
   Index,
   AdminRequest,
   Login,
-} from '../controllers/admin';
+} from './controller';
 
 const jsonParser = bodyParser.json();
 const router = express.Router();

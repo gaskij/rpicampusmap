@@ -1,5 +1,7 @@
 /* eslint-disable no-console */
 
+/** INFO CONTROLLER */
+
 /** Node Imports */
 import Mongoose from 'mongoose';
 import { Request, Response } from 'express';

@@ -1,3 +1,5 @@
+/** INFO ROUTE */
+
 /** Node Imports */
 import express from 'express';
 import bodyParser from 'body-parser';
@@ -7,7 +9,7 @@ import {
   Index,
   Comments,
   Photos,
-} from '../controllers/info';
+} from './controller';
 
 const jsonParser = bodyParser.json();
 const router = express.Router();

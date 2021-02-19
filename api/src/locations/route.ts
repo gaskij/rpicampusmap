@@ -1,3 +1,5 @@
+/** LOCATIONS ROUTE */
+
 /** Node Imports */
 import express from 'express';
 import bodyParser from 'body-parser';
@@ -6,7 +8,7 @@ import bodyParser from 'body-parser';
 import {
   Index,
   LocationController,
-} from '../controllers/locations';
+} from './controller';
 
 const jsonParser = bodyParser.json();
 const router = express.Router();
