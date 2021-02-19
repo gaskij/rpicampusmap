@@ -19,12 +19,15 @@ const createLeafletMap = (targetId: string): L.Map => {
    * Set the tile layer to be used for the map.
    * This uses and accredits OpenStreetMap and Mapbox for the tile layers.
    */
-  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     maxZoom: 18,
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, '
           + '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, '
           + 'Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>',
-    id: 'mapbox.streets',
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw',
   }).addTo(campusMap);
 
   /** Show a popup when the map is clicked that alerts the coordinates of the clicked spot. */
