@@ -32,7 +32,10 @@ const createLeafletMap = (targetId: string): L.Map => {
 
   /** Show a popup when the map is clicked that alerts the coordinates of the clicked spot. */
   const popup = L.popup();
-  campusMap.on('click', (e: L.LeafletMouseEvent) => onMapClick(e, popup, campusMap));
+  if (process.env.NODE_ENV === 'development') {
+    campusMap.on('click', (e: L.LeafletMouseEvent) => onMapClick(e, popup, campusMap));
+  }
+
 
   /** Outline the area of the campus on the map with a gray translucency. */
   L.polygon(campusArea, { color: 'gray', opacity: 0.1 }).addTo(campusMap);
