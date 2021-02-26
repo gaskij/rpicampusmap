@@ -1,5 +1,7 @@
 /* eslint-disable no-console */
 
+/** LOCATION CONTROLLER */
+
 import { Request, Response } from 'express';
 import Mongoose, { MongooseDocument } from 'mongoose';
 

@@ -15,10 +15,10 @@ import morgan from 'morgan';
 import session from 'express-session';
 
 /** API Routes */
-import locationsRoutes from './routes/locations';
-import searchRoutes from './routes/search';
-import infoRoutes from './routes/info';
-import casRoutes from './routes/cas';
+import locationsRoutes from './locations/route';
+import searchRoutes from './search/route';
+import infoRoutes from './info/route';
+import casRoutes from './cas/route';
 
 /** General Configuration */
 dotenv.config({ path: '../../.env' });

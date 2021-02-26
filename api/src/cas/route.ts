@@ -9,7 +9,7 @@ import {
   CasUserController,
   CasAuthController,
   CasLogoutController,
-} from '../controllers/cas';
+} from './controller';
 
 /** Instantiate CASAuthentication */
 const cas = new CASAuthentication({

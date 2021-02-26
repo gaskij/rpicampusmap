@@ -1,8 +1,10 @@
+/** SEARCH ROUTE */
+
 /** Node Imports */
 import express from 'express';
 
 /** Custom Imports */
-import { Index } from '../controllers/search';
+import { Index } from './controller';
 
 const router = express.Router();
 
