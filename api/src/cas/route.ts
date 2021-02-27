@@ -46,7 +46,7 @@ router.route('/authenticate')
 
 /** Redirect unauthenticated clients */
 router.route('/logout')
-  .get(cas.logout)
+  .get(cas.logout, (req, res) => CasLogoutController.read(req, res))
   .post(jsonParser, (req, res) => CasLogoutController.create(req, res))
   .put((req, res) => CasLogoutController.update(req, res))
   .delete((req, res) => CasLogoutController.delete(req, res));
