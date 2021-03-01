@@ -27,7 +27,7 @@ const createLeafletMap = (targetId: string): L.Map => {
     id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
-    accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw',
+    accessToken: process.env.MAPBOX_API_KEY || '',
   }).addTo(campusMap);
 
   /** Show a popup when the map is clicked that alerts the coordinates of the clicked spot. */

@@ -36,6 +36,7 @@ jobs:
         run: |
           touch .env
           echo NODE_ENV=production >> .env
+          echo MAPBOX_API_KEY=${{secrets.MAPBOX_API_KEY}} >> .env
           cat .env
 
       - name: Install Dependencies
