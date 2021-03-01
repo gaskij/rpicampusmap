@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "build": "cd api && npm run build && cd ../campusmap && npm run build",
+    "heroku-prebuild": "touch .env && echo \"NODE_ENV=production\" >> .env",
     "heroku-postbuild": "npm run install-all && npm run build",
     "install-all": "cd api && npm install && cd ../campusmap && npm install",
     "install-api": "cd api && npm install",
@@ -14,6 +15,9 @@
     "test-api": "cd api && npm run test-coverage",
     "test-ui": "cd campusmap && npm run test-coverage",
     "start": "cd api && npm run api-prod"
+  },
+  "engines": {
+    "node": "14.x"
   },
   "repository": {
     "type": "git",
