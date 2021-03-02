@@ -31,6 +31,12 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+      
+      - name: Create env file
+        run: |
+          touch .env
+          echo NODE_ENV=production >> .env
+          cat .env
 
       - name: Install Dependencies
         run: npm run install-ui
