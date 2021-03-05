@@ -10,10 +10,15 @@ module.exports = () => {
   const env = dotenv.config({path: path.join(__dirname, '../.env')}).parsed;
 
   // reduce it to a nice object, the same as before
-  const envKeys = Object.keys(env).reduce((prev, next) => {
-    prev[`process.env.${next}`] = JSON.stringify(env[next]);
-    return prev;
-  }, {});
+  // const envKeys = Object.keys(env).reduce((prev, next) => {
+  //   prev[`process.env.${next}`] = JSON.stringify(env[next]);
+  //   return prev;
+  // }, {});
+
+  const envKeys = {
+    'process.env.NODE_ENV': '"production"',
+    'process.env.MAPBOX_API_KEY': '"key"' 
+  }
 
   console.log(envKeys)
 
