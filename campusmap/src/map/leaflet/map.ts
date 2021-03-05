@@ -15,8 +15,10 @@ const createLeafletMap = (targetId: string): L.Map => {
     zoomDelta: 0.5,
   });
 
-  console.log(process.env.MAPBOX_API_KEY);
-  
+  console.log('MAPBOX_API_KEY:', process.env.MAPBOX_API_KEY);
+  console.log('MONGODB_URI:', process.env.MONGODB_URI);
+  console.log('NODE_ENV:', process.env.NODE_ENV);
+
   /**
    * Set the tile layer to be used for the map.
    * This uses and accredits OpenStreetMap and Mapbox for the tile layers.
@@ -34,12 +36,10 @@ const createLeafletMap = (targetId: string): L.Map => {
 
   /** Show a popup when the map is clicked that alerts the coordinates of the clicked spot. */
   const popup = L.popup();
-  console.log(process.env.NODE_ENV)
 
   if (process.env.NODE_ENV === 'production') {
     campusMap.on('click', (e: L.LeafletMouseEvent) => onMapClick(e, popup, campusMap));
   }
-
 
   /** Outline the area of the campus on the map with a gray translucency. */
   L.polygon(campusArea, { color: 'gray', opacity: 0.1 }).addTo(campusMap);

@@ -5,7 +5,6 @@ const dotenv = require('dotenv');
 const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 module.exports = () => {
   // call dotenv and it will return an Object with a parsed key 
   const env = dotenv.config({path: path.join(__dirname, '../.env')}).parsed;
