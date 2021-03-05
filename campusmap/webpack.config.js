@@ -16,6 +16,8 @@ module.exports = () => {
     return prev;
   }, {});
 
+  console.log(envKeys)
+
   return {
     mode: 'development',
     devtool: 'inline-source-map',

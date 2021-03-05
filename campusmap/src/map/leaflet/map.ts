@@ -15,6 +15,8 @@ const createLeafletMap = (targetId: string): L.Map => {
     zoomDelta: 0.5,
   });
 
+  console.log(process.env.MAPBOX_API_KEY);
+  
   /**
    * Set the tile layer to be used for the map.
    * This uses and accredits OpenStreetMap and Mapbox for the tile layers.
@@ -32,7 +34,9 @@ const createLeafletMap = (targetId: string): L.Map => {
 
   /** Show a popup when the map is clicked that alerts the coordinates of the clicked spot. */
   const popup = L.popup();
-  if (process.env.NODE_ENV === 'development') {
+  console.log(process.env.NODE_ENV)
+
+  if (process.env.NODE_ENV === 'production') {
     campusMap.on('click', (e: L.LeafletMouseEvent) => onMapClick(e, popup, campusMap));
   }
 
