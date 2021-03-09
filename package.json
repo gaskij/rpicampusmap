@@ -24,5 +24,9 @@
   "bugs": {
     "url": "https://github.com/gaskij/rpicampusmap/issues"
   },
-  "homepage": "https://github.com/gaskij/rpicampusmap#readme"
+  "homepage": "https://github.com/gaskij/rpicampusmap#readme",
+  "dependencies": {
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5"
+  }
 }
