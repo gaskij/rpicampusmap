@@ -16,7 +16,7 @@ const readCasAPI = (req: Request, res: Response): void => {
       if (req.session.casUser) {
         res.json(req.session);
       } else {
-        res.json('Not authenticated');
+        res.json({ casUser: 'Not authenticated', admin: false });
       }
     }
   } catch (err) {
@@ -30,7 +30,7 @@ const readCasUser = (req: Request, res: Response): void => {
       if (req.session.casUser) {
         res.json({ casUser: req.session.casUser, admin: false });
       } else {
-        res.json('Not authenticated');
+        res.json({ casUser: 'Not authenticated', admin: false });
       }
     }
   } catch (err) {

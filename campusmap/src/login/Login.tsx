@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { ReactElement, useContext } from 'react';
-import { Container, ProgressBar } from 'react-bootstrap';
-import useAxios from 'axios-hooks';
+import { Container } from 'react-bootstrap';
 
-import { User } from 'campusmap/src/types';
 import AuthContext from '../auth';
 
 /**
