@@ -1,5 +1,5 @@
 /** Node Imports */
-import express from 'express';
+import express, { Response } from 'express';
 import bodyParser from 'body-parser';
 import CASAuthentication from 'express-cas-authentication';
 
@@ -10,6 +10,28 @@ import {
   CasAuthController,
   CasLogoutController,
 } from './controller';
+
+// Override the default CASAuthentication Logout function.
+/* eslint-disable @typescript-eslint/no-explicit-any */
+CASAuthentication.prototype.logout = function logoutOverride(req: any, res: Response): void {
+  // Destroy the entire session if the option is set.
+  if (this.destroy_session) {
+    req.session.destroy((err: any) => {
+      if (err) {
+        /* eslint-disable-next-line no-console */
+        console.log(err);
+      }
+    });
+  } else { // Otherwise, just destroy the CAS session variables.
+    delete req.session[this.session_name];
+    if (this.session_info) {
+      delete req.session[this.session_info];
+    }
+  }
+  // Redirect the client back to the page the request was sent from. **OVERRIDE**
+  res.redirect('back');
+};
+/* eslint-enable @typescript-eslint/no-explicit-any */
 
 /** Instantiate CASAuthentication */
 const cas = new CASAuthentication({
