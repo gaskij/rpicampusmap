@@ -17,6 +17,8 @@ const Header = (): ReactElement => (
         <Nav className="mr-auto">
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/search">Browse</Nav.Link>
+          <Nav.Link href={`/api/cas?returnTo=${window.location.pathname}`}>Login</Nav.Link>
+          <Nav.Link href="/user">Profile</Nav.Link>
         </Nav>
         <SearchForm />
       </Navbar.Collapse>
