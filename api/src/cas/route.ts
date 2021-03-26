@@ -1,16 +1,15 @@
 /** Node Imports */
-import express, { Response } from 'express';
+import express from 'express';
 import bodyParser from 'body-parser';
 
 /** Custom Imports */
 import {
+  cas,
   CasAPIController,
   CasUserController,
   CasAuthController,
   CasLogoutController,
 } from './controller';
-
-import cas from './controller'
 
 const jsonParser = bodyParser.json();
 const router = express.Router();

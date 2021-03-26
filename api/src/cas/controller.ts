@@ -30,7 +30,7 @@ CASAuthentication.prototype.logout = function logoutOverride(req: any, res: Resp
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
 /** Instantiate CASAuthentication */
-const cas = new CASAuthentication({
+export const cas = new CASAuthentication({
   /* eslint-disable @typescript-eslint/camelcase */
   cas_url: 'https://cas-auth.rpi.edu/cas',
   service_url: process.env.NODE_ENV === 'production' ? 'https://rpicampusmap.herokuapp.com' : 'http://localhost:3000',
@@ -76,7 +76,6 @@ const readCasLogout = (req: Request, res: Response): void => {
   } catch (err) {
     res.status(500).send(`ERROR: ${err}`);
   }
-  
 };
 
 export const CasAPIController: CRUDController = {
@@ -106,5 +105,3 @@ export const CasLogoutController: CRUDController = {
   update: unsupported,
   delete: unsupported,
 };
-
-export default cas;
