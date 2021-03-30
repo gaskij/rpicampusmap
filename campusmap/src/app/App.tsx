@@ -2,6 +2,7 @@ import * as React from 'react';
 import { ReactElement } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import { AuthProvider } from 'campusmap/src/auth';
 import MapPage from 'campusmap/src/map';
 import NotFoundPage from 'campusmap/src/not-found';
 import LoginPage from 'campusmap/src/login';
@@ -16,32 +17,34 @@ import Footer from './Footer';
  * This component is rendered at the root element on the index page.
  */
 const App = (): ReactElement => (
-  <BrowserRouter>
-    <Header />
-    <main>
-      <Switch>
-        <Route exact path="/">
-          <MapPage targetId="mapContainer" />
-        </Route>
-        <Route path="/index">
-          <MapPage targetId="mapContainer" />
-        </Route>
-        <Route path="/search">
-          <SearchResultsPage />
-        </Route>
-        <Route path="/info/:id">
-          <InfoPage />
-        </Route>
-        <Route path="/user">
-          <LoginPage />
-        </Route>
-        <Route path="*">
-          <NotFoundPage />
-        </Route>
-      </Switch>
-    </main>
-    <Footer />
-  </BrowserRouter>
+  <AuthProvider>
+    <BrowserRouter>
+      <Header />
+      <main>
+        <Switch>
+          <Route exact path="/">
+            <MapPage targetId="mapContainer" />
+          </Route>
+          <Route path="/index">
+            <MapPage targetId="mapContainer" />
+          </Route>
+          <Route path="/search">
+            <SearchResultsPage />
+          </Route>
+          <Route path="/info/:id">
+            <InfoPage />
+          </Route>
+          <Route path="/user">
+            <LoginPage />
+          </Route>
+          <Route path="*">
+            <NotFoundPage />
+          </Route>
+        </Switch>
+      </main>
+      <Footer />
+    </BrowserRouter>
+  </AuthProvider>
 );
 
 export default App;

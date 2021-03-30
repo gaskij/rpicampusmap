@@ -1,24 +1,15 @@
 /** Node Imports */
 import express from 'express';
 import bodyParser from 'body-parser';
-import CASAuthentication from 'express-cas-authentication';
 
 /** Custom Imports */
 import {
+  cas,
   CasAPIController,
   CasUserController,
   CasAuthController,
   CasLogoutController,
 } from './controller';
-
-/** Instantiate CASAuthentication */
-const cas = new CASAuthentication({
-  /* eslint-disable @typescript-eslint/camelcase */
-  cas_url: 'https://cas-auth.rpi.edu/cas',
-  service_url: process.env.NODE_ENV === 'production' ? 'https://rpicampusmap.herokuapp.com' : 'http://localhost:3000',
-  session_name: 'casUser',
-  /* eslint-enable @typescript-eslint/camelcase */
-});
 
 const jsonParser = bodyParser.json();
 const router = express.Router();
@@ -46,7 +37,7 @@ router.route('/authenticate')
 
 /** Redirect unauthenticated clients */
 router.route('/logout')
-  .get(cas.logout)
+  .get(cas.logout, (req, res) => CasLogoutController.read(req, res))
   .post(jsonParser, (req, res) => CasLogoutController.create(req, res))
   .put((req, res) => CasLogoutController.update(req, res))
   .delete((req, res) => CasLogoutController.delete(req, res));

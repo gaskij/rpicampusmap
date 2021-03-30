@@ -1,29 +1,19 @@
 import * as React from 'react';
-import { ReactElement } from 'react';
-import { Container, ProgressBar } from 'react-bootstrap';
-import useAxios from 'axios-hooks';
+import { ReactElement, useContext } from 'react';
+import { Container } from 'react-bootstrap';
 
-import { User } from 'campusmap/src/types';
+import AuthContext from '../auth';
 
 /**
  * Top level component to control login feature.
  */
 const LoginPage = (): ReactElement => {
-  const [{ data, loading }] = useAxios<User>({
-    // Backend endpoint to confirm user login
-    url: '/api/cas/user',
-  }, { manual: false });
-
-  if (!loading) {
-    return (
-      <Container>
-        <code>{JSON.stringify(data)}</code>
-      </Container>
-    );
-  }
+  const user = useContext(AuthContext);
 
   return (
-    <ProgressBar animated variant="danger" now={100} />
+    <Container>
+      <code>{JSON.stringify(user)}</code>
+    </Container>
   );
 };
 
