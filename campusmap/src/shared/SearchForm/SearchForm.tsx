@@ -10,11 +10,3 @@ const SearchForm = (): ReactElement => (
 );
 
 export default SearchForm;
-
-/*
-    <Form inline>
-      <FormControl type="text" placeholder="Enter a location" className="mr-sm-2" />
-      <Button variant="light" type = "submit">Search</Button>
-    </Form>
-*/
-
