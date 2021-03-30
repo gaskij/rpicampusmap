@@ -12,18 +12,16 @@ import SearchResult from './SearchResult';
  * Top level component that renders the entire Search Results page.
  */
 const SearchResultsPage = (): ReactElement => {
-  const [params, queryString] = getParams();
+  const [params, query] = getParams();
 
   const [{ data, loading }] = useAxios<Location[]>({
-    url: `/api/search${queryString}`,
+    url: `/api/search${query}`,
   }, { manual: false });
-
-  const query = queryString ? `Search Results -- "${params.get('query')}"` : 'Browse All Locations';
 
   return (
     <>
       <Helmet>
-        <title>{query}</title>
+        <title>{query ? `Search Results -- "${params.get('query')}"` : 'Browse All Locations'}</title>
       </Helmet>
       <Container>
         <h5 className="my-4">{query}</h5>

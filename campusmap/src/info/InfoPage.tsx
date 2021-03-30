@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { ReactElement } from 'react';
+import Helmet from 'react-helmet';
 import {
   Button,
   Container,
@@ -65,6 +66,9 @@ const InfoPage = (): ReactElement => {
 
   return (
     <>
+      <Helmet>
+        <title>Info Page</title>
+      </Helmet>
       {loading && <ProgressBar animated variant="danger" now={100} />}
       {error && (
         <Container className="my-4">
@@ -77,6 +81,9 @@ const InfoPage = (): ReactElement => {
       )}
       {!loading && !error && (
         <>
+          <Helmet>
+            <title>{location.properties.name}</title>
+          </Helmet>
           <div className="py-4" style={{ backgroundColor: 'beige' }}>
             <Container>
               <Row id="infoSection">
