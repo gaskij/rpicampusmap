@@ -18,19 +18,19 @@ const Header = (): ReactElement => {
         {/* eslint-disable-next-line no-shadow */
           (user): ReactElement => (
             <Navbar variant="dark" bg="danger" expand="lg">
-              <Link component={Navbar.Brand} to="/">
+              <Link className="navbar-brand" to="/">
                 <img id="logo" src={logo} height="40px" alt="RPI CampusMap" />
               </Link>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                  <Link component={Nav.Link} to="/">Home</Link>
-                  <Link component={Nav.Link} to="/search">Browse</Link>
+                  <Link className="nav-link" to="/">Home</Link>
+                  <Link className="nav-link" to="/search">Browse</Link>
                   {(!user || user.casUser === 'Not authenticated')
                     ? <Nav.Link href={`/api/cas?returnTo=${window.location.pathname}`}>Login</Nav.Link>
                     : (
                       <>
-                        <Link component={Nav.Link} to="/user">Profile</Link>
+                        <Link className="nav-link" to="/user">Profile</Link>
                         <Nav.Link href="/api/cas/logout">Logout</Nav.Link>
                       </>
                     )}
