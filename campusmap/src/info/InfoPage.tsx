@@ -8,7 +8,7 @@ import {
   ProgressBar,
   Row,
 } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import useAxios from 'axios-hooks';
 
 import { Comment, Location, Photo } from 'campusmap/src/types';
@@ -84,7 +84,7 @@ const InfoPage = (): ReactElement => {
                   <h2>{location.properties.name}</h2>
                   <p>{location.properties.description}</p>
                   <p>Also known as: {location.properties.nick}</p>
-                  <Button className="shadow" href={`/?location=${location.id}`} variant="danger">Show on Map</Button>
+                  <Link to={`/?location=${location.id}`}><Button className="shadow" variant="danger">Show on Map</Button></Link>
                 </Col>
                 <Col sm={6}>
                   <PhotoCarousel photos={photos} />
