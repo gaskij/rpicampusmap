@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
+import Location from '../models/Location';
+
 import Mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import locations from './geolocations.json';
-import Location from './models/Location';
 
 dotenv.config({ path: './.env' });
 
@@ -16,8 +16,19 @@ Mongoose.connect(uri, options)
     console.log('Connected to database.');
     // Populate Database with locations if need be (ONLY FOR USERS WITH WRITE ACCESS).
     console.log('Attempting to add locations to database...');
-    Location.collection.insertMany(locations, { ordered: false })
-      .then((success) => console.log('Successfully added to database:\n', success))
+    Location.find()
+      .then((locations) => {
+        Mongoose.disconnect();
+        try {
+          // convert JSON object to a string
+          const data = JSON.stringify(locations, null, 4);
+          // write file to disk
+          fs.writeFileSync('./geolocations.json', data, 'utf8');
+          console.log(`File is written successfully!`);
+        } catch (err) {
+            console.log(`Error writing file: ${err}`);
+        }
+      })
       .catch((err) => console.error('ERROR:', err));
   })
   .catch((err) => console.error('ERROR:', err))
