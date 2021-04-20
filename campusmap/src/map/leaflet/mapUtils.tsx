@@ -1,3 +1,6 @@
+import React from 'react';
+import { Link, StaticRouter } from 'react-router-dom';
+import { renderToString } from 'react-dom/server';
 import { Feature, FeatureCollection } from 'geojson';
 import {
   circleMarker,
@@ -25,20 +28,21 @@ export const onMapClick = (e: LeafletMouseEvent, popup: Popup, map: Map): void =
  * Populate html for a location popup on the map.
  * @param location The location to display information for.
 */
-const makePopupContent = (location: Location | Feature): string => {
-  if (location.properties) {
-    return (`
-    <a href="/info/${location.id}">
-      <div className="popup">
-        <h5>${location.properties.popupContent}</h5>
-        <img src="${location.properties.thumbnail}" alt="${location.properties.name}" width="100%"/>
-        <p>Nicknames: ${location.properties.nick}</p>
-      </div>
-    </a>
-  `);
-  }
-  return '';
-};
+const makePopupContent = (location: Location | Feature): string => (
+  location.properties
+    ? (renderToString(
+      <StaticRouter>
+        <Link to={`/info/${location.id}`}>
+          <div className="popup">
+            <h5>{location.properties.popupContent}</h5>
+            <img src={location.properties.thumbnail} alt={location.properties.name} width="100%" />
+            <p>Nicknames: {location.properties.nick}</p>
+          </div>
+        </Link>
+      </StaticRouter>
+    ))
+    : ''
+);
 
 /**
  * Create marker and set view to the given loaction on the map.

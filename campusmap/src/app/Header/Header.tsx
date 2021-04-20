@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { ReactElement, useContext } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 // TODO: fix typescript import issue
 import logo from 'campusmap/public/images/logo.png';
@@ -17,19 +18,19 @@ const Header = (): ReactElement => {
         {/* eslint-disable-next-line no-shadow */
           (user): ReactElement => (
             <Navbar variant="dark" bg="danger" expand="lg">
-              <Navbar.Brand href="/">
+              <Link className="navbar-brand" to="/">
                 <img id="logo" src={logo} height="40px" alt="RPI CampusMap" />
-              </Navbar.Brand>
+              </Link>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                  <Nav.Link href="/">Home</Nav.Link>
-                  <Nav.Link href="/search">Browse</Nav.Link>
+                  <Link className="nav-link" to="/">Home</Link>
+                  <Link className="nav-link" to="/search">Browse</Link>
                   {(!user || user.casUser === 'Not authenticated')
                     ? <Nav.Link href={`/api/cas?returnTo=${window.location.pathname}`}>Login</Nav.Link>
                     : (
                       <>
-                        <Nav.Link href="/user">Profile</Nav.Link>
+                        <Link className="nav-link" to="/user">Profile</Link>
                         <Nav.Link href="/api/cas/logout">Logout</Nav.Link>
                       </>
                     )}

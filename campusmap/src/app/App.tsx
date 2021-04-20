@@ -17,8 +17,8 @@ import Footer from './Footer';
  * This component is rendered at the root element on the index page.
  */
 const App = (): ReactElement => (
-  <AuthProvider>
-    <BrowserRouter>
+  <BrowserRouter>
+    <AuthProvider>
       <Header />
       <main>
         <Switch>
@@ -43,8 +43,8 @@ const App = (): ReactElement => (
         </Switch>
       </main>
       <Footer />
-    </BrowserRouter>
-  </AuthProvider>
+    </AuthProvider>
+  </BrowserRouter>
 );
 
 export default App;

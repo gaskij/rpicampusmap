@@ -4,6 +4,7 @@ import {
   useEffect,
   useState,
 } from 'react';
+import Helmet from 'react-helmet';
 import useAxios from 'axios-hooks';
 import {
   Feature,
@@ -66,7 +67,12 @@ const Map = ({ targetId }: Props): ReactElement => {
   }, [createGeoJsonLayer, createPopup, campusMap, data, getLocationData, popupError]);
 
   return (
-    <div id={targetId} style={{ height: '100%' }} />
+    <>
+      <Helmet>
+        <title>RPI CampusMap</title>
+      </Helmet>
+      <div id={targetId} style={{ height: '100%' }} />
+    </>
   );
 };
 
