@@ -12,12 +12,14 @@
     "start": "npm run api-dev",
     "test": "echo \"No test suite set up.\"",
     "test-coverage": "echo \"No test suite set up.\"",
+    "export": "ts-node-dev --transpile-only ./src/database/exportDb.ts",
     "update-db": "node update_db.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gaskij/rpicampusmap.git"
   },
+  "type": "module",
   "author": "Justin Gaskins",
   "license": "GPL-3.0-or-later",
   "bugs": {

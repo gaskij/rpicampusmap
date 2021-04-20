@@ -1,9 +1,8 @@
 [
     {
-        "type": "Feature",
-        "_id": "amos",
-        "id": "amos",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Amos Eaton Hall",
             "nick": "JEC",
             "category": "Academic & Research",
@@ -11,15 +10,20 @@
             "popupContent": "Amos Eaton"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.682596, 42.730189]
-        }
+            "coordinates": [
+                -73.682596,
+                42.730189
+            ],
+            "type": "Point"
+        },
+        "_id": "amos",
+        "type": "Feature",
+        "id": "amos"
     },
     {
-        "type": "Feature",
-        "_id": "carn",
-        "id": "carn",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Carnegie Building",
             "nick": "CARNEG",
             "category": "Academic & Research",
@@ -27,15 +31,20 @@
             "popupContent": "Carnegie Building"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.68321, 42.730448]
-        }
+            "coordinates": [
+                -73.68321,
+                42.730448
+            ],
+            "type": "Point"
+        },
+        "_id": "carn",
+        "type": "Feature",
+        "id": "carn"
     },
     {
-        "type": "Feature",
-        "_id": "cbis",
-        "id": "cbis",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Center for Biotechnology and Interdisciplinary Studies",
             "nick": "CBIS",
             "category": "Academic & Research",
@@ -43,15 +52,20 @@
             "popupContent": "Center for Biotechnology and Interdisciplinary Studies"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.678419, 42.728252]
-        }
+            "coordinates": [
+                -73.678419,
+                42.728252
+            ],
+            "type": "Point"
+        },
+        "_id": "cbis",
+        "type": "Feature",
+        "id": "cbis"
     },
     {
-        "type": "Feature",
-        "_id": "cogs",
-        "id": "cogs",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Cogswell Laboratory",
             "nick": "Cogswell",
             "category": "Academic & Research",
@@ -59,15 +73,20 @@
             "popupContent": "Cogswell Laboratory"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.681343, 42.728189]
-        }
+            "coordinates": [
+                -73.681343,
+                42.728189
+            ],
+            "type": "Point"
+        },
+        "_id": "cogs",
+        "type": "Feature",
+        "id": "cogs"
     },
     {
-        "type": "Feature",
-        "_id": "dcc",
-        "id": "dcc",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Darrin Communications Center",
             "nick": "DCC, DARRIN",
             "category": "Academic & Research",
@@ -76,15 +95,20 @@
             "popupContent": "Darrin Communications Center"
         },
         "geometry": {
-           "type": "Point",
-           "coordinates": [-73.679059, 42.729226]
-        }
+            "coordinates": [
+                -73.679059,
+                42.729226
+            ],
+            "type": "Point"
+        },
+        "_id": "dcc",
+        "type": "Feature",
+        "id": "dcc"
     },
     {
-        "type": "Feature",
-        "_id": "empire",
-        "id": "empire",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Empire State Hall",
             "nick": "Empire",
             "category": "Academic & Research",
@@ -92,15 +116,20 @@
             "popupContent": "Empire State Hall"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.68217, 42.728373]
-        }
+            "coordinates": [
+                -73.68217,
+                42.728373
+            ],
+            "type": "Point"
+        },
+        "_id": "empire",
+        "type": "Feature",
+        "id": "empire"
     },
     {
-        "type": "Feature",
-        "_id": "empac",
-        "id": "empac",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Experimental Media and Performing Arts Center at Rensselaer",
             "nick": "EMPAC",
             "category": "Academic & Research",
@@ -108,15 +137,20 @@
             "popupContent": "Experimental Media & Performing Arts Center"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.683828, 42.728883]
-        }
+            "coordinates": [
+                -73.683828,
+                42.728883
+            ],
+            "type": "Point"
+        },
+        "_id": "empac",
+        "type": "Feature",
+        "id": "empac"
     },
     {
-        "type": "Feature",
-        "_id": "lib",
-        "id": "lib",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Folsom Library",
             "nick": "FOLSOM, LIB",
             "category": "Academic & Research",
@@ -125,15 +159,20 @@
             "popupContent": "Folsom Library"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.682654, 42.729408]
-        }
+            "coordinates": [
+                -73.682654,
+                42.729408
+            ],
+            "type": "Point"
+        },
+        "_id": "lib",
+        "type": "Feature",
+        "id": "lib"
     },
     {
-        "type": "Feature",
-        "_id": "greene",
-        "id": "greene",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Greene Building",
             "nick": "Greene",
             "category": "Academic & Research",
@@ -141,15 +180,20 @@
             "popupContent": "Greene Building"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.681216, 42.730023]
-        }
+            "coordinates": [
+                -73.681216,
+                42.730023
+            ],
+            "type": "Point"
+        },
+        "_id": "greene",
+        "type": "Feature",
+        "id": "greene"
     },
     {
-        "type": "Feature",
-        "_id": "jec",
-        "id": "jec",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Jonsson Engineering Center",
             "nick": "JEC",
             "category": "Academic & Research",
@@ -157,15 +201,20 @@
             "popupContent": "Jonsson Engineering Center"
         },
         "geometry": {
-           "type": "Point",
-           "coordinates": [-73.6804, 42.72957]
-        }
+            "coordinates": [
+                -73.6804,
+                42.72957
+            ],
+            "type": "Point"
+        },
+        "_id": "jec",
+        "type": "Feature",
+        "id": "jec"
     },
     {
-        "type": "Feature",
-        "_id": "jrowl",
-        "id": "jrowl",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Jonsson Rowland Science Center",
             "nick": "J-ROWL, JROWL",
             "category": "Academic & Research",
@@ -173,15 +222,20 @@
             "popupContent": "Jonsson-Rowland Science Center"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.680432, 42.728776]
-        }
+            "coordinates": [
+                -73.680432,
+                42.728776
+            ],
+            "type": "Point"
+        },
+        "_id": "jrowl",
+        "type": "Feature",
+        "id": "jrowl"
     },
     {
-        "type": "Feature",
-        "_id": "lally",
-        "id": "lally",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Lally Hall",
             "nick": "LALLY",
             "category": "Academic & Research",
@@ -189,15 +243,20 @@
             "popupContent": "Lally Hall"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.681929, 42.73007]
-        }
+            "coordinates": [
+                -73.681929,
+                42.73007
+            ],
+            "type": "Point"
+        },
+        "_id": "lally",
+        "type": "Feature",
+        "id": "lally"
     },
     {
-        "type": "Feature",
-        "_id": "linac",
-        "id": "linac",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "LINAC Facility (Gaerttner Laboratory)",
             "nick": "LINAC",
             "category": "Academic & Research",
@@ -205,32 +264,45 @@
             "popupContent": "LINAC Facility"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.662296, 42.732647]
-        }
+            "coordinates": [
+                -73.662296,
+                42.732647
+            ],
+            "type": "Point"
+        },
+        "_id": "linac",
+        "type": "Feature",
+        "id": "linac"
     },
     {
-        "type": "Feature",
-        "_id": "cii",
-        "id": "cii",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Low Center for Industrial Innovation",
             "nick": "LOW, CII",
-            "nicknames": ["low", "cii"],
+            "nicknames": [
+                "low",
+                "cii"
+            ],
             "category": "Academic & Research",
             "description": "Right side of the DCC",
             "popupContent": "Low Center for Industrial Innovation"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.67921, 42.729732]
-        }
+            "coordinates": [
+                -73.67921,
+                42.729732
+            ],
+            "type": "Point"
+        },
+        "_id": "cii",
+        "type": "Feature",
+        "id": "cii"
     },
     {
-        "type": "Feature",
-        "_id": "mrc",
-        "id": "mrc",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Materials Research Center",
             "nick": "MRC",
             "category": "Academic & Research",
@@ -238,15 +310,20 @@
             "popupContent": "Low Center for Industrial Innovation"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.682706, 42.72849]
-        }
+            "coordinates": [
+                -73.682706,
+                42.72849
+            ],
+            "type": "Point"
+        },
+        "_id": "mrc",
+        "type": "Feature",
+        "id": "mrc"
     },
     {
-        "type": "Feature",
-        "_id": "pitt",
-        "id": "pitt",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Pittsburgh Building",
             "nick": "PITT",
             "category": "Academic & Research",
@@ -254,15 +331,20 @@
             "popupContent": "Pittsburgh Building"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.683313, 42.731174]
-        }
+            "coordinates": [
+                -73.683313,
+                42.731174
+            ],
+            "type": "Point"
+        },
+        "_id": "pitt",
+        "type": "Feature",
+        "id": "pitt"
     },
     {
-        "type": "Feature",
-        "_id": "rick",
-        "id": "rick",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Ricketts Building",
             "nick": "Ricketts, RIC",
             "category": "Academic & Research",
@@ -270,15 +352,20 @@
             "popupContent": "Ricketts Building"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.679757, 42.730906]
-        }
+            "coordinates": [
+                -73.679757,
+                42.730906
+            ],
+            "type": "Point"
+        },
+        "_id": "rick",
+        "type": "Feature",
+        "id": "rick"
     },
     {
-        "type": "Feature",
-        "_id": "sage",
-        "id": "sage",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Russell Sage Laboratory",
             "nick": "SAGE, RIC",
             "category": "Academic & Research",
@@ -287,15 +374,20 @@
             "popupContent": "Russell Sage Laboratory"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.681671, 42.730898]
-        }
+            "coordinates": [
+                -73.681671,
+                42.730898
+            ],
+            "type": "Point"
+        },
+        "_id": "sage",
+        "type": "Feature",
+        "id": "sage"
     },
     {
-        "type": "Feature",
-        "_id": "walk",
-        "id": "walk",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Walker Laboratory",
             "nick": "WALKER",
             "category": "Academic & Research",
@@ -303,15 +395,20 @@
             "popupContent": "Walker Laboratory"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.682562, 42.730863]
-        }
+            "coordinates": [
+                -73.682562,
+                42.730863
+            ],
+            "type": "Point"
+        },
+        "_id": "walk",
+        "type": "Feature",
+        "id": "walk"
     },
     {
-        "type": "Feature",
-        "_id": "west",
-        "id": "west",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "West Hall",
             "nick": "WEST",
             "category": "Academic & Research",
@@ -319,15 +416,20 @@
             "popupContent": "West Hall"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.683146, 42.731702]
-        }
+            "coordinates": [
+                -73.683146,
+                42.731702
+            ],
+            "type": "Point"
+        },
+        "_id": "west",
+        "type": "Feature",
+        "id": "west"
     },
     {
-        "type": "Feature",
-        "_id": "winslow",
-        "id": "winslow",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Winslow Building",
             "nick": "Winslow",
             "category": "Academic & Research",
@@ -335,15 +437,20 @@
             "popupContent": "Winslow Building"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.684296, 42.730929]
-        }
+            "coordinates": [
+                -73.684296,
+                42.730929
+            ],
+            "type": "Point"
+        },
+        "_id": "winslow",
+        "type": "Feature",
+        "id": "winslow"
     },
     {
-        "type": "Feature",
-        "_id": "87",
-        "id": "87",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "87 Gymnasium",
             "nick": "87",
             "category": "Student Life",
@@ -351,15 +458,20 @@
             "popupContent": "87 Gymnasium"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.67879, 42.73078]
-        }
+            "coordinates": [
+                -73.67879,
+                42.73078
+            ],
+            "type": "Point"
+        },
+        "_id": "87",
+        "type": "Feature",
+        "id": "87"
     },
     {
-        "type": "Feature",
-        "_id": "acad",
-        "id": "acad",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Academy Hall",
             "nick": "ACADMY",
             "category": "Student Life",
@@ -368,15 +480,20 @@
             "popupContent": "Academy Hall"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.678715, 42.727454]
-        }
+            "coordinates": [
+                -73.678715,
+                42.727454
+            ],
+            "type": "Point"
+        },
+        "_id": "acad",
+        "type": "Feature",
+        "id": "acad"
     },
     {
-        "type": "Feature",
-        "_id": "asrc",
-        "id": "asrc",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Alumni Sports & Recreation Center",
             "nick": "ASRC",
             "category": "Student Life",
@@ -384,15 +501,20 @@
             "popupContent": "Alumni Sports & Recreation Center"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.676878, 42.728467]
-        }
+            "coordinates": [
+                -73.676878,
+                42.728467
+            ],
+            "type": "Point"
+        },
+        "_id": "asrc",
+        "type": "Feature",
+        "id": "asrc"
     },
     {
-        "type": "Feature",
-        "_id": "anderson",
-        "id": "anderson",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Anderson Field",
             "nick": "Rugby Field",
             "category": "Student Life",
@@ -400,15 +522,20 @@
             "popupContent": "Anderson Field"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.666956, 42.734426]
-        }
+            "coordinates": [
+                -73.666956,
+                42.734426
+            ],
+            "type": "Point"
+        },
+        "_id": "anderson",
+        "type": "Feature",
+        "id": "anderson"
     },
     {
-        "type": "Feature",
-        "_id": "chapel",
-        "id": "chapel",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Chapel + Cultural Center",
             "nick": "Chapel",
             "category": "Student Life",
@@ -416,15 +543,20 @@
             "popupContent": "Chapel + Cultural Center"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.672276, 42.731818]
-        }
+            "coordinates": [
+                -73.672276,
+                42.731818
+            ],
+            "type": "Point"
+        },
+        "_id": "chapel",
+        "type": "Feature",
+        "id": "chapel"
     },
     {
-        "type": "Feature",
-        "_id": "commons",
-        "id": "commons",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Commons Dining Hall",
             "nick": "Commons",
             "category": "Student Life",
@@ -432,15 +564,20 @@
             "popupContent": "Commons Dining Hall"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.674332, 42.728289]
-        }
+            "coordinates": [
+                -73.674332,
+                42.728289
+            ],
+            "type": "Point"
+        },
+        "_id": "commons",
+        "type": "Feature",
+        "id": "commons"
     },
     {
-        "type": "Feature",
-        "_id": "ecav",
-        "id": "ecav",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "East Campus Athletic Village Arena",
             "nick": "ECAV",
             "category": "Student Life",
@@ -448,15 +585,20 @@
             "popupContent": "East Campus Athletic Village Arena (ECAV)"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.66743, 42.732301]
-        }
+            "coordinates": [
+                -73.66743,
+                42.732301
+            ],
+            "type": "Point"
+        },
+        "_id": "ecav",
+        "type": "Feature",
+        "id": "ecav"
     },
     {
-        "type": "Feature",
-        "_id": "ecavstad",
-        "id": "ecavstad",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "East Campus Athletic Village Stadium",
             "nick": "ECAV Stadium",
             "category": "Student Life",
@@ -464,15 +606,20 @@
             "popupContent": "East Campus Athletic Village Stadium"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.666954, 42.733093]
-        }
+            "coordinates": [
+                -73.666954,
+                42.733093
+            ],
+            "type": "Point"
+        },
+        "_id": "ecavstad",
+        "type": "Feature",
+        "id": "ecavstad"
     },
     {
-        "type": "Feature",
-        "_id": "houston",
-        "id": "houston",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Houston Field House",
             "nick": "field house",
             "category": "Student Life",
@@ -480,15 +627,20 @@
             "popupContent": "Houston Field House"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.669483, 42.732059]
-        }
+            "coordinates": [
+                -73.669483,
+                42.732059
+            ],
+            "type": "Point"
+        },
+        "_id": "houston",
+        "type": "Feature",
+        "id": "houston"
     },
     {
-        "type": "Feature",
-        "_id": "mueller",
-        "id": "mueller",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Mueller Center",
             "nick": "Mueller",
             "category": "Student Life",
@@ -496,15 +648,20 @@
             "popupContent": "Mueller Center"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.676902, 42.728829]
-        }
+            "coordinates": [
+                -73.676902,
+                42.728829
+            ],
+            "type": "Point"
+        },
+        "_id": "mueller",
+        "type": "Feature",
+        "id": "mueller"
     },
     {
-        "type": "Feature",
-        "_id": "play",
-        "id": "play",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Rensselaer Playhouse",
             "nick": "Playhouse",
             "category": "Student Life",
@@ -512,15 +669,20 @@
             "popupContent": "Rensselaer Playhouse"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.678227, 42.729227]
-        }
+            "coordinates": [
+                -73.678227,
+                42.729227
+            ],
+            "type": "Point"
+        },
+        "_id": "play",
+        "type": "Feature",
+        "id": "play"
     },
     {
-        "type": "Feature",
-        "_id": "radio",
-        "id": "radio",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Radio Club W2SZ",
             "nick": "Radio",
             "category": "Student Life",
@@ -528,15 +690,20 @@
             "popupContent": "Radio Club W2SZ"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.663192, 42.734229]
-        }
+            "coordinates": [
+                -73.663192,
+                42.734229
+            ],
+            "type": "Point"
+        },
+        "_id": "radio",
+        "type": "Feature",
+        "id": "radio"
     },
     {
-        "type": "Feature",
-        "_id": "union",
-        "id": "union",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Rensselaer Student Union",
             "nick": "Union",
             "category": "Student Life",
@@ -545,15 +712,20 @@
             "popupContent": "Rensselaer Student Union"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.676647, 42.729995]
-        }
+            "coordinates": [
+                -73.676647,
+                42.729995
+            ],
+            "type": "Point"
+        },
+        "_id": "union",
+        "type": "Feature",
+        "id": "union"
     },
     {
-        "type": "Feature",
-        "_id": "pool",
-        "id": "pool",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Robison Swimming Pool",
             "nick": "Pool",
             "category": "Student Life",
@@ -561,15 +733,20 @@
             "popupContent": "Robison Swimming Pool"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.677313, 42.728007]
-        }
+            "coordinates": [
+                -73.677313,
+                42.728007
+            ],
+            "type": "Point"
+        },
+        "_id": "pool",
+        "type": "Feature",
+        "id": "pool"
     },
     {
-        "type": "Feature",
-        "_id": "sagedin",
-        "id": "sagedin",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Russell Sage Dining Hall",
             "nick": "RSDH, Sage",
             "category": "Student Life",
@@ -578,15 +755,20 @@
             "popupContent": "Russell Sage Dining Hall"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.678264, 42.729778]
-        }
+            "coordinates": [
+                -73.678264,
+                42.729778
+            ],
+            "type": "Point"
+        },
+        "_id": "sagedin",
+        "type": "Feature",
+        "id": "sagedin"
     },
     {
-        "type": "Feature",
-        "_id": "barton",
-        "id": "barton",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Barton Hall",
             "nick": "Barton",
             "category": "Student Housing",
@@ -594,15 +776,20 @@
             "popupContent": "Barton Hall"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.674091, 42.729136]
-        }
+            "coordinates": [
+                -73.674091,
+                42.729136
+            ],
+            "type": "Point"
+        },
+        "_id": "barton",
+        "type": "Feature",
+        "id": "barton"
     },
     {
-        "type": "Feature",
-        "_id": "blitman",
-        "id": "blitman",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Blitman Commons",
             "nick": "blitman",
             "category": "Student Housing",
@@ -610,15 +797,20 @@
             "popupContent": "Blitman Commons"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.685893, 42.731215]
-        }
+            "coordinates": [
+                -73.685893,
+                42.731215
+            ],
+            "type": "Point"
+        },
+        "_id": "blitman",
+        "type": "Feature",
+        "id": "blitman"
     },
     {
-        "type": "Feature",
-        "_id": "bray",
-        "id": "bray",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Bray Hall",
             "nick": "Bray, Freshman Five, Freshman Hill",
             "category": "Student Housing",
@@ -626,15 +818,20 @@
             "popupContent": "Bray Hall"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.673686, 42.728713]
-        }
+            "coordinates": [
+                -73.673686,
+                42.728713
+            ],
+            "type": "Point"
+        },
+        "_id": "bray",
+        "type": "Feature",
+        "id": "bray"
     },
     {
-        "type": "Feature",
-        "_id": "bryck",
-        "id": "bryck",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Bryckwyck",
             "nick": "Bryck",
             "category": "Student Housing",
@@ -642,15 +839,20 @@
             "popupContent": "Bryckwyck"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.663865, 42.734785]
-        }
+            "coordinates": [
+                -73.663865,
+                42.734785
+            ],
+            "type": "Point"
+        },
+        "_id": "bryck",
+        "type": "Feature",
+        "id": "bryck"
     },
     {
-        "type": "Feature",
-        "_id": "barh",
-        "id": "barh",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Burdett Avenue Residence Hall",
             "nick": "BARH, BAR-H",
             "category": "Student Housing",
@@ -658,15 +860,20 @@
             "popupContent": "Burdett Avenue Residence Hall"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.671231, 42.731026]
-        }
+            "coordinates": [
+                -73.671231,
+                42.731026
+            ],
+            "type": "Point"
+        },
+        "_id": "barh",
+        "type": "Feature",
+        "id": "barh"
     },
     {
-        "type": "Feature",
-        "_id": "colonie",
-        "id": "colonie",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Colonie Apartments",
             "nick": "Colonie",
             "category": "Student Housing",
@@ -674,15 +881,20 @@
             "popupContent": "Colonie Apartments"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.669785, 42.737063]
-        }
+            "coordinates": [
+                -73.669785,
+                42.737063
+            ],
+            "type": "Point"
+        },
+        "_id": "colonie",
+        "type": "Feature",
+        "id": "colonie"
     },
     {
-        "type": "Feature",
-        "_id": "hall",
-        "id": "hall",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Hall Hall",
             "nick": "Hall Hall",
             "category": "Student Housing",
@@ -690,15 +902,20 @@
             "popupContent": "Hall Hall"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.675048, 42.728552]
-        }
+            "coordinates": [
+                -73.675048,
+                42.728552
+            ],
+            "type": "Point"
+        },
+        "_id": "hall",
+        "type": "Feature",
+        "id": "hall"
     },
     {
-        "type": "Feature",
-        "_id": "nason",
-        "id": "nason",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Nason Hall",
             "nick": "Nason",
             "category": "Student Housing",
@@ -706,15 +923,20 @@
             "popupContent": "Nason Hall"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.673598, 42.727664]
-        }
+            "coordinates": [
+                -73.673598,
+                42.727664
+            ],
+            "type": "Point"
+        },
+        "_id": "nason",
+        "type": "Feature",
+        "id": "nason"
     },
     {
-        "type": "Feature",
-        "_id": "north",
-        "id": "north",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "North Hall",
             "nick": "North",
             "category": "Student Housing",
@@ -722,15 +944,20 @@
             "popupContent": "North Hall"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.679844, 42.731357]
-        }
+            "coordinates": [
+                -73.679844,
+                42.731357
+            ],
+            "type": "Point"
+        },
+        "_id": "north",
+        "type": "Feature",
+        "id": "north"
     },
     {
-        "type": "Feature",
-        "_id": "nugent",
-        "id": "nugent",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Nugent Hall",
             "nick": "Nugent",
             "category": "Student Housing",
@@ -738,15 +965,20 @@
             "popupContent": "Nugent Hall"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.675031, 42.727411]
-        }
+            "coordinates": [
+                -73.675031,
+                42.727411
+            ],
+            "type": "Point"
+        },
+        "_id": "nugent",
+        "type": "Feature",
+        "id": "nugent"
     },
     {
-        "type": "Feature",
-        "_id": "poly",
-        "id": "poly",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Polytechnic Residence Commons",
             "nick": "Poly",
             "category": "Student Housing",
@@ -754,15 +986,20 @@
             "popupContent": "Polytechnic Residence Commons"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.679528, 42.722276]
-        }
+            "coordinates": [
+                -73.679528,
+                42.722276
+            ],
+            "type": "Point"
+        },
+        "_id": "poly",
+        "type": "Feature",
+        "id": "poly"
     },
     {
-        "type": "Feature",
-        "_id": "quad",
-        "id": "quad",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Quadrangle Complex",
             "nick": "Quad",
             "category": "Student Housing",
@@ -770,15 +1007,20 @@
             "popupContent": "Quadrangle Complex"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.677616, 42.730189]
-        }
+            "coordinates": [
+                -73.677616,
+                42.730189
+            ],
+            "type": "Point"
+        },
+        "_id": "quad",
+        "type": "Feature",
+        "id": "quad"
     },
     {
-        "type": "Feature",
-        "_id": "rahpsa",
-        "id": "rahpsa",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Rensselaer Apartment Housing Project A",
             "nick": "RAHPS A, RAHP",
             "category": "Student Housing",
@@ -786,15 +1028,20 @@
             "popupContent": "Rensselaer Apartment Housing Project A"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.669557, 42.730833]
-        }
+            "coordinates": [
+                -73.669557,
+                42.730833
+            ],
+            "type": "Point"
+        },
+        "_id": "rahpsa",
+        "type": "Feature",
+        "id": "rahpsa"
     },
     {
-        "type": "Feature",
-        "_id": "rahpsb",
-        "id": "rahpsb",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Rensselaer Apartment Housing Project B",
             "nick": "RAHPS B, RAHP",
             "category": "Student Housing",
@@ -802,15 +1049,20 @@
             "popupContent": "Rensselaer Apartment Housing Project"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.665257, 42.734795]
-        }
+            "coordinates": [
+                -73.665257,
+                42.734795
+            ],
+            "type": "Point"
+        },
+        "_id": "rahpsb",
+        "type": "Feature",
+        "id": "rahpsb"
     },
     {
-        "type": "Feature",
-        "_id": "rousseau",
-        "id": "rousseau",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Rousseau Apartments",
             "nick": "Rousseau, Stack, Stacwyck",
             "category": "Student Housing",
@@ -818,15 +1070,20 @@
             "popupContent": "Rousseau Apartments (Stacwyck)"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.664306, 42.734362]
-        }
+            "coordinates": [
+                -73.664306,
+                42.734362
+            ],
+            "type": "Point"
+        },
+        "_id": "rousseau",
+        "type": "Feature",
+        "id": "rousseau"
     },
     {
-        "type": "Feature",
-        "_id": "sharp",
-        "id": "sharp",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Sharp Hall",
             "nick": "Sharp",
             "category": "Student Housing",
@@ -834,15 +1091,20 @@
             "popupContent": "Sharp Hall"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.674582, 42.727008]
-        }
+            "coordinates": [
+                -73.674582,
+                42.727008
+            ],
+            "type": "Point"
+        },
+        "_id": "sharp",
+        "type": "Feature",
+        "id": "sharp"
     },
     {
-        "type": "Feature",
-        "_id": "stack",
-        "id": "stack",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Stacwyck Apartments",
             "nick": "Staccc, Stack",
             "category": "Student Housing",
@@ -850,15 +1112,20 @@
             "popupContent": "Blitman Commons"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.664715, 42.733772]
-        }
+            "coordinates": [
+                -73.664715,
+                42.733772
+            ],
+            "type": "Point"
+        },
+        "_id": "stack",
+        "type": "Feature",
+        "id": "stack"
     },
     {
-        "type": "Feature",
-        "_id": "warren",
-        "id": "warren",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Warren Hall",
             "nick": "Warren",
             "category": "Student Housing",
@@ -866,15 +1133,20 @@
             "popupContent": "Warren Hall"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.67525, 42.727911]
-        }
+            "coordinates": [
+                -73.67525,
+                42.727911
+            ],
+            "type": "Point"
+        },
+        "_id": "warren",
+        "type": "Feature",
+        "id": "warren"
     },
     {
-        "type": "Feature",
-        "_id": "williams",
-        "id": "williams",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Williams Apartments",
             "nick": "Williams, Stack",
             "category": "Student Housing",
@@ -882,15 +1154,20 @@
             "popupContent": "Williams Apartments"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.664544, 42.733971]
-        }
+            "coordinates": [
+                -73.664544,
+                42.733971
+            ],
+            "type": "Point"
+        },
+        "_id": "williams",
+        "type": "Feature",
+        "id": "williams"
     },
     {
-        "type": "Feature",
-        "_id": "exops",
-        "id": "exops",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "2021 15th Street",
             "nick": "Government & Community Relations, Media Relations",
             "category": "Operations & Administration",
@@ -898,15 +1175,20 @@
             "popupContent": "2021 15th Street"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.676977, 42.732908]
-        }
+            "coordinates": [
+                -73.676977,
+                42.732908
+            ],
+            "type": "Point"
+        },
+        "_id": "exops",
+        "type": "Feature",
+        "id": "exops"
     },
     {
-        "type": "Feature",
-        "_id": "parking",
-        "id": "parking",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "2144 Burdett Avenue",
             "nick": "Parking Building",
             "category": "Operations & Administration",
@@ -914,15 +1196,20 @@
             "popupContent": "2144 Burdett Avenue"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.671402, 42.732192]
-        }
+            "coordinates": [
+                -73.671402,
+                42.732192
+            ],
+            "type": "Point"
+        },
+        "_id": "parking",
+        "type": "Feature",
+        "id": "parking"
     },
     {
-        "type": "Feature",
-        "_id": "419th",
-        "id": "419th",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "41 Ninth Street",
             "nick": "41 Ninth Street",
             "category": "Operations & Administration",
@@ -930,15 +1217,20 @@
             "popupContent": "41 Ninth Street"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.682864, 42.732476]
-        }
+            "coordinates": [
+                -73.682864,
+                42.732476
+            ],
+            "type": "Point"
+        },
+        "_id": "419th",
+        "type": "Feature",
+        "id": "419th"
     },
     {
-        "type": "Feature",
-        "_id": "admissions",
-        "id": "admissions",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Admissions Building",
             "nick": "Admissions",
             "category": "Operations & Administration",
@@ -946,15 +1238,20 @@
             "popupContent": "Admissions Building"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.675528, 42.730648]
-        }
+            "coordinates": [
+                -73.675528,
+                42.730648
+            ],
+            "type": "Point"
+        },
+        "_id": "admissions",
+        "type": "Feature",
+        "id": "admissions"
     },
     {
-        "type": "Feature",
-        "_id": "alumni",
-        "id": "alumni",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Heffner Alumni House",
             "nick": "Heffner Alumni House",
             "category": "Operations & Administration",
@@ -962,15 +1259,20 @@
             "popupContent": "Alumni House (Heffner)"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.678216, 42.732883]
-        }
+            "coordinates": [
+                -73.678216,
+                42.732883
+            ],
+            "type": "Point"
+        },
+        "_id": "alumni",
+        "type": "Feature",
+        "id": "alumni"
     },
     {
-        "type": "Feature",
-        "_id": "blaw",
-        "id": "blaw",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Blaw Knox 1 & 2",
             "nick": "Blaw",
             "category": "Operations & Administration",
@@ -978,15 +1280,20 @@
             "popupContent": "Blaw Knox 1 & 2"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.680893, 42.732037]
-        }
+            "coordinates": [
+                -73.680893,
+                42.732037
+            ],
+            "type": "Point"
+        },
+        "_id": "blaw",
+        "type": "Feature",
+        "id": "blaw"
     },
     {
-        "type": "Feature",
-        "_id": "boiler11",
-        "id": "boiler11",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Boiler House, 11th Street",
             "nick": "Boiler House",
             "category": "Operations & Administration",
@@ -994,15 +1301,20 @@
             "popupContent": "Boiler House, 11th Street"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.680229, 42.73268]
-        }
+            "coordinates": [
+                -73.680229,
+                42.73268
+            ],
+            "type": "Point"
+        },
+        "_id": "boiler11",
+        "type": "Feature",
+        "id": "boiler11"
     },
     {
-        "type": "Feature",
-        "_id": "boilersage",
-        "id": "boilersage",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Boiler House, Sage Avenue",
             "nick": "Boiler House",
             "category": "Operations & Administration",
@@ -1010,15 +1322,20 @@
             "popupContent": "Boiler House, Sage Avenue"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.681762, 42.73117]
-        }
+            "coordinates": [
+                -73.681762,
+                42.73117
+            ],
+            "type": "Point"
+        },
+        "_id": "boilersage",
+        "type": "Feature",
+        "id": "boilersage"
     },
     {
-        "type": "Feature",
-        "_id": "grad",
-        "id": "grad",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Graduate Education",
             "nick": "Graduate Education",
             "category": "Operations & Administration",
@@ -1026,15 +1343,20 @@
             "popupContent": "Graduate Education"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.675926, 42.732659]
-        }
+            "coordinates": [
+                -73.675926,
+                42.732659
+            ],
+            "type": "Point"
+        },
+        "_id": "grad",
+        "type": "Feature",
+        "id": "grad"
     },
     {
-        "type": "Feature",
-        "_id": "grounds",
-        "id": "grounds",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Greenhouses and Grounds Barn",
             "nick": "Greenhouses and Grounds Barn",
             "category": "Operations & Administration",
@@ -1042,15 +1364,20 @@
             "popupContent": "Greenhouses and Grounds Barn"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.66791, 42.728718]
-        }
+            "coordinates": [
+                -73.66791,
+                42.728718
+            ],
+            "type": "Point"
+        },
+        "_id": "grounds",
+        "type": "Feature",
+        "id": "grounds"
     },
     {
-        "type": "Feature",
-        "_id": "hbuild",
-        "id": "hbuild",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "H Building",
             "nick": "H Building",
             "category": "Operations & Administration",
@@ -1058,15 +1385,20 @@
             "popupContent": "H Building"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.679231, 42.732592]
-        }
+            "coordinates": [
+                -73.679231,
+                42.732592
+            ],
+            "type": "Point"
+        },
+        "_id": "hbuild",
+        "type": "Feature",
+        "id": "hbuild"
     },
     {
-        "type": "Feature",
-        "_id": "jbuild",
-        "id": "jbuild",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "J Building",
             "nick": "J Building",
             "category": "Operations & Administration",
@@ -1074,15 +1406,20 @@
             "popupContent": "J Building"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.679803, 42.733148]
-        }
+            "coordinates": [
+                -73.679803,
+                42.733148
+            ],
+            "type": "Point"
+        },
+        "_id": "jbuild",
+        "type": "Feature",
+        "id": "jbuild"
     },
     {
-        "type": "Feature",
-        "_id": "patroon",
-        "id": "patroon",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Patroon Manor",
             "nick": "Patroon Manor",
             "category": "Operations & Administration",
@@ -1090,15 +1427,20 @@
             "popupContent": "Patroon Manor"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.663714, 42.736883]
-        }
+            "coordinates": [
+                -73.663714,
+                42.736883
+            ],
+            "type": "Point"
+        },
+        "_id": "patroon",
+        "type": "Feature",
+        "id": "patroon"
     },
     {
-        "type": "Feature",
-        "_id": "pubsafe",
-        "id": "pubsafe",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Public Safety",
             "nick": "pubsafe",
             "category": "Operations & Administration",
@@ -1106,15 +1448,20 @@
             "popupContent": "Public Safety"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.677031, 42.729261]
-        }
+            "coordinates": [
+                -73.677031,
+                42.729261
+            ],
+            "type": "Point"
+        },
+        "_id": "pubsafe",
+        "type": "Feature",
+        "id": "pubsafe"
     },
     {
-        "type": "Feature",
-        "_id": "service",
-        "id": "service",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Service Building",
             "nick": "Service",
             "category": "Operations & Administration",
@@ -1122,15 +1469,20 @@
             "popupContent": "Service Building"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.681052, 42.732793]
-        }
+            "coordinates": [
+                -73.681052,
+                42.732793
+            ],
+            "type": "Point"
+        },
+        "_id": "service",
+        "type": "Feature",
+        "id": "service"
     },
     {
-        "type": "Feature",
-        "_id": "troy",
-        "id": "troy",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Troy Building",
             "nick": "TROY",
             "category": "Operations & Administration",
@@ -1138,15 +1490,20 @@
             "popupContent": "Troy Building"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.680525, 42.731029]
-        }
+            "coordinates": [
+                -73.680525,
+                42.731029
+            ],
+            "type": "Point"
+        },
+        "_id": "troy",
+        "type": "Feature",
+        "id": "troy"
     },
     {
-        "type": "Feature",
-        "_id": "vcc",
-        "id": "vcc",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Voorhees Computing Center",
             "nick": "VCC",
             "category": "Operations & Administration",
@@ -1154,15 +1511,20 @@
             "popupContent": "Voorhees Computing Center (VCC)"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.681755, 42.729231]
-        }
+            "coordinates": [
+                -73.681755,
+                42.729231
+            ],
+            "type": "Point"
+        },
+        "_id": "vcc",
+        "type": "Feature",
+        "id": "vcc"
     },
     {
-        "type": "Feature",
-        "_id": "garage",
-        "id": "garage",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "College Ave Parking Garage",
             "nick": "Parking Garage",
             "category": "Operations & Administration",
@@ -1170,15 +1532,20 @@
             "popupContent": "College Ave Parking Garage"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.681549, 42.727745]
-        }
+            "coordinates": [
+                -73.681549,
+                42.727745
+            ],
+            "type": "Point"
+        },
+        "_id": "garage",
+        "type": "Feature",
+        "id": "garage"
     },
     {
-        "type": "Feature",
-        "_id": "sigep",
-        "id": "sigep",
         "properties": {
+            "comments": [],
+            "photos": [],
             "name": "Sigma Phi Epsilon (ΣΦΕ)",
             "nick": "SigEp, SPE",
             "category": "Fraternity/Sorrority",
@@ -1186,8 +1553,14 @@
             "popupContent": "Sigma Phi Epsilon (ΣΦΕ)"
         },
         "geometry": {
-            "type": "Point",
-            "coordinates": [-73.677091, 42.732331]
-        }
+            "coordinates": [
+                -73.677091,
+                42.732331
+            ],
+            "type": "Point"
+        },
+        "_id": "sigep",
+        "type": "Feature",
+        "id": "sigep"
     }
 ]
