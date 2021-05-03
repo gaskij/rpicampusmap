@@ -1,4 +1,4 @@
-### Documentation on CAS Authentication for Express
+### Documentation on CAS Authentication for Express/MERN Stack
 This document is meant to provide some insight and information when implementing CAS authentication for a webapp with Express and React. I came into this with limited experience on how to use Express and React and throughout the semester made note of issues and troubleshooting tips in the process of working on CAS login/logout functionality for CampusMap.
 
 ## Information on packages that can be used
