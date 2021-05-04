@@ -40,6 +40,39 @@ const createLeafletMap = (targetId: string): L.Map => {
   /** Outline the area of the campus on the map with a gray translucency. */
   L.polygon(campusArea, { color: 'gray', opacity: 0.1 }).addTo(campusMap);
 
+  // Code modified from: https://gis.stackexchange.com/questions/182068/getting-current-user-location-automatically-every-x-seconds-to-put-on-leaflet
+  // placeholders for the L.marker and L.circle representing user's current position and accuracy    
+  var current_position: L.Layer, current_accuracy: L.Layer;
+
+  function onLocationFound(e: { accuracy: number; latlng: L.LatLngExpression; }) {
+    // if position defined, then remove the existing position marker and accuracy circle from the map
+    if (current_position) {
+        campusMap.removeLayer(current_position);
+        campusMap.removeLayer(current_accuracy);
+    }
+
+    var radius = e.accuracy / 2;
+
+    current_position = L.marker(e.latlng).addTo(campusMap)
+      .bindPopup("You are here").openPopup();
+      current_accuracy = L.circle(e.latlng, radius).addTo(campusMap);
+    }
+
+    function onLocationError(e: { message: any; }) {
+      alert(e.message);
+    }
+
+    campusMap.on('locationfound', onLocationFound);
+    campusMap.on('locationerror', onLocationError);
+
+    // wrap map.locate in a function    
+    function locate() {
+      campusMap.locate({setView: true, maxZoom: 16});
+    }
+
+    // call locate every 3 seconds... forever
+    setInterval(locate, 3000);
+
   /** Return the created and configured map object. */
   return campusMap;
 };
